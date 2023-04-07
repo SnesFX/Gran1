@@ -22,7 +22,7 @@ public class closeOptionMenuIG : MonoBehaviour
 
 	public virtual void Start()
 	{
-		_ = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));
+		saveSensitivityData saveSensitivityData2 = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));
 	}
 
 	public virtual void Update()
@@ -35,12 +35,12 @@ public class closeOptionMenuIG : MonoBehaviour
 			{
 				saveSensitivityData saveSensitivityData2 = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));
 				Time.timeScale = 1f;
-				optionMenu.SetActive(value: false);
-				optionButton.SetActive(value: true);
-				joystick.SetActive(value: true);
-				crouchButton.SetActive(value: true);
-				bedButtons.SetActive(value: true);
-				carControls.SetActive(value: true);
+				optionMenu.SetActive(false);
+				optionButton.SetActive(true);
+				joystick.SetActive(true);
+				crouchButton.SetActive(true);
+				bedButtons.SetActive(true);
+				carControls.SetActive(true);
 				PlayerPrefs.SetInt("slideData", (int)saveSensitivityData2.sliderValue);
 				((backgroundSound)soundHolder.GetComponent(typeof(backgroundSound))).buttonClick();
 			}

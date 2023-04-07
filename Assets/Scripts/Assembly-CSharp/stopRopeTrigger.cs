@@ -19,7 +19,7 @@ public class stopRopeTrigger : MonoBehaviour
 			((playerVevar)vevaHolder.GetComponent(typeof(playerVevar))).noMoreVev = true;
 			((playerVevar)vevaHolder.GetComponent(typeof(playerVevar))).playerHoldButton = false;
 			vev.gameObject.tag = "Untagged";
-			vevButton.SetActive(value: false);
+			vevButton.SetActive(false);
 			((vevarBrunnLjud)brunnsLjud.GetComponent(typeof(vevarBrunnLjud))).PlayerVevar = false;
 		}
 	}

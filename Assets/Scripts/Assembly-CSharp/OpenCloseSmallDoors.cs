@@ -16,10 +16,6 @@ public class OpenCloseSmallDoors : MonoBehaviour
 
 	public AudioClip doorClose;
 
-	public bool doorLocked;
-
-	public AudioClip doorLockedLjud;
-
 	public NavMeshObstacle obs;
 
 	public virtual void Start()
@@ -50,12 +46,6 @@ public class OpenCloseSmallDoors : MonoBehaviour
 			base.gameObject.tag = "Untagged";
 			StartCoroutine(timerDoorclosed());
 		}
-		if (!DoorOpen && GetComponent<Animation>().IsPlaying("SmallDoorLocked") && !doorLocked)
-		{
-			doorLocked = true;
-			GetComponent<AudioSource>().PlayOneShot(doorLockedLjud);
-			StartCoroutine(timerDoorlocked());
-		}
 	}
 
 	public virtual IEnumerator timerDooropen()
@@ -73,24 +63,18 @@ public class OpenCloseSmallDoors : MonoBehaviour
 		DoorMoving = false;
 	}
 
-	public virtual IEnumerator timerDoorlocked()
-	{
-		yield return new WaitForSeconds(1f);
-		doorLocked = false;
-	}
-
 	public virtual void OnTriggerEnter(Collider other)
 	{
 		if (DoorMoving)
 		{
 			if (other.gameObject.tag == "Player")
 			{
-				Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<CharacterController>(), ignore: true);
+				Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<CharacterController>(), true);
 			}
 		}
 		else if (!DoorMoving && other.gameObject.tag == "Player")
 		{
-			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<CharacterController>(), ignore: false);
+			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<CharacterController>(), false);
 		}
 	}
 }

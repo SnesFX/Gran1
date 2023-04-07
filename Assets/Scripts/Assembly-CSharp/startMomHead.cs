@@ -10,6 +10,6 @@ public class startMomHead : MonoBehaviour
 	public virtual IEnumerator Start()
 	{
 		yield return new WaitForSeconds(5f);
-		head.SetActive(value: true);
+		head.SetActive(true);
 	}
 }

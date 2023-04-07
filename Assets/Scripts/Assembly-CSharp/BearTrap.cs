@@ -37,6 +37,11 @@ public class BearTrap : MonoBehaviour
 
 	public GameObject gameController;
 
+	public BearTrap()
+	{
+		timer = 120f;
+	}
+
 	public virtual void Start()
 	{
 		Granny = GameObject.Find("GrannyParent");
@@ -85,17 +90,17 @@ public class BearTrap : MonoBehaviour
 					player.GetComponent<CharacterController>().height = 2.76f;
 					player.GetComponent<CharacterController>().center = new Vector3(0f, 1.18f, 0.12f);
 					playerHead.transform.transform.localPosition = new Vector3(0f, 1.007f, 0f);
-					if (!((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByArrow && !((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByGun && !((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByCar && !((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuKilled && !((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).freeze && GrannyEye.activeSelf)
+					if (!((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByArrow && !((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByGun)
 					{
-						((EnemyEye)GrannyEye.GetComponent(typeof(EnemyEye))).seeRange = 200f;
+						GameObject.Find("GrannyEyes").GetComponent<EnemyEye>().seeRange = 200f;
 					}
 					((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).playerInhole = true;
 					((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
 					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).grannyHearObject = true;
 					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).startTimerSearch = false;
 					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).GrannySearching = false;
-					crawlButtonParent.SetActive(value: false);
-					allBedButtons.SetActive(value: false);
+					crawlButtonParent.SetActive(false);
+					allBedButtons.SetActive(false);
 					if ((bool)GameObject.Find("TempNavObjects(Clone)"))
 					{
 						GameObject.Find("TempNavObjects(Clone)").transform.name = "TempNavObjects(Clone)Old";
@@ -179,10 +184,5 @@ public class BearTrap : MonoBehaviour
 				UnityEngine.Object.Instantiate(spawnObject, base.transform.position, base.transform.rotation);
 			}
 		}
-	}
-
-	public BearTrap()
-	{
-		timer = 120f;
 	}
 }

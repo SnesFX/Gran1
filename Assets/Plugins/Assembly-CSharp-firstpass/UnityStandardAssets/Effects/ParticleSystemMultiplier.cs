@@ -9,14 +9,15 @@ namespace UnityStandardAssets.Effects
 		private void Start()
 		{
 			ParticleSystem[] componentsInChildren = GetComponentsInChildren<ParticleSystem>();
-			foreach (ParticleSystem obj in componentsInChildren)
+			ParticleSystem[] array = componentsInChildren;
+			foreach (ParticleSystem particleSystem in array)
 			{
-				ParticleSystem.MainModule main = obj.main;
+				ParticleSystem.MainModule main = particleSystem.main;
 				main.startSizeMultiplier *= multiplier;
 				main.startSpeedMultiplier *= multiplier;
 				main.startLifetimeMultiplier *= Mathf.Lerp(multiplier, 1f, 0.5f);
-				obj.Clear();
-				obj.Play();
+				particleSystem.Clear();
+				particleSystem.Play();
 			}
 		}
 	}

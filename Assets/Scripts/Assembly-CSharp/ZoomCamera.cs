@@ -26,6 +26,13 @@ public class ZoomCamera : MonoBehaviour
 
 	private float zoomVelocity;
 
+	public ZoomCamera()
+	{
+		zoomMin = -5f;
+		zoomMax = 5f;
+		seekTime = 1f;
+	}
+
 	public virtual void Start()
 	{
 		thisTransform = base.transform;
@@ -43,7 +50,8 @@ public class ZoomCamera : MonoBehaviour
 		Vector3 end = thisTransform.parent.TransformPoint(position2);
 		if (Physics.Linecast(position, end, out hitInfo, layerMask))
 		{
-			targetZoom = (hitInfo.point + thisTransform.TransformDirection(Vector3.forward) - thisTransform.parent.TransformPoint(defaultLocalPosition)).magnitude;
+			Vector3 vector = hitInfo.point + thisTransform.TransformDirection(Vector3.forward);
+			targetZoom = (vector - thisTransform.parent.TransformPoint(defaultLocalPosition)).magnitude;
 		}
 		else
 		{
@@ -60,12 +68,5 @@ public class ZoomCamera : MonoBehaviour
 		}
 		position2 = defaultLocalPosition + thisTransform.parent.InverseTransformDirection(thisTransform.forward * currentZoom);
 		thisTransform.localPosition = position2;
-	}
-
-	public ZoomCamera()
-	{
-		zoomMin = -5f;
-		zoomMax = 5f;
-		seekTime = 1f;
 	}
 }

@@ -24,36 +24,41 @@ namespace UnityStandardAssets.Effects
 				Object.Instantiate(original, position, rotation);
 			}
 			yield return null;
-			float num = 10f * multiplier;
-			Collider[] array = Physics.OverlapSphere(base.transform.position, num);
+			float r = 10f * multiplier;
+			Collider[] cols = Physics.OverlapSphere(base.transform.position, r);
+			Collider[] array = cols;
 			foreach (Collider collider in array)
 			{
 				if (numFires > 0)
 				{
 					Ray ray = new Ray(base.transform.position, collider.transform.position - base.transform.position);
-					if (collider.Raycast(ray, out var hitInfo, num))
+					RaycastHit hitInfo;
+					if (collider.Raycast(ray, out hitInfo, r))
 					{
 						AddFire(collider.transform, hitInfo.point, hitInfo.normal);
 						numFires--;
 					}
 				}
 			}
-			float num2 = 0f;
-			while (numFires > 0 && num2 < num)
+			float testR = 0f;
+			while (numFires > 0 && testR < r)
 			{
-				if (Physics.Raycast(new Ray(base.transform.position + Vector3.up, Random.onUnitSphere), out var hitInfo2, num2))
+				Ray ray2 = new Ray(base.transform.position + Vector3.up, Random.onUnitSphere);
+				RaycastHit hitInfo2;
+				if (Physics.Raycast(ray2, out hitInfo2, testR))
 				{
 					AddFire(null, hitInfo2.point, hitInfo2.normal);
 					numFires--;
 				}
-				num2 += num * 0.1f;
+				testR += r * 0.1f;
 			}
 		}
 
 		private void AddFire(Transform t, Vector3 pos, Vector3 normal)
 		{
 			pos += normal * 0.5f;
-			Object.Instantiate(firePrefab, pos, Quaternion.identity).parent = t;
+			Transform transform = Object.Instantiate(firePrefab, pos, Quaternion.identity);
+			transform.parent = t;
 		}
 	}
 }

@@ -4,13 +4,13 @@ using UnityEngine;
 [Serializable]
 public class placePlankaHole : MonoBehaviour
 {
-	public GameObject gameController;
+	public GameObject handHolder;
 
 	public virtual void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.F))
 		{
-			((InventoryController)gameController.GetComponent(typeof(InventoryController))).placePlankaHole();
+			((PickUp)handHolder.GetComponent(typeof(PickUp))).placeObject = true;
 		}
 	}
 }

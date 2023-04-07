@@ -21,8 +21,8 @@ public class crawlVentilTrumma : MonoBehaviour
 			((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerInHole = true;
 			((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerHiding = true;
 			((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).seePlayer = false;
-			grannyEyes.SetActive(value: false);
-			crouchButton.SetActive(value: false);
+			grannyEyes.SetActive(false);
+			crouchButton.SetActive(false);
 		}
 	}
 
@@ -32,8 +32,8 @@ public class crawlVentilTrumma : MonoBehaviour
 		{
 			((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerInHole = false;
 			((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerHiding = false;
-			grannyEyes.SetActive(value: true);
-			crouchButton.SetActive(value: true);
+			grannyEyes.SetActive(true);
+			crouchButton.SetActive(true);
 		}
 	}
 }

@@ -8,6 +8,11 @@ public class destroyCarDoor : MonoBehaviour
 
 	public bool destroyBrokenCardorr;
 
+	public destroyCarDoor()
+	{
+		brokenCardoorTimer = 20f;
+	}
+
 	public virtual void Start()
 	{
 	}
@@ -22,10 +27,5 @@ public class destroyCarDoor : MonoBehaviour
 				UnityEngine.Object.Destroy(base.gameObject);
 			}
 		}
-	}
-
-	public destroyCarDoor()
-	{
-		brokenCardoorTimer = 20f;
 	}
 }

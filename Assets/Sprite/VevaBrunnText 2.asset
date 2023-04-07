@@ -4,8 +4,7 @@
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: VevaBrunnText 2
   m_Rect:
     serializedVersion: 2
@@ -27,9 +26,8 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 2800000, guid: 0c5d54856c945a54ea8aee91d3ddd802, type: 3}
+    texture: {fileID: 2800000, guid: 0331199dfb6e0c8418b898913a3b068d, type: 3}
     alphaTexture: {fileID: 0}
-    secondaryTextures: []
     m_SubMeshes:
     - serializedVersion: 2
       firstByte: 0
@@ -43,7 +41,7 @@ Sprite:
         m_Extent: {x: 0, y: 0, z: 0}
     m_IndexBuffer: 5200510050004400500051004200500044004300500042004a005000430041004a0043004f004a0041004e004a004f004d004a004e004c004a004d0049004a004c004b004a00490048004700440046004400470045004400460041004400450044004100420043004200410040003d003e003f003e003d003c003b0036003a0036003b00390036003a003800360039003500360038003700360035003400330031003200310033002d0031003200300031002d002e0030002d002f002e002d002c002b0029002a0029002b00260029002a002700290026002800270026002500240023002200230024002000230022001f0020002200210020001f001e001d001a001c001a001d0019001a001c001b001a001900180017001600140016001700150016001400120015001400110012001400130012001100100003000d0001000d00030002000d0001000e000d0002000f000c000e000d000e000c000a000d000c0009000a000c000b000a000900080007000600040006000700000006000400030006000000020000000400050002000400030000000100020001000000
     m_VertexData:
-      serializedVersion: 3
+      serializedVersion: 2
       m_VertexCount: 83
       m_Channels:
       - stream: 0
@@ -120,11 +118,10 @@ Sprite:
     serializedVersion: 3
     texture: {fileID: 0}
     alphaTexture: {fileID: 0}
-    secondaryTextures: []
     m_SubMeshes: []
     m_IndexBuffer:
     m_VertexData:
-      serializedVersion: 3
+      serializedVersion: 2
       m_VertexCount: 0
       m_Channels: []
       m_DataSize: 0

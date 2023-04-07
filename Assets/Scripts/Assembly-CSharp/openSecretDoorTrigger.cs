@@ -19,7 +19,7 @@ public class openSecretDoorTrigger : MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			door.gameObject.GetComponent<Animation>().Play("SecretDoorOpen");
-			doorljud.SetActive(value: true);
+			doorljud.SetActive(true);
 			UnityEngine.Object.Destroy(doorTrigger);
 		}
 	}

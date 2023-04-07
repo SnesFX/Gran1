@@ -214,6 +214,20 @@ public class AIfollow : MonoBehaviour
 
 	public GameObject gameController;
 
+	public AIfollow()
+	{
+		timerOnOff = true;
+		damp = 5;
+		seeRange = 10f;
+		attackRange = 4f;
+		stopFollowRange = 4f;
+		RobotRotatespeed = 0.1f;
+		seeOpenDoorTimer = 5f;
+		seeClosedDoorTimer = 3f;
+		seeClosedGarderobDoorTimer = 3f;
+		timerCount2 = 2f;
+	}
+
 	public virtual void Start()
 	{
 		AudioSource component = GetComponent<AudioSource>();
@@ -364,7 +378,9 @@ public class AIfollow : MonoBehaviour
 		{
 			return;
 		}
-		_ = stopFollow;
+		if (!stopFollow)
+		{
+		}
 		navComponent.updateRotation = true;
 		distance = Vector3.Distance(player.position, base.transform.position);
 		distanceWaypoint = Vector3.Distance(target.position, base.transform.position);
@@ -424,11 +440,11 @@ public class AIfollow : MonoBehaviour
 		}
 		if (seePlayer)
 		{
-			maniacHandSmash.SetActive(value: true);
+			maniacHandSmash.SetActive(true);
 		}
 		else if (!seePlayer)
 		{
-			maniacHandSmash.SetActive(value: false);
+			maniacHandSmash.SetActive(false);
 		}
 		if (seePlayer && !attackingPlayer)
 		{
@@ -630,9 +646,8 @@ public class AIfollow : MonoBehaviour
 				{
 					PlayerVisible = false;
 				}
-				if (!(hitInfo.collider.gameObject.tag == "doorClosed") && !(hitInfo.collider.gameObject.tag == "doorOpen"))
+				if (!(hitInfo.collider.gameObject.tag == "doorClosed") && !(hitInfo.collider.gameObject.tag == "doorOpen") && !(hitInfo.collider.gameObject.tag == "lockerDoor"))
 				{
-					_ = hitInfo.collider.gameObject.tag == "lockerDoor";
 				}
 			}
 		}
@@ -760,7 +775,8 @@ public class AIfollow : MonoBehaviour
 		}
 		if (seePlayer && !PlayerVisible && distance < attackRange)
 		{
-			Quaternion b = Quaternion.LookRotation((target.position - base.transform.position).normalized);
+			Vector3 normalized = (target.position - base.transform.position).normalized;
+			Quaternion b = Quaternion.LookRotation(normalized);
 			base.transform.rotation = Quaternion.Slerp(base.transform.rotation, b, Time.deltaTime * RobotRotatespeed);
 			navComponent.stoppingDistance = 4.5f;
 		}
@@ -785,8 +801,9 @@ public class AIfollow : MonoBehaviour
 		yield return new WaitForSeconds(3f);
 		if (!stopAndAttackPlayer)
 		{
-			Quaternion to = Quaternion.LookRotation(target.position - base.transform.position);
-			base.transform.rotation = Quaternion.RotateTowards(base.transform.rotation, to, Time.deltaTime * RobotRotatespeed);
+			Vector3 relativePos = target.position - base.transform.position;
+			Quaternion rotation = Quaternion.LookRotation(relativePos);
+			base.transform.rotation = Quaternion.RotateTowards(base.transform.rotation, rotation, Time.deltaTime * RobotRotatespeed);
 			stopAndAttackPlayer = true;
 			yield return new WaitForSeconds(6f);
 			stopAndAttackPlayer = false;
@@ -829,7 +846,9 @@ public class AIfollow : MonoBehaviour
 		{
 			startHittingPlayer = false;
 		}
-		_ = playerHiding;
+		if (playerHiding)
+		{
+		}
 	}
 
 	public virtual IEnumerator stopfollowPlayer()
@@ -1105,19 +1124,5 @@ public class AIfollow : MonoBehaviour
 	{
 		yield return new WaitForSeconds(8f);
 		Debug.Log("Now Move On!!");
-	}
-
-	public AIfollow()
-	{
-		timerOnOff = true;
-		damp = 5;
-		seeRange = 10f;
-		attackRange = 4f;
-		stopFollowRange = 4f;
-		RobotRotatespeed = 0.1f;
-		seeOpenDoorTimer = 5f;
-		seeClosedDoorTimer = 3f;
-		seeClosedGarderobDoorTimer = 3f;
-		timerCount2 = 2f;
 	}
 }

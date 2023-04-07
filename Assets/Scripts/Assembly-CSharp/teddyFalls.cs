@@ -16,7 +16,7 @@ public class teddyFalls : MonoBehaviour
 		if ((bool)GameObject.Find("Player"))
 		{
 			player = GameObject.Find("Player").transform;
-			Physics.IgnoreCollision(ParentObject.GetComponent<Collider>(), player.GetComponent<CharacterController>(), ignore: true);
+			Physics.IgnoreCollision(ParentObject.GetComponent<Collider>(), player.GetComponent<CharacterController>(), true);
 		}
 	}
 
@@ -24,7 +24,7 @@ public class teddyFalls : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			Physics.IgnoreCollision(ParentObject.GetComponent<Collider>(), other.GetComponent<CharacterController>(), ignore: true);
+			Physics.IgnoreCollision(ParentObject.GetComponent<Collider>(), other.GetComponent<CharacterController>(), true);
 		}
 		else if (other.gameObject.tag == "resetfloor")
 		{

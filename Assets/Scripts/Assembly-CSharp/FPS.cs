@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
 public class FPS : MonoBehaviour
@@ -13,11 +12,16 @@ public class FPS : MonoBehaviour
 
 	private float timeleft;
 
+	public FPS()
+	{
+		updateInterval = 0.5f;
+	}
+
 	public virtual void Start()
 	{
-		if (!GetComponent<Text>())
+		if (!GetComponent<GUIText>())
 		{
-			MonoBehaviour.print("FramesPerSecond needs a UI.Text component!");
+			MonoBehaviour.print("FramesPerSecond needs a GUIText component!");
 			base.enabled = false;
 		}
 		else
@@ -33,15 +37,10 @@ public class FPS : MonoBehaviour
 		frames++;
 		if (timeleft <= 0f)
 		{
-			GetComponent<Text>().text = (accum / (float)frames).ToString("f2") ?? "";
+			GetComponent<GUIText>().text = string.Empty + (accum / (float)frames).ToString("f2");
 			timeleft = updateInterval;
 			accum = 0f;
 			frames = 0;
 		}
-	}
-
-	public FPS()
-	{
-		updateInterval = 0.5f;
 	}
 }

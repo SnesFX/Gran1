@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
 public class SensitivitySlider : MonoBehaviour
@@ -13,7 +12,7 @@ public class SensitivitySlider : MonoBehaviour
 
 	private Rect defaultRect;
 
-	private Image gui;
+	private GUITexture gui;
 
 	public saveSensitivityData scriptC;
 
@@ -21,7 +20,7 @@ public class SensitivitySlider : MonoBehaviour
 
 	public virtual void Start()
 	{
-		_ = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));
+		saveSensitivityData saveSensitivityData2 = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));
 		if (PlayerPrefs.GetInt("slideData") == 0)
 		{
 			PlayerPrefs.SetInt("slideData", 150);
@@ -35,7 +34,8 @@ public class SensitivitySlider : MonoBehaviour
 
 	public virtual void Update()
 	{
-		((saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData))).sliderValue = hSliderValue;
+		saveSensitivityData saveSensitivityData2 = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));
+		saveSensitivityData2.sliderValue = hSliderValue;
 	}
 
 	public virtual void OnGUI()

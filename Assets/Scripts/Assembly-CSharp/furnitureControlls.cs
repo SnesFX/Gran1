@@ -5,8 +5,6 @@ using UnityEngine;
 [Serializable]
 public class furnitureControlls : MonoBehaviour
 {
-	public GameObject gameController;
-
 	public GameObject bordVR;
 
 	public Transform bordVRPos;
@@ -110,14 +108,6 @@ public class furnitureControlls : MonoBehaviour
 	public GameObject BurkOH;
 
 	public Transform BurkOHPos;
-
-	public GameObject TavlaOH;
-
-	public Transform TavlaOHPos;
-
-	public GameObject christmasTree;
-
-	public Transform christmasTreePos;
 
 	public virtual IEnumerator cleanUp()
 	{
@@ -302,18 +292,6 @@ public class furnitureControlls : MonoBehaviour
 			UnityEngine.Object.Instantiate(BurkOH, BurkOHPos.position, BurkOHPos.rotation);
 			yield return new WaitForSeconds(0.5f);
 			GameObject.Find("MetalCanOuthouse(Clone)").transform.name = "MetalCanOuthouse";
-		}
-		if ((bool)GameObject.Find("OldHouseTavla(Clone)"))
-		{
-			UnityEngine.Object.Destroy(GameObject.Find("OldHouseTavla(Clone)"));
-			UnityEngine.Object.Instantiate(TavlaOH, TavlaOHPos.position, TavlaOHPos.rotation);
-			yield return new WaitForSeconds(0.5f);
-			GameObject.Find("OldHouseTavla(Clone)").transform.name = "OldHouseTavla";
-		}
-		if (((ChristmasScript)gameController.GetComponent(typeof(ChristmasScript))).itsChristmas)
-		{
-			christmasTree.transform.position = christmasTreePos.position;
-			christmasTree.transform.rotation = christmasTreePos.rotation;
 		}
 	}
 }

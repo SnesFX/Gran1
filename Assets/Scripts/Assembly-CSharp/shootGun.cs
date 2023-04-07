@@ -33,19 +33,12 @@ public class shootGun : MonoBehaviour
 
 	public GameObject Spider;
 
-	public GameObject rat1;
-
-	public GameObject rat2;
-
-	public GameObject crow;
-
-	public GameObject crowBurDead;
-
-	public GameObject crowEatDead;
-
-	public GameObject Skjutplatta;
-
 	public bool shootingOnGascan;
+
+	public shootGun()
+	{
+		power = 500;
+	}
 
 	public virtual void Start()
 	{
@@ -65,7 +58,7 @@ public class shootGun : MonoBehaviour
 			shooting = false;
 			shotgunAnim.GetComponent<Animation>().Play("Shoot");
 			playerShootAnim.GetComponent<Animation>().Play("shootGun");
-			shootButton.SetActive(value: false);
+			shootButton.SetActive(false);
 			((PickUp)ammoCheckHolder.GetComponent(typeof(PickUp))).oldShotgunLoaded = false;
 			((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).GunShoot();
 			UnityEngine.Object.Instantiate(grannyHearSound, noiceDP.transform.position, noiceDP.transform.rotation);
@@ -102,59 +95,15 @@ public class shootGun : MonoBehaviour
 			{
 				((spiderControll)Spider.GetComponent(typeof(spiderControll))).spiderIsDead();
 			}
-			else if (hitInfo.collider.gameObject.tag == "gascan")
+			else if (hitInfo.collider.gameObject.tag == "gascan" && !shootingOnGascan)
 			{
-				if (!shootingOnGascan)
-				{
-					shootingOnGascan = true;
-					((explode)hitInfo.collider.gameObject.GetComponent(typeof(explode))).explodeNow();
-				}
-			}
-			else if (hitInfo.collider.gameObject.tag == "rat1")
-			{
-				((ratController)rat1.GetComponent(typeof(ratController))).Waittimer = 100f;
-			}
-			else if (hitInfo.collider.gameObject.tag == "rat2")
-			{
-				((ratController)rat2.GetComponent(typeof(ratController))).Waittimer = 100f;
-			}
-			else if (hitInfo.collider.gameObject.tag == "burdoor")
-			{
-				((CrowControl)crow.GetComponent(typeof(CrowControl))).shootInBur = true;
-			}
-			else if (hitInfo.collider.gameObject.tag == "crowbur")
-			{
-				crow.SetActive(value: false);
-				crowBurDead.SetActive(value: true);
-				if (!((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).ragdollSpawn)
-				{
-					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = true;
-					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).spiderIsDead = true;
-				}
-			}
-			else if (hitInfo.collider.gameObject.tag == "croweat")
-			{
-				crow.SetActive(value: false);
-				crowEatDead.SetActive(value: true);
-				if (!((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).ragdollSpawn)
-				{
-					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = true;
-					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).spiderIsDead = true;
-				}
-			}
-			else if (hitInfo.collider.gameObject.tag == "skjutplatta")
-			{
-				((SkjutplattaDoor)Skjutplatta.GetComponent(typeof(SkjutplattaDoor))).doorUnlocked = true;
+				shootingOnGascan = true;
+				((explode)hitInfo.collider.gameObject.GetComponent(typeof(explode))).explodeNow();
 			}
 		}
 		else
 		{
 			shooting = false;
 		}
-	}
-
-	public shootGun()
-	{
-		power = 500;
 	}
 }

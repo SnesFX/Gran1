@@ -97,12 +97,12 @@ public class OpenCloseDoorVind : MonoBehaviour
 		{
 			if (other.gameObject.tag == "Player")
 			{
-				Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), ignore: true);
+				Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), true);
 			}
 		}
 		else if (!DoorMoving)
 		{
-			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), ignore: false);
+			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), false);
 		}
 	}
 }

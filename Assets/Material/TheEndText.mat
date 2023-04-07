@@ -5,10 +5,9 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: TheEndText
-  m_Shader: {fileID: 4800000, guid: 6a22b3f3c49c2814a963924a62703a95, type: 3}
+  m_Shader: {fileID: 4800000, guid: 2697ad8deeac6eb408b64c1a191af691, type: 3}
   m_ShaderKeywords:
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -20,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: b99ce71f1e43f5e408d51102dc3674a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 59d09418532db3c40880a25599b0b8d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:

@@ -4,29 +4,23 @@
 RuntimeInitializeOnLoadManager:
   m_ObjectHideFlags: 0
   m_AssemblyNames:
-  - com.unity.multiplayer-hlapi.Runtime
+  - UnityEditor.Advertisements
   m_NamespaceNames:
-  - UnityEngine.Networking
+  - UnityEditor.Advertisements
   m_ClassInfos:
   - m_AssemblyNameIndex: 0
     m_NamespaceIndex: 0
-    m_ClassName: NetworkIdentity
+    m_ClassName: UnityAdsEditor
     m_NumOfMethods: 1
     m_MethodIndex: 0
     m_IsUnityClass: 0
   m_ClassMethodInfos:
   - m_ClassIndex: 0
-    m_MethodName: OnRuntimeInitializeOnLoad
+    m_MethodName: EditorOnLoad
     m_OrderNumber: 0
-  m_BeforeUnityMethodExecutionOrders: []
-  m_AfterUnityMethodExecutionOrders:
+  m_BeforeUnityMethodExecutionOrders:
   - 0
+  m_AfterUnityMethodExecutionOrders: []
   m_BeforeMethodExecutionOrders: []
   m_AfterMethodExecutionOrders: []
-  m_AfterAssembliesLoadedUnityMethodExecutionOrders: []
-  m_AfterAssembliesLoadedMethodExecutionOrders: []
-  m_BeforeSplashScreenUnityMethodExecutionOrders: []
-  m_BeforeSplashScreenMethodExecutionOrders: []
-  m_SubsystemRegistrationUnityMethodExecutionOrders: []
-  m_SubsystemRegistrationMethodExecutionOrders: []
   m_FullClassNames: []

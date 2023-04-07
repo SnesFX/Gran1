@@ -8,14 +8,14 @@ public class AnimationSpeed : MonoBehaviour
 
 	public float speed;
 
-	public virtual void Start()
-	{
-		animationTarget[animationTarget.clip.name].speed = speed;
-	}
-
 	public AnimationSpeed()
 	{
 		speed = 1f;
+	}
+
+	public virtual void Start()
+	{
+		animationTarget[animationTarget.clip.name].speed = speed;
 	}
 }
 [Serializable]

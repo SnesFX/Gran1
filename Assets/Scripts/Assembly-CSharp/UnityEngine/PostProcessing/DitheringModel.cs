@@ -10,7 +10,13 @@ namespace UnityEngine.PostProcessing
 		[StructLayout(LayoutKind.Sequential, Size = 1)]
 		public struct Settings
 		{
-			public static Settings defaultSettings => default(Settings);
+			public static Settings defaultSettings
+			{
+				get
+				{
+					return default(Settings);
+				}
+			}
 		}
 
 		[SerializeField]

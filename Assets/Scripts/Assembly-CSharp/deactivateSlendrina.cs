@@ -14,7 +14,7 @@ public class deactivateSlendrina : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			slendrina.SetActive(value: false);
+			slendrina.SetActive(false);
 			UnityEngine.Object.Destroy(base.gameObject);
 		}
 	}

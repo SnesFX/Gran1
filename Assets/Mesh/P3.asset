@@ -2,11 +2,10 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!43 &4300000
 Mesh:
-  serializedVersion: 10
+  serializedVersion: 9
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: P3
   m_SubMeshes:
   - serializedVersion: 2
@@ -27,9 +26,6 @@ Mesh:
   m_BindPose: []
   m_BoneNameHashes: []
   m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: []
   m_MeshCompression: 0
   m_IsReadable: 1
   m_KeepVertices: 0
@@ -37,7 +33,7 @@ Mesh:
   m_IndexFormat: 0
   m_IndexBuffer: 0000010002000000020003000300020004000300040005000600070008000600080009000a000b000c000a000c000d000e000f0010000e0010001100120013001400120014001500160015001400160017001500180019001a0018001a001b001c001d001e001c001e001f001f001e0020001f00200021002200230024002200240025002600270028002600280029002a002b002c002a002c002d002e002f0030002e003000310032003300340032003400350036003700380038003900360039003a0036003a003b0036003a003c003b003c003d003b003d003e003b003d003f003e003d0040003f003d004100400041004200400041004300420043004400420045004600470047004800450048004900450048004a0049004a004b0049004a004c004b004a004d004c004d004e004c004e004f004c004f0050004c004f0051005000510052005000510053005200
   m_VertexData:
-    serializedVersion: 3
+    serializedVersion: 2
     m_VertexCount: 84
     m_Channels:
     - stream: 0
@@ -158,8 +154,4 @@ Mesh:
   m_BakedTriangleCollisionMesh:
   m_MeshMetrics[0]: 6739.8496
   m_MeshMetrics[1]: 9103.615
-  m_MeshOptimizationFlags: -1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path:
+  m_MeshOptimized: 1

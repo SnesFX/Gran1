@@ -43,7 +43,7 @@ public class grannyClosePrisondoor : MonoBehaviour
 					((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).grannyHearObject = false;
 					((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).startTimerSearch = true;
 					((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).timerSearch = 4f;
-					noiceObjects.SetActive(value: false);
+					noiceObjects.SetActive(false);
 					((camLampBlink)camSound.GetComponent(typeof(camLampBlink))).soundOff = true;
 				}
 				else if (firstTime)

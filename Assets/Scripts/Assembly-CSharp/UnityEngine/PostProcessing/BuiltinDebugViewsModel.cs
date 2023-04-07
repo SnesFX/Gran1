@@ -121,11 +121,7 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				if (!IsModeActive(Mode.None) && !IsModeActive(Mode.EyeAdaptation) && !IsModeActive(Mode.PreGradingLog) && !IsModeActive(Mode.LogLut))
-				{
-					return !IsModeActive(Mode.UserLut);
-				}
-				return false;
+				return !IsModeActive(Mode.None) && !IsModeActive(Mode.EyeAdaptation) && !IsModeActive(Mode.PreGradingLog) && !IsModeActive(Mode.LogLut) && !IsModeActive(Mode.UserLut);
 			}
 		}
 

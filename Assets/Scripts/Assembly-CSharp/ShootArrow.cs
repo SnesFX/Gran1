@@ -9,8 +9,6 @@ public class ShootArrow : MonoBehaviour
 
 	public GameObject player;
 
-	public GameObject gameController;
-
 	public Rigidbody arrow;
 
 	public Transform bulletSpawn;
@@ -46,17 +44,16 @@ public class ShootArrow : MonoBehaviour
 		if (Physics.Raycast(SeeRay.transform.position, direction, out hitInfo, 100f) && shooting)
 		{
 			shooting = false;
-			shootButton.SetActive(value: false);
-			laddad.SetActive(value: false);
-			Oladdad.SetActive(value: true);
-			Arrow.SetActive(value: false);
-			((InventoryController)gameController.GetComponent(typeof(InventoryController))).armborstArrowOK = false;
-			((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveArrow = false;
+			shootButton.SetActive(false);
+			laddad.SetActive(false);
+			Oladdad.SetActive(true);
+			Arrow.SetActive(false);
+			((PickUp)arrowCheckHolder.GetComponent(typeof(PickUp))).armborstArrowOK = false;
+			((PickUp)arrowCheckHolder.GetComponent(typeof(PickUp))).haveArrow = false;
 			Rigidbody rigidbody = UnityEngine.Object.Instantiate(arrow, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
 			rigidbody.velocity = (hitInfo.point - bulletSpawn.transform.position).normalized * 30f;
 			rigidbody.rotation = Quaternion.LookRotation(rigidbody.velocity);
 			((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).CrossbowShoot();
-			Debug.Log("Shooting");
 		}
 	}
 }

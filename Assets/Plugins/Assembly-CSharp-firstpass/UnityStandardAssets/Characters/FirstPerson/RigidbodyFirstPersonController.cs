@@ -30,7 +30,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 			private bool m_Running;
 
-			public bool Running => m_Running;
+			public bool Running
+			{
+				get
+				{
+					return m_Running;
+				}
+			}
 
 			public void UpdateDesiredTargetSpeed(Vector2 input)
 			{
@@ -100,13 +106,37 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private bool m_IsGrounded;
 
-		public Vector3 Velocity => m_RigidBody.velocity;
+		public Vector3 Velocity
+		{
+			get
+			{
+				return m_RigidBody.velocity;
+			}
+		}
 
-		public bool Grounded => m_IsGrounded;
+		public bool Grounded
+		{
+			get
+			{
+				return m_IsGrounded;
+			}
+		}
 
-		public bool Jumping => m_Jumping;
+		public bool Jumping
+		{
+			get
+			{
+				return m_Jumping;
+			}
+		}
 
-		public bool Running => movementSettings.Running;
+		public bool Running
+		{
+			get
+			{
+				return movementSettings.Running;
+			}
+		}
 
 		private void Start()
 		{
@@ -174,7 +204,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private void StickToGroundHelper()
 		{
-			if (Physics.SphereCast(base.transform.position, m_Capsule.radius * (1f - advancedSettings.shellOffset), Vector3.down, out var hitInfo, m_Capsule.height / 2f - m_Capsule.radius + advancedSettings.stickToGroundHelperDistance, -1, QueryTriggerInteraction.Ignore) && Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
+			RaycastHit hitInfo;
+			if (Physics.SphereCast(base.transform.position, m_Capsule.radius * (1f - advancedSettings.shellOffset), Vector3.down, out hitInfo, m_Capsule.height / 2f - m_Capsule.radius + advancedSettings.stickToGroundHelperDistance, -1, QueryTriggerInteraction.Ignore) && Mathf.Abs(Vector3.Angle(hitInfo.normal, Vector3.up)) < 85f)
 			{
 				m_RigidBody.velocity = Vector3.ProjectOnPlane(m_RigidBody.velocity, hitInfo.normal);
 			}
@@ -207,7 +238,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private void GroundCheck()
 		{
 			m_PreviouslyGrounded = m_IsGrounded;
-			if (Physics.SphereCast(base.transform.position, m_Capsule.radius * (1f - advancedSettings.shellOffset), Vector3.down, out var hitInfo, m_Capsule.height / 2f - m_Capsule.radius + advancedSettings.groundCheckDistance, -1, QueryTriggerInteraction.Ignore))
+			RaycastHit hitInfo;
+			if (Physics.SphereCast(base.transform.position, m_Capsule.radius * (1f - advancedSettings.shellOffset), Vector3.down, out hitInfo, m_Capsule.height / 2f - m_Capsule.radius + advancedSettings.groundCheckDistance, -1, QueryTriggerInteraction.Ignore))
 			{
 				m_IsGrounded = true;
 				m_GroundContactNormal = hitInfo.normal;

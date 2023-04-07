@@ -25,13 +25,18 @@ public class fillingFuel : MonoBehaviour
 
 	public bool noMoreFill;
 
-	public GameObject pickUpButton;
+	public GameObject pickUpHolder;
 
 	public GameObject tanklockAnim;
 
 	public GameObject fillingGasSoundHolder;
 
 	public bool tanklockAnimPlayed;
+
+	public fillingFuel()
+	{
+		layerMask = 256;
+	}
 
 	public virtual void Start()
 	{
@@ -52,73 +57,65 @@ public class fillingFuel : MonoBehaviour
 			{
 				if (hitInfo.collider.gameObject.tag == "fueltankPlace")
 				{
-					if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegascan)
+					if (!((PickUp)pickUpHolder.GetComponent(typeof(PickUp))).havegascan)
 					{
-						fillFuelMeter.SetActive(value: true);
-						fillFuelButton.SetActive(value: true);
-						if (playerHoldButton)
+						return;
+					}
+					fillFuelMeter.SetActive(true);
+					fillFuelButton.SetActive(true);
+					if (playerHoldButton)
+					{
+						fillingGasSoundHolder.SetActive(true);
+						if (!tanklockAnimPlayed)
 						{
-							fillingGasSoundHolder.SetActive(value: true);
-							if (!tanklockAnimPlayed)
-							{
-								tanklockAnimPlayed = true;
-								tanklockAnim.GetComponent<Animation>().Play("tanklockOpen");
-							}
-							fillFuealBar.fillAmount += 0.1f * Time.deltaTime;
-							if (fillFuealBar.fillAmount >= 1f)
-							{
-								((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).fuelOK = true;
-								fillFuelMeter.SetActive(value: false);
-								fillFuelButton.SetActive(value: false);
-								UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-								tanklockAnim.GetComponent<Animation>().Play("tanklockClose");
-								fillingGasSoundHolder.SetActive(value: false);
-							}
+							tanklockAnimPlayed = true;
+							tanklockAnim.GetComponent<Animation>().Play("tanklockOpen");
 						}
-						else
+						fillFuealBar.fillAmount += 0.1f * Time.deltaTime;
+						if (fillFuealBar.fillAmount >= 1f)
 						{
-							fillingGasSoundHolder.SetActive(value: false);
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).fuelOK = true;
+							fillFuelMeter.SetActive(false);
+							fillFuelButton.SetActive(false);
+							UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
+							tanklockAnim.GetComponent<Animation>().Play("tanklockClose");
+							fillingGasSoundHolder.SetActive(false);
 						}
 					}
 					else
 					{
-						pickUpButton.SetActive(value: true);
+						fillingGasSoundHolder.SetActive(false);
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "golv")
 				{
-					fillFuelButton.SetActive(value: false);
-					fillFuelMeter.SetActive(value: false);
+					fillFuelButton.SetActive(false);
+					fillFuelMeter.SetActive(false);
 					playerHoldButton = false;
-					fillingGasSoundHolder.SetActive(value: false);
+					fillingGasSoundHolder.SetActive(false);
 				}
 				else if (hitInfo.collider.gameObject.tag == "Untagged")
 				{
-					fillFuelButton.SetActive(value: false);
-					fillFuelMeter.SetActive(value: false);
+					fillFuelButton.SetActive(false);
+					fillFuelMeter.SetActive(false);
 					playerHoldButton = false;
-					fillingGasSoundHolder.SetActive(value: false);
+					fillingGasSoundHolder.SetActive(false);
 				}
 			}
 			else
 			{
-				fillFuelButton.SetActive(value: false);
-				fillFuelMeter.SetActive(value: false);
+				fillFuelButton.SetActive(false);
+				fillFuelMeter.SetActive(false);
 				playerHoldButton = false;
-				fillingGasSoundHolder.SetActive(value: false);
+				fillingGasSoundHolder.SetActive(false);
 			}
 		}
 		else
 		{
-			fillFuelButton.SetActive(value: false);
-			fillFuelMeter.SetActive(value: false);
+			fillFuelButton.SetActive(false);
+			fillFuelMeter.SetActive(false);
 			playerHoldButton = false;
-			fillingGasSoundHolder.SetActive(value: false);
+			fillingGasSoundHolder.SetActive(false);
 		}
-	}
-
-	public fillingFuel()
-	{
-		layerMask = 256;
 	}
 }

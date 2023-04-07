@@ -95,7 +95,7 @@ namespace UnityEngine.PostProcessing
 			m_ComponentStates = new Dictionary<PostProcessingComponentBase, bool>();
 			foreach (PostProcessingComponentBase component in m_Components)
 			{
-				m_ComponentStates.Add(component, value: false);
+				m_ComponentStates.Add(component, false);
 			}
 			base.useGUILayout = false;
 		}
@@ -182,7 +182,7 @@ namespace UnityEngine.PostProcessing
 			bool flag = false;
 			bool active = m_Fxaa.active;
 			bool flag2 = m_Taa.active && !m_RenderingInSceneView;
-			bool num = m_DepthOfField.active && !m_RenderingInSceneView;
+			bool flag3 = m_DepthOfField.active && !m_RenderingInSceneView;
 			Material material = m_MaterialFactory.Get("Hidden/Post FX/Uber Shader");
 			material.shaderKeywords = null;
 			RenderTexture renderTexture = source;
@@ -199,7 +199,7 @@ namespace UnityEngine.PostProcessing
 				texture = m_EyeAdaptation.Prepare(renderTexture, material);
 			}
 			material.SetTexture("_AutoExposure", texture);
-			if (num)
+			if (flag3)
 			{
 				flag = true;
 				m_DepthOfField.Prepare(renderTexture, material, flag2, m_Taa.jitterVector, m_Taa.model.settings.taaSettings.motionBlending);
@@ -213,7 +213,7 @@ namespace UnityEngine.PostProcessing
 			flag |= TryPrepareUberImageEffect(m_ColorGrading, material);
 			flag |= TryPrepareUberImageEffect(m_Vignette, material);
 			flag |= TryPrepareUberImageEffect(m_UserLut, material);
-			Material material2 = (active ? m_MaterialFactory.Get("Hidden/Post FX/FXAA") : null);
+			Material material2 = ((!active) ? null : m_MaterialFactory.Get("Hidden/Post FX/FXAA"));
 			if (active)
 			{
 				material2.shaderKeywords = null;
@@ -339,10 +339,9 @@ namespace UnityEngine.PostProcessing
 
 		private CommandBuffer AddCommandBuffer<T>(CameraEvent evt, string name) where T : PostProcessingModel
 		{
-			CommandBuffer value = new CommandBuffer
-			{
-				name = name
-			};
+			CommandBuffer commandBuffer = new CommandBuffer();
+			commandBuffer.name = name;
+			CommandBuffer value = commandBuffer;
 			KeyValuePair<CameraEvent, CommandBuffer> value2 = new KeyValuePair<CameraEvent, CommandBuffer>(evt, value);
 			m_CommandBuffers.Add(typeof(T), value2);
 			m_Camera.AddCommandBuffer(evt, value2.Value);
@@ -352,7 +351,8 @@ namespace UnityEngine.PostProcessing
 		private void RemoveCommandBuffer<T>() where T : PostProcessingModel
 		{
 			Type typeFromHandle = typeof(T);
-			if (m_CommandBuffers.TryGetValue(typeFromHandle, out var value))
+			KeyValuePair<CameraEvent, CommandBuffer> value;
+			if (m_CommandBuffers.TryGetValue(typeFromHandle, out value))
 			{
 				m_Camera.RemoveCommandBuffer(value.Key, value.Value);
 				m_CommandBuffers.Remove(typeFromHandle);
@@ -362,7 +362,8 @@ namespace UnityEngine.PostProcessing
 
 		private CommandBuffer GetCommandBuffer<T>(CameraEvent evt, string name) where T : PostProcessingModel
 		{
-			if (!m_CommandBuffers.TryGetValue(typeof(T), out var value))
+			KeyValuePair<CameraEvent, CommandBuffer> value;
+			if (!m_CommandBuffers.TryGetValue(typeof(T), out value))
 			{
 				return AddCommandBuffer<T>(evt, name);
 			}

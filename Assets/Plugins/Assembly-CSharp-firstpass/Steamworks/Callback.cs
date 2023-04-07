@@ -23,6 +23,13 @@ namespace Steamworks
 
 		private event DispatchDelegate m_Func;
 
+		public Callback(DispatchDelegate func, bool bGameServer = false)
+		{
+			m_bGameServer = bGameServer;
+			BuildCCallbackBase();
+			Register(func);
+		}
+
 		public static Callback<T> Create(DispatchDelegate func)
 		{
 			return new Callback<T>(func);
@@ -30,14 +37,7 @@ namespace Steamworks
 
 		public static Callback<T> CreateGameServer(DispatchDelegate func)
 		{
-			return new Callback<T>(func, bGameServer: true);
-		}
-
-		public Callback(DispatchDelegate func, bool bGameServer = false)
-		{
-			m_bGameServer = bGameServer;
-			BuildCCallbackBase();
-			Register(func);
+			return new Callback<T>(func, true);
 		}
 
 		~Callback()
@@ -129,7 +129,7 @@ namespace Steamworks
 				m_GetCallbackSizeBytes = OnGetCallbackSizeBytes
 			};
 			m_pVTable = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(CCallbackBaseVTable)));
-			Marshal.StructureToPtr(VTable, m_pVTable, fDeleteOld: false);
+			Marshal.StructureToPtr(VTable, m_pVTable, false);
 			m_CCallbackBase = new CCallbackBase
 			{
 				m_vfptr = m_pVTable,

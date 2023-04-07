@@ -4,8 +4,7 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -70,7 +69,7 @@ MonoBehaviour:
       screenEdgeMask:
         intensity: 0.03
   depthOfField:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       focusDistance: 36.8
       aperture: 0.21
@@ -78,7 +77,7 @@ MonoBehaviour:
       useCameraFov: 0
       kernelSize: 1
   motionBlur:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       shutterAngle: 270
       sampleCount: 8
@@ -312,29 +311,29 @@ MonoBehaviour:
   userLut:
     m_Enabled: 0
     m_Settings:
-      lut: {fileID: 2800000, guid: 373810778584bd44da715d41d5056365, type: 3}
+      lut: {fileID: 0}
       contribution: 1
   chromaticAberration:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
-      spectralTexture: {fileID: 2800000, guid: ed0e4a565df1d6c4c99406a44b81aa8d, type: 3}
-      intensity: 0.7246733
+      spectralTexture: {fileID: 0}
+      intensity: 0
   grain:
     m_Enabled: 0
     m_Settings:
       colored: 0
-      intensity: 0.105
+      intensity: 0.197
       size: 1
       luminanceContribution: 0.8
   vignette:
-    m_Enabled: 1
+    m_Enabled: 0
     m_Settings:
       mode: 0
       color: {r: 0, g: 0, b: 0, a: 1}
       center: {x: 0.5, y: 0.5}
-      intensity: 0.4623371
-      smoothness: 1
-      roundness: 0.85
+      intensity: 0
+      smoothness: 0.443
+      roundness: 0.234
       mask: {fileID: 0}
       opacity: 1
       rounded: 0

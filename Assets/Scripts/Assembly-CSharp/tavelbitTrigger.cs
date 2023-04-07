@@ -4,7 +4,9 @@ using UnityEngine;
 [Serializable]
 public class tavelbitTrigger : MonoBehaviour
 {
-	public GameObject gameController;
+	public GameObject checkTavelbitar;
+
+	public GameObject checkTavla;
 
 	public GameObject tb1Ram;
 
@@ -40,44 +42,44 @@ public class tavelbitTrigger : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb1)
+			if (((PickUp)checkTavelbitar.GetComponent(typeof(PickUp))).havetb1)
 			{
-				((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb1 = false;
-				((startNewDay)gameController.GetComponent(typeof(startNewDay))).tavelbit1 = true;
-				tb1Ram.SetActive(value: true);
-				tb1Hand.SetActive(value: false);
-				dropObjectButton.SetActive(value: false);
-				mittenRing.SetActive(value: false);
+				((PickUp)checkTavelbitar.GetComponent(typeof(PickUp))).havetb1 = false;
+				((startNewDay)checkTavla.GetComponent(typeof(startNewDay))).tavelbit1 = true;
+				tb1Ram.SetActive(true);
+				tb1Hand.SetActive(false);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).tavelbitPlace();
 			}
-			else if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb2)
+			else if (((PickUp)checkTavelbitar.GetComponent(typeof(PickUp))).havetb2)
 			{
-				((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb2 = false;
-				((startNewDay)gameController.GetComponent(typeof(startNewDay))).tavelbit2 = true;
-				tb2Ram.SetActive(value: true);
-				tb2Hand.SetActive(value: false);
-				dropObjectButton.SetActive(value: false);
-				mittenRing.SetActive(value: false);
+				((PickUp)checkTavelbitar.GetComponent(typeof(PickUp))).havetb2 = false;
+				((startNewDay)checkTavla.GetComponent(typeof(startNewDay))).tavelbit2 = true;
+				tb2Ram.SetActive(true);
+				tb2Hand.SetActive(false);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).tavelbitPlace();
 			}
-			else if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb3)
+			else if (((PickUp)checkTavelbitar.GetComponent(typeof(PickUp))).havetb3)
 			{
-				((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb3 = false;
-				((startNewDay)gameController.GetComponent(typeof(startNewDay))).tavelbit3 = true;
-				tb3Ram.SetActive(value: true);
-				tb3Hand.SetActive(value: false);
-				dropObjectButton.SetActive(value: false);
-				mittenRing.SetActive(value: false);
+				((PickUp)checkTavelbitar.GetComponent(typeof(PickUp))).havetb3 = false;
+				((startNewDay)checkTavla.GetComponent(typeof(startNewDay))).tavelbit3 = true;
+				tb3Ram.SetActive(true);
+				tb3Hand.SetActive(false);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).tavelbitPlace();
 			}
-			else if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb4)
+			else if (((PickUp)checkTavelbitar.GetComponent(typeof(PickUp))).havetb4)
 			{
-				((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb4 = false;
-				((startNewDay)gameController.GetComponent(typeof(startNewDay))).tavelbit4 = true;
-				tb4Ram.SetActive(value: true);
-				tb4Hand.SetActive(value: false);
-				dropObjectButton.SetActive(value: false);
-				mittenRing.SetActive(value: false);
+				((PickUp)checkTavelbitar.GetComponent(typeof(PickUp))).havetb4 = false;
+				((startNewDay)checkTavla.GetComponent(typeof(startNewDay))).tavelbit4 = true;
+				tb4Ram.SetActive(true);
+				tb4Hand.SetActive(false);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).tavelbitPlace();
 			}
 		}

@@ -5,14 +5,12 @@ LightingDataAsset:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: SplashScreen
-  m_Scene: {fileID: 102900000, guid: ef2211b7206169a458270bf14b6a8f0d, type: 3}
+  m_Scene: {fileID: 102900000, guid: 1d830c8095abcc344ac5b57b176f3501, type: 3}
   m_Lightmaps: []
-  m_AOTextures: []
   m_LightmapsCacheFiles: []
-  m_LightProbes: {fileID: 25800000, guid: d0068c9b45c44ef49b90331151efd040, type: 2}
+  m_LightProbes: {fileID: 25800000, guid: 4a351d7289eed3648801b5366e8aaf9d, type: 2}
   m_LightmapsMode: 1
   m_BakedAmbientProbeInLinear:
     sh[ 0]: 0

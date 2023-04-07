@@ -26,7 +26,13 @@ public class SteamManager : MonoBehaviour
 		}
 	}
 
-	public static bool Initialized => Instance.m_bInitialized;
+	public static bool Initialized
+	{
+		get
+		{
+			return Instance.m_bInitialized;
+		}
+	}
 
 	private static void SteamAPIDebugTextHook(int nSeverity, StringBuilder pchDebugText)
 	{

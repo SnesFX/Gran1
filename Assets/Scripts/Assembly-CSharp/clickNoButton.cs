@@ -23,7 +23,7 @@ public class clickNoButton : MonoBehaviour
 	private void TaskOnClick()
 	{
 		btn1.GetComponent<RectTransform>().sizeDelta = new Vector2(width, height);
-		AreYouSureMenu.SetActive(value: false);
+		AreYouSureMenu.SetActive(false);
 		menuButton.interactable = true;
 		ResumeButton.interactable = true;
 	}

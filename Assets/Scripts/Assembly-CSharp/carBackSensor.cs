@@ -29,24 +29,21 @@ public class carBackSensor : MonoBehaviour
 
 	public GameObject optionButton;
 
-	public GameObject granny;
-
 	public virtual IEnumerator OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag == "car")
 		{
 			((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).reverseOK = false;
 			((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).forwardOK = true;
-			((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).carMoving = false;
 			headAnim.GetComponent<Animation>().Play("HeadBackward");
-			forwardButton.SetActive(value: true);
-			ReverseButton.SetActive(value: false);
-			outOffCarButton.SetActive(value: true);
-			optionButton.SetActive(value: true);
-			carReverseSound1.SetActive(value: false);
-			engineOnSound.SetActive(value: true);
-			crashSound.SetActive(value: true);
-			CarHitTriggers.SetActive(value: false);
+			forwardButton.SetActive(true);
+			ReverseButton.SetActive(false);
+			outOffCarButton.SetActive(true);
+			optionButton.SetActive(true);
+			carReverseSound1.SetActive(false);
+			engineOnSound.SetActive(true);
+			crashSound.SetActive(true);
+			CarHitTriggers.SetActive(false);
 			if (!bakluckaLoss)
 			{
 				bakluckaLoss = true;

@@ -64,7 +64,7 @@ namespace Steamworks
 				m_VTPlayersRefreshComplete = InternalOnPlayersRefreshComplete
 			};
 			m_pVTable = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(VTable)));
-			Marshal.StructureToPtr(m_VTable, m_pVTable, fDeleteOld: false);
+			Marshal.StructureToPtr(m_VTable, m_pVTable, false);
 			m_pGCHandle = GCHandle.Alloc(m_pVTable, GCHandleType.Pinned);
 		}
 

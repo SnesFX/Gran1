@@ -21,9 +21,9 @@ public class TestFPS : MonoBehaviour
 			int lastFrameCount = Time.frameCount;
 			float lastTime = Time.realtimeSinceStartup;
 			yield return new WaitForSeconds(frequency);
-			float num = Time.realtimeSinceStartup - lastTime;
-			int num2 = Time.frameCount - lastFrameCount;
-			fps = $"FPS: {(float)num2 / num}";
+			float timeSpan = Time.realtimeSinceStartup - lastTime;
+			int frameCount = Time.frameCount - lastFrameCount;
+			fps = string.Format("FPS: {0}", (float)frameCount / timeSpan);
 		}
 	}
 

@@ -76,7 +76,7 @@ namespace Steamworks
 			InteropHelp.TestIfAvailableGameServer();
 			IntPtr intPtr = Marshal.AllocHGlobal(cchNameBufferSize);
 			bool flag = NativeMethods.ISteamApps_BGetDLCDataByIndex(CSteamGameServerAPIContext.GetSteamApps(), iDLC, out pAppID, out pbAvailable, intPtr, cchNameBufferSize);
-			pchName = (flag ? InteropHelp.PtrToStringUTF8(intPtr) : null);
+			pchName = ((!flag) ? null : InteropHelp.PtrToStringUTF8(intPtr));
 			Marshal.FreeHGlobal(intPtr);
 			return flag;
 		}
@@ -104,7 +104,7 @@ namespace Steamworks
 			InteropHelp.TestIfAvailableGameServer();
 			IntPtr intPtr = Marshal.AllocHGlobal(cchNameBufferSize);
 			bool flag = NativeMethods.ISteamApps_GetCurrentBetaName(CSteamGameServerAPIContext.GetSteamApps(), intPtr, cchNameBufferSize);
-			pchName = (flag ? InteropHelp.PtrToStringUTF8(intPtr) : null);
+			pchName = ((!flag) ? null : InteropHelp.PtrToStringUTF8(intPtr));
 			Marshal.FreeHGlobal(intPtr);
 			return flag;
 		}
@@ -126,7 +126,7 @@ namespace Steamworks
 			InteropHelp.TestIfAvailableGameServer();
 			IntPtr intPtr = Marshal.AllocHGlobal((int)cchFolderBufferSize);
 			uint num = NativeMethods.ISteamApps_GetAppInstallDir(CSteamGameServerAPIContext.GetSteamApps(), appID, intPtr, cchFolderBufferSize);
-			pchFolder = ((num != 0) ? InteropHelp.PtrToStringUTF8(intPtr) : null);
+			pchFolder = ((num == 0) ? null : InteropHelp.PtrToStringUTF8(intPtr));
 			Marshal.FreeHGlobal(intPtr);
 			return num;
 		}

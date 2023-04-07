@@ -18,10 +18,10 @@ public class clickBeartrapMenu : MonoBehaviour, IPointerClickHandler, IEventSyst
 		if (eventData.pointerCurrentRaycast.gameObject != null && !beartrapOK)
 		{
 			beartrapOK = true;
-			beartrapClose.SetActive(value: true);
+			beartrapClose.SetActive(true);
 			granny.GetComponent<Animation>().CrossFade("Look");
 			((ButtonClicks)SoundHolder.GetComponent(typeof(ButtonClicks))).beartrap();
-			beartrapOpen.SetActive(value: false);
+			beartrapOpen.SetActive(false);
 		}
 	}
 }

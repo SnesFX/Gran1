@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
 public class ClickContinueButton2 : MonoBehaviour
@@ -21,12 +20,10 @@ public class ClickContinueButton2 : MonoBehaviour
 		for (int i = 0; i < touches.Length; i++)
 		{
 			Touch touch = touches[i];
+			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
 			{
-                Vector2 localPoint;
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(GetComponent<RectTransform>(), touch.position, null, out localPoint);
-                if (GetComponent<Image>().rectTransform.rect.Contains(localPoint))
-				LoadingScreen.SetActive(value: true);
-				allButtons.SetActive(value: false);
+				LoadingScreen.SetActive(true);
+				allButtons.SetActive(false);
 				((ButtonClicks)ljudHolder.GetComponent(typeof(ButtonClicks))).clickButton();
 			}
 		}

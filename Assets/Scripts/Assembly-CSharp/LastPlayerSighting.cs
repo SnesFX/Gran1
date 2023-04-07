@@ -22,6 +22,15 @@ public class LastPlayerSighting : MonoBehaviour
 
 	private AudioSource[] sirens;
 
+	public LastPlayerSighting()
+	{
+		position = new Vector3(1000f, 1000f, 1000f);
+		resetPosition = new Vector3(1000f, 1000f, 1000f);
+		lightHighIntensity = 0.25f;
+		fadeSpeed = 7f;
+		musicFadeSpeed = 1f;
+	}
+
 	public virtual void Awake()
 	{
 	}
@@ -34,27 +43,21 @@ public class LastPlayerSighting : MonoBehaviour
 
 	public virtual void SwitchAlarms()
 	{
+		float num = 0f;
 		if (position != resetPosition)
 		{
-			_ = lightLowIntensity;
+			num = lightLowIntensity;
 		}
 		else
 		{
-			_ = lightHighIntensity;
+			num = lightHighIntensity;
 		}
 	}
 
 	public virtual void MusicFading()
 	{
-		_ = position != resetPosition;
-	}
-
-	public LastPlayerSighting()
-	{
-		position = new Vector3(1000f, 1000f, 1000f);
-		resetPosition = new Vector3(1000f, 1000f, 1000f);
-		lightHighIntensity = 0.25f;
-		fadeSpeed = 7f;
-		musicFadeSpeed = 1f;
+		if (!(position != resetPosition))
+		{
+		}
 	}
 }

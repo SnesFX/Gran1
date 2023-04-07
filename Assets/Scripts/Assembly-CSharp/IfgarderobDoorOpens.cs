@@ -20,6 +20,11 @@ public class IfgarderobDoorOpens : MonoBehaviour
 
 	public AudioClip gardeDoorsOpen;
 
+	public IfgarderobDoorOpens()
+	{
+		doorsClosed = true;
+	}
+
 	public virtual void Start()
 	{
 	}
@@ -35,13 +40,8 @@ public class IfgarderobDoorOpens : MonoBehaviour
 			((AIfollow)nos.GetComponent(typeof(AIfollow))).playerHiding = false;
 			((FPSControllerNEW)player.GetComponent(typeof(FPSControllerNEW))).sidestepSpeed = 6f;
 			((FPSControllerNEW)player.GetComponent(typeof(FPSControllerNEW))).forwardSpeed = 8f;
-			doorButton.SetActive(value: false);
+			doorButton.SetActive(false);
 			AudioSource.PlayClipAtPoint(gardeDoorsOpen, base.transform.position);
 		}
-	}
-
-	public IfgarderobDoorOpens()
-	{
-		doorsClosed = true;
 	}
 }

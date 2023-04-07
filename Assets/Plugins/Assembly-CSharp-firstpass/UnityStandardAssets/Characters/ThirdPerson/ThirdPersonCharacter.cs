@@ -102,24 +102,30 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 					m_Capsule.center /= 2f;
 					m_Crouching = true;
 				}
+				return;
 			}
-			else if (Physics.SphereCast(new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * 0.5f, Vector3.up), maxDistance: m_CapsuleHeight - m_Capsule.radius * 0.5f, radius: m_Capsule.radius * 0.5f, layerMask: -1, queryTriggerInteraction: QueryTriggerInteraction.Ignore))
+			Ray ray = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * 0.5f, Vector3.up);
+			float maxDistance = m_CapsuleHeight - m_Capsule.radius * 0.5f;
+			if (Physics.SphereCast(ray, m_Capsule.radius * 0.5f, maxDistance, -1, QueryTriggerInteraction.Ignore))
 			{
 				m_Crouching = true;
+				return;
 			}
-			else
-			{
-				m_Capsule.height = m_CapsuleHeight;
-				m_Capsule.center = m_CapsuleCenter;
-				m_Crouching = false;
-			}
+			m_Capsule.height = m_CapsuleHeight;
+			m_Capsule.center = m_CapsuleCenter;
+			m_Crouching = false;
 		}
 
 		private void PreventStandingInLowHeadroom()
 		{
-			if (!m_Crouching && Physics.SphereCast(new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * 0.5f, Vector3.up), maxDistance: m_CapsuleHeight - m_Capsule.radius * 0.5f, radius: m_Capsule.radius * 0.5f, layerMask: -1, queryTriggerInteraction: QueryTriggerInteraction.Ignore))
+			if (!m_Crouching)
 			{
-				m_Crouching = true;
+				Ray ray = new Ray(m_Rigidbody.position + Vector3.up * m_Capsule.radius * 0.5f, Vector3.up);
+				float maxDistance = m_CapsuleHeight - m_Capsule.radius * 0.5f;
+				if (Physics.SphereCast(ray, m_Capsule.radius * 0.5f, maxDistance, -1, QueryTriggerInteraction.Ignore))
+				{
+					m_Crouching = true;
+				}
 			}
 		}
 
@@ -133,7 +139,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			{
 				m_Animator.SetFloat("Jump", m_Rigidbody.velocity.y);
 			}
-			float value = (float)((Mathf.Repeat(m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime + m_RunCycleLegOffset, 1f) < 0.5f) ? 1 : (-1)) * m_ForwardAmount;
+			float num = Mathf.Repeat(m_Animator.GetCurrentAnimatorStateInfo(0).normalizedTime + m_RunCycleLegOffset, 1f);
+			float value = (float)((num < 0.5f) ? 1 : (-1)) * m_ForwardAmount;
 			if (m_IsGrounded)
 			{
 				m_Animator.SetFloat("JumpLeg", value);
@@ -152,7 +159,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 		{
 			Vector3 force = Physics.gravity * m_GravityMultiplier - Physics.gravity;
 			m_Rigidbody.AddForce(force);
-			m_GroundCheckDistance = ((m_Rigidbody.velocity.y < 0f) ? m_OrigGroundCheckDistance : 0.01f);
+			m_GroundCheckDistance = ((!(m_Rigidbody.velocity.y < 0f)) ? 0.01f : m_OrigGroundCheckDistance);
 		}
 
 		private void HandleGroundedMovement(bool crouch, bool jump)
@@ -184,7 +191,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
 		private void CheckGroundStatus()
 		{
-			if (Physics.Raycast(base.transform.position + Vector3.up * 0.1f, Vector3.down, out var hitInfo, m_GroundCheckDistance))
+			RaycastHit hitInfo;
+			if (Physics.Raycast(base.transform.position + Vector3.up * 0.1f, Vector3.down, out hitInfo, m_GroundCheckDistance))
 			{
 				m_GroundNormal = hitInfo.normal;
 				m_IsGrounded = true;

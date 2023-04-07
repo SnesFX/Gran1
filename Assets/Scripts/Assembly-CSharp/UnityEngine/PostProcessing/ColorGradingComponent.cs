@@ -59,11 +59,7 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				if (base.model.enabled)
-				{
-					return !context.interrupted;
-				}
-				return false;
+				return base.model.enabled && !context.interrupted;
 			}
 		}
 
@@ -87,7 +83,7 @@ namespace UnityEngine.PostProcessing
 		{
 			float num = temperature / 55f;
 			float num2 = tint / 55f;
-			float x = 0.31271f - num * ((num < 0f) ? 0.1f : 0.05f);
+			float x = 0.31271f - num * ((!(num < 0f)) ? 0.05f : 0.1f);
 			float y = StandardIlluminantY(x) + num2 * 0.05f;
 			Vector3 vector = new Vector3(0.949237f, 1.03542f, 1.08728f);
 			Vector3 vector2 = CIExyToLMS(x, y);
@@ -128,7 +124,7 @@ namespace UnityEngine.PostProcessing
 		{
 			Color color = NormalizeColor(gamma);
 			float num = (color.r + color.g + color.b) / 3f;
-			gamma.a *= ((gamma.a < 0f) ? 0.8f : 5f);
+			gamma.a *= ((!(gamma.a < 0f)) ? 5f : 0.8f);
 			float b = Mathf.Pow(2f, (color.r - num) * 0.5f) + gamma.a;
 			float b2 = Mathf.Pow(2f, (color.g - num) * 0.5f) + gamma.a;
 			float b3 = Mathf.Pow(2f, (color.b - num) * 0.5f) + gamma.a;
@@ -142,7 +138,7 @@ namespace UnityEngine.PostProcessing
 		{
 			Color color = NormalizeColor(gain);
 			float num = (color.r + color.g + color.b) / 3f;
-			gain.a *= ((gain.a > 0f) ? 3f : 1f);
+			gain.a *= ((!(gain.a > 0f)) ? 1f : 3f);
 			float x = Mathf.Pow(2f, (color.r - num) * 0.5f) + gain.a;
 			float y = Mathf.Pow(2f, (color.g - num) * 0.5f) + gain.a;
 			float z = Mathf.Pow(2f, (color.b - num) * 0.5f) + gain.a;
@@ -212,7 +208,7 @@ namespace UnityEngine.PostProcessing
 		{
 			if (m_GradingCurves == null)
 			{
-				m_GradingCurves = new Texture2D(128, 2, GetCurveFormat(), mipChain: false, linear: true)
+				m_GradingCurves = new Texture2D(128, 2, GetCurveFormat(), false, true)
 				{
 					name = "Internal Curves Texture",
 					hideFlags = HideFlags.DontSave,
@@ -239,17 +235,13 @@ namespace UnityEngine.PostProcessing
 				m_pixels[i + 128] = new Color(r2, g2, b2, a2);
 			}
 			m_GradingCurves.SetPixels(m_pixels);
-			m_GradingCurves.Apply(updateMipmaps: false, makeNoLongerReadable: false);
+			m_GradingCurves.Apply(false, false);
 			return m_GradingCurves;
 		}
 
 		private bool IsLogLutValid(RenderTexture lut)
 		{
-			if (lut != null && lut.IsCreated())
-			{
-				return lut.height == 32;
-			}
-			return false;
+			return lut != null && lut.IsCreated() && lut.height == 32;
 		}
 
 		private RenderTextureFormat GetLutFormat()
@@ -306,11 +298,17 @@ namespace UnityEngine.PostProcessing
 			material.SetFloat(Uniforms._Saturation, settings.basic.saturation);
 			material.SetFloat(Uniforms._Contrast, settings.basic.contrast);
 			material.SetVector(Uniforms._Balance, CalculateColorBalance(settings.basic.temperature, settings.basic.tint));
-			CalculateLiftGammaGain(settings.colorWheels.linear.lift, settings.colorWheels.linear.gamma, settings.colorWheels.linear.gain, out var outLift, out var outGamma, out var outGain);
+			Vector3 outLift;
+			Vector3 outGamma;
+			Vector3 outGain;
+			CalculateLiftGammaGain(settings.colorWheels.linear.lift, settings.colorWheels.linear.gamma, settings.colorWheels.linear.gain, out outLift, out outGamma, out outGain);
 			material.SetVector(Uniforms._Lift, outLift);
 			material.SetVector(Uniforms._InvGamma, outGamma);
 			material.SetVector(Uniforms._Gain, outGain);
-			CalculateSlopePowerOffset(settings.colorWheels.log.slope, settings.colorWheels.log.power, settings.colorWheels.log.offset, out var outSlope, out var outPower, out var outOffset);
+			Vector3 outSlope;
+			Vector3 outPower;
+			Vector3 outOffset;
+			CalculateSlopePowerOffset(settings.colorWheels.log.slope, settings.colorWheels.log.power, settings.colorWheels.log.offset, out outSlope, out outPower, out outOffset);
 			material.SetVector(Uniforms._Slope, outSlope);
 			material.SetVector(Uniforms._Power, outPower);
 			material.SetVector(Uniforms._Offset, outOffset);
@@ -328,7 +326,7 @@ namespace UnityEngine.PostProcessing
 				GenerateLut();
 				base.model.isDirty = false;
 			}
-			uberMaterial.EnableKeyword(context.profile.debugViews.IsModeActive(BuiltinDebugViewsModel.Mode.PreGradingLog) ? "COLOR_GRADING_LOG_VIEW" : "COLOR_GRADING");
+			uberMaterial.EnableKeyword((!context.profile.debugViews.IsModeActive(BuiltinDebugViewsModel.Mode.PreGradingLog)) ? "COLOR_GRADING" : "COLOR_GRADING_LOG_VIEW");
 			RenderTexture bakedLut = base.model.bakedLut;
 			uberMaterial.SetTexture(Uniforms._LogLut, bakedLut);
 			uberMaterial.SetVector(Uniforms._LogLut_Params, new Vector3(1f / (float)bakedLut.width, 1f / (float)bakedLut.height, (float)bakedLut.height - 1f));
@@ -339,7 +337,8 @@ namespace UnityEngine.PostProcessing
 		public void OnGUI()
 		{
 			RenderTexture bakedLut = base.model.bakedLut;
-			GUI.DrawTexture(new Rect(context.viewport.x * (float)Screen.width + 8f, 8f, bakedLut.width, bakedLut.height), bakedLut);
+			Rect position = new Rect(context.viewport.x * (float)Screen.width + 8f, 8f, bakedLut.width, bakedLut.height);
+			GUI.DrawTexture(position, bakedLut);
 		}
 
 		public override void OnDisable()

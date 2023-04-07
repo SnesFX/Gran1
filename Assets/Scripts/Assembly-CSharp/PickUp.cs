@@ -5,8 +5,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 [Serializable]
 public class PickUp : MonoBehaviour
 {
-	public GameObject gameController;
-
 	public GameObject Granny;
 
 	public GameObject player;
@@ -27,8 +25,6 @@ public class PickUp : MonoBehaviour
 
 	public bool readyPickUp;
 
-	public GameObject pickUpButton;
-
 	public GameObject dropPoint;
 
 	public GameObject dropPointPlanka;
@@ -38,8 +34,6 @@ public class PickUp : MonoBehaviour
 	public GameObject placeObjectButton;
 
 	public GameObject soundHolder;
-
-	public GameObject SpraysoundHolder;
 
 	public GameObject mittenRing;
 
@@ -97,11 +91,11 @@ public class PickUp : MonoBehaviour
 
 	public AudioClip skruva;
 
-	public AudioClip fillSeed;
-
 	public GameObject LampaDoor1;
 
 	public GameObject LampaDoor2;
+
+	public GameObject gameController;
 
 	public GameObject doorRayHolder;
 
@@ -117,43 +111,65 @@ public class PickUp : MonoBehaviour
 
 	public GameObject ArmborstOladdad;
 
+	public bool armborstArrowOK;
+
 	public GameObject avbitare;
 
 	public Transform newAvbitare;
+
+	public bool haveAvbitare;
 
 	public GameObject hammare;
 
 	public Transform newHammare;
 
+	public bool haveHammare;
+
 	public GameObject vas;
 
 	public Transform newvas;
+
+	public bool havevas;
 
 	public GameObject vas2;
 
 	public Transform newvas2;
 
+	public bool havevas2;
+
 	public GameObject safeKey;
 
 	public Transform newsafeKey;
+
+	public bool havesafeKey;
 
 	public GameObject exitKey;
 
 	public Transform newexitKey;
 
+	public bool haveexitKey;
+
 	public GameObject hanglockKey;
 
 	public Transform newhanglockKey;
+
+	public bool havehanglockKey;
 
 	public GameObject padlockCode;
 
 	public Transform newpadlockCode;
 
+	public bool havepadlockCode;
+
 	public GameObject armborst;
 
 	public Transform newarmborst;
 
+	public bool havearmborst;
+
 	public Transform newArrow;
+
+	public bool haveArrow;
 
 	public GameObject shootArrowRay;
 
@@ -161,55 +177,81 @@ public class PickUp : MonoBehaviour
 
 	public Transform newweaponKey;
 
+	public bool haveweaponKey;
+
 	public GameObject screwdriver;
 
 	public Transform newscrewdriver;
+
+	public bool havescrewdriver;
 
 	public GameObject planka;
 
 	public Transform newplanka;
 
+	public bool haveplanka;
+
 	public GameObject battery;
 
 	public Transform newbattery;
+
+	public bool havebattery;
 
 	public GameObject playhouseKey;
 
 	public Transform newplayhouseKey;
 
+	public bool haveplayhouseKey;
+
 	public GameObject carKey;
 
 	public Transform newcarKey;
+
+	public bool havecarKey;
 
 	public GameObject melon;
 
 	public Transform newmelon;
 
+	public bool havemelon;
+
 	public GameObject teddy;
 
 	public Transform newteddy;
+
+	public bool haveteddy;
 
 	public GameObject kugg1;
 
 	public Transform newkugg1;
 
+	public bool havekugg1;
+
 	public GameObject kugg2;
 
 	public Transform newkugg2;
+
+	public bool havekugg2;
 
 	public GameObject message;
 
 	public Transform newmessage;
 
+	public bool havemessage;
+
 	public GameObject brunnsvev;
 
 	public Transform newbrunnsvev;
+
+	public bool havebrunnsvev;
 
 	public GameObject oldShotgun;
 
 	public GameObject oldShotgunAnim;
 
 	public Transform newoldShotgun;
+
+	public bool haveoldShotgun;
 
 	public bool oldShotgunLoaded;
 
@@ -223,17 +265,25 @@ public class PickUp : MonoBehaviour
 
 	public Transform newgunDel1;
 
+	public bool havegunDel1;
+
 	public GameObject gunDel2;
 
 	public Transform newgunDel2;
+
+	public bool havegunDel2;
 
 	public GameObject gunDel3;
 
 	public Transform newgunDel3;
 
+	public bool havegunDel3;
+
 	public GameObject topplock;
 
 	public Transform newtopplock;
+
+	public bool havetopplock;
 
 	public GameObject topplockInPlace;
 
@@ -241,19 +291,27 @@ public class PickUp : MonoBehaviour
 
 	public Transform newcarbattery;
 
+	public bool havecarbattery;
+
 	public GameObject carbatteryInPlace;
 
 	public GameObject gascan;
 
 	public Transform newgascan;
 
+	public bool havegascan;
+
 	public GameObject wrench;
 
 	public Transform newwrench;
 
+	public bool havewrench;
+
 	public GameObject sparkplug;
 
 	public Transform newsparkplug;
+
+	public bool havesparkplug;
 
 	public GameObject sparkPlugInPlace;
 
@@ -262,6 +320,8 @@ public class PickUp : MonoBehaviour
 	public GameObject meat;
 
 	public Transform newmeat;
+
+	public bool havemeat;
 
 	public GameObject spider;
 
@@ -273,6 +333,8 @@ public class PickUp : MonoBehaviour
 
 	public Transform newspecialkey;
 
+	public bool havespecialkey;
+
 	public GameObject specialkeyLock;
 
 	public GameObject specialkeyDoor;
@@ -283,27 +345,7 @@ public class PickUp : MonoBehaviour
 
 	public Transform newbook;
 
-	public GameObject pepperspray;
-
-	public Transform newpepperspray;
-
-	public GameObject remote;
-
-	public Transform newremote;
-
-	public GameObject birdSeed;
-
-	public Transform newbirdSeed;
-
-	public GameObject freezeTrap;
-
-	public Transform newfreezeTrap;
-
-	public GameObject sprayButton;
-
-	public GameObject sprayParticle;
-
-	public GameObject useRemoteButton;
+	public bool havebook;
 
 	public GameObject secretWall;
 
@@ -381,14 +423,6 @@ public class PickUp : MonoBehaviour
 
 	public GameObject bookText;
 
-	public GameObject peppersprayText;
-
-	public GameObject RemoteControlText;
-
-	public GameObject BirdSeedText;
-
-	public GameObject freezeTrapText;
-
 	public GameObject ShotgunLoadedText;
 
 	public GameObject NeedShotgunText;
@@ -431,8 +465,6 @@ public class PickUp : MonoBehaviour
 
 	public GameObject emptyPlateText;
 
-	public GameObject emptyBowlText;
-
 	public GameObject NeedEnginePartText;
 
 	public GameObject NeedWrenchText;
@@ -440,8 +472,6 @@ public class PickUp : MonoBehaviour
 	public GameObject NeedGasolineText;
 
 	public GameObject NeedSpecialKeyText;
-
-	public GameObject NeedRemoteControlText;
 
 	public GameObject MaybePutSomethingHereText;
 
@@ -469,17 +499,25 @@ public class PickUp : MonoBehaviour
 
 	public Transform newtb1;
 
+	public bool havetb1;
+
 	public GameObject tb2;
 
 	public Transform newtb2;
+
+	public bool havetb2;
 
 	public GameObject tb3;
 
 	public Transform newtb3;
 
+	public bool havetb3;
+
 	public GameObject tb4;
 
 	public Transform newtb4;
+
+	public bool havetb4;
 
 	public GameObject playhouseDoor;
 
@@ -513,11 +551,16 @@ public class PickUp : MonoBehaviour
 
 	public GameObject extremeLockOff;
 
-	public GameObject crow;
+	public GameObject motorCollider;
 
 	public bool textTimerOnOff;
 
 	public float textTimer;
+
+	public PickUp()
+	{
+		layerMask = 256;
+	}
 
 	public virtual void Start()
 	{
@@ -533,15 +576,9 @@ public class PickUp : MonoBehaviour
 				pickUp = true;
 			}
 		}
-		else if (Input.GetKeyUp(KeyCode.E))
-		{
-			readyPickUp = false;
-			pickUp = false;
-		}
 		else if (Input.GetKeyDown(KeyCode.Space) && !((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).menuEnabled && dropObjectButton.activeSelf)
 		{
-			((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-			((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
+			dropObject = true;
 		}
 		RaycastHit hitInfo = default(RaycastHit);
 		Vector3 direction = SeeRay.transform.TransformDirection(Vector3.forward);
@@ -552,868 +589,9273 @@ public class PickUp : MonoBehaviour
 				if (hitInfo.collider.gameObject.tag == "avbitare")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					AvbitarTongText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					AvbitarTongText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveAvbitare = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						avbitare.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						AvbitarTongText.SetActive(value: false);
+						avbitare.SetActive(true);
+						haveAvbitare = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						AvbitarTongText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "hammer")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					hammerText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					hammerText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveHammare = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						hammare.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						hammerText.SetActive(value: false);
+						hammare.SetActive(true);
+						haveHammare = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						hammerText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "vas")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havevas = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						vas.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
+						vas.SetActive(true);
+						havevas = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "vas2")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havevas2 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						vas2.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
+						vas2.SetActive(true);
+						havevas2 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "safekey")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					safeKeyText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					safeKeyText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havesafeKey = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						safeKey.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						safeKeyText.SetActive(value: false);
+						safeKey.SetActive(true);
+						havesafeKey = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						safeKeyText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppNyckel);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "exitkey")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					HusnyckelText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					HusnyckelText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveexitKey = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						exitKey.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						HusnyckelText.SetActive(value: false);
+						exitKey.SetActive(true);
+						haveexitKey = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						HusnyckelText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppNyckel);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "hanglockkey")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					hangLockKeyText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					hangLockKeyText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havehanglockKey = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						hanglockKey.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						hangLockKeyText.SetActive(value: false);
+						hanglockKey.SetActive(true);
+						havehanglockKey = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						hangLockKeyText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppNyckel);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "dpadlockCode")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					padlockCodeText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					padlockCodeText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havepadlockCode = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						padlockCode.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						padlockCodeText.SetActive(value: false);
+						padlockCode.SetActive(true);
+						havepadlockCode = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						padlockCodeText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "armborst")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					CrossbowText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					CrossbowText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havearmborst = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						armborst.SetActive(value: true);
-						arrowButton.SetActive(value: false);
-						arrowArmborst.SetActive(value: false);
-						Armborstladdad.SetActive(value: false);
-						ArmborstOladdad.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						CrossbowText.SetActive(value: false);
+						armborst.SetActive(true);
+						arrowButton.SetActive(false);
+						arrowArmborst.SetActive(false);
+						Armborstladdad.SetActive(false);
+						ArmborstOladdad.SetActive(true);
+						havearmborst = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						CrossbowText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppCrossbow);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "arrow")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					TranquilizerDartText.SetActive(value: true);
-					if (pickUp)
+					mittenRing.SetActive(true);
+					TranquilizerDartText.SetActive(true);
+					if (havearmborst)
 					{
-						pickUp = false;
-						readyPickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havearmborst)
+						if (pickUp)
 						{
-							if (!((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveArrow)
+							if (!haveArrow)
 							{
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveArrow = true;
+								haveArrow = true;
 								pickUp = false;
-								readyPickUp = false;
 								UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-								arrowButton.SetActive(value: true);
-								shootArrowRay.SetActive(value: true);
-								arrowArmborst.SetActive(value: true);
-								Armborstladdad.SetActive(value: true);
-								ArmborstOladdad.SetActive(value: false);
-								mittenRing.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).armborstArrowOK = true;
-								TranquilizerDartText.SetActive(value: false);
+								arrowButton.SetActive(true);
+								shootArrowRay.SetActive(true);
+								arrowArmborst.SetActive(true);
+								Armborstladdad.SetActive(true);
+								ArmborstOladdad.SetActive(false);
+								mittenRing.SetActive(false);
+								readyPickUp = false;
+								armborstArrowOK = true;
+								TranquilizerDartText.SetActive(false);
 								GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
 								((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).CrossbowLoad();
 							}
-							else if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveArrow)
+							else if (haveArrow)
 							{
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveArrow = true;
+								haveArrow = true;
 								pickUp = false;
-								readyPickUp = false;
 								UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-								arrowButton.SetActive(value: true);
-								shootArrowRay.SetActive(value: true);
-								arrowArmborst.SetActive(value: true);
-								Armborstladdad.SetActive(value: true);
-								ArmborstOladdad.SetActive(value: false);
-								mittenRing.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).armborstArrowOK = true;
-								TranquilizerDartText.SetActive(value: false);
+								arrowButton.SetActive(true);
+								shootArrowRay.SetActive(true);
+								arrowArmborst.SetActive(true);
+								Armborstladdad.SetActive(true);
+								ArmborstOladdad.SetActive(false);
+								mittenRing.SetActive(false);
+								armborstArrowOK = true;
+								TranquilizerDartText.SetActive(false);
 								GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
 								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
 							}
 						}
-						else
-						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
-							NeedCrossbowText.SetActive(value: true);
-							textTimerOnOff = true;
-						}
+					}
+					else if (pickUp)
+					{
+						pickUp = false;
+						NeedCrossbowText.SetActive(true);
+						textTimerOnOff = true;
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "weaponkey")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					weaponKeyText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					weaponKeyText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveweaponKey = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						weaponKey.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						weaponKeyText.SetActive(value: false);
+						weaponKey.SetActive(true);
+						haveweaponKey = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						weaponKeyText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "screwdriver")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					screwdriverText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					screwdriverText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havescrewdriver = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						screwdriver.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						screwdriverText.SetActive(value: false);
+						screwdriver.SetActive(true);
+						havescrewdriver = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						screwdriverText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "plankawalk")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					plankText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					plankText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveplanka = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						planka.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						plankText.SetActive(value: false);
+						planka.SetActive(true);
+						if (haveplanka)
+						{
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						haveplanka = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						plankText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "battery")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					batteryText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					batteryText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebattery = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						battery.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						batteryText.SetActive(value: false);
+						battery.SetActive(true);
+						havebattery = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						batteryText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "tb1")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					tavelbitText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					tavelbitText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb1 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						tb1.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						tavelbitText.SetActive(value: false);
+						tb1.SetActive(true);
+						havetb1 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						tavelbitText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "tb2")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					tavelbitText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					tavelbitText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb2 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						tb2.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						tavelbitText.SetActive(value: false);
+						tb2.SetActive(true);
+						havetb2 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						tavelbitText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "tb3")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					tavelbitText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					tavelbitText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb3 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						tb3.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						tavelbitText.SetActive(value: false);
+						tb3.SetActive(true);
+						havetb3 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						tavelbitText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "tb4")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					tavelbitText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					tavelbitText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetb4 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						tb4.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						tavelbitText.SetActive(value: false);
+						tb4.SetActive(true);
+						havetb4 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						tavelbitText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "playhousekey")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					playhouseKeyText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					playhouseKeyText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveplayhouseKey = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						playhouseKey.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						playhouseKeyText.SetActive(value: false);
+						playhouseKey.SetActive(true);
+						haveplayhouseKey = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						playhouseKeyText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppNyckel);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "melon")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					melonText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					melonText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havemelon = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						melon.SetActive(value: true);
+						melon.SetActive(true);
+						havemelon = true;
 						textTimer = 0f;
 						if (!haveSeenMelonText)
 						{
 							haveSeenMelonText = true;
-							somethingInsideMelonText.SetActive(value: true);
+							somethingInsideMelonText.SetActive(true);
 							textTimerOnOff = true;
 						}
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						melonText.SetActive(value: false);
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						melonText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "teddy")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					teddyText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					teddyText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveteddy = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						teddy.SetActive(value: true);
+						teddy.SetActive(true);
+						haveteddy = true;
 						((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = true;
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						teddyText.SetActive(value: false);
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						teddyText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(pickUpTeddy);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "kugg1")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					cogwheelText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					cogwheelText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havekugg1 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						kugg1.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						cogwheelText.SetActive(value: false);
+						kugg1.SetActive(true);
+						havekugg1 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						cogwheelText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "kugg2")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					cogwheelText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					cogwheelText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havekugg2 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						kugg2.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						cogwheelText.SetActive(value: false);
+						kugg2.SetActive(true);
+						havekugg2 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						cogwheelText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "message")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havemessage = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						message.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
+						message.SetActive(true);
+						havemessage = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "brunnsvevpickup")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					winchhandleText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					winchhandleText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebrunnsvev = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						brunnsvev.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						winchhandleText.SetActive(value: false);
+						brunnsvev.SetActive(true);
+						havebrunnsvev = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						winchhandleText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "shotgun")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					ShotgunText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					ShotgunText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveoldShotgun = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						oldShotgun.SetActive(value: true);
+						oldShotgun.SetActive(true);
 						if (oldShotgunLoaded)
 						{
-							ammo.SetActive(value: true);
+							ammo.SetActive(true);
 							oldShotgunAnim.GetComponent<Animation>().Play("Load");
-							shootButton.SetActive(value: true);
-							shootRay.SetActive(value: true);
+							shootButton.SetActive(true);
+							shootRay.SetActive(true);
 							((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).loadedPickup();
 						}
 						else
 						{
 							oldShotgunAnim.GetComponent<Animation>().Play("OpenEmpty");
-							shootButton.SetActive(value: false);
-							shootRay.SetActive(value: false);
-							ammo.SetActive(value: false);
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							ammo.SetActive(false);
 							((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).emptyShotgun();
 						}
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						ShotgunText.SetActive(value: false);
+						haveoldShotgun = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						ShotgunText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "ammo")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					AmmoText.SetActive(value: true);
-					if (pickUp)
+					mittenRing.SetActive(true);
+					AmmoText.SetActive(true);
+					if (haveoldShotgun)
 					{
-						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveoldShotgun)
+						if (pickUp)
 						{
 							if (!oldShotgunLoaded)
 							{
 								oldShotgunLoaded = true;
+								pickUp = false;
 								UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-								shootButton.SetActive(value: true);
-								shootRay.SetActive(value: true);
-								ammo.SetActive(value: true);
+								shootButton.SetActive(true);
+								shootRay.SetActive(true);
+								ammo.SetActive(true);
 								oldShotgunAnim.GetComponent<Animation>().Play("Load");
-								mittenRing.SetActive(value: false);
-								AmmoText.SetActive(value: false);
+								mittenRing.SetActive(false);
+								readyPickUp = false;
+								AmmoText.SetActive(false);
 								GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
 								((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).loadShotgun();
 							}
 							else if (oldShotgunLoaded)
 							{
 								oldShotgunLoaded = true;
-								ShotgunLoadedText.SetActive(value: true);
+								pickUp = false;
+								ShotgunLoadedText.SetActive(true);
 								textTimerOnOff = true;
 							}
 						}
-						else
-						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
-							NeedShotgunText.SetActive(value: true);
-							textTimerOnOff = true;
-						}
+					}
+					else if (pickUp)
+					{
+						pickUp = false;
+						NeedShotgunText.SetActive(true);
+						textTimerOnOff = true;
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "shotgunp1")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					PartOfShotgunText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					PartOfShotgunText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegunDel1 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						gunDel1.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						PartOfShotgunText.SetActive(value: false);
+						gunDel1.SetActive(true);
+						havegunDel1 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						PartOfShotgunText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "shotgunp2")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					PartOfShotgunText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					PartOfShotgunText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegunDel2 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						gunDel2.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						PartOfShotgunText.SetActive(value: false);
+						gunDel2.SetActive(true);
+						havegunDel2 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						PartOfShotgunText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "shotgunp3")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					PartOfShotgunText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					PartOfShotgunText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegunDel3 = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						gunDel3.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						PartOfShotgunText.SetActive(value: false);
+						gunDel3.SetActive(true);
+						havegunDel3 = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						PartOfShotgunText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "carkey")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					carKeyText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					carKeyText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havecarKey = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						carKey.SetActive(value: true);
+						carKey.SetActive(true);
+						havecarKey = true;
 						((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = true;
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						carKeyText.SetActive(value: false);
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						carKeyText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "topplock")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					EnginePartText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					EnginePartText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetopplock = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						topplock.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						EnginePartText.SetActive(value: false);
+						topplock.SetActive(true);
+						havetopplock = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						EnginePartText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "carbattery")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					CarBatteryText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					CarBatteryText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havecarbattery = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						carbattery.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						CarBatteryText.SetActive(value: false);
+						carbattery.SetActive(true);
+						havecarbattery = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						CarBatteryText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "gascan")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					GasolineCanText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					GasolineCanText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegascan = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						gascan.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						GasolineCanText.SetActive(value: false);
+						gascan.SetActive(true);
+						havegascan = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						GasolineCanText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(pickUpGascan);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "wrench")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					WrenchText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					WrenchText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havewrench = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						wrench.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						WrenchText.SetActive(value: false);
+						wrench.SetActive(true);
+						havewrench = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						WrenchText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "sparkplug")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					SparkPlugText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					SparkPlugText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havesparkplug = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						sparkplug.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						SparkPlugText.SetActive(value: false);
+						sparkplug.SetActive(true);
+						havesparkplug = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						SparkPlugText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "meat")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					MeatText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					MeatText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havemeat = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						meat.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						MeatText.SetActive(value: false);
+						meat.SetActive(true);
+						havemeat = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						MeatText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "specialkey")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					specialKeyText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					specialKeyText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havespecialkey = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						specialkey.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						specialKeyText.SetActive(value: false);
+						specialkey.SetActive(true);
+						havespecialkey = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						specialKeyText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebook)
+						{
+							book.SetActive(false);
+							havebook = false;
+							UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "book")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					bookText.SetActive(value: true);
+					mittenRing.SetActive(true);
+					bookText.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebook = true;
 						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						book.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						bookText.SetActive(value: false);
+						book.SetActive(true);
+						havebook = true;
+						dropObjectButton.SetActive(true);
+						mittenRing.SetActive(false);
+						readyPickUp = false;
+						bookText.SetActive(false);
 						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
-					}
-				}
-				else if (hitInfo.collider.gameObject.tag == "pepperspray")
-				{
-					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					peppersprayText.SetActive(value: true);
-					if (pickUp)
-					{
-						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havepepperspray = true;
-						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						pepperspray.SetActive(value: true);
-						((sprayPepper)sprayButton.GetComponent(typeof(sprayPepper))).sprayTime = false;
-						sprayParticle.SetActive(value: false);
-						sprayButton.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						peppersprayText.SetActive(value: false);
-						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
-					}
-				}
-				else if (hitInfo.collider.gameObject.tag == "remotecontrol")
-				{
-					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					RemoteControlText.SetActive(value: true);
-					if (pickUp)
-					{
-						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveremote = true;
-						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						remote.SetActive(value: true);
-						useRemoteButton.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						RemoteControlText.SetActive(value: false);
-						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
-					}
-				}
-				else if (hitInfo.collider.gameObject.tag == "birdseed")
-				{
-					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					BirdSeedText.SetActive(value: true);
-					if (pickUp)
-					{
-						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebirdSeed = true;
-						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						birdSeed.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						BirdSeedText.SetActive(value: false);
-						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
-					}
-				}
-				else if (hitInfo.collider.gameObject.tag == "freezetrap")
-				{
-					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					freezeTrapText.SetActive(value: true);
-					if (pickUp)
-					{
-						pickUp = false;
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).havefreezeTrap = true;
-						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-						freezeTrap.SetActive(value: true);
-						dropObjectButton.SetActive(value: true);
-						mittenRing.SetActive(value: false);
-						freezeTrapText.SetActive(value: false);
-						GetComponent<AudioSource>().PlayOneShot(plockaUppObject);
+						if (haveAvbitare)
+						{
+							avbitare.SetActive(false);
+							haveAvbitare = false;
+							UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveHammare)
+						{
+							hammare.SetActive(false);
+							haveHammare = false;
+							UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas)
+						{
+							vas.SetActive(false);
+							havevas = false;
+							UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesafeKey)
+						{
+							safeKey.SetActive(false);
+							havesafeKey = false;
+							UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveexitKey)
+						{
+							exitKey.SetActive(false);
+							haveexitKey = false;
+							UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havepadlockCode)
+						{
+							padlockCode.SetActive(false);
+							havepadlockCode = false;
+							UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havearmborst)
+						{
+							armborst.SetActive(false);
+							havearmborst = false;
+							arrowButton.SetActive(false);
+							shootArrowRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+							if (armborstArrowOK)
+							{
+								UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+								haveArrow = false;
+								armborstArrowOK = false;
+							}
+						}
+						else if (haveweaponKey)
+						{
+							weaponKey.SetActive(false);
+							haveweaponKey = false;
+							UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havescrewdriver)
+						{
+							screwdriver.SetActive(false);
+							havescrewdriver = false;
+							UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplanka)
+						{
+							planka.SetActive(false);
+							haveplanka = false;
+							UnityEngine.Object.Instantiate(newplanka, dropPoint.transform.position, dropPoint.transform.rotation);
+							placeObject = false;
+							placeObjectButton.SetActive(false);
+						}
+						else if (havebattery)
+						{
+							battery.SetActive(false);
+							havebattery = false;
+							UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb1)
+						{
+							tb1.SetActive(false);
+							havetb1 = false;
+							UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb2)
+						{
+							tb2.SetActive(false);
+							havetb2 = false;
+							UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb3)
+						{
+							tb3.SetActive(false);
+							havetb3 = false;
+							UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetb4)
+						{
+							tb4.SetActive(false);
+							havetb4 = false;
+							UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havevas2)
+						{
+							vas2.SetActive(false);
+							havevas2 = false;
+							UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveplayhouseKey)
+						{
+							playhouseKey.SetActive(false);
+							haveplayhouseKey = false;
+							UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemelon)
+						{
+							melon.SetActive(false);
+							havemelon = false;
+							UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveteddy)
+						{
+							teddy.SetActive(false);
+							haveteddy = false;
+							((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+							UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg1)
+						{
+							kugg1.SetActive(false);
+							havekugg1 = false;
+							UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havekugg2)
+						{
+							kugg2.SetActive(false);
+							havekugg2 = false;
+							UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemessage)
+						{
+							message.SetActive(false);
+							havemessage = false;
+							UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havehanglockKey)
+						{
+							hanglockKey.SetActive(false);
+							havehanglockKey = false;
+							UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (haveoldShotgun)
+						{
+							oldShotgun.SetActive(false);
+							haveoldShotgun = false;
+							shootButton.SetActive(false);
+							shootRay.SetActive(false);
+							UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havebrunnsvev)
+						{
+							brunnsvev.SetActive(false);
+							havebrunnsvev = false;
+							UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel1)
+						{
+							gunDel1.SetActive(false);
+							havegunDel1 = false;
+							UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel2)
+						{
+							gunDel2.SetActive(false);
+							havegunDel2 = false;
+							UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegunDel3)
+						{
+							gunDel3.SetActive(false);
+							havegunDel3 = false;
+							UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarKey)
+						{
+							carKey.SetActive(false);
+							havecarKey = false;
+							((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+							UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havetopplock)
+						{
+							topplock.SetActive(false);
+							havetopplock = false;
+							UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havecarbattery)
+						{
+							carbattery.SetActive(false);
+							havecarbattery = false;
+							UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havegascan)
+						{
+							gascan.SetActive(false);
+							havegascan = false;
+							UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havewrench)
+						{
+							wrench.SetActive(false);
+							havewrench = false;
+							UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havesparkplug)
+						{
+							sparkplug.SetActive(false);
+							havesparkplug = false;
+							UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havemeat)
+						{
+							meat.SetActive(false);
+							havemeat = false;
+							UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
+						else if (havespecialkey)
+						{
+							specialkey.SetActive(false);
+							havespecialkey = false;
+							UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "bluekabel")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveAvbitare)
+						if (haveAvbitare)
 						{
 							if (!playSound)
 							{
@@ -1424,25 +9866,50 @@ public class PickUp : MonoBehaviour
 								((CheckExitDoor)gameController.GetComponent(typeof(CheckExitDoor))).counter = ((CheckExitDoor)gameController.GetComponent(typeof(CheckExitDoor))).counter + 1f;
 							}
 							UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-							avklipptKabel.SetActive(value: true);
+							avklipptKabel.SetActive(true);
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedAvbitarTongText.SetActive(value: true);
+							NeedAvbitarTongText.SetActive(true);
+							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
+							NeedFindSwitchText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "bluekabelcellar")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveAvbitare)
+						if (haveAvbitare)
 						{
 							if (!playSound)
 							{
@@ -1453,55 +9920,101 @@ public class PickUp : MonoBehaviour
 								((CheckExitDoor)gameController.GetComponent(typeof(CheckExitDoor))).counter = ((CheckExitDoor)gameController.GetComponent(typeof(CheckExitDoor))).counter + 1f;
 							}
 							UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-							avklipptKabelCellar.SetActive(value: true);
+							avklipptKabelCellar.SetActive(true);
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedAvbitarTongText.SetActive(value: true);
+							NeedAvbitarTongText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "bluekabelvind")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveAvbitare)
+						if (haveAvbitare)
 						{
 							if (!playSound)
 							{
 								playSound = true;
 								GetComponent<AudioSource>().PlayOneShot(klippKabel);
 								fan.GetComponent<Animation>().Stop("FanSpinn");
-								fanCollider.SetActive(value: false);
+								fanCollider.SetActive(false);
 							}
 							UnityEngine.Object.Destroy(KabelVind);
-							avklipptKabelVind.SetActive(value: true);
+							avklipptKabelVind.SetActive(true);
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedAvbitarTongText.SetActive(value: true);
+							NeedAvbitarTongText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "planka")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveHammare)
+						if (haveHammare)
 						{
 							if (!playSound)
 							{
@@ -1525,22 +10038,46 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedhammerText.SetActive(value: true);
+							NeedhammerText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
+							NeedFindSwitchText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "plankavind")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveHammare)
+						if (haveHammare)
 						{
 							((Rigidbody)hitInfo.collider.gameObject.GetComponent(typeof(Rigidbody))).isKinematic = false;
 							GetComponent<AudioSource>().PlayOneShot(taBortPlanka);
@@ -1548,22 +10085,45 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedhammerText.SetActive(value: true);
+							NeedhammerText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "exitdoor")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveexitKey)
+						if (haveexitKey)
 						{
 							if (!playSound)
 							{
@@ -1573,23 +10133,47 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
 							GetComponent<AudioSource>().PlayOneShot(doorLocked);
-							NeedHusnyckelText.SetActive(value: true);
+							NeedHusnyckelText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
+							NeedFindSwitchText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "hanglock")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havehanglockKey)
+						if (havehanglockKey)
 						{
 							if (!playSound)
 							{
@@ -1604,22 +10188,46 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedhangLockKeyText.SetActive(value: true);
+							NeedhangLockKeyText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhammerText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
+							NeedFindSwitchText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "hanglockgarage")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havehanglockKey)
+						if (havehanglockKey)
 						{
 							if (!playSound)
 							{
@@ -1632,22 +10240,45 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedhangLockKeyText.SetActive(value: true);
+							NeedhangLockKeyText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhammerText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "phpadlock")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveplayhouseKey)
+						if (haveplayhouseKey)
 						{
 							if (!playSound)
 							{
@@ -1660,22 +10291,46 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedplayhouseKeyText.SetActive(value: true);
+							NeedplayhouseKeyText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
+							NeedFindSwitchText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "dpadlock")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havepadlockCode)
+						if (havepadlockCode)
 						{
 							if (!playSound)
 							{
@@ -1689,22 +10344,46 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedpadlockCodeText.SetActive(value: true);
+							NeedpadlockCodeText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhammerText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedhangLockKeyText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
+							NeedFindSwitchText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "batteryholder")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebattery)
+						if (havebattery)
 						{
 							if (!playSound)
 							{
@@ -1712,33 +10391,57 @@ public class PickUp : MonoBehaviour
 								hitInfo.collider.GetComponent<Animation>().Play("BatteryLockOpen");
 								((CheckExitDoor)gameController.GetComponent(typeof(CheckExitDoor))).batteryLockOk = true;
 								batterySpak.GetComponent<Animation>().Play("BattSpakOK");
-								battery.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebattery = false;
-								batteryOnPlace.SetActive(value: true);
-								dropObjectButton.SetActive(value: false);
+								battery.SetActive(false);
+								havebattery = false;
+								batteryOnPlace.SetActive(true);
+								dropObjectButton.SetActive(false);
 								GetComponent<AudioSource>().PlayOneShot(placeBattery);
 								hitInfo.collider.gameObject.tag = "Untagged";
 							}
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
+							NeedpadlockCodeText.SetActive(false);
 							textTimerOnOff = true;
-							NeedbatteryText.SetActive(value: true);
+							NeedhammerText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedhangLockKeyText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(true);
 							batterySpak.GetComponent<Animation>().Play("BattSpakNotOK");
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
+							NeedFindSwitchText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "safedoor")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havesafeKey)
+						if (havesafeKey)
 						{
 							if (!playSound)
 							{
@@ -1750,23 +10453,46 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
 							GetComponent<AudioSource>().PlayOneShot(safeDoordoorLocked);
-							NeedsafeKeyText.SetActive(value: true);
+							NeedsafeKeyText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "vapenskopdoor")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveweaponKey)
+						if (haveweaponKey)
 						{
 							if (!playSound)
 							{
@@ -1778,42 +10504,65 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
 							GetComponent<AudioSource>().PlayOneShot(safeDoordoorLocked);
-							NeedweaponKeyText.SetActive(value: true);
+							NeedweaponKeyText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "tavelbitar")
 				{
 					if (!((startNewDay)gameController.GetComponent(typeof(startNewDay))).allaTavelbitarOnPlace)
 					{
 						readyPickUp = true;
-						mittenRing.SetActive(value: true);
+						mittenRing.SetActive(true);
 						if (pickUp)
 						{
 							pickUp = false;
-							missinTavelbitarText.SetActive(value: true);
+							missinTavelbitarText.SetActive(true);
 							textTimerOnOff = true;
 						}
 					}
 					else
 					{
 						readyPickUp = false;
-						mittenRing.SetActive(value: false);
+						mittenRing.SetActive(false);
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "screw1")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havescrewdriver)
+						if (havescrewdriver)
 						{
 							if (!playSound)
 							{
@@ -1826,22 +10575,45 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedscrewdriverText.SetActive(value: true);
+							NeedscrewdriverText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "screw2")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havescrewdriver)
+						if (havescrewdriver)
 						{
 							if (!playSound)
 							{
@@ -1854,33 +10626,56 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedscrewdriverText.SetActive(value: true);
+							NeedscrewdriverText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "camera")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveHammare)
+						if (haveHammare)
 						{
 							if (!playSound)
 							{
 								playSound = true;
-								kamera.SetActive(value: false);
-								kameraBroken.SetActive(value: true);
+								kamera.SetActive(false);
+								kameraBroken.SetActive(true);
 								if (!playerInPrison)
 								{
-									kameraSeeTrigger.SetActive(value: false);
+									kameraSeeTrigger.SetActive(false);
 									galler.GetComponent<Collider>().enabled = true;
-									gallerColliders.SetActive(value: false);
+									gallerColliders.SetActive(false);
 								}
 								hitInfo.collider.gameObject.tag = "Untagged";
 								GetComponent<AudioSource>().PlayOneShot(hitCam);
@@ -1888,69 +10683,115 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
+							NeedscrewdriverText.SetActive(false);
 							textTimerOnOff = true;
-							NeedhammerText.SetActive(value: true);
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(true);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "giljocutarea")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havemelon)
+						if (havemelon)
 						{
 							if (!playSound)
 							{
 								playSound = true;
-								giljoCutArea.SetActive(value: false);
-								melonInPlace.SetActive(value: true);
+								giljoCutArea.SetActive(false);
+								melonInPlace.SetActive(true);
 								((giljotinTrigger)giljotin.GetComponent(typeof(giljotinTrigger))).meloninPlace = true;
 								GetComponent<AudioSource>().PlayOneShot(placeMelon);
-								melon.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havemelon = false;
+								melon.SetActive(false);
+								havemelon = false;
 								pickUp = false;
 								dropObject = false;
-								dropObjectButton.SetActive(value: false);
-								mittenRing.SetActive(value: false);
+								dropObjectButton.SetActive(false);
+								mittenRing.SetActive(false);
 							}
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							cutThingsHereText.SetActive(value: true);
+							cutThingsHereText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "stortkugg")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havekugg1)
+						if (havekugg1)
 						{
 							if (!playSound)
 							{
 								playSound = true;
-								kugg1inPlace.SetActive(value: true);
+								kugg1inPlace.SetActive(true);
 								kugg1OK = true;
 								GetComponent<AudioSource>().PlayOneShot(placebrunnsvev);
-								kugg1.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havekugg1 = false;
+								kugg1.SetActive(false);
+								havekugg1 = false;
 								pickUp = false;
 								dropObject = false;
-								dropObjectButton.SetActive(value: false);
-								mittenRing.SetActive(value: false);
+								dropObjectButton.SetActive(false);
+								mittenRing.SetActive(false);
 								if (kugg2OK)
 								{
 									playHouseLucka.gameObject.GetComponent<Animation>().Play("openToyLock");
@@ -1958,20 +10799,20 @@ public class PickUp : MonoBehaviour
 								}
 							}
 						}
-						else if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havekugg2)
+						else if (havekugg2)
 						{
 							if (!playSound)
 							{
 								playSound = true;
-								kugg2inPlace.SetActive(value: true);
+								kugg2inPlace.SetActive(true);
 								kugg2OK = true;
 								GetComponent<AudioSource>().PlayOneShot(placebrunnsvev);
-								kugg2.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havekugg2 = false;
+								kugg2.SetActive(false);
+								havekugg2 = false;
 								pickUp = false;
 								dropObject = false;
-								dropObjectButton.SetActive(value: false);
-								mittenRing.SetActive(value: false);
+								dropObjectButton.SetActive(false);
+								mittenRing.SetActive(false);
 								if (kugg1OK)
 								{
 									playHouseLucka.gameObject.GetComponent<Animation>().Play("openToyLock");
@@ -1981,57 +10822,103 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							SomethingMissingHereText.SetActive(value: true);
+							SomethingMissingHereText.SetActive(true);
+							cutThingsHereText.SetActive(false);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "brunn")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebrunnsvev)
+						if (havebrunnsvev)
 						{
 							if (!playSound)
 							{
 								playSound = true;
-								brunnsvevInPlace.SetActive(value: true);
+								brunnsvevInPlace.SetActive(true);
 								readyPickUp = false;
 								((playerVevar)brunnsvevsHolder.GetComponent(typeof(playerVevar))).vevInPlace = true;
 								hitInfo.collider.gameObject.GetComponent<Collider>().enabled = false;
 								GetComponent<AudioSource>().PlayOneShot(placebrunnsvev);
-								brunnsvev.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebrunnsvev = false;
+								brunnsvev.SetActive(false);
+								havebrunnsvev = false;
 								pickUp = false;
 								dropObject = false;
-								dropObjectButton.SetActive(value: false);
-								mittenRing.SetActive(value: false);
+								dropObjectButton.SetActive(false);
+								mittenRing.SetActive(false);
 							}
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedWinchhandleText.SetActive(value: true);
+							NeedWinchhandleText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							NeedscrewdriverText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "screwout1")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havescrewdriver)
+						if (havescrewdriver)
 						{
 							if (!playSound)
 							{
@@ -2044,22 +10931,45 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedscrewdriverText.SetActive(value: true);
+							NeedscrewdriverText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "screwout2")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havescrewdriver)
+						if (havescrewdriver)
 						{
 							if (!playSound)
 							{
@@ -2072,22 +10982,45 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedscrewdriverText.SetActive(value: true);
+							NeedscrewdriverText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "screwout3")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havescrewdriver)
+						if (havescrewdriver)
 						{
 							if (!playSound)
 							{
@@ -2100,22 +11033,45 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedscrewdriverText.SetActive(value: true);
+							NeedscrewdriverText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "screwout4")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havescrewdriver)
+						if (havescrewdriver)
 						{
 							if (!playSound)
 							{
@@ -2128,22 +11084,45 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedscrewdriverText.SetActive(value: true);
+							NeedscrewdriverText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "topplocksskruv")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havewrench)
+						if (havewrench)
 						{
 							if (!playSound)
 							{
@@ -2155,132 +11134,241 @@ public class PickUp : MonoBehaviour
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedWrenchText.SetActive(value: true);
+							NeedWrenchText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "topplockPlace")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetopplock)
+						if (havetopplock)
 						{
 							if (!playSound)
 							{
 								playSound = true;
 								((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).topplockOK = true;
-								topplockInPlace.SetActive(value: true);
-								topplock.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havetopplock = false;
-								dropObjectButton.SetActive(value: false);
+								topplockInPlace.SetActive(true);
+								topplock.SetActive(false);
+								havetopplock = false;
+								dropObjectButton.SetActive(false);
 								UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
 								GetComponent<AudioSource>().PlayOneShot(drarIspak);
 							}
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedEnginePartText.SetActive(value: true);
+							NeedEnginePartText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "carbatteryPlace")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havecarbattery)
+						if (havecarbattery)
 						{
 							if (!playSound)
 							{
 								playSound = true;
 								((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).batteryOK = true;
-								carbatteryInPlace.SetActive(value: true);
-								carbattery.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havecarbattery = false;
+								carbatteryInPlace.SetActive(true);
+								carbattery.SetActive(false);
+								havecarbattery = false;
+								dropObjectButton.SetActive(false);
 								UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-								dropObjectButton.SetActive(value: false);
 								GetComponent<AudioSource>().PlayOneShot(drarIspak);
 							}
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedCarBatteryText.SetActive(value: true);
+							NeedCarBatteryText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "fueltankPlace")
 				{
-					mittenRing.SetActive(value: true);
+					readyPickUp = true;
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (!((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegascan && !playSound)
+						if (!havegascan && !playSound)
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							playSound = true;
 							textTimer = 0f;
-							NeedGasolineText.SetActive(value: true);
+							NeedGasolineText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedSparkPlugText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "sparkplugPlace")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havesparkplug)
+						if (havesparkplug)
 						{
 							if (!playSound)
 							{
 								playSound = true;
 								((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).sparkplugOK = true;
-								sparkPlugInPlace.SetActive(value: true);
-								sparkPlugCable.SetActive(value: false);
-								sparkplug.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havesparkplug = false;
-								dropObjectButton.SetActive(value: false);
+								sparkPlugInPlace.SetActive(true);
+								sparkPlugCable.SetActive(false);
+								sparkplug.SetActive(false);
+								havesparkplug = false;
+								dropObjectButton.SetActive(false);
 								GetComponent<AudioSource>().PlayOneShot(drarIspak);
 							}
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedSparkPlugText.SetActive(value: true);
+							NeedSparkPlugText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							emptyPlateText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "platevind")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havemeat)
+						if (havemeat)
 						{
 							if (!playSound)
 							{
@@ -2290,32 +11378,53 @@ public class PickUp : MonoBehaviour
 									((spiderControll)spider.GetComponent(typeof(spiderControll))).foodTime = true;
 								}
 								GetComponent<AudioSource>().PlayOneShot(meatPlate);
-								meatOnPlate.SetActive(value: true);
-								spiderTrigger.SetActive(value: false);
-								meat.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havemeat = false;
-								dropObjectButton.SetActive(value: false);
+								meatOnPlate.SetActive(true);
+								spiderTrigger.SetActive(false);
+								meat.SetActive(false);
+								havemeat = false;
+								dropObjectButton.SetActive(false);
 								UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
 							}
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							emptyPlateText.SetActive(value: true);
+							emptyPlateText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
+							NeedSpecialKeyText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "vind2lock")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havespecialkey)
+						if (havespecialkey)
 						{
 							if (!playSound)
 							{
@@ -2324,64 +11433,101 @@ public class PickUp : MonoBehaviour
 								specialkeyDoor.GetComponent<Animation>().Play("vind2DoorOpen");
 								specialkeyLock.GetComponent<AudioSource>().PlayOneShot(vind2Lockopen);
 								specialkeyDoor.GetComponent<AudioSource>().PlayOneShot(vind2Dooropen);
-								specialkeyInPlace.SetActive(value: true);
-								specialkey.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havespecialkey = false;
-								dropObjectButton.SetActive(value: false);
+								specialkeyInPlace.SetActive(true);
+								specialkey.SetActive(false);
+								havespecialkey = false;
+								dropObjectButton.SetActive(false);
 								hitInfo.collider.gameObject.tag = "Untagged";
 							}
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							NeedSpecialKeyText.SetActive(value: true);
+							NeedSpecialKeyText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "bookplace")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebook)
+						if (havebook)
 						{
 							if (!playSound)
 							{
 								playSound = true;
 								secretWall.GetComponent<Animation>().Play("fakeWallMove");
-								bookInPlace.SetActive(value: true);
-								book.SetActive(value: false);
-								((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebook = false;
-								dropObjectButton.SetActive(value: false);
+								bookInPlace.SetActive(true);
+								book.SetActive(false);
+								havebook = false;
+								dropObjectButton.SetActive(false);
 								hitInfo.collider.gameObject.tag = "Untagged";
-								if (!((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByArrow && !((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByPepper && !((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).freeze)
-								{
-									Granny.SetActive(value: false);
-									Granny.transform.position = GrannyStartPos.position;
-									Granny.SetActive(value: true);
-								}
+								Granny.SetActive(false);
+								Granny.transform.position = GrannyStartPos.position;
+								Granny.SetActive(true);
 								((startNewDay)gameController.GetComponent(typeof(startNewDay))).slendrinaMomAppeard = true;
 							}
 						}
 						else
 						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
 							textTimer = 0f;
-							MaybePutSomethingHereText.SetActive(value: true);
+							MaybePutSomethingHereText.SetActive(true);
 							textTimerOnOff = true;
+							NeedhangLockKeyText.SetActive(false);
+							NeedhammerText.SetActive(false);
+							NeedAvbitarTongText.SetActive(false);
+							NeedHusnyckelText.SetActive(false);
+							NeedpadlockCodeText.SetActive(false);
+							NeedCrossbowText.SetActive(false);
+							NeedsafeKeyText.SetActive(false);
+							NeedweaponKeyText.SetActive(false);
+							NeedbatteryText.SetActive(false);
+							missinTavelbitarText.SetActive(false);
+							NeedplayhouseKeyText.SetActive(false);
+							cutThingsHereText.SetActive(false);
+							SomethingMissingHereText.SetActive(false);
+							NeedWinchhandleText.SetActive(false);
+							NeedShotgunText.SetActive(false);
+							ShotgunLoadedText.SetActive(false);
+							NeedcarKeyText.SetActive(false);
+							NeedEnginePartText.SetActive(false);
+							NeedWrenchText.SetActive(false);
+							NeedGasolineText.SetActive(false);
+							NeedCarBatteryText.SetActive(false);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "spak")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
@@ -2390,73 +11536,55 @@ public class PickUp : MonoBehaviour
 							playSound = true;
 							hitInfo.collider.gameObject.GetComponent<Animation>().Play("Spak");
 							hitInfo.collider.gameObject.tag = "Untagged";
+							motorCollider.SetActive(false);
 							((CheckExitDoor)gameController.GetComponent(typeof(CheckExitDoor))).extremeLockOk = true;
-							extremeLockOn.SetActive(value: false);
-							extremeLockOff.SetActive(value: true);
+							extremeLockOn.SetActive(false);
+							extremeLockOff.SetActive(true);
 							GetComponent<AudioSource>().PlayOneShot(drarIspak);
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "lockmotor")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					if (pickUp)
-					{
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
-						pickUp = false;
-						textTimer = 0f;
-						NeedFindSwitchText.SetActive(value: true);
-						textTimerOnOff = true;
-					}
-					audio();
-				}
-				else if (hitInfo.collider.gameObject.tag == "remoteLock")
-				{
-					readyPickUp = true;
-					mittenRing.SetActive(value: true);
-					if (pickUp && !((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveremote)
-					{
-						((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
-						pickUp = false;
-						textTimer = 0f;
-						NeedRemoteControlText.SetActive(value: true);
-						textTimerOnOff = true;
-					}
-					audio();
-				}
-				else if (hitInfo.collider.gameObject.tag == "birdseedplate")
-				{
-					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
-						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havebirdSeed)
-						{
-							if (!playSound)
-							{
-								playSound = true;
-								hitInfo.collider.gameObject.tag = "Untagged";
-								((CrowControl)crow.GetComponent(typeof(CrowControl))).CrowStartEat = true;
-								GetComponent<AudioSource>().PlayOneShot(fillSeed);
-							}
-						}
-						else
-						{
-							((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
-							textTimer = 0f;
-							emptyBowlText.SetActive(value: true);
-							textTimerOnOff = true;
-						}
+						textTimer = 0f;
+						NeedFindSwitchText.SetActive(true);
+						textTimerOnOff = true;
+						NeedhangLockKeyText.SetActive(false);
+						NeedhammerText.SetActive(false);
+						NeedAvbitarTongText.SetActive(false);
+						NeedHusnyckelText.SetActive(false);
+						NeedpadlockCodeText.SetActive(false);
+						NeedCrossbowText.SetActive(false);
+						NeedsafeKeyText.SetActive(false);
+						NeedweaponKeyText.SetActive(false);
+						NeedbatteryText.SetActive(false);
+						missinTavelbitarText.SetActive(false);
+						NeedplayhouseKeyText.SetActive(false);
+						cutThingsHereText.SetActive(false);
+						SomethingMissingHereText.SetActive(false);
+						NeedWinchhandleText.SetActive(false);
+						NeedscrewdriverText.SetActive(false);
+						NeedShotgunText.SetActive(false);
+						ShotgunLoadedText.SetActive(false);
+						NeedcarKeyText.SetActive(false);
+						NeedCarBatteryText.SetActive(false);
+						NeedEnginePartText.SetActive(false);
+						NeedGasolineText.SetActive(false);
+						emptyPlateText.SetActive(false);
+						NeedSpecialKeyText.SetActive(false);
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "sprint1")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
@@ -2468,17 +11596,17 @@ public class PickUp : MonoBehaviour
 							((prisonDoorOpenClose)prisonDoor.GetComponent(typeof(prisonDoorOpenClose))).sprint1Bort = true;
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "prisondoorlocked")
 				{
-					mittenRing.SetActive(value: false);
+					mittenRing.SetActive(false);
 					pickUp = false;
 				}
 				else if (hitInfo.collider.gameObject.tag == "sprint2")
 				{
 					readyPickUp = true;
-					mittenRing.SetActive(value: true);
+					mittenRing.SetActive(true);
 					if (pickUp)
 					{
 						pickUp = false;
@@ -2490,56 +11618,660 @@ public class PickUp : MonoBehaviour
 							((prisonDoorOpenClose)prisonDoor.GetComponent(typeof(prisonDoorOpenClose))).sprint2Bort = true;
 						}
 					}
-					audio();
+					audioPickUp();
 				}
 				else if (hitInfo.collider.gameObject.tag == "Untagged")
 				{
 					readyPickUp = false;
-					mittenRing.SetActive(value: false);
-					((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
+					mittenRing.SetActive(false);
+					hangLockKeyText.SetActive(false);
+					hammerText.SetActive(false);
+					safeKeyText.SetActive(false);
+					AvbitarTongText.SetActive(false);
+					HusnyckelText.SetActive(false);
+					padlockCodeText.SetActive(false);
+					CrossbowText.SetActive(false);
+					TranquilizerDartText.SetActive(false);
+					weaponKeyText.SetActive(false);
+					screwdriverText.SetActive(false);
+					plankText.SetActive(false);
+					batteryText.SetActive(false);
+					tavelbitText.SetActive(false);
+					playhouseKeyText.SetActive(false);
+					melonText.SetActive(false);
+					teddyText.SetActive(false);
+					cogwheelText.SetActive(false);
+					winchhandleText.SetActive(false);
+					PartOfShotgunText.SetActive(false);
+					ShotgunText.SetActive(false);
+					AmmoText.SetActive(false);
+					carKeyText.SetActive(false);
+					EnginePartText.SetActive(false);
+					SparkPlugText.SetActive(false);
+					GasolineCanText.SetActive(false);
+					CarBatteryText.SetActive(false);
+					WrenchText.SetActive(false);
+					MeatText.SetActive(false);
+					specialKeyText.SetActive(false);
+					bookText.SetActive(false);
 				}
 				else if (hitInfo.collider.gameObject.tag == "golv")
 				{
-					((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
+					readyPickUp = false;
+					mittenRing.SetActive(false);
+					hangLockKeyText.SetActive(false);
+					hammerText.SetActive(false);
+					safeKeyText.SetActive(false);
+					AvbitarTongText.SetActive(false);
+					HusnyckelText.SetActive(false);
+					padlockCodeText.SetActive(false);
+					CrossbowText.SetActive(false);
+					TranquilizerDartText.SetActive(false);
+					weaponKeyText.SetActive(false);
+					screwdriverText.SetActive(false);
+					plankText.SetActive(false);
+					batteryText.SetActive(false);
+					tavelbitText.SetActive(false);
+					playhouseKeyText.SetActive(false);
+					melonText.SetActive(false);
+					teddyText.SetActive(false);
+					cogwheelText.SetActive(false);
+					winchhandleText.SetActive(false);
+					PartOfShotgunText.SetActive(false);
+					ShotgunText.SetActive(false);
+					AmmoText.SetActive(false);
+					carKeyText.SetActive(false);
+					EnginePartText.SetActive(false);
+					SparkPlugText.SetActive(false);
+					GasolineCanText.SetActive(false);
+					CarBatteryText.SetActive(false);
+					WrenchText.SetActive(false);
+					MeatText.SetActive(false);
+					specialKeyText.SetActive(false);
+					bookText.SetActive(false);
 				}
 				else if (hitInfo.collider.gameObject.tag == "grus")
 				{
-					((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
+					readyPickUp = false;
+					mittenRing.SetActive(false);
+					hangLockKeyText.SetActive(false);
+					hammerText.SetActive(false);
+					safeKeyText.SetActive(false);
+					AvbitarTongText.SetActive(false);
+					HusnyckelText.SetActive(false);
+					padlockCodeText.SetActive(false);
+					CrossbowText.SetActive(false);
+					TranquilizerDartText.SetActive(false);
+					weaponKeyText.SetActive(false);
+					screwdriverText.SetActive(false);
+					plankText.SetActive(false);
+					batteryText.SetActive(false);
+					tavelbitText.SetActive(false);
+					playhouseKeyText.SetActive(false);
+					melonText.SetActive(false);
+					teddyText.SetActive(false);
+					cogwheelText.SetActive(false);
+					winchhandleText.SetActive(false);
+					PartOfShotgunText.SetActive(false);
+					ShotgunText.SetActive(false);
+					AmmoText.SetActive(false);
+					carKeyText.SetActive(false);
+					EnginePartText.SetActive(false);
+					SparkPlugText.SetActive(false);
+					GasolineCanText.SetActive(false);
+					CarBatteryText.SetActive(false);
+					WrenchText.SetActive(false);
+					MeatText.SetActive(false);
+					specialKeyText.SetActive(false);
+					bookText.SetActive(false);
 				}
 				else if (hitInfo.collider.gameObject.tag == "car")
 				{
-					((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
-				}
-				else if (hitInfo.collider.gameObject.tag == "smalldoorLocked")
-				{
 					readyPickUp = false;
-					RemoteControlText.SetActive(value: false);
-				}
-				else if (hitInfo.collider.gameObject.tag == "loda1Open")
-				{
-					readyPickUp = false;
-					((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
-				}
-				else if (hitInfo.collider.gameObject.tag == "loda2Open")
-				{
-					readyPickUp = false;
-					((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
+					mittenRing.SetActive(false);
+					hangLockKeyText.SetActive(false);
+					hammerText.SetActive(false);
+					safeKeyText.SetActive(false);
+					AvbitarTongText.SetActive(false);
+					HusnyckelText.SetActive(false);
+					padlockCodeText.SetActive(false);
+					CrossbowText.SetActive(false);
+					TranquilizerDartText.SetActive(false);
+					weaponKeyText.SetActive(false);
+					screwdriverText.SetActive(false);
+					plankText.SetActive(false);
+					batteryText.SetActive(false);
+					tavelbitText.SetActive(false);
+					playhouseKeyText.SetActive(false);
+					melonText.SetActive(false);
+					teddyText.SetActive(false);
+					cogwheelText.SetActive(false);
+					winchhandleText.SetActive(false);
+					PartOfShotgunText.SetActive(false);
+					ShotgunText.SetActive(false);
+					AmmoText.SetActive(false);
+					carKeyText.SetActive(false);
+					EnginePartText.SetActive(false);
+					SparkPlugText.SetActive(false);
+					GasolineCanText.SetActive(false);
+					CarBatteryText.SetActive(false);
+					WrenchText.SetActive(false);
+					MeatText.SetActive(false);
+					specialKeyText.SetActive(false);
+					bookText.SetActive(false);
 				}
 				else
 				{
-					((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
+					readyPickUp = false;
+					mittenRing.SetActive(false);
+					hangLockKeyText.SetActive(false);
+					hammerText.SetActive(false);
+					safeKeyText.SetActive(false);
+					AvbitarTongText.SetActive(false);
+					HusnyckelText.SetActive(false);
+					padlockCodeText.SetActive(false);
+					CrossbowText.SetActive(false);
+					TranquilizerDartText.SetActive(false);
+					weaponKeyText.SetActive(false);
+					screwdriverText.SetActive(false);
+					plankText.SetActive(false);
+					batteryText.SetActive(false);
+					tavelbitText.SetActive(false);
+					playhouseKeyText.SetActive(false);
+					melonText.SetActive(false);
+					teddyText.SetActive(false);
+					cogwheelText.SetActive(false);
+					winchhandleText.SetActive(false);
+					PartOfShotgunText.SetActive(false);
+					ShotgunText.SetActive(false);
+					AmmoText.SetActive(false);
+					carKeyText.SetActive(false);
+					EnginePartText.SetActive(false);
+					SparkPlugText.SetActive(false);
+					GasolineCanText.SetActive(false);
+					CarBatteryText.SetActive(false);
+					WrenchText.SetActive(false);
+					MeatText.SetActive(false);
+					specialKeyText.SetActive(false);
+					bookText.SetActive(false);
 				}
 			}
 			else
 			{
 				readyPickUp = false;
-				mittenRing.SetActive(value: false);
-				((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
+				mittenRing.SetActive(false);
+				hangLockKeyText.SetActive(false);
+				hammerText.SetActive(false);
+				safeKeyText.SetActive(false);
+				AvbitarTongText.SetActive(false);
+				HusnyckelText.SetActive(false);
+				padlockCodeText.SetActive(false);
+				CrossbowText.SetActive(false);
+				TranquilizerDartText.SetActive(false);
+				weaponKeyText.SetActive(false);
+				screwdriverText.SetActive(false);
+				plankText.SetActive(false);
+				batteryText.SetActive(false);
+				tavelbitText.SetActive(false);
+				playhouseKeyText.SetActive(false);
+				melonText.SetActive(false);
+				teddyText.SetActive(false);
+				cogwheelText.SetActive(false);
+				winchhandleText.SetActive(false);
+				PartOfShotgunText.SetActive(false);
+				ShotgunText.SetActive(false);
+				AmmoText.SetActive(false);
+				carKeyText.SetActive(false);
+				EnginePartText.SetActive(false);
+				SparkPlugText.SetActive(false);
+				GasolineCanText.SetActive(false);
+				CarBatteryText.SetActive(false);
+				WrenchText.SetActive(false);
+				MeatText.SetActive(false);
+				specialKeyText.SetActive(false);
+				bookText.SetActive(false);
+				pickUp = false;
 			}
 		}
 		else
 		{
 			readyPickUp = false;
+			mittenRing.SetActive(false);
+			hangLockKeyText.SetActive(false);
+			hammerText.SetActive(false);
+			safeKeyText.SetActive(false);
+			AvbitarTongText.SetActive(false);
+			HusnyckelText.SetActive(false);
+			padlockCodeText.SetActive(false);
+			CrossbowText.SetActive(false);
+			TranquilizerDartText.SetActive(false);
+			weaponKeyText.SetActive(false);
+			screwdriverText.SetActive(false);
+			plankText.SetActive(false);
+			batteryText.SetActive(false);
+			tavelbitText.SetActive(false);
+			playhouseKeyText.SetActive(false);
+			melonText.SetActive(false);
+			teddyText.SetActive(false);
+			cogwheelText.SetActive(false);
+			winchhandleText.SetActive(false);
+			PartOfShotgunText.SetActive(false);
+			ShotgunText.SetActive(false);
+			AmmoText.SetActive(false);
+			carKeyText.SetActive(false);
+			EnginePartText.SetActive(false);
+			SparkPlugText.SetActive(false);
+			GasolineCanText.SetActive(false);
+			CarBatteryText.SetActive(false);
+			WrenchText.SetActive(false);
+			MeatText.SetActive(false);
+			specialKeyText.SetActive(false);
+			bookText.SetActive(false);
+			pickUp = false;
+		}
+		if (dropObject)
+		{
+			if (haveAvbitare)
+			{
+				avbitare.SetActive(false);
+				haveAvbitare = false;
+				hammare.SetActive(false);
+				haveHammare = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newAvbitare, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (haveHammare)
+			{
+				hammare.SetActive(false);
+				haveHammare = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newHammare, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havevas)
+			{
+				vas.SetActive(false);
+				havevas = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newvas, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havevas2)
+			{
+				vas2.SetActive(false);
+				havevas2 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newvas2, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havesafeKey)
+			{
+				safeKey.SetActive(false);
+				havesafeKey = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newsafeKey, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (haveexitKey)
+			{
+				exitKey.SetActive(false);
+				haveexitKey = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newexitKey, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havehanglockKey)
+			{
+				hanglockKey.SetActive(false);
+				havehanglockKey = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newhanglockKey, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havepadlockCode)
+			{
+				padlockCode.SetActive(false);
+				havepadlockCode = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newpadlockCode, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havearmborst)
+			{
+				armborst.SetActive(false);
+				havearmborst = false;
+				arrowButton.SetActive(false);
+				shootArrowRay.SetActive(false);
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newarmborst, dropPoint.transform.position, dropPoint.transform.rotation);
+				if (armborstArrowOK)
+				{
+					UnityEngine.Object.Instantiate(newArrow, dropPoint.transform.position, dropPoint.transform.rotation);
+					haveArrow = false;
+					armborstArrowOK = false;
+				}
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (haveweaponKey)
+			{
+				weaponKey.SetActive(false);
+				haveweaponKey = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newweaponKey, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havescrewdriver)
+			{
+				screwdriver.SetActive(false);
+				havescrewdriver = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newscrewdriver, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (haveplanka)
+			{
+				planka.SetActive(false);
+				haveplanka = false;
+				pickUp = false;
+				dropObject = false;
+				placeObject = false;
+				placeObjectButton.SetActive(false);
+				UnityEngine.Object.Instantiate(newplanka, dropPointPlanka.transform.position, dropPointPlanka.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havebattery)
+			{
+				battery.SetActive(false);
+				havebattery = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havetb1)
+			{
+				tb1.SetActive(false);
+				havetb1 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newtb1, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havetb2)
+			{
+				tb2.SetActive(false);
+				havetb2 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newtb2, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havetb3)
+			{
+				tb3.SetActive(false);
+				havetb3 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newtb3, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havetb4)
+			{
+				tb4.SetActive(false);
+				havetb4 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newtb4, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (haveplayhouseKey)
+			{
+				playhouseKey.SetActive(false);
+				haveplayhouseKey = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newplayhouseKey, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havemelon)
+			{
+				melon.SetActive(false);
+				havemelon = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newmelon, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (haveteddy)
+			{
+				teddy.SetActive(false);
+				haveteddy = false;
+				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newteddy, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havekugg1)
+			{
+				kugg1.SetActive(false);
+				havekugg1 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newkugg1, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havekugg2)
+			{
+				kugg2.SetActive(false);
+				havekugg2 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newkugg2, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havemessage)
+			{
+				message.SetActive(false);
+				havemessage = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newmessage, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havebrunnsvev)
+			{
+				brunnsvev.SetActive(false);
+				havebrunnsvev = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newbrunnsvev, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (haveoldShotgun)
+			{
+				oldShotgun.SetActive(false);
+				haveoldShotgun = false;
+				pickUp = false;
+				dropObject = false;
+				shootButton.SetActive(false);
+				shootRay.SetActive(false);
+				UnityEngine.Object.Instantiate(newoldShotgun, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havegunDel1)
+			{
+				gunDel1.SetActive(false);
+				havegunDel1 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newgunDel1, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havegunDel2)
+			{
+				gunDel2.SetActive(false);
+				havegunDel2 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newgunDel2, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havegunDel3)
+			{
+				gunDel3.SetActive(false);
+				havegunDel3 = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newgunDel3, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havecarKey)
+			{
+				carKey.SetActive(false);
+				havecarKey = false;
+				((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).playerHaveCarKey = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newcarKey, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havetopplock)
+			{
+				topplock.SetActive(false);
+				havetopplock = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newtopplock, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havecarbattery)
+			{
+				carbattery.SetActive(false);
+				havecarbattery = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newcarbattery, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havegascan)
+			{
+				gascan.SetActive(false);
+				havegascan = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newgascan, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havewrench)
+			{
+				wrench.SetActive(false);
+				havewrench = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newwrench, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havesparkplug)
+			{
+				sparkplug.SetActive(false);
+				havesparkplug = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newsparkplug, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havemeat)
+			{
+				meat.SetActive(false);
+				havemeat = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newmeat, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havespecialkey)
+			{
+				specialkey.SetActive(false);
+				havespecialkey = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newspecialkey, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+			if (havebook)
+			{
+				book.SetActive(false);
+				havebook = false;
+				pickUp = false;
+				dropObject = false;
+				UnityEngine.Object.Instantiate(newbook, dropPoint.transform.position, dropPoint.transform.rotation);
+				dropObjectButton.SetActive(false);
+				mittenRing.SetActive(false);
+			}
+		}
+		else if (placeObject && plankaHighlighted)
+		{
+			plankaHighlighted = false;
+			highlightedPlanka.SetActive(false);
+			highlightedPlankaTrigger.SetActive(false);
+			plankaHole.SetActive(true);
+			planka.SetActive(false);
+			haveplanka = false;
+			pickUp = false;
+			dropObject = false;
+			placeObject = false;
+			placeObjectButton.SetActive(false);
+			dropObjectButton.SetActive(false);
+			mittenRing.SetActive(false);
 		}
 		if (textTimerOnOff)
 		{
@@ -2548,18 +12280,41 @@ public class PickUp : MonoBehaviour
 			{
 				textTimerOnOff = false;
 				textTimer = 0f;
-				((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoText();
+				NeedhangLockKeyText.SetActive(false);
+				NeedhammerText.SetActive(false);
+				NeedsafeKeyText.SetActive(false);
+				NeedAvbitarTongText.SetActive(false);
+				NeedHusnyckelText.SetActive(false);
+				NeedpadlockCodeText.SetActive(false);
+				NeedCrossbowText.SetActive(false);
+				CantopenDoorYetText.SetActive(false);
+				NeedweaponKeyText.SetActive(false);
+				NeedscrewdriverText.SetActive(false);
+				NeedbatteryText.SetActive(false);
+				missinTavelbitarText.SetActive(false);
+				NeedplayhouseKeyText.SetActive(false);
+				cutThingsHereText.SetActive(false);
+				SomethingMissingHereText.SetActive(false);
+				somethingInsideMelonText.SetActive(false);
+				NeedWinchhandleText.SetActive(false);
+				NeedFindSwitchText.SetActive(false);
+				NeedShotgunText.SetActive(false);
+				ShotgunLoadedText.SetActive(false);
+				NeedcarKeyText.SetActive(false);
+				NeedCarBatteryText.SetActive(false);
+				NeedGasolineText.SetActive(false);
+				NeedEnginePartText.SetActive(false);
+				NeedWrenchText.SetActive(false);
+				NeedSparkPlugText.SetActive(false);
+				emptyPlateText.SetActive(false);
+				NeedSpecialKeyText.SetActive(false);
+				MaybePutSomethingHereText.SetActive(false);
 			}
 		}
 	}
 
-	public virtual void audio()
+	public virtual void audioPickUp()
 	{
 		playSound = false;
-	}
-
-	public PickUp()
-	{
-		layerMask = 256;
 	}
 }

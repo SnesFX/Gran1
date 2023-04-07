@@ -4,8 +4,7 @@
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: BearTrapOpenReady 2
   m_Rect:
     serializedVersion: 2
@@ -27,9 +26,8 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 2800000, guid: a31e86fe7cdb089428fa2341068a191a, type: 3}
+    texture: {fileID: 2800000, guid: 6ba2e6af39784e947937bceb3b25a398, type: 3}
     alphaTexture: {fileID: 0}
-    secondaryTextures: []
     m_SubMeshes:
     - serializedVersion: 2
       firstByte: 0
@@ -43,7 +41,7 @@ Sprite:
         m_Extent: {x: 0, y: 0, z: 0}
     m_IndexBuffer: 410040003e003f003e0040003d003e003f003c003e003d003b003c003d003a003c003b0039003a003b0038003a0039003700380039003500380037003600350037003200350036003400350032003300340032003100330032002f0031003200300031002f002e0030002f002d002e002f002c002e002d002b002c002d002a002c002b0029002a002b0028002a0029002600280029002700280026001c002700260025001c00260024001c00250023001c00240022001c00230021001c00220020001c0021001f001c0020001e001c001f001d001c001e001b001c001d001a001c001b0019001a001b0017001a0019001800170019001600170018001400170016001500140016001200140015001300140012001000130012001100100012000f00100011000e0010000f000c000e000f000d000e000c000a000d000c000b000a000c0009000a000b0008000a000900070008000900060008000700050006000700040006000500030004000500010004000300000001000300020001000000
     m_VertexData:
-      serializedVersion: 3
+      serializedVersion: 2
       m_VertexCount: 66
       m_Channels:
       - stream: 0
@@ -120,11 +118,10 @@ Sprite:
     serializedVersion: 3
     texture: {fileID: 0}
     alphaTexture: {fileID: 0}
-    secondaryTextures: []
     m_SubMeshes: []
     m_IndexBuffer:
     m_VertexData:
-      serializedVersion: 3
+      serializedVersion: 2
       m_VertexCount: 0
       m_Channels: []
       m_DataSize: 0

@@ -16,8 +16,8 @@ public class FetchAds : MonoBehaviour
 	public virtual void toMainMenu()
 	{
 		Time.timeScale = 1f;
-		optionMenu.SetActive(value: false);
-		granny.SetActive(value: false);
+		optionMenu.SetActive(false);
+		granny.SetActive(false);
 		readyToMainMenu();
 	}
 

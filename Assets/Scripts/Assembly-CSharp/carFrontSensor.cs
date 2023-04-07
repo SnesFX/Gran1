@@ -70,7 +70,7 @@ public class carFrontSensor : MonoBehaviour
 			{
 				textTimerOnOff = false;
 				textTimer = 0f;
-				shouldOpenDoorFirstText.SetActive(value: false);
+				shouldOpenDoorFirstText.SetActive(false);
 			}
 		}
 	}
@@ -83,40 +83,39 @@ public class carFrontSensor : MonoBehaviour
 		}
 		((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).reverseOK = true;
 		((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).forwardOK = false;
-		((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).carMoving = false;
 		if (garagedoorOpen)
 		{
 			if (hitGaragedoorCounter == 1f)
 			{
 				brickWallStart.GetComponent<Renderer>().material.mainTexture = brokenTextureMax;
 				hitGaragedoorCounter += 1f;
-				dust2.SetActive(value: true);
+				dust2.SetActive(true);
 				headAnim.GetComponent<Animation>().Play("HeadForward");
-				carForwardSound.SetActive(value: false);
-				engineOnSound.SetActive(value: true);
-				crashSound.SetActive(value: true);
-				CarHitTriggers.SetActive(value: false);
+				carForwardSound.SetActive(false);
+				engineOnSound.SetActive(true);
+				crashSound.SetActive(true);
+				CarHitTriggers.SetActive(false);
 				yield return new WaitForSeconds(1f);
-				forwardButton.SetActive(value: false);
-				ReverseButton.SetActive(value: true);
-				optionButton.SetActive(value: true);
-				outOffCarButton.SetActive(value: true);
-				carForwardSound.SetActive(value: false);
-				engineOnSound.SetActive(value: true);
-				crashSound.SetActive(value: true);
+				forwardButton.SetActive(false);
+				ReverseButton.SetActive(true);
+				optionButton.SetActive(true);
+				outOffCarButton.SetActive(true);
+				carForwardSound.SetActive(false);
+				engineOnSound.SetActive(true);
+				crashSound.SetActive(true);
 			}
 			else if (hitGaragedoorCounter == 2f)
 			{
-				brickWallStart.SetActive(value: false);
-				brickWallBroken.SetActive(value: true);
-				mittPrick.SetActive(value: false);
-				camInCar.SetActive(value: false);
-				granny.SetActive(value: false);
+				brickWallStart.SetActive(false);
+				brickWallBroken.SetActive(true);
+				mittPrick.SetActive(false);
+				camInCar.SetActive(false);
+				granny.SetActive(false);
 				if (PlayerPrefs.GetInt("DiffData") == 4)
 				{
-					escapeCamNoGranny.SetActive(value: true);
+					escapeCamNoGranny.SetActive(true);
 					RenderSettings.fog = false;
-					optionButton.SetActive(value: false);
+					optionButton.SetActive(false);
 					if ((bool)GameObject.Find("GrannyRagdoll(Clone)"))
 					{
 						UnityEngine.Object.Destroy(GameObject.Find("GrannyRagdoll(Clone)"));
@@ -124,51 +123,51 @@ public class carFrontSensor : MonoBehaviour
 				}
 				else
 				{
-					escapeCam.SetActive(value: true);
+					escapeCam.SetActive(true);
 					RenderSettings.fog = false;
-					optionButton.SetActive(value: false);
+					optionButton.SetActive(false);
 					if ((bool)GameObject.Find("GrannyRagdoll(Clone)"))
 					{
 						UnityEngine.Object.Destroy(GameObject.Find("GrannyRagdoll(Clone)"));
 					}
 				}
-				crashSound.SetActive(value: true);
-				CarHitTriggers.SetActive(value: false);
+				crashSound.SetActive(true);
+				CarHitTriggers.SetActive(false);
 			}
 			else
 			{
 				hitGaragedoorCounter += 1f;
 				brickWallStart.GetComponent<Renderer>().material.mainTexture = brokenTextureMin;
-				dust1.SetActive(value: true);
+				dust1.SetActive(true);
 				headAnim.GetComponent<Animation>().Play("HeadForward");
-				carForwardSound.SetActive(value: false);
-				engineOnSound.SetActive(value: true);
-				crashSound.SetActive(value: true);
-				CarHitTriggers.SetActive(value: false);
+				carForwardSound.SetActive(false);
+				engineOnSound.SetActive(true);
+				crashSound.SetActive(true);
+				CarHitTriggers.SetActive(false);
 				yield return new WaitForSeconds(1f);
-				forwardButton.SetActive(value: false);
-				ReverseButton.SetActive(value: true);
-				outOffCarButton.SetActive(value: true);
-				optionButton.SetActive(value: true);
+				forwardButton.SetActive(false);
+				ReverseButton.SetActive(true);
+				outOffCarButton.SetActive(true);
+				optionButton.SetActive(true);
 			}
 		}
 		else
 		{
 			headAnim.GetComponent<Animation>().Play("HeadForward");
-			carForwardSound.SetActive(value: false);
-			engineOnSound.SetActive(value: true);
-			crashSoundPort.SetActive(value: true);
-			CarHitTriggers.SetActive(value: false);
+			carForwardSound.SetActive(false);
+			engineOnSound.SetActive(true);
+			crashSoundPort.SetActive(true);
+			CarHitTriggers.SetActive(false);
 			yield return new WaitForSeconds(1f);
-			forwardButton.SetActive(value: false);
-			ReverseButton.SetActive(value: true);
-			outOffCarButton.SetActive(value: true);
-			optionButton.SetActive(value: true);
+			forwardButton.SetActive(false);
+			ReverseButton.SetActive(true);
+			outOffCarButton.SetActive(true);
+			optionButton.SetActive(true);
 			if (!textShown)
 			{
 				textShown = true;
 				textTimer = 0f;
-				shouldOpenDoorFirstText.SetActive(value: true);
+				shouldOpenDoorFirstText.SetActive(true);
 				textTimerOnOff = true;
 			}
 		}

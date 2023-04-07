@@ -24,7 +24,7 @@ namespace Steamworks
 			using (InteropHelp.UTF8StringHandle pchPropertyName2 = new InteropHelp.UTF8StringHandle(pchPropertyName))
 			{
 				bool flag = NativeMethods.ISteamInventory_GetResultItemProperty(CSteamAPIContext.GetSteamInventory(), resultHandle, unItemIndex, pchPropertyName2, intPtr, ref punValueBufferSizeOut);
-				pchValueBuffer = (flag ? InteropHelp.PtrToStringUTF8(intPtr) : null);
+				pchValueBuffer = ((!flag) ? null : InteropHelp.PtrToStringUTF8(intPtr));
 				Marshal.FreeHGlobal(intPtr);
 				return flag;
 			}
@@ -151,7 +151,7 @@ namespace Steamworks
 			using (InteropHelp.UTF8StringHandle pchPropertyName2 = new InteropHelp.UTF8StringHandle(pchPropertyName))
 			{
 				bool flag = NativeMethods.ISteamInventory_GetItemDefinitionProperty(CSteamAPIContext.GetSteamInventory(), iDefinition, pchPropertyName2, intPtr, ref punValueBufferSizeOut);
-				pchValueBuffer = (flag ? InteropHelp.PtrToStringUTF8(intPtr) : null);
+				pchValueBuffer = ((!flag) ? null : InteropHelp.PtrToStringUTF8(intPtr));
 				Marshal.FreeHGlobal(intPtr);
 				return flag;
 			}

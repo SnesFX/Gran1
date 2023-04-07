@@ -16,9 +16,9 @@ namespace UnityStandardAssets.Effects
 		public void Extinguish()
 		{
 			ParticleSystem[] systems = m_Systems;
-			for (int i = 0; i < systems.Length; i++)
+			foreach (ParticleSystem particleSystem in systems)
 			{
-				ParticleSystem.EmissionModule emission = systems[i].emission;
+				ParticleSystem.EmissionModule emission = particleSystem.emission;
 				emission.enabled = false;
 			}
 		}

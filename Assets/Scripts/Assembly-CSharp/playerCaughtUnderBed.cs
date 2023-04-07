@@ -7,8 +7,6 @@ using UnityStandardAssets.Characters.FirstPerson;
 [Serializable]
 public class playerCaughtUnderBed : MonoBehaviour
 {
-	public GameObject gameController;
-
 	public Image blackScreenTexture;
 
 	public float fadeBlackSpeed2;
@@ -75,8 +73,6 @@ public class playerCaughtUnderBed : MonoBehaviour
 
 	public GameObject teddyMusicHolder;
 
-	public GameObject grannyHuntMusicHolder;
-
 	public GameObject bastuSteamHolder;
 
 	public virtual void Start()
@@ -89,11 +85,10 @@ public class playerCaughtUnderBed : MonoBehaviour
 
 	public virtual IEnumerator EndDayUnderBed()
 	{
-		mittPrick.SetActive(value: false);
+		mittPrick.SetActive(false);
 		yield return new WaitForSeconds(1.7f);
 		((fadeUpDownTeddyMusic)teddyMusicHolder.GetComponent(typeof(fadeUpDownTeddyMusic))).playerCaught = true;
-		((fadeUpDownGrannyHunt)grannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).playerCaught = true;
-		blackScreenTexture.CrossFadeAlpha(1f, 0.2f, ignoreTimeScale: false);
+		blackScreenTexture.CrossFadeAlpha(1f, 0.2f, false);
 		yield return new WaitForSeconds(2f);
 		((backgroundSound)soundHolder2.GetComponent(typeof(backgroundSound))).fadeDown = true;
 		yield return new WaitForSeconds(3f);
@@ -101,38 +96,36 @@ public class playerCaughtUnderBed : MonoBehaviour
 		{
 			bedCam1.GetComponent<bedEyes>().lookAtGranny = false;
 			bedCam1.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
-			bedCam1Holder.SetActive(value: false);
+			bedCam1Holder.SetActive(false);
 		}
 		if (bedCam2Holder.activeSelf)
 		{
 			bedCam2.GetComponent<bedEyes2>().lookAtGranny = false;
 			bedCam2.transform.localEulerAngles = new Vector3(0f, 90f, 0f);
-			bedCam2Holder.SetActive(value: false);
+			bedCam2Holder.SetActive(false);
 		}
 		if (bedCam3Holder.activeSelf)
 		{
 			bedCam3.GetComponent<bedEyes3>().lookAtGranny = false;
 			bedCam3.transform.localEulerAngles = new Vector3(0f, 270f, 0f);
-			bedCam3Holder.SetActive(value: false);
+			bedCam3Holder.SetActive(false);
 		}
 		if (bedButton1.activeSelf)
 		{
 			bedButton1.GetComponent<bedButton>().PlayerHiding = false;
-			bedButton1.SetActive(value: false);
+			bedButton1.SetActive(false);
 		}
 		if (bedButton2.activeSelf)
 		{
 			bedButton2.GetComponent<bedButton2>().PlayerHiding = false;
-			bedButton2.SetActive(value: false);
+			bedButton2.SetActive(false);
 		}
 		if (bedButton3.activeSelf)
 		{
 			bedButton3.GetComponent<bedButton3>().PlayerHiding = false;
-			bedButton3.SetActive(value: false);
+			bedButton3.SetActive(false);
 		}
-		Player.SetActive(value: true);
-		((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
-		((InventoryController)gameController.GetComponent(typeof(InventoryController))).NoObjectText();
+		Player.SetActive(true);
 		((openDoors)DoorHolder.GetComponent(typeof(openDoors))).playerTaken = true;
 		((PickUp)PickUpHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 		playerStop = GameObject.Find("Main Camera");
@@ -141,55 +134,55 @@ public class playerCaughtUnderBed : MonoBehaviour
 		yield return new WaitForSeconds(0.1f);
 		((openDoors)DoorHolder.GetComponent(typeof(openDoors))).playerTaken = false;
 		((PickUp)PickUpHolder.GetComponent(typeof(PickUp))).playerTaken = false;
-		Player.SetActive(value: false);
-		dropButtonHolder.SetActive(value: true);
-		dropButton.SetActive(value: false);
+		Player.SetActive(false);
+		dropButtonHolder.SetActive(true);
+		dropButton.SetActive(false);
 		playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 		Player.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
 		((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).resetMouse();
 		((playerCrawl)crouchButton.GetComponent(typeof(playerCrawl))).standUp();
-		playerInBedCam.SetActive(value: true);
+		playerInBedCam.SetActive(true);
 		Player.transform.position = PlayerStartPos.position;
 		Player.transform.rotation = PlayerStartPos.rotation;
-		Granny.SetActive(value: false);
+		Granny.SetActive(false);
 		Granny.transform.position = GrannyStartPos.position;
-		Granny.SetActive(value: true);
-		crouchButton.SetActive(value: false);
-		optionButton.SetActive(value: false);
-		allBedButtons.SetActive(value: true);
-		bastuSteamHolder.SetActive(value: false);
+		Granny.SetActive(true);
+		crouchButton.SetActive(false);
+		optionButton.SetActive(false);
+		allBedButtons.SetActive(true);
+		bastuSteamHolder.SetActive(false);
 		if (bedCam1Holder.activeSelf)
 		{
 			bedCam1.GetComponent<bedEyes>().lookAtGranny = false;
 			bedCam1.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
-			bedCam1Holder.SetActive(value: false);
+			bedCam1Holder.SetActive(false);
 		}
 		if (bedCam2Holder.activeSelf)
 		{
 			bedCam2.GetComponent<bedEyes2>().lookAtGranny = false;
 			bedCam2.transform.localEulerAngles = new Vector3(0f, 90f, 0f);
-			bedCam2Holder.SetActive(value: false);
+			bedCam2Holder.SetActive(false);
 		}
 		if (bedCam3Holder.activeSelf)
 		{
 			bedCam3.GetComponent<bedEyes3>().lookAtGranny = false;
 			bedCam3.transform.localEulerAngles = new Vector3(0f, 270f, 0f);
-			bedCam3Holder.SetActive(value: false);
+			bedCam3Holder.SetActive(false);
 		}
 		if (bedButton1.activeSelf)
 		{
 			bedButton1.GetComponent<bedButton>().PlayerHiding = false;
-			bedButton1.SetActive(value: false);
+			bedButton1.SetActive(false);
 		}
 		if (bedButton2.activeSelf)
 		{
 			bedButton2.GetComponent<bedButton2>().PlayerHiding = false;
-			bedButton2.SetActive(value: false);
+			bedButton2.SetActive(false);
 		}
 		if (bedButton3.activeSelf)
 		{
 			bedButton3.GetComponent<bedButton3>().PlayerHiding = false;
-			bedButton3.SetActive(value: false);
+			bedButton3.SetActive(false);
 		}
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerGetCaught = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).attackingPlayer = false;

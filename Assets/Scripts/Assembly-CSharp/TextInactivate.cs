@@ -8,6 +8,11 @@ public class TextInactivate : MonoBehaviour
 
 	public float timer;
 
+	public TextInactivate()
+	{
+		timer = 3f;
+	}
+
 	public virtual void Start()
 	{
 		float y = 14.15f;
@@ -35,12 +40,7 @@ public class TextInactivate : MonoBehaviour
 			Vector3 localPosition2 = base.transform.localPosition;
 			localPosition2.y = y2;
 			base.transform.localPosition = localPosition2;
-			base.gameObject.SetActive(value: false);
+			base.gameObject.SetActive(false);
 		}
-	}
-
-	public TextInactivate()
-	{
-		timer = 3f;
 	}
 }

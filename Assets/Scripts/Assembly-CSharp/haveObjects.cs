@@ -64,7 +64,7 @@ public class haveObjects : MonoBehaviour
 		{
 			plankaDoorTag = true;
 			plankaDoorHolder.gameObject.tag = "doorClosed";
-			crowbarBild.SetActive(value: false);
+			crowbarBild.SetActive(false);
 		}
 	}
 }

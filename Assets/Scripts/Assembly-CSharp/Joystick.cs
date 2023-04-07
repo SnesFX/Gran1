@@ -1,9 +1,8 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
-[RequireComponent(typeof(Image))]
+[RequireComponent(typeof(GUITexture))]
 public class Joystick : MonoBehaviour
 {
 	private static Joystick[] joysticks;
@@ -34,7 +33,7 @@ public class Joystick : MonoBehaviour
 
 	private float firstDeltaTime;
 
-	private Image gui;
+	private GUITexture gui;
 
 	private Rect defaultRect;
 
@@ -46,7 +45,7 @@ public class Joystick : MonoBehaviour
 
 	public bool havestopped;
 
-	public Image joystickRing;
+	public GUITexture joystickRing;
 
 	public GameObject footstepScriptHolder;
 
@@ -54,19 +53,26 @@ public class Joystick : MonoBehaviour
 
 	public GameObject joystickCircle;
 
-    private Vector2 defaultPosition;
+	public Joystick()
+	{
+		deadZone = Vector2.zero;
+		lastFingerId = -1;
+		firstDeltaTime = 0.5f;
+		guiBoundary = new Boundary();
+	}
 
-    private Vector2 defaultSize;
+	static Joystick()
+	{
+		tapTimeDelta = 0.3f;
+	}
 
 	public virtual void Start()
 	{
 		footstepScriptHolder = GameObject.Find("Main Camera");
-        gui = GetComponent<Image>();
-        RectTransform rectTransform = gui.rectTransform;
-        defaultPosition = rectTransform.anchoredPosition;
-        defaultSize = rectTransform.sizeDelta;
-        defaultPosition.x += base.transform.position.x * (float)Screen.width;
-        defaultPosition.y += base.transform.position.y * (float)Screen.height;
+		gui = (GUITexture)GetComponent(typeof(GUITexture));
+		defaultRect = gui.pixelInset;
+		defaultRect.x += base.transform.position.x * (float)Screen.width;
+		defaultRect.y += base.transform.position.y * (float)Screen.height;
 		float x = 0f;
 		Vector3 vector = base.transform.position;
 		vector.x = x;
@@ -115,7 +121,7 @@ public class Joystick : MonoBehaviour
 
 	public virtual void Disable()
 	{
-		base.gameObject.SetActive(value: false);
+		base.gameObject.SetActive(false);
 		enumeratedJoysticks = false;
 	}
 
@@ -276,18 +282,5 @@ public class Joystick : MonoBehaviour
 		{
 			position.y = Mathf.Sign(position.y) * (num2 - deadZone.y) / (1f - deadZone.y);
 		}
-	}
-
-	public Joystick()
-	{
-		deadZone = Vector2.zero;
-		lastFingerId = -1;
-		firstDeltaTime = 0.5f;
-		guiBoundary = new Boundary();
-	}
-
-	static Joystick()
-	{
-		tapTimeDelta = 0.3f;
 	}
 }

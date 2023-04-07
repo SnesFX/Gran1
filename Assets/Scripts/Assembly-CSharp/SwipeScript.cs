@@ -56,10 +56,8 @@ public class SwipeScript : MonoBehaviour
 						Debug.Log("Left");
 					}
 				}
-				if (zero.y != 0f)
+				if (zero.y != 0f && !(zero.y > 0f))
 				{
-					_ = zero.y;
-					_ = 0f;
 				}
 				break;
 			}

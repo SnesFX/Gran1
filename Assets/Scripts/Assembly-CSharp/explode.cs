@@ -10,7 +10,7 @@ public class explode : MonoBehaviour
 
 	public virtual void explodeNow()
 	{
-		explosion.SetActive(value: true);
+		explosion.SetActive(true);
 		parent.GetComponent<Renderer>().enabled = false;
 	}
 }

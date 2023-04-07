@@ -4,8 +4,7 @@
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: cogwheelText
   m_Rect:
     serializedVersion: 2
@@ -27,9 +26,8 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 2800000, guid: 13022d62557e25e44831d38bfe34dda3, type: 3}
+    texture: {fileID: 2800000, guid: ba547acfb0808ab419dc794fe145ba9c, type: 3}
     alphaTexture: {fileID: 0}
-    secondaryTextures: []
     m_SubMeshes:
     - serializedVersion: 2
       firstByte: 0
@@ -43,7 +41,7 @@ Sprite:
         m_Extent: {x: 0, y: 0, z: 0}
     m_IndexBuffer: 4c004b004a0049004a004b0047004a00490046004700490048004700460040003f004400450044003f004300420040004100400042003c00400041003f0040003c003d003f003c003e003d003c00360034003a003b003a00340039003800370035003700380036003700350034003600350031003400350032003400310033003200310030002f002e002d002e002f002a002e002d002c002a002d0029002a002c002b002a002900200024002800210025001e0024001e00250028002400250026002800250027002600250020001e002400230022001f0021001f0022001e001f00210020001f001e001d000f001c000d001c000f000e001c000d001a001c000e001b001a000e0017001a001b0018001a0017001900180017001600030015000100150003000200150001001400150002001300150014001200130014000c00130012000f0013000c000e000c00120010000e00120011000e0010000f000c000d000e000d000c000b000a000900080009000a00060009000800070006000800040006000700050006000400000005000400030005000000020000000400030000000100020001000000
     m_VertexData:
-      serializedVersion: 3
+      serializedVersion: 2
       m_VertexCount: 77
       m_Channels:
       - stream: 0
@@ -120,11 +118,10 @@ Sprite:
     serializedVersion: 3
     texture: {fileID: 0}
     alphaTexture: {fileID: 0}
-    secondaryTextures: []
     m_SubMeshes: []
     m_IndexBuffer:
     m_VertexData:
-      serializedVersion: 3
+      serializedVersion: 2
       m_VertexCount: 0
       m_Channels: []
       m_DataSize: 0

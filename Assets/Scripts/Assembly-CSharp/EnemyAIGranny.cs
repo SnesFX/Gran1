@@ -10,8 +10,6 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public Transform grannyEye;
 
-	public GameObject grannyLock;
-
 	public Transform target;
 
 	public Transform bedtargetTemp1;
@@ -236,8 +234,6 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public GameObject bearTrap;
 
-	public GameObject bearTrapOrganic;
-
 	public Transform bearTrapSP;
 
 	public bool droppingBeartrap;
@@ -264,12 +260,6 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public bool hitByCar;
 
-	public bool hitByPepper;
-
-	public bool hitByPepperStart;
-
-	public bool freeze;
-
 	public bool bastuKilled;
 
 	public bool ragdollSpawn;
@@ -277,8 +267,6 @@ public class EnemyAIGranny : MonoBehaviour
 	public Transform grannyRagdoll;
 
 	public Transform grannyForceRagdoll;
-
-	public Transform grannyFreezedoll;
 
 	public GameObject grannyDisaper;
 
@@ -322,15 +310,9 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public float grannyEyeColorTimer;
 
-	public float blindTimer = 30f;
-
-	public bool grannyPepperReact;
-
 	public GameObject grannyEyeColor;
 
 	public GameObject teddyMusicHolder;
-
-	public GameObject GrannyHuntMusicHolder;
 
 	public GameObject startCarButton;
 
@@ -346,19 +328,18 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public GameObject ObjectHolder;
 
-	public GameObject grannyCloseTrigger;
+	public EnemyAIGranny()
+	{
+		offScreenDot = 0.8f;
+		waypointStart = true;
+		timerOnOff = true;
+	}
 
 	public virtual void Start()
 	{
 		hitByArrow = false;
 		hitByGun = false;
 		hitByCar = false;
-		hitByPepper = false;
-		hitByPepperStart = false;
-		freeze = false;
-		grannyLock.SetActive(value: false);
-		grannyPepperReact = false;
-		GrannyGonnaSmack = false;
 		bastuKilled = false;
 		grannyStandBesideCar = false;
 		playerInPrison = false;
@@ -463,7 +444,7 @@ public class EnemyAIGranny : MonoBehaviour
 			grannysVarSpeed = 5f;
 			grannysAnimSpeed = 2.7f;
 		}
-		else if (PlayerPrefs.GetInt("DiffData") == 3 || PlayerPrefs.GetInt("DiffData") == 5)
+		else if (PlayerPrefs.GetInt("DiffData") == 3)
 		{
 			grannysVarSpeed = 7f;
 			grannysAnimSpeed = 3.3f;
@@ -472,10 +453,15 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public virtual void FixedUpdate()
 	{
+		if (playerGetCaught)
+		{
+			Cursor.visible = false;
+			Screen.lockCursor = true;
+		}
 		RaycastHit hitInfo = default(RaycastHit);
 		if (PlayerPrefs.GetInt("DiffData") != 4)
 		{
-			if (playerHaveTeddy && !freeze)
+			if (playerHaveTeddy)
 			{
 				grannyEyeColor.gameObject.GetComponent<Renderer>().material.color = new Color(0.2264151f, 0f, 0f);
 				grannyEyeColorTimerOn = true;
@@ -489,12 +475,12 @@ public class EnemyAIGranny : MonoBehaviour
 				{
 					grannyEyeColorTimerOn = false;
 					grannyEyeColorTimer = 0f;
-					grannyEyeColor.gameObject.GetComponent<Renderer>().material.color = new Color(0.5882353f, 0.5882353f, 0.5882353f);
+					grannyEyeColor.gameObject.GetComponent<Renderer>().material.color = new Color(0.1509434f, 0.1509434f, 0.1509434f);
 					((fadeUpDownTeddyMusic)teddyMusicHolder.GetComponent(typeof(fadeUpDownTeddyMusic))).startFade = false;
 				}
 			}
 		}
-		if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+		if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 		{
 			int num = 0;
 			Quaternion rotation = base.transform.rotation;
@@ -513,11 +499,11 @@ public class EnemyAIGranny : MonoBehaviour
 		}
 		if (!playerGetCaught)
 		{
-			if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze && target == null)
+			if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && target == null)
 			{
 				target = nav1;
 			}
-			if (!grannyIsFollow && !grannyLookUnderBed && !playerGetCaught && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+			if (!grannyIsFollow && !grannyLookUnderBed && !playerGetCaught && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 			{
 				safeTimer += Time.deltaTime;
 				if (safeTimer >= 80f)
@@ -536,7 +522,6 @@ public class EnemyAIGranny : MonoBehaviour
 			{
 				if (hitByArrow)
 				{
-					((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).grannyDead = true;
 					if (!ragdollSpawn)
 					{
 						ragdollSpawn = true;
@@ -545,50 +530,28 @@ public class EnemyAIGranny : MonoBehaviour
 						animationHolder.GetComponent<Animation>().CrossFade("arrowHit");
 						animationHolder.GetComponent<Animation>()["arrowHit"].speed = 0.8f;
 						StartCoroutine(grannyHitByArrow());
-						huntPlayer = false;
 					}
 				}
 				else if (hitByGun)
 				{
-					((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).grannyDead = true;
 					if (!ragdollSpawn)
 					{
 						ragdollSpawn = true;
 						navComponent.speed = 0f;
 						grannyHitByGun();
-						huntPlayer = false;
 					}
 				}
-				else if (hitByCar)
+				else if (hitByCar && !ragdollSpawn)
 				{
-					((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).grannyDead = true;
-					if (!ragdollSpawn)
-					{
-						ragdollSpawn = true;
-						navComponent.speed = 0f;
-						base.gameObject.tag = "Untagged";
-						grannyHitByCar();
-						huntPlayer = false;
-					}
-				}
-				else if (freeze)
-				{
-					((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).grannyDead = true;
-					if (!ragdollSpawn)
-					{
-						ragdollSpawn = true;
-						navComponent.speed = 0f;
-						base.gameObject.tag = "Untagged";
-						animationHolder.GetComponent<Animation>().CrossFade("freezeTrap");
-						animationHolder.GetComponent<Animation>()["freezeTrap"].speed = 1f;
-						StartCoroutine(grannyFreeze());
-						huntPlayer = false;
-					}
+					ragdollSpawn = true;
+					navComponent.speed = 0f;
+					base.gameObject.tag = "Untagged";
+					grannyHitByCar();
 				}
 			}
 			if (navComponent.velocity != Vector3.zero)
 			{
-				if (!grannyLookUnderBed && !playerGetCaught && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+				if (!grannyLookUnderBed && !playerGetCaught && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 				{
 					stopWalk = false;
 					GrannyMoving = true;
@@ -612,7 +575,7 @@ public class EnemyAIGranny : MonoBehaviour
 					}
 				}
 			}
-			else if (navComponent.velocity == Vector3.zero && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze && !grannyLookUnderBed)
+			else if (navComponent.velocity == Vector3.zero && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !grannyLookUnderBed)
 			{
 				startWalk = false;
 				GrannyMoving = false;
@@ -642,7 +605,7 @@ public class EnemyAIGranny : MonoBehaviour
 					}
 				}
 			}
-			if ((bool)target && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+			if ((bool)target && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 			{
 				navComponent.destination = target.position;
 				if (!seePlayer && !grannyIsFollow && !GrannySearching)
@@ -690,15 +653,14 @@ public class EnemyAIGranny : MonoBehaviour
 					else if (distanceWaypoint > 3f && !waypointStop)
 					{
 						waypointStart = true;
-						waypointStop = false;
 					}
 				}
 			}
-			if (waypointStop && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze && !startTimerSearch && (!grannyHearObject || !grannyHearPlayer))
+			if (waypointStop && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !startTimerSearch && (!grannyHearObject || !grannyHearPlayer))
 			{
 				timer += Time.deltaTime;
 			}
-			if (timer >= 10f && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+			if (timer >= 10f && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 			{
 				waypointStop = false;
 				waypointStart = true;
@@ -714,7 +676,7 @@ public class EnemyAIGranny : MonoBehaviour
 			}
 			if (seePlayer)
 			{
-				if (!grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+				if (!grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 				{
 					grannyHearPlayer = false;
 					grannyHearObject = false;
@@ -723,10 +685,6 @@ public class EnemyAIGranny : MonoBehaviour
 					if (!huntPlayer)
 					{
 						huntPlayer = true;
-						if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-						{
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).startFade = true;
-						}
 						if (!grannyIsFollow)
 						{
 							grannyIsFollow = true;
@@ -737,7 +695,7 @@ public class EnemyAIGranny : MonoBehaviour
 			}
 			else if (playerHaveTeddy)
 			{
-				if (PlayerPrefs.GetInt("DiffData") != 4 && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+				if (PlayerPrefs.GetInt("DiffData") != 4 && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 				{
 					grannyHearPlayer = false;
 					grannyHearObject = false;
@@ -746,10 +704,6 @@ public class EnemyAIGranny : MonoBehaviour
 					if (!huntPlayer)
 					{
 						huntPlayer = true;
-						if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-						{
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).startFade = true;
-						}
 						if (!grannyIsFollow)
 						{
 							grannyIsFollow = true;
@@ -758,7 +712,7 @@ public class EnemyAIGranny : MonoBehaviour
 					}
 				}
 			}
-			else if (playerStartCar && PlayerPrefs.GetInt("DiffData") != 4 && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+			else if (playerStartCar && PlayerPrefs.GetInt("DiffData") != 4 && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 			{
 				grannyHearPlayer = false;
 				grannyHearObject = false;
@@ -768,10 +722,6 @@ public class EnemyAIGranny : MonoBehaviour
 				if (!huntPlayer)
 				{
 					huntPlayer = true;
-					if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-					{
-						((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).startFade = true;
-					}
 					if (!grannyIsFollow)
 					{
 						grannyIsFollow = true;
@@ -779,7 +729,7 @@ public class EnemyAIGranny : MonoBehaviour
 					}
 				}
 			}
-			if (grannyIsFollow && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+			if (grannyIsFollow && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 			{
 				if (!seePlayer)
 				{
@@ -792,7 +742,7 @@ public class EnemyAIGranny : MonoBehaviour
 					safeTimer = 0f;
 				}
 			}
-			if (seePlayerTimer && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+			if (seePlayerTimer && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 			{
 				timerSee += Time.deltaTime;
 				if (timerSee >= 6f)
@@ -800,17 +750,13 @@ public class EnemyAIGranny : MonoBehaviour
 					seePlayerTimer = false;
 					grannyIsFollow = false;
 					huntPlayer = false;
-					if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-					{
-						((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).startFade = false;
-					}
 					timerSee = 0f;
 					safeTimer = 0f;
 					startTimerSearch = true;
 					GrannySearching = true;
 				}
 			}
-			if (startTimerSearch && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+			if (startTimerSearch && !grannyLookUnderBed && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 			{
 				if (GrannySearching)
 				{
@@ -867,10 +813,10 @@ public class EnemyAIGranny : MonoBehaviour
 			if (PlayerPrefs.GetInt("DiffData") != 4)
 			{
 				Vector3 direction = doorRay.transform.TransformDirection(Vector3.forward);
-				doorRay.transform.TransformDirection(Vector3.down);
+				Vector3 vector = doorRay.transform.TransformDirection(Vector3.down);
 				if (Physics.Raycast(doorRay.transform.position, direction, out hitInfo, 3f))
 				{
-					if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+					if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 					{
 						Debug.DrawRay(doorRay.transform.position, base.transform.forward, Color.green);
 						if (hitInfo.collider.gameObject.tag == "innerdoorClosed")
@@ -961,77 +907,6 @@ public class EnemyAIGranny : MonoBehaviour
 								if (seeClosedDoorTimer >= 4f)
 								{
 									hitInfo.collider.gameObject.GetComponent<Animation>().Play("InnerdoorOpen");
-									if (!grannyIsFollow)
-									{
-										navComponent.speed = 1.2f;
-										if (navComponent.velocity != Vector3.zero)
-										{
-											animationHolder.GetComponent<Animation>().CrossFade("Walk");
-										}
-										else
-										{
-											animationHolder.GetComponent<Animation>().CrossFade("idle");
-										}
-										animationHolder.GetComponent<Animation>()["Walk"].speed = 0.9f;
-									}
-									else
-									{
-										navComponent.speed = grannysVarSpeed;
-										if (navComponent.velocity != Vector3.zero)
-										{
-											animationHolder.GetComponent<Animation>().CrossFade("Walk");
-										}
-										else
-										{
-											animationHolder.GetComponent<Animation>().CrossFade("idle");
-										}
-										animationHolder.GetComponent<Animation>()["Walk"].speed = grannysAnimSpeed;
-									}
-									if (grannySeeLockedDoor && seeClosedDoorTimer >= 10f)
-									{
-										grannySeeLockedDoor = false;
-										stopSeeLockedDoor = true;
-										seeClosedDoorTimer = 0f;
-										grannyHearPlayer = false;
-										grannyHearObject = false;
-										number = UnityEngine.Random.Range(1, 33);
-										newNav();
-									}
-								}
-							}
-						}
-						else if (hitInfo.collider.gameObject.tag == "steeldoorLocked")
-						{
-							if (!stopSeeLockedDoor)
-							{
-								grannySeeLockedDoor = true;
-								seeClosedDoorTimer += Time.deltaTime;
-								if (grannySeeLockedDoor && !seePlayer)
-								{
-									if (playerHaveTeddy)
-									{
-										animationHolder.GetComponent<Animation>().CrossFade("idle");
-									}
-									else if (playerStartCar)
-									{
-										animationHolder.GetComponent<Animation>().CrossFade("idle");
-									}
-									else
-									{
-										navComponent.speed = 0f;
-									}
-								}
-								if (navComponent.velocity == Vector3.zero)
-								{
-									animationHolder.GetComponent<Animation>().CrossFade("idle");
-									navComponent.speed = 0f;
-								}
-								if (seeClosedDoorTimer <= 2f)
-								{
-									hitInfo.collider.gameObject.GetComponent<Animation>().Play("InnerdoorLocked");
-								}
-								if (seeClosedDoorTimer >= 4f)
-								{
 									if (!grannyIsFollow)
 									{
 										navComponent.speed = 1.2f;
@@ -1272,16 +1147,16 @@ public class EnemyAIGranny : MonoBehaviour
 					grannySeeDoor = false;
 					grannySeeLockedDoor = false;
 					stopSeeLockedDoor = false;
-					if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze && navComponent.velocity != Vector3.zero)
+					if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && navComponent.velocity != Vector3.zero)
 					{
 						animationHolder.GetComponent<Animation>().CrossFade("Walk");
 					}
 				}
 			}
-			Vector3 vector = new Vector3(0f, -1f, 0f);
-			if (Physics.Raycast(checkGround.transform.position, vector, out hitInfo, 5f))
+			Vector3 vector2 = new Vector3(0f, -1f, 0f);
+			if (Physics.Raycast(checkGround.transform.position, vector2, out hitInfo, 5f))
 			{
-				Debug.DrawRay(checkGround.transform.position, vector, Color.yellow);
+				Debug.DrawRay(checkGround.transform.position, vector2, Color.yellow);
 				if (hitInfo.collider.gameObject.name == "StairColliderC")
 				{
 					if (!seeStairs)
@@ -1306,14 +1181,14 @@ public class EnemyAIGranny : MonoBehaviour
 				}
 			}
 		}
-		if (distance < attackDistance && seePlayer && !grannyLookUnderBed && !playerHidingInCoffin && !playerHidingInCoffinBackyard && !playerHidingInCar && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze && !playerInHole && !playerGetCaught)
+		if (distance < attackDistance && seePlayer && !grannyLookUnderBed && !playerHidingInCoffin && !playerHidingInCoffinBackyard && !playerHidingInCar && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !playerInHole && !playerGetCaught)
 		{
 			playerGetCaught = true;
 			attackingPlayer = true;
 			StartCoroutine(Playercaught());
 			base.transform.LookAt(playerPos);
 		}
-		if (!playerGetCaught && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+		if (!playerGetCaught && !hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 		{
 			if (distanceWaypoint < 4f && playerHidingUnderBed && grannyIsFollow)
 			{
@@ -1329,12 +1204,12 @@ public class EnemyAIGranny : MonoBehaviour
 				}
 				if (timerBed >= 3f && playerHidingUnderBed)
 				{
-					optionButton.SetActive(value: false);
+					optionButton.SetActive(false);
 					animationHolder.GetComponent<Animation>().CrossFade("lookBed");
 					grannyLookUnderBed = true;
 					timerBed = 0f;
 					safeTimer = 0f;
-					allBedButtons.SetActive(value: false);
+					allBedButtons.SetActive(false);
 					if (hidingUnderBed1)
 					{
 						((bedEyes)bedCam1.GetComponent(typeof(bedEyes))).lookAtGranny = true;
@@ -1380,10 +1255,10 @@ public class EnemyAIGranny : MonoBehaviour
 				}
 				if (timerBed >= 3f && playerHidingInCoffin)
 				{
-					optionButton.SetActive(value: false);
+					optionButton.SetActive(false);
 					timerBed = 0f;
 					safeTimer = 0f;
-					allBedButtons.SetActive(value: false);
+					allBedButtons.SetActive(false);
 					StartCoroutine(Playercaught());
 				}
 			}
@@ -1401,38 +1276,35 @@ public class EnemyAIGranny : MonoBehaviour
 				}
 				if (timerBed >= 3f && playerHidingInCoffinBackyard)
 				{
-					optionButton.SetActive(value: false);
+					optionButton.SetActive(false);
 					timerBed = 0f;
 					safeTimer = 0f;
-					allBedButtons.SetActive(value: false);
+					allBedButtons.SetActive(false);
 					StartCoroutine(Playercaught());
 				}
 			}
 			else if (distanceWaypoint < 4f && playerHidingInCar && grannyIsFollow && grannyStandBesideCar)
 			{
-				if (!((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).carMoving)
+				navComponent.speed = 0f;
+				facePlayerBed();
+				if (navComponent.velocity != Vector3.zero)
 				{
-					navComponent.speed = 0f;
-					facePlayerBed();
-					if (navComponent.velocity != Vector3.zero)
-					{
-						animationHolder.GetComponent<Animation>().CrossFade("idle");
-					}
-					if (!grannyLookUnderBed)
-					{
-						timerBed += Time.deltaTime;
-					}
-					if (timerBed >= 3f && playerHidingInCar)
-					{
-						optionButton.SetActive(value: false);
-						timerBed = 0f;
-						safeTimer = 0f;
-						allBedButtons.SetActive(value: false);
-						startCarButton.SetActive(value: false);
-						forwardButton.SetActive(value: false);
-						reverseButton.SetActive(value: false);
-						StartCoroutine(Playercaught());
-					}
+					animationHolder.GetComponent<Animation>().CrossFade("idle");
+				}
+				if (!grannyLookUnderBed)
+				{
+					timerBed += Time.deltaTime;
+				}
+				if (timerBed >= 3f && playerHidingInCar)
+				{
+					optionButton.SetActive(false);
+					timerBed = 0f;
+					safeTimer = 0f;
+					allBedButtons.SetActive(false);
+					startCarButton.SetActive(false);
+					forwardButton.SetActive(false);
+					reverseButton.SetActive(false);
+					StartCoroutine(Playercaught());
 				}
 			}
 			else if (!playerHidingUnderBed && !playerHidingInCoffin && !playerHidingInCoffinBackyard && !playerHidingInCar && grannyIsFollow)
@@ -1521,12 +1393,12 @@ public class EnemyAIGranny : MonoBehaviour
 		}
 		if (playerNearGranny && !playerGetCaught && !playerHiding)
 		{
-			Vector3 vector2 = playerPos.position - base.transform.position;
+			Vector3 vector3 = playerPos.position - base.transform.position;
 			float maxRadiansDelta = speed * Time.deltaTime;
-			Vector3 forward = Vector3.RotateTowards(base.transform.forward, vector2, maxRadiansDelta, 0f);
+			Vector3 forward = Vector3.RotateTowards(base.transform.forward, vector3, maxRadiansDelta, 0f);
 			base.transform.rotation = Quaternion.LookRotation(forward);
 		}
-		if (grannyInBastu && bastuswitchOn && bastuBomNere && !freeze)
+		if (grannyInBastu && bastuswitchOn && bastuBomNere)
 		{
 			bastuTimer -= Time.deltaTime;
 			bastuDoorTimer -= Time.deltaTime;
@@ -1543,7 +1415,7 @@ public class EnemyAIGranny : MonoBehaviour
 				bastuDoorCarv.carving = !base.enabled;
 			}
 		}
-		if (grannyInBastu && !bastuswitchOn && bastuBomNere && !freeze)
+		if (grannyInBastu && !bastuswitchOn && bastuBomNere)
 		{
 			if (!bastuTimeOff)
 			{
@@ -1570,59 +1442,6 @@ public class EnemyAIGranny : MonoBehaviour
 		{
 			bastuDoorTimer = 20f;
 		}
-		if (hitByPepper && !playerGetCaught)
-		{
-			huntPlayer = false;
-			if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-			{
-				((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).startFade = false;
-			}
-			grannyLock.SetActive(value: true);
-			seePlayer = false;
-			grannyIsFollow = false;
-			playerNearGranny = false;
-			base.gameObject.GetComponent<Collider>().enabled = false;
-			((EnemyEye)grannyEye.GetComponent(typeof(EnemyEye))).enabled = false;
-			blindTimer -= Time.deltaTime;
-			if (blindTimer < 0f)
-			{
-				base.gameObject.GetComponent<Collider>().enabled = true;
-				((EnemyEye)grannyEye.GetComponent(typeof(EnemyEye))).enabled = true;
-				grannyCloseTrigger.SetActive(value: false);
-				grannyLock.SetActive(value: false);
-				hitByPepper = false;
-				blindTimer = 30f;
-				grannyPepperReact = false;
-			}
-			if (!grannyPepperReact)
-			{
-				grannyPepperReact = true;
-				grannyHitByPepper();
-			}
-		}
-		else if (playerGetCaught && hitByPepper)
-		{
-			grannyLock.SetActive(value: false);
-			base.gameObject.GetComponent<Collider>().enabled = true;
-			((EnemyEye)grannyEye.GetComponent(typeof(EnemyEye))).enabled = true;
-			blindTimer = 30f;
-		}
-		if (hitByPepperStart && !animationHolder.GetComponent<Animation>().IsPlaying("pepperHit") && !animationHolder.GetComponent<Animation>().IsPlaying("pepperHit"))
-		{
-			hitByPepperStart = false;
-			pepperAnimDone();
-		}
-	}
-
-	public virtual void grannyHitByPepper()
-	{
-		navComponent.speed = 0f;
-		animationHolder.GetComponent<Animation>().CrossFade("pepperHit");
-	}
-
-	public virtual void pepperAnimDone()
-	{
-		newNav();
 	}
 
 	public virtual IEnumerator grannyHitByArrow()
@@ -1631,7 +1450,7 @@ public class EnemyAIGranny : MonoBehaviour
 		if (!((playerDead)gameController.GetComponent(typeof(playerDead))).endSceneRunning)
 		{
 			UnityEngine.Object.Instantiate(grannyRagdoll, base.transform.position, base.transform.rotation);
-			grannyDisaper.SetActive(value: false);
+			grannyDisaper.SetActive(false);
 			if (PlayerPrefs.GetInt("DiffData") == 0)
 			{
 				((GrannyGoneText)grannyGoneNormalText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
@@ -1644,7 +1463,7 @@ public class EnemyAIGranny : MonoBehaviour
 			{
 				((GrannyGoneText)grannyGoneHardText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
 			}
-			else if (PlayerPrefs.GetInt("DiffData") == 3 || PlayerPrefs.GetInt("DiffData") == 5)
+			else if (PlayerPrefs.GetInt("DiffData") == 3)
 			{
 				((GrannyGoneText)grannyGoneExtremeText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
 			}
@@ -1656,7 +1475,7 @@ public class EnemyAIGranny : MonoBehaviour
 		if (!((playerDead)gameController.GetComponent(typeof(playerDead))).endSceneRunning)
 		{
 			UnityEngine.Object.Instantiate(grannyRagdoll, base.transform.position, base.transform.rotation);
-			grannyDisaper.SetActive(value: false);
+			grannyDisaper.SetActive(false);
 			if (PlayerPrefs.GetInt("DiffData") == 0)
 			{
 				((GrannyGoneText)grannyGoneNormalText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
@@ -1669,7 +1488,7 @@ public class EnemyAIGranny : MonoBehaviour
 			{
 				((GrannyGoneText)grannyGoneHardText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
 			}
-			else if (PlayerPrefs.GetInt("DiffData") == 3 || PlayerPrefs.GetInt("DiffData") == 5)
+			else if (PlayerPrefs.GetInt("DiffData") == 3)
 			{
 				((GrannyGoneText)grannyGoneExtremeText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
 			}
@@ -1681,7 +1500,7 @@ public class EnemyAIGranny : MonoBehaviour
 		if (!((playerDead)gameController.GetComponent(typeof(playerDead))).endSceneRunning)
 		{
 			UnityEngine.Object.Instantiate(grannyForceRagdoll, base.transform.position, base.transform.rotation);
-			grannyDisaper.SetActive(value: false);
+			grannyDisaper.SetActive(false);
 			if (PlayerPrefs.GetInt("DiffData") == 0)
 			{
 				((GrannyGoneText)grannyGoneNormalShotText.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
@@ -1694,35 +1513,9 @@ public class EnemyAIGranny : MonoBehaviour
 			{
 				((GrannyGoneText)grannyGoneHardShotText.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
 			}
-			else if (PlayerPrefs.GetInt("DiffData") == 3 || PlayerPrefs.GetInt("DiffData") == 5)
+			else if (PlayerPrefs.GetInt("DiffData") == 3)
 			{
 				((GrannyGoneText)grannyGoneExtremeShotText.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
-			}
-		}
-	}
-
-	public virtual IEnumerator grannyFreeze()
-	{
-		yield return new WaitForSeconds(2.5f);
-		if (!((playerDead)gameController.GetComponent(typeof(playerDead))).endSceneRunning)
-		{
-			UnityEngine.Object.Instantiate(grannyFreezedoll, base.transform.position, base.transform.rotation);
-			grannyDisaper.SetActive(value: false);
-			if (PlayerPrefs.GetInt("DiffData") == 0)
-			{
-				((GrannyGoneText)grannyGoneNormalText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
-			}
-			else if (PlayerPrefs.GetInt("DiffData") == 1)
-			{
-				((GrannyGoneText)grannyGoneEasyText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
-			}
-			else if (PlayerPrefs.GetInt("DiffData") == 2)
-			{
-				((GrannyGoneText)grannyGoneHardText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
-			}
-			else if (PlayerPrefs.GetInt("DiffData") == 3 || PlayerPrefs.GetInt("DiffData") == 5)
-			{
-				((GrannyGoneText)grannyGoneExtremeText1.GetComponent(typeof(GrannyGoneText))).textOnOff = true;
 			}
 		}
 	}
@@ -1730,19 +1523,12 @@ public class EnemyAIGranny : MonoBehaviour
 	public virtual IEnumerator dropBearTrap()
 	{
 		yield return new WaitForSeconds(10f);
-		if (!grannyIsFollow && !hitByArrow && !hitByGun && !grannyInBastu && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+		if (!grannyIsFollow && !hitByArrow && !hitByGun && !grannyInBastu && !bastuKilled && !hitByCar)
 		{
 			navComponent.speed = 0f;
 			droppingBeartrap = true;
 			yield return new WaitForSeconds(1f);
-			if (PlayerPrefs.GetInt("NightMareOnOff") == 0)
-			{
-				UnityEngine.Object.Instantiate(bearTrap, bearTrapSP.position, bearTrapSP.rotation);
-			}
-			else
-			{
-				UnityEngine.Object.Instantiate(bearTrapOrganic, bearTrapSP.position, bearTrapSP.rotation);
-			}
+			UnityEngine.Object.Instantiate(bearTrap, bearTrapSP.position, bearTrapSP.rotation);
 			yield return new WaitForSeconds(1f);
 			droppingBeartrap = false;
 			navComponent.speed = 1.2f;
@@ -1759,7 +1545,7 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public virtual void OnTriggerStay(Collider other)
 	{
-		if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze && other.gameObject.tag == "Player" && !playerHiding)
+		if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && other.gameObject.tag == "Player" && !playerHiding)
 		{
 			playerNearGranny = true;
 			target = player;
@@ -1777,7 +1563,7 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public virtual void GrannyDecisions()
 	{
-		if (hitByArrow || hitByGun || bastuKilled || hitByCar || hitByPepperStart || freeze)
+		if (hitByArrow || hitByGun || bastuKilled || hitByCar)
 		{
 			return;
 		}
@@ -1800,7 +1586,7 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public virtual void facePlayer()
 	{
-		if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+		if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 		{
 			Vector3 vector = target.position - base.transform.position;
 			float maxRadiansDelta = speed * Time.deltaTime;
@@ -1858,7 +1644,7 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public virtual IEnumerator Playercaught()
 	{
-		if (hitByArrow || hitByGun || bastuKilled || hitByCar || hitByPepperStart || freeze || playerInHole)
+		if (hitByArrow || hitByGun || bastuKilled || hitByCar || playerInHole)
 		{
 			yield break;
 		}
@@ -1869,95 +1655,68 @@ public class EnemyAIGranny : MonoBehaviour
 				if (playerHidingInCoffin)
 				{
 					player.transform.position = PlayerCoffinPos.position;
-					Player.SetActive(value: true);
-					coffinHead1.SetActive(value: false);
+					Player.SetActive(true);
+					coffinHead1.SetActive(false);
 					coffinLock.transform.localEulerAngles = new Vector3(-153.846f, 0f, 0f);
 					navComponent.speed = 0f;
 					if (!dontHitPlayer)
 					{
 						((playerCrawl)playerHukaKnapp.GetComponent(typeof(playerCrawl))).standUp();
-						playerHukaKnappParent.SetActive(value: false);
+						playerHukaKnappParent.SetActive(false);
 						animationHolder.GetComponent<Animation>().CrossFade("Hit");
 						((playerCaught)player.GetComponent(typeof(playerCaught))).startFOV = true;
 						((playerCaught)player.GetComponent(typeof(playerCaught))).grannyTakePlayer = true;
-						if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-						{
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).grannySmackPlayer = true;
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).playerCaught = true;
-						}
 						yield return new WaitForSeconds(0.6f);
 						yield return new WaitForSeconds(0.3f);
 						((playerInBeartrap)gameController.GetComponent(typeof(playerInBeartrap))).playerHit();
 						GrannyGonnaSmack = false;
-					}
-					else
-					{
-						animationHolder.GetComponent<Animation>().CrossFade("idle");
 					}
 				}
 				else if (playerHidingInCoffinBackyard)
 				{
 					player.transform.position = PlayerCoffinBYPos.position;
-					Player.SetActive(value: true);
-					coffinHead2.SetActive(value: false);
+					Player.SetActive(true);
+					coffinHead2.SetActive(false);
 					coffinLockBY.transform.localEulerAngles = new Vector3(165.669f, 0f, 0f);
 					navComponent.speed = 0f;
 					if (!dontHitPlayer)
 					{
 						((playerCrawl)playerHukaKnapp.GetComponent(typeof(playerCrawl))).standUp();
-						playerHukaKnappParent.SetActive(value: false);
+						playerHukaKnappParent.SetActive(false);
 						animationHolder.GetComponent<Animation>().CrossFade("Hit");
 						((playerCaught)player.GetComponent(typeof(playerCaught))).startFOV = true;
 						((playerCaught)player.GetComponent(typeof(playerCaught))).grannyTakePlayer = true;
-						if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-						{
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).grannySmackPlayer = true;
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).playerCaught = true;
-						}
 						yield return new WaitForSeconds(0.6f);
 						yield return new WaitForSeconds(0.3f);
 						((playerInBeartrap)gameController.GetComponent(typeof(playerInBeartrap))).playerHit();
 						GrannyGonnaSmack = false;
-					}
-					else
-					{
-						animationHolder.GetComponent<Animation>().CrossFade("idle");
 					}
 				}
 				else if (playerHidingInCar)
 				{
 					player.transform.position = PlayerCarPos.position;
-					Player.SetActive(value: true);
-					carHead.SetActive(value: false);
+					Player.SetActive(true);
+					carHead.SetActive(false);
 					navComponent.speed = 0f;
 					if (!dontHitPlayer)
 					{
 						((playerCrawl)playerHukaKnapp.GetComponent(typeof(playerCrawl))).standUp();
-						playerHukaKnappParent.SetActive(value: false);
+						playerHukaKnappParent.SetActive(false);
 						animationHolder.GetComponent<Animation>().CrossFade("Hit");
 						((playerCaught)player.GetComponent(typeof(playerCaught))).startFOV = true;
 						((playerCaught)player.GetComponent(typeof(playerCaught))).grannyTakePlayer = true;
 						((soundEffects)playerSounds.GetComponent(typeof(soundEffects))).CarOut();
-						if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-						{
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).grannySmackPlayer = true;
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).playerCaught = true;
-						}
 						playerStartCar = false;
-						engineOnSound.SetActive(value: false);
-						engineOffSound.SetActive(value: true);
-						engineStartSound.SetActive(value: false);
+						engineOnSound.SetActive(false);
+						engineOffSound.SetActive(true);
+						engineStartSound.SetActive(false);
 						grannyStandBesideCar = false;
-						ObjectHolder.SetActive(value: true);
+						ObjectHolder.SetActive(true);
 						yield return new WaitForSeconds(0.6f);
 						yield return new WaitForSeconds(0.3f);
 						((playerInBeartrap)gameController.GetComponent(typeof(playerInBeartrap))).playerHit();
 						GrannyGonnaSmack = false;
-						engineOffSound.SetActive(value: false);
-					}
-					else
-					{
-						animationHolder.GetComponent<Animation>().CrossFade("idle");
+						engineOffSound.SetActive(false);
 					}
 				}
 				else
@@ -1968,15 +1727,10 @@ public class EnemyAIGranny : MonoBehaviour
 					if (!dontHitPlayer)
 					{
 						((playerCrawl)playerHukaKnapp.GetComponent(typeof(playerCrawl))).standUp();
-						playerHukaKnappParent.SetActive(value: false);
+						playerHukaKnappParent.SetActive(false);
 						animationHolder.GetComponent<Animation>().CrossFade("Hit");
 						((playerCaught)player.GetComponent(typeof(playerCaught))).startFOV = true;
 						((playerCaught)player.GetComponent(typeof(playerCaught))).grannyTakePlayer = true;
-						if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-						{
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).grannySmackPlayer = true;
-							((fadeUpDownGrannyHunt)GrannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).playerCaught = true;
-						}
 						if (Spider.activeSelf)
 						{
 							((spiderControll)Spider.GetComponent(typeof(spiderControll))).grannyCaughtPlayer();
@@ -1986,17 +1740,13 @@ public class EnemyAIGranny : MonoBehaviour
 						yield return new WaitForSeconds(0.3f);
 						((playerInBeartrap)gameController.GetComponent(typeof(playerInBeartrap))).playerHit();
 					}
-					else
-					{
-						animationHolder.GetComponent<Animation>().CrossFade("idle");
-					}
 				}
 			}
 		}
 		else if (!playerHidingUnderBed)
 		{
 			((playerCrawl)playerHukaKnapp.GetComponent(typeof(playerCrawl))).standUp();
-			playerHukaKnappParent.SetActive(value: false);
+			playerHukaKnappParent.SetActive(false);
 			if (navComponent.velocity == Vector3.zero)
 			{
 				animationHolder.GetComponent<Animation>().CrossFade("idle");
@@ -2010,7 +1760,7 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public virtual void followPlayer()
 	{
-		if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar && !hitByPepperStart && !freeze)
+		if (!hitByArrow && !hitByGun && !bastuKilled && !hitByCar)
 		{
 			droppingBeartrap = false;
 			if (!grannySeeDoor && !grannySeeLockedDoor)
@@ -2036,7 +1786,7 @@ public class EnemyAIGranny : MonoBehaviour
 
 	public virtual void newNav()
 	{
-		if (hitByArrow || hitByGun || bastuKilled || hitByCar || hitByPepperStart || freeze)
+		if (hitByArrow || hitByGun || bastuKilled || hitByCar)
 		{
 			return;
 		}
@@ -2133,12 +1883,5 @@ public class EnemyAIGranny : MonoBehaviour
 	{
 		yield return new WaitForSeconds(15f);
 		StartCoroutine(((furnitureControlls)gameController.GetComponent(typeof(furnitureControlls))).cleanUp());
-	}
-
-	public EnemyAIGranny()
-	{
-		offScreenDot = 0.8f;
-		waypointStart = true;
-		timerOnOff = true;
 	}
 }

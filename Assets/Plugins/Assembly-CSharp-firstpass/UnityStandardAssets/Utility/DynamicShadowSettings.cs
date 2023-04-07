@@ -35,7 +35,8 @@ namespace UnityStandardAssets.Utility
 		{
 			Ray ray = new Ray(Camera.main.transform.position, -Vector3.up);
 			float num = base.transform.position.y;
-			if (Physics.Raycast(ray, out var hitInfo))
+			RaycastHit hitInfo;
+			if (Physics.Raycast(ray, out hitInfo))
 			{
 				num = hitInfo.distance;
 			}

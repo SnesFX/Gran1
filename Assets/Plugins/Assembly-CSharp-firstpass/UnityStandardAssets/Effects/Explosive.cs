@@ -27,14 +27,18 @@ namespace UnityStandardAssets.Effects
 
 		private IEnumerator OnCollisionEnter(Collision col)
 		{
-			if (base.enabled && col.contacts.Length != 0 && (Vector3.Project(col.relativeVelocity, col.contacts[0].normal).magnitude > detonationImpactVelocity || m_Exploded) && !m_Exploded)
+			if (base.enabled && col.contacts.Length > 0)
 			{
-				Object.Instantiate(explosionPrefab, col.contacts[0].point, Quaternion.LookRotation(col.contacts[0].normal));
-				m_Exploded = true;
-				SendMessage("Immobilize");
-				if (reset)
+				float magnitude = Vector3.Project(col.relativeVelocity, col.contacts[0].normal).magnitude;
+				if ((magnitude > detonationImpactVelocity || m_Exploded) && !m_Exploded)
 				{
-					m_ObjectResetter.DelayedReset(resetTimeDelay);
+					Object.Instantiate(explosionPrefab, col.contacts[0].point, Quaternion.LookRotation(col.contacts[0].normal));
+					m_Exploded = true;
+					SendMessage("Immobilize");
+					if (reset)
+					{
+						m_ObjectResetter.DelayedReset(resetTimeDelay);
+					}
 				}
 			}
 			yield return null;

@@ -18,17 +18,17 @@ namespace UnityStandardAssets.Effects
 
 		private void Update()
 		{
-			m_Power = Mathf.Lerp(m_Power, Input.GetMouseButton(0) ? maxPower : minPower, Time.deltaTime * changeSpeed);
+			m_Power = Mathf.Lerp(m_Power, (!Input.GetMouseButton(0)) ? minPower : maxPower, Time.deltaTime * changeSpeed);
 			if (Input.GetKeyDown(KeyCode.Alpha1))
 			{
 				systemRenderer.enabled = !systemRenderer.enabled;
 			}
 			ParticleSystem[] array = hoseWaterSystems;
-			foreach (ParticleSystem obj in array)
+			foreach (ParticleSystem particleSystem in array)
 			{
-				ParticleSystem.MainModule main = obj.main;
+				ParticleSystem.MainModule main = particleSystem.main;
 				main.startSpeed = m_Power;
-				ParticleSystem.EmissionModule emission = obj.emission;
+				ParticleSystem.EmissionModule emission = particleSystem.emission;
 				emission.enabled = m_Power > minPower * 1.1f;
 			}
 		}

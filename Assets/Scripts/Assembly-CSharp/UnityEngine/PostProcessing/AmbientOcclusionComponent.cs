@@ -64,11 +64,7 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				if (context.isHdr && base.model.settings.ambientOnly && context.isGBufferAvailable)
-				{
-					return !base.model.settings.forceForwardCompatibility;
-				}
-				return false;
+				return context.isHdr && base.model.settings.ambientOnly && context.isGBufferAvailable && !base.model.settings.forceForwardCompatibility;
 			}
 		}
 
@@ -76,11 +72,7 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				if (base.model.enabled && base.model.settings.intensity > 0f)
-				{
-					return !context.interrupted;
-				}
-				return false;
+				return base.model.enabled && base.model.settings.intensity > 0f && !context.interrupted;
 			}
 		}
 
@@ -105,11 +97,7 @@ namespace UnityEngine.PostProcessing
 
 		public override CameraEvent GetCameraEvent()
 		{
-			if (!ambientOnlySupported || context.profile.debugViews.IsModeActive(BuiltinDebugViewsModel.Mode.AmbientOcclusion))
-			{
-				return CameraEvent.BeforeImageEffectsOpaque;
-			}
-			return CameraEvent.BeforeReflections;
+			return (!ambientOnlySupported || context.profile.debugViews.IsModeActive(BuiltinDebugViewsModel.Mode.AmbientOcclusion)) ? CameraEvent.BeforeImageEffectsOpaque : CameraEvent.BeforeReflections;
 		}
 
 		public override void PopulateCommandBuffer(CommandBuffer cb)
@@ -120,7 +108,7 @@ namespace UnityEngine.PostProcessing
 			material.shaderKeywords = null;
 			material.SetFloat(Uniforms._Intensity, settings.intensity);
 			material.SetFloat(Uniforms._Radius, settings.radius);
-			material.SetFloat(Uniforms._Downsample, settings.downsampling ? 0.5f : 1f);
+			material.SetFloat(Uniforms._Downsample, (!settings.downsampling) ? 1f : 0.5f);
 			material.SetInt(Uniforms._SampleCount, (int)settings.sampleCount);
 			if (!context.isGBufferAvailable && RenderSettings.fog)
 			{
@@ -151,7 +139,7 @@ namespace UnityEngine.PostProcessing
 			int occlusionTexture2 = Uniforms._OcclusionTexture2;
 			cb.GetTemporaryRT(occlusionTexture2, width, height, 0, FilterMode.Bilinear, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Linear);
 			cb.SetGlobalTexture(Uniforms._MainTex, occlusionTexture);
-			cb.Blit(occlusionTexture, occlusionTexture2, material, (occlusionSource == OcclusionSource.GBuffer) ? 4 : 3);
+			cb.Blit(occlusionTexture, occlusionTexture2, material, (occlusionSource != OcclusionSource.GBuffer) ? 3 : 4);
 			cb.ReleaseTemporaryRT(occlusionTexture);
 			occlusionTexture = Uniforms._OcclusionTexture;
 			cb.GetTemporaryRT(occlusionTexture, width, height, 0, FilterMode.Bilinear, RenderTextureFormat.ARGB32, RenderTextureReadWrite.Linear);
@@ -171,7 +159,7 @@ namespace UnityEngine.PostProcessing
 			}
 			else
 			{
-				RenderTextureFormat format = (context.isHdr ? RenderTextureFormat.DefaultHDR : RenderTextureFormat.Default);
+				RenderTextureFormat format = ((!context.isHdr) ? RenderTextureFormat.Default : RenderTextureFormat.DefaultHDR);
 				int tempRT = Uniforms._TempRT;
 				cb.GetTemporaryRT(tempRT, context.width, context.height, 0, FilterMode.Bilinear, format);
 				cb.Blit(BuiltinRenderTextureType.CameraTarget, tempRT, mat, 0);

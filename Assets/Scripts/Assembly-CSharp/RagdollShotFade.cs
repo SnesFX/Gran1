@@ -31,23 +31,24 @@ public class RagdollShotFade : MonoBehaviour
 
 	public GameObject Bat;
 
-	public GameObject ChristmasHat;
-
 	public float fadeStartTime;
 
 	public float timerCount;
 
 	public bool checkFadeEarly;
 
+	public RagdollShotFade()
+	{
+		ragdollFade = true;
+		timerCount = 5f;
+		checkFadeEarly = true;
+	}
+
 	public virtual IEnumerator Start()
 	{
 		gameController = GameObject.Find("GameController");
 		Granny = GameObject.Find("GrannyParent");
 		shader2 = Shader.Find("Legacy Shaders/Transparent/Diffuse");
-		if (((ChristmasScript)gameController.GetComponent(typeof(ChristmasScript))).itsChristmas)
-		{
-			ChristmasHat.SetActive(value: true);
-		}
 		if (PlayerPrefs.GetInt("DiffData") == 3)
 		{
 			yield return new WaitForSeconds(15f);
@@ -68,11 +69,11 @@ public class RagdollShotFade : MonoBehaviour
 		if (ragdollFade)
 		{
 			timerCount -= Time.deltaTime;
-			Bat.SetActive(value: false);
-			Eyes.SetActive(value: false);
-			Tand.SetActive(value: false);
-			leg1Texture.SetActive(value: false);
-			leg2Texture.SetActive(value: false);
+			Bat.SetActive(false);
+			Eyes.SetActive(false);
+			Tand.SetActive(false);
+			leg1Texture.SetActive(false);
+			leg2Texture.SetActive(false);
 			rend.GetComponent<Renderer>().material.shader = shader2;
 			float a = ragdollTexture.GetComponent<Renderer>().material.color.a - 0.2f * Time.deltaTime;
 			Color color = ragdollTexture.GetComponent<Renderer>().material.color;
@@ -90,12 +91,5 @@ public class RagdollShotFade : MonoBehaviour
 			((grannyRestart)gameController.GetComponent(typeof(grannyRestart))).startTimer2 = true;
 			UnityEngine.Object.Destroy(base.gameObject);
 		}
-	}
-
-	public RagdollShotFade()
-	{
-		ragdollFade = true;
-		timerCount = 5f;
-		checkFadeEarly = true;
 	}
 }

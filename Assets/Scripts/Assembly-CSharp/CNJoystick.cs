@@ -68,13 +68,13 @@ public class CNJoystick : CNAbstractController
 		_baseGameObject = _baseTransform.gameObject;
 		if (IsHiddenIfNotTweaking)
 		{
-			_baseGameObject.gameObject.SetActive(value: false);
-			_stickGameObject.gameObject.SetActive(value: false);
+			_baseGameObject.gameObject.SetActive(false);
+			_stickGameObject.gameObject.SetActive(false);
 		}
 		else
 		{
-			_baseGameObject.gameObject.SetActive(value: true);
-			_stickGameObject.gameObject.SetActive(value: true);
+			_baseGameObject.gameObject.SetActive(true);
+			_stickGameObject.gameObject.SetActive(true);
 		}
 	}
 
@@ -82,8 +82,9 @@ public class CNJoystick : CNAbstractController
 	{
 		base.ResetControlState();
 		Transform stickTransform = _stickTransform;
-		Vector3 localPosition = (_baseTransform.localPosition = Vector3.zero);
-		stickTransform.localPosition = localPosition;
+		Vector3 zero = Vector3.zero;
+		_baseTransform.localPosition = zero;
+		stickTransform.localPosition = zero;
 	}
 
 	protected override void OnFingerLifted()
@@ -91,8 +92,8 @@ public class CNJoystick : CNAbstractController
 		base.OnFingerLifted();
 		if (IsHiddenIfNotTweaking)
 		{
-			_baseGameObject.gameObject.SetActive(value: false);
-			_stickGameObject.gameObject.SetActive(value: false);
+			_baseGameObject.gameObject.SetActive(false);
+			_stickGameObject.gameObject.SetActive(false);
 		}
 	}
 
@@ -101,14 +102,15 @@ public class CNJoystick : CNAbstractController
 		base.OnFingerTouched();
 		if (IsHiddenIfNotTweaking)
 		{
-			_baseGameObject.gameObject.SetActive(value: true);
-			_stickGameObject.gameObject.SetActive(value: true);
+			_baseGameObject.gameObject.SetActive(true);
+			_stickGameObject.gameObject.SetActive(true);
 		}
 	}
 
 	protected virtual void Update()
 	{
-		if (!TweakIfNeeded() && IsTouchCaptured(out var capturedTouch))
+		Touch capturedTouch;
+		if (!TweakIfNeeded() && IsTouchCaptured(out capturedTouch))
 		{
 			PlaceJoystickBaseUnderTheFinger(capturedTouch);
 		}
@@ -136,7 +138,8 @@ public class CNJoystick : CNAbstractController
 		if (_snapsToFinger)
 		{
 			Transform stickTransform = _stickTransform;
-			Vector3 position = (_baseTransform.position = base.ParentCamera.ScreenToWorldPoint(touch.position));
+			Vector3 position = base.ParentCamera.ScreenToWorldPoint(touch.position);
+			_baseTransform.position = position;
 			stickTransform.position = position;
 		}
 	}

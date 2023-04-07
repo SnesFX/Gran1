@@ -21,19 +21,25 @@ namespace Steamworks
 
 		private bool m_bDisposed;
 
-		public SteamAPICall_t Handle => m_hAPICall;
+		public SteamAPICall_t Handle
+		{
+			get
+			{
+				return m_hAPICall;
+			}
+		}
 
 		private event APIDispatchDelegate m_Func;
-
-		public static CallResult<T> Create(APIDispatchDelegate func = null)
-		{
-			return new CallResult<T>(func);
-		}
 
 		public CallResult(APIDispatchDelegate func = null)
 		{
 			this.m_Func = func;
 			BuildCCallbackBase();
+		}
+
+		public static CallResult<T> Create(APIDispatchDelegate func = null)
+		{
+			return new CallResult<T>(func);
 		}
 
 		~CallResult()
@@ -104,7 +110,7 @@ namespace Steamworks
 			m_hAPICall = SteamAPICall_t.Invalid;
 			try
 			{
-				this.m_Func((T)Marshal.PtrToStructure(pvParam, typeof(T)), bIOFailure: false);
+				this.m_Func((T)Marshal.PtrToStructure(pvParam, typeof(T)), false);
 			}
 			catch (Exception e)
 			{
@@ -114,7 +120,8 @@ namespace Steamworks
 
 		private void OnRunCallResult(IntPtr thisptr, IntPtr pvParam, bool bFailed, ulong hSteamAPICall_)
 		{
-			if ((SteamAPICall_t)hSteamAPICall_ == m_hAPICall)
+			SteamAPICall_t steamAPICall_t = (SteamAPICall_t)hSteamAPICall_;
+			if (steamAPICall_t == m_hAPICall)
 			{
 				m_hAPICall = SteamAPICall_t.Invalid;
 				try
@@ -142,7 +149,7 @@ namespace Steamworks
 				m_GetCallbackSizeBytes = OnGetCallbackSizeBytes
 			};
 			m_pVTable = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(CCallbackBaseVTable)));
-			Marshal.StructureToPtr(VTable, m_pVTable, fDeleteOld: false);
+			Marshal.StructureToPtr(VTable, m_pVTable, false);
 			m_CCallbackBase = new CCallbackBase
 			{
 				m_vfptr = m_pVTable,

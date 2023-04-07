@@ -29,8 +29,8 @@ public class PressCloseButton : MonoBehaviour
 			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
 			{
 				((soundEffectsMenu)ljudHolder.GetComponent(typeof(soundEffectsMenu))).buttonClick();
-				HelpMenu.SetActive(value: false);
-				playButton.SetActive(value: true);
+				HelpMenu.SetActive(false);
+				playButton.SetActive(true);
 			}
 		}
 	}

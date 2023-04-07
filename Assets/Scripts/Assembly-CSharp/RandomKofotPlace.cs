@@ -17,15 +17,15 @@ public class RandomKofotPlace : MonoBehaviour
 		number = UnityEngine.Random.Range(1, 4);
 		if (number == 1)
 		{
-			kofotPlace1.SetActive(value: true);
+			kofotPlace1.SetActive(true);
 		}
 		else if (number == 2)
 		{
-			kofotPlace2.SetActive(value: true);
+			kofotPlace2.SetActive(true);
 		}
 		else if (number == 3)
 		{
-			kofotPlace3.SetActive(value: true);
+			kofotPlace3.SetActive(true);
 		}
 	}
 }

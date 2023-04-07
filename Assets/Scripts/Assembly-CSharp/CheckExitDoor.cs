@@ -117,7 +117,7 @@ public class CheckExitDoor : MonoBehaviour
 			if (!easyDiff && PlayerPrefs.GetInt("twoLocksOnOff") == 1)
 			{
 				ExtralockTimerHard();
-				extraLockExtreme.SetActive(value: true);
+				extraLockExtreme.SetActive(true);
 				ExtralockTimer();
 				easyDiff = true;
 			}
@@ -130,7 +130,7 @@ public class CheckExitDoor : MonoBehaviour
 				if (PlayerPrefs.GetInt("twoLocksOnOff") == 1)
 				{
 					ExtralockTimerHard();
-					extraLockExtreme.SetActive(value: true);
+					extraLockExtreme.SetActive(true);
 				}
 				ExtralockTimer();
 			}
@@ -142,7 +142,7 @@ public class CheckExitDoor : MonoBehaviour
 				hardDiff = true;
 				if (PlayerPrefs.GetInt("twoLocksOnOff") == 1)
 				{
-					extraLockExtreme.SetActive(value: true);
+					extraLockExtreme.SetActive(true);
 				}
 				ExtralockTimer();
 				ExtralockTimerHard();
@@ -155,7 +155,7 @@ public class CheckExitDoor : MonoBehaviour
 				extremeDiff = true;
 				ExtralockTimer();
 				ExtralockTimerHard();
-				extraLockExtreme.SetActive(value: true);
+				extraLockExtreme.SetActive(true);
 			}
 		}
 		else if (PlayerPrefs.GetInt("DiffData") == 4 && !practiseDiff)
@@ -164,12 +164,12 @@ public class CheckExitDoor : MonoBehaviour
 			if (PlayerPrefs.GetInt("twoLocksOnOff") == 1)
 			{
 				ExtralockTimerHard();
-				extraLockExtreme.SetActive(value: true);
+				extraLockExtreme.SetActive(true);
 			}
 			ExtralockTimer();
 			((Collider)Granny.gameObject.GetComponent(typeof(Collider))).enabled = false;
 			((Renderer)GrannySkin.gameObject.GetComponent(typeof(Renderer))).enabled = false;
-			GrannyBone.SetActive(value: false);
+			GrannyBone.SetActive(false);
 		}
 	}
 
@@ -184,21 +184,21 @@ public class CheckExitDoor : MonoBehaviour
 					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = false;
 					((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 					((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
-					crouchButton.SetActive(value: false);
-					trapButton.SetActive(value: false);
+					crouchButton.SetActive(false);
+					trapButton.SetActive(false);
 					removeBar.fillAmount = 0f;
-					trapBar.SetActive(value: false);
-					dropObjectText.SetActive(value: false);
+					trapBar.SetActive(false);
+					dropObjectText.SetActive(false);
 					((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 					((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 					((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).openExitDoor();
-					blackScreenTexture.CrossFadeAlpha(1f, 0.1f, ignoreTimeScale: false);
+					blackScreenTexture.CrossFadeAlpha(1f, 0.1f, false);
 					yield return new WaitForSeconds(5f);
 					SceneManager.LoadScene("EndScene");
 				}
 				else
 				{
-					CantopenDoorYetText.SetActive(value: true);
+					CantopenDoorYetText.SetActive(true);
 					((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimerOnOff = true;
 					((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimer = 0f;
 				}
@@ -208,21 +208,21 @@ public class CheckExitDoor : MonoBehaviour
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = false;
 				((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 				((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
-				crouchButton.SetActive(value: false);
-				trapButton.SetActive(value: false);
+				crouchButton.SetActive(false);
+				trapButton.SetActive(false);
 				removeBar.fillAmount = 0f;
-				trapBar.SetActive(value: false);
-				dropObjectText.SetActive(value: false);
+				trapBar.SetActive(false);
+				dropObjectText.SetActive(false);
 				((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).openExitDoor();
-				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, ignoreTimeScale: false);
+				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, false);
 				yield return new WaitForSeconds(5f);
 				SceneManager.LoadScene("EndScene");
 			}
 			else
 			{
-				CantopenDoorYetText.SetActive(value: true);
+				CantopenDoorYetText.SetActive(true);
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimerOnOff = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimer = 0f;
 			}
@@ -234,21 +234,21 @@ public class CheckExitDoor : MonoBehaviour
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = false;
 				((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 				((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
-				crouchButton.SetActive(value: false);
-				trapButton.SetActive(value: false);
+				crouchButton.SetActive(false);
+				trapButton.SetActive(false);
 				removeBar.fillAmount = 0f;
-				trapBar.SetActive(value: false);
-				dropObjectText.SetActive(value: false);
+				trapBar.SetActive(false);
+				dropObjectText.SetActive(false);
 				((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).openExitDoor();
-				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, ignoreTimeScale: false);
+				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, false);
 				yield return new WaitForSeconds(5f);
 				SceneManager.LoadScene("EndScene");
 			}
 			else
 			{
-				CantopenDoorYetText.SetActive(value: true);
+				CantopenDoorYetText.SetActive(true);
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimerOnOff = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimer = 0f;
 			}
@@ -262,21 +262,21 @@ public class CheckExitDoor : MonoBehaviour
 					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = false;
 					((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 					((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
-					crouchButton.SetActive(value: false);
-					trapButton.SetActive(value: false);
+					crouchButton.SetActive(false);
+					trapButton.SetActive(false);
 					removeBar.fillAmount = 0f;
-					trapBar.SetActive(value: false);
-					dropObjectText.SetActive(value: false);
+					trapBar.SetActive(false);
+					dropObjectText.SetActive(false);
 					((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 					((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 					((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).openExitDoor();
-					blackScreenTexture.CrossFadeAlpha(1f, 0.1f, ignoreTimeScale: false);
+					blackScreenTexture.CrossFadeAlpha(1f, 0.1f, false);
 					yield return new WaitForSeconds(5f);
 					SceneManager.LoadScene("EndScene");
 				}
 				else
 				{
-					CantopenDoorYetText.SetActive(value: true);
+					CantopenDoorYetText.SetActive(true);
 					((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimerOnOff = true;
 					((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimer = 0f;
 				}
@@ -286,15 +286,15 @@ public class CheckExitDoor : MonoBehaviour
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = false;
 				((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 				((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
-				crouchButton.SetActive(value: false);
-				trapButton.SetActive(value: false);
+				crouchButton.SetActive(false);
+				trapButton.SetActive(false);
 				removeBar.fillAmount = 0f;
-				trapBar.SetActive(value: false);
-				dropObjectText.SetActive(value: false);
+				trapBar.SetActive(false);
+				dropObjectText.SetActive(false);
 				((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).openExitDoor();
-				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, ignoreTimeScale: false);
+				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, false);
 				yield return new WaitForSeconds(5f);
 				SceneManager.LoadScene("EndScene");
 			}
@@ -303,21 +303,21 @@ public class CheckExitDoor : MonoBehaviour
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = false;
 				((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 				((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
-				crouchButton.SetActive(value: false);
-				trapButton.SetActive(value: false);
+				crouchButton.SetActive(false);
+				trapButton.SetActive(false);
 				removeBar.fillAmount = 0f;
-				trapBar.SetActive(value: false);
-				dropObjectText.SetActive(value: false);
+				trapBar.SetActive(false);
+				dropObjectText.SetActive(false);
 				((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).openExitDoor();
-				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, ignoreTimeScale: false);
+				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, false);
 				yield return new WaitForSeconds(5f);
 				SceneManager.LoadScene("EndScene");
 			}
 			else
 			{
-				CantopenDoorYetText.SetActive(value: true);
+				CantopenDoorYetText.SetActive(true);
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimerOnOff = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimer = 0f;
 			}
@@ -335,21 +335,21 @@ public class CheckExitDoor : MonoBehaviour
 					((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = false;
 					((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 					((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
-					crouchButton.SetActive(value: false);
-					trapButton.SetActive(value: false);
+					crouchButton.SetActive(false);
+					trapButton.SetActive(false);
 					removeBar.fillAmount = 0f;
-					trapBar.SetActive(value: false);
-					dropObjectText.SetActive(value: false);
+					trapBar.SetActive(false);
+					dropObjectText.SetActive(false);
 					((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 					((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 					((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).openExitDoor();
-					blackScreenTexture.CrossFadeAlpha(1f, 0.1f, ignoreTimeScale: false);
+					blackScreenTexture.CrossFadeAlpha(1f, 0.1f, false);
 					yield return new WaitForSeconds(5f);
 					SceneManager.LoadScene("EndScene");
 				}
 				else
 				{
-					CantopenDoorYetText.SetActive(value: true);
+					CantopenDoorYetText.SetActive(true);
 					((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimerOnOff = true;
 					((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimer = 0f;
 				}
@@ -359,15 +359,15 @@ public class CheckExitDoor : MonoBehaviour
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = false;
 				((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 				((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
-				crouchButton.SetActive(value: false);
-				trapButton.SetActive(value: false);
+				crouchButton.SetActive(false);
+				trapButton.SetActive(false);
 				removeBar.fillAmount = 0f;
-				trapBar.SetActive(value: false);
-				dropObjectText.SetActive(value: false);
+				trapBar.SetActive(false);
+				dropObjectText.SetActive(false);
 				((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).openExitDoor();
-				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, ignoreTimeScale: false);
+				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, false);
 				yield return new WaitForSeconds(5f);
 				SceneManager.LoadScene("EndScene");
 			}
@@ -376,21 +376,21 @@ public class CheckExitDoor : MonoBehaviour
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = false;
 				((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 				((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
-				crouchButton.SetActive(value: false);
-				trapButton.SetActive(value: false);
+				crouchButton.SetActive(false);
+				trapButton.SetActive(false);
 				removeBar.fillAmount = 0f;
-				trapBar.SetActive(value: false);
-				dropObjectText.SetActive(value: false);
+				trapBar.SetActive(false);
+				dropObjectText.SetActive(false);
 				((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).openExitDoor();
-				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, ignoreTimeScale: false);
+				blackScreenTexture.CrossFadeAlpha(1f, 0.1f, false);
 				yield return new WaitForSeconds(5f);
 				SceneManager.LoadScene("EndScene");
 			}
 			else
 			{
-				CantopenDoorYetText.SetActive(value: true);
+				CantopenDoorYetText.SetActive(true);
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimerOnOff = true;
 				((PickUp)seeHolder.GetComponent(typeof(PickUp))).textTimer = 0f;
 			}
@@ -400,51 +400,51 @@ public class CheckExitDoor : MonoBehaviour
 	public virtual void ExtralockTimer()
 	{
 		extraLockPlaced = true;
-		extraLock.SetActive(value: true);
+		extraLock.SetActive(true);
 		if (PlayerPrefs.GetInt("randomNR") == 1)
 		{
-			padlockCodePL2.SetActive(value: true);
+			padlockCodePL2.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 2)
 		{
-			padlockCodePL3.SetActive(value: true);
+			padlockCodePL3.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 3)
 		{
-			padlockCodePL4.SetActive(value: true);
+			padlockCodePL4.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 4)
 		{
-			padlockCodePL5.SetActive(value: true);
+			padlockCodePL5.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 5)
 		{
-			padlockCodePL1.SetActive(value: true);
+			padlockCodePL1.SetActive(true);
 		}
 	}
 
 	public virtual void ExtralockTimerHard()
 	{
-		extraLockHard.SetActive(value: true);
+		extraLockHard.SetActive(true);
 		if (PlayerPrefs.GetInt("randomNR") == 1)
 		{
-			battery2.SetActive(value: true);
+			battery2.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 2)
 		{
-			battery3.SetActive(value: true);
+			battery3.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 3)
 		{
-			battery4.SetActive(value: true);
+			battery4.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 4)
 		{
-			battery5.SetActive(value: true);
+			battery5.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 5)
 		{
-			battery1.SetActive(value: true);
+			battery1.SetActive(true);
 		}
 	}
 }

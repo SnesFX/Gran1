@@ -16,7 +16,7 @@ public class TriggerBats : MonoBehaviour
 	{
 		if (other.gameObject.tag == "floor")
 		{
-			bats.SetActive(value: true);
+			bats.SetActive(true);
 			UnityEngine.Object.Destroy(triggerHolder);
 		}
 	}

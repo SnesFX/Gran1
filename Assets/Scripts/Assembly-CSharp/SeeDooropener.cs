@@ -21,16 +21,16 @@ public class SeeDooropener : MonoBehaviour
 		{
 			if (hitInfo.collider.gameObject.tag == "dooropener")
 			{
-				hitDoorButton.SetActive(value: true);
+				hitDoorButton.SetActive(true);
 			}
 			else if (hitInfo.collider.gameObject.tag == "Untagged")
 			{
-				hitDoorButton.SetActive(value: false);
+				hitDoorButton.SetActive(false);
 			}
 		}
 		else
 		{
-			hitDoorButton.SetActive(value: false);
+			hitDoorButton.SetActive(false);
 		}
 	}
 }

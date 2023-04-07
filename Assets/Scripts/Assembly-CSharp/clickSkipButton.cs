@@ -14,8 +14,8 @@ public class clickSkipButton : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Escape) && !buttonPressed)
 		{
 			buttonPressed = true;
-			blackLoadingScreen.SetActive(value: true);
-			sound.SetActive(value: false);
+			blackLoadingScreen.SetActive(true);
+			sound.SetActive(false);
 			SceneManager.LoadScene("Scene");
 		}
 	}

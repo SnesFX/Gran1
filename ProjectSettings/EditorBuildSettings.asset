@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/1_Scenes/SplashScreen.unity
-    guid: ef2211b7206169a458270bf14b6a8f0d
+    guid: 1d830c8095abcc344ac5b57b176f3501
   - enabled: 1
     path: Assets/1_Scenes/Menu.unity
     guid: 3d63d9130f603654a99bd78a8d6c56b6
@@ -19,5 +19,5 @@ EditorBuildSettings:
     guid: 4390d7eb15bba844c96dd46f12b9ae49
   - enabled: 1
     path: Assets/1_Scenes/EndScene.unity
-    guid: 00ba6b6507c2c6c44a9666bfb1253be2
+    guid: 0a5b6ac26a85914448132429ea6f6318
   m_configObjects: {}

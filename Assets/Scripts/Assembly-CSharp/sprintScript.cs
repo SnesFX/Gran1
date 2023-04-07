@@ -26,7 +26,7 @@ public class sprintScript : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 		((Rigidbody)GetComponent(typeof(Rigidbody))).isKinematic = false;
-		sparcle1.SetActive(value: false);
+		sparcle1.SetActive(false);
 		yield return new WaitForSeconds(5f);
 		UnityEngine.Object.Destroy(base.gameObject);
 	}

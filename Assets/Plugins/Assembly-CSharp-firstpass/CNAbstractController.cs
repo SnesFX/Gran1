@@ -145,13 +145,13 @@ public abstract class CNAbstractController : MonoBehaviour
 	public virtual void Disable()
 	{
 		CurrentAxisValues = Vector2.zero;
-		base.gameObject.SetActive(value: false);
+		base.gameObject.SetActive(false);
 		base.enabled = false;
 	}
 
 	public virtual void Enable()
 	{
-		base.gameObject.SetActive(value: true);
+		base.gameObject.SetActive(true);
 		base.enabled = true;
 	}
 
@@ -273,7 +273,7 @@ public abstract class CNAbstractController : MonoBehaviour
 
 	private bool IsTouchInZone(Vector2 touchPosition)
 	{
-		return CalculatedTouchZone.Contains(ParentCamera.ScreenToWorldPoint(touchPosition), allowInverse: false);
+		return CalculatedTouchZone.Contains(ParentCamera.ScreenToWorldPoint(touchPosition), false);
 	}
 
 	protected abstract void TweakControl(Vector2 touchPosition);

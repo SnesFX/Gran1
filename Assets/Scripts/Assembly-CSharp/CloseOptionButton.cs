@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
 public class CloseOptionButton : MonoBehaviour
@@ -28,17 +27,16 @@ public class CloseOptionButton : MonoBehaviour
 		Touch[] touches = Input.touches;
 		for (int i = 0; i < touches.Length; i++)
 		{
-		    Touch touch = touches[i];
-            Vector2 touchPosition = touch.position;
-            if (touch.phase == TouchPhase.Ended && RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), touchPosition, Camera.main))
+			Touch touch = touches[i];
+			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
 			{
-				optionMenu.SetActive(value: false);
-				joystick.SetActive(value: true);
-				joystickRing.SetActive(value: true);
-				mapButton.SetActive(value: true);
-				swordButton.SetActive(value: true);
-				allapapperslappar.SetActive(value: true);
-				pianoCollider.SetActive(value: true);
+				optionMenu.SetActive(false);
+				joystick.SetActive(true);
+				joystickRing.SetActive(true);
+				mapButton.SetActive(true);
+				swordButton.SetActive(true);
+				allapapperslappar.SetActive(true);
+				pianoCollider.SetActive(true);
 				Time.timeScale = 1f;
 			}
 		}

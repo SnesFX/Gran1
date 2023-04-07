@@ -3,7 +3,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
-using UnityEngine.UI;
 
 [Serializable]
 public class endDay : MonoBehaviour
@@ -64,7 +63,7 @@ public class endDay : MonoBehaviour
 
 	public GameObject carButton;
 
-	public Image trapButtonGUI;
+	public GUITexture trapButtonGUI;
 
 	public GameObject trapButton;
 
@@ -91,8 +90,6 @@ public class endDay : MonoBehaviour
 	public GameObject prisonGallerColliders;
 
 	public GameObject teddyMusicHolder;
-
-	public GameObject grannyHuntMusicHolder;
 
 	public GameObject brunnsvevButton;
 
@@ -123,15 +120,14 @@ public class endDay : MonoBehaviour
 		enDayStart = true;
 		yield return new WaitForSeconds(2f);
 		playerStop = GameObject.Find("Main Camera");
-		_ = (CameraFollowExample)playerStop.GetComponent(typeof(CameraFollowExample));
+		CameraFollowExample script = (CameraFollowExample)playerStop.GetComponent(typeof(CameraFollowExample));
 		((fadeUpDownTeddyMusic)teddyMusicHolder.GetComponent(typeof(fadeUpDownTeddyMusic))).playerCaught = true;
-		((fadeUpDownGrannyHunt)grannyHuntMusicHolder.GetComponent(typeof(fadeUpDownGrannyHunt))).playerCaught = true;
-		blackScreenTexture.CrossFadeAlpha(1f, 0.8f, ignoreTimeScale: false);
+		blackScreenTexture.CrossFadeAlpha(1f, 0.8f, false);
 		yield return new WaitForSeconds(2f);
 		playerAnim.GetComponent<Animation>().Play("PlayerDie");
 		playerAnim.GetComponent<Animation>()["PlayerDie"].speed = -50f;
 		yield return new WaitForSeconds(3f);
-		playerInBedCam.SetActive(value: true);
+		playerInBedCam.SetActive(true);
 		playerCam.GetComponent<Camera>().fieldOfView = 60f;
 		playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 		Player.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
@@ -142,27 +138,27 @@ public class endDay : MonoBehaviour
 		((PickUp)PickUpHolder.GetComponent(typeof(PickUp))).playerTaken = false;
 		((PickUp)PickUpHolder.GetComponent(typeof(PickUp))).dropObject = false;
 		((playerCaught)Player.GetComponent(typeof(playerCaught))).soundPlaying = false;
-		Player.SetActive(value: false);
+		Player.SetActive(false);
 		Player.transform.position = PlayerStartPos.position;
 		Player.transform.rotation = PlayerStartPos.rotation;
-		Granny.SetActive(value: false);
+		Granny.SetActive(false);
 		Granny.transform.position = GrannyStartPos.position;
-		Granny.SetActive(value: true);
-		crouchButton.SetActive(value: false);
-		optionButton.SetActive(value: false);
-		brunnsvevButton.SetActive(value: false);
-		bedButton1.SetActive(value: false);
-		bedButton2.SetActive(value: false);
-		bedButton3.SetActive(value: false);
-		bastuSteamHolder.SetActive(value: false);
+		Granny.SetActive(true);
+		crouchButton.SetActive(false);
+		optionButton.SetActive(false);
+		brunnsvevButton.SetActive(false);
+		bedButton1.SetActive(false);
+		bedButton2.SetActive(false);
+		bedButton3.SetActive(false);
+		bastuSteamHolder.SetActive(false);
 		((coffinButton)coffinButton1.GetComponent(typeof(coffinButton))).PlayerHiding = false;
-		coffinButton1.SetActive(value: false);
+		coffinButton1.SetActive(false);
 		((coffinButtonBackyard)coffinButton2.GetComponent(typeof(coffinButtonBackyard))).PlayerHiding = false;
-		coffinButton2.SetActive(value: false);
+		coffinButton2.SetActive(false);
 		((insideCarButton)carButton.GetComponent(typeof(insideCarButton))).PlayerHiding = false;
-		carButton.SetActive(value: false);
-		trapButton.SetActive(value: true);
-		trapBar.SetActive(value: true);
+		carButton.SetActive(false);
+		trapButton.SetActive(true);
+		trapBar.SetActive(true);
 		trapButtonGUI.enabled = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerGetCaught = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).attackingPlayer = false;
@@ -172,11 +168,6 @@ public class endDay : MonoBehaviour
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).dontHitPlayer = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerInHole = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).spiderIsDead = false;
-		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByPepper = false;
-		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByPepperStart = false;
-		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).grannyPepperReact = false;
-		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).GrannyGonnaSmack = false;
-		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).grannyStandBesideCar = false;
 		if (Spider.activeSelf)
 		{
 			((spiderControll)Spider.GetComponent(typeof(spiderControll))).grannyCaughtPlayerReset();
@@ -185,16 +176,16 @@ public class endDay : MonoBehaviour
 		{
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerInPrison = false;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).prisondoorClosed = false;
-			cameraSee.SetActive(value: false);
-			prisonDoorTrigger.SetActive(value: false);
+			cameraSee.SetActive(false);
+			prisonDoorTrigger.SetActive(false);
 			prisonGaller.GetComponent<Collider>().enabled = true;
-			prisonGallerColliders.SetActive(value: false);
+			prisonGallerColliders.SetActive(false);
 			if (GameObject.Find("prisonDoor") != null)
 			{
 				prisonDoor.tag = "Untagged";
 			}
 		}
-		mittPrick.SetActive(value: false);
+		mittPrick.SetActive(false);
 		playerBedAnim.GetComponent<Animation>().Play("PlayerInBed");
 		playerBedAnim.GetComponent<Animation>()["PlayerInBed"].speed = -50f;
 		StartCoroutine(((furnitureControlls)furnitureHolder.GetComponent(typeof(furnitureControlls))).cleanUp());

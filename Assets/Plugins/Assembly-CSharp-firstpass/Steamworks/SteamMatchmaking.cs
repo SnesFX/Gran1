@@ -164,9 +164,9 @@ namespace Steamworks
 			IntPtr intPtr = Marshal.AllocHGlobal(cchKeyBufferSize);
 			IntPtr intPtr2 = Marshal.AllocHGlobal(cchValueBufferSize);
 			bool flag = NativeMethods.ISteamMatchmaking_GetLobbyDataByIndex(CSteamAPIContext.GetSteamMatchmaking(), steamIDLobby, iLobbyData, intPtr, cchKeyBufferSize, intPtr2, cchValueBufferSize);
-			pchKey = (flag ? InteropHelp.PtrToStringUTF8(intPtr) : null);
+			pchKey = ((!flag) ? null : InteropHelp.PtrToStringUTF8(intPtr));
 			Marshal.FreeHGlobal(intPtr);
-			pchValue = (flag ? InteropHelp.PtrToStringUTF8(intPtr2) : null);
+			pchValue = ((!flag) ? null : InteropHelp.PtrToStringUTF8(intPtr2));
 			Marshal.FreeHGlobal(intPtr2);
 			return flag;
 		}

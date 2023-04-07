@@ -115,37 +115,28 @@ public class playerCaught : MonoBehaviour
 
 	public virtual IEnumerator faceGranny()
 	{
-		Vector3 target = grannyEye.position - playerEye.position;
-		float maxRadiansDelta = speed * Time.deltaTime;
-		Vector3 vector = Vector3.RotateTowards(playerEye.forward, target, maxRadiansDelta, 0f);
-		Debug.DrawRay(base.transform.position, vector, Color.red);
-		playerEye.rotation = Quaternion.LookRotation(vector);
+		Vector3 newDir = Vector3.RotateTowards(target: grannyEye.position - playerEye.position, maxRadiansDelta: speed * Time.deltaTime, current: playerEye.forward, maxMagnitudeDelta: 0f);
+		Debug.DrawRay(base.transform.position, newDir, Color.red);
+		playerEye.rotation = Quaternion.LookRotation(newDir);
 		((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 		((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
 		((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).playerGetCaught = true;
 		((playerInBeartrap)gameController.GetComponent(typeof(playerInBeartrap))).playerHit();
 		removeBar.fillAmount = 0f;
-		trapBar.SetActive(value: false);
-		bedButton1.SetActive(value: false);
-		bedButton2.SetActive(value: false);
-		bedButton3.SetActive(value: false);
-		CoffinButton1.SetActive(value: false);
-		CoffinButton2.SetActive(value: false);
-		CarButton.SetActive(value: false);
+		trapBar.SetActive(false);
+		bedButton1.SetActive(false);
+		bedButton2.SetActive(false);
+		bedButton3.SetActive(false);
+		CoffinButton1.SetActive(false);
+		CoffinButton2.SetActive(false);
+		CarButton.SetActive(false);
 		((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 		((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
-		((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
+		((PickUp)seeHolder.GetComponent(typeof(PickUp))).dropObject = true;
 		if (!soundPlaying)
 		{
 			soundPlaying = true;
-			if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-			{
-				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).playerCaughtNightmare();
-			}
-			else
-			{
-				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).playerCaught();
-			}
+			((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).playerCaught();
 		}
 		if (((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerCaughtLastTime)
 		{
@@ -170,13 +161,13 @@ public class playerCaught : MonoBehaviour
 		((playerInBeartrap)gameController.GetComponent(typeof(playerInBeartrap))).playerStuck();
 		((playerCrawl)playerHukaKnapp.GetComponent(typeof(playerCrawl))).standUp();
 		removeBar.fillAmount = 0f;
-		trapBar.SetActive(value: false);
-		bedButton1.SetActive(value: false);
-		bedButton2.SetActive(value: false);
-		bedButton3.SetActive(value: false);
+		trapBar.SetActive(false);
+		bedButton1.SetActive(false);
+		bedButton2.SetActive(false);
+		bedButton3.SetActive(false);
 		((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 		((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
-		((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
+		((PickUp)seeHolder.GetComponent(typeof(PickUp))).dropObject = true;
 		MainCam.GetComponent<Animation>()["PlayerDie"].speed = 1f;
 		MainCam.GetComponent<Animation>().CrossFade("PlayerDie");
 		if (((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).ragdollSpawn)
@@ -199,13 +190,13 @@ public class playerCaught : MonoBehaviour
 		((playerInBeartrap)gameController.GetComponent(typeof(playerInBeartrap))).playerStuck();
 		((playerCrawl)playerHukaKnapp.GetComponent(typeof(playerCrawl))).standUp();
 		removeBar.fillAmount = 0f;
-		trapBar.SetActive(value: false);
-		bedButton1.SetActive(value: false);
-		bedButton2.SetActive(value: false);
-		bedButton3.SetActive(value: false);
+		trapBar.SetActive(false);
+		bedButton1.SetActive(false);
+		bedButton2.SetActive(false);
+		bedButton3.SetActive(false);
 		((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 		((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
-		((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
+		((PickUp)seeHolder.GetComponent(typeof(PickUp))).dropObject = true;
 		MainCam.GetComponent<Animation>()["PlayerDie"].speed = 1f;
 		MainCam.GetComponent<Animation>().CrossFade("PlayerDie");
 		if (((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).ragdollSpawn)
@@ -221,26 +212,24 @@ public class playerCaught : MonoBehaviour
 
 	public virtual IEnumerator faceSpider()
 	{
-		Vector3 target = spiderPos.position - playerEye.position;
-		float maxRadiansDelta = speed * Time.deltaTime;
-		Vector3 vector = Vector3.RotateTowards(playerEye.forward, target, maxRadiansDelta, 0f);
-		Debug.DrawRay(base.transform.position, vector, Color.red);
-		playerEye.rotation = Quaternion.LookRotation(vector);
+		Vector3 newDir = Vector3.RotateTowards(target: spiderPos.position - playerEye.position, maxRadiansDelta: speed * Time.deltaTime, current: playerEye.forward, maxMagnitudeDelta: 0f);
+		Debug.DrawRay(base.transform.position, newDir, Color.red);
+		playerEye.rotation = Quaternion.LookRotation(newDir);
 		((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).stopwalk();
 		((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 0f;
 		((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).playerGetCaught = true;
 		((playerInBeartrap)gameController.GetComponent(typeof(playerInBeartrap))).playerBiten();
 		removeBar.fillAmount = 0f;
-		trapBar.SetActive(value: false);
-		bedButton1.SetActive(value: false);
-		bedButton2.SetActive(value: false);
-		bedButton3.SetActive(value: false);
-		CoffinButton1.SetActive(value: false);
-		CoffinButton2.SetActive(value: false);
-		CarButton.SetActive(value: false);
+		trapBar.SetActive(false);
+		bedButton1.SetActive(false);
+		bedButton2.SetActive(false);
+		bedButton3.SetActive(false);
+		CoffinButton1.SetActive(false);
+		CoffinButton2.SetActive(false);
+		CarButton.SetActive(false);
 		((openDoors)dooropener.GetComponent(typeof(openDoors))).playerTaken = true;
 		((PickUp)seeHolder.GetComponent(typeof(PickUp))).playerTaken = true;
-		((InventoryController)gameController.GetComponent(typeof(InventoryController))).CheckInventory();
+		((PickUp)seeHolder.GetComponent(typeof(PickUp))).dropObject = true;
 		if (!soundPlaying)
 		{
 			soundPlaying = true;

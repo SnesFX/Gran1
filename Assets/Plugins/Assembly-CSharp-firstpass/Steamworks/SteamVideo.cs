@@ -28,7 +28,7 @@ namespace Steamworks
 			InteropHelp.TestIfAvailableClient();
 			IntPtr intPtr = Marshal.AllocHGlobal(pnBufferSize);
 			bool flag = NativeMethods.ISteamVideo_GetOPFStringForApp(CSteamAPIContext.GetSteamVideo(), unVideoAppID, intPtr, ref pnBufferSize);
-			pchBuffer = (flag ? InteropHelp.PtrToStringUTF8(intPtr) : null);
+			pchBuffer = ((!flag) ? null : InteropHelp.PtrToStringUTF8(intPtr));
 			Marshal.FreeHGlobal(intPtr);
 			return flag;
 		}

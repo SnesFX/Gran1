@@ -19,11 +19,7 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				if (base.model.enabled)
-				{
-					return !context.interrupted;
-				}
-				return false;
+				return base.model.enabled && !context.interrupted;
 			}
 		}
 
@@ -36,7 +32,7 @@ namespace UnityEngine.PostProcessing
 				uberMaterial.SetVector(Uniforms._Vignette_Center, settings.center);
 				uberMaterial.EnableKeyword("VIGNETTE_CLASSIC");
 				float z = (1f - settings.roundness) * 6f + settings.roundness;
-				uberMaterial.SetVector(Uniforms._Vignette_Settings, new Vector4(settings.intensity * 3f, settings.smoothness * 5f, z, settings.rounded ? 1f : 0f));
+				uberMaterial.SetVector(Uniforms._Vignette_Settings, new Vector4(settings.intensity * 3f, settings.smoothness * 5f, z, (!settings.rounded) ? 0f : 1f));
 			}
 			else if (settings.mode == VignetteModel.Mode.Masked && settings.mask != null && settings.opacity > 0f)
 			{

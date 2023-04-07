@@ -48,7 +48,11 @@ public class HandObjectFalls : MonoBehaviour
 				GetComponent<AudioSource>().PlayOneShot(ObjectLjud);
 			}
 		}
-		else if (!(other.gameObject.tag == "Player") && other.gameObject.tag == "resetfloor")
+		else if (other.gameObject.tag == "Player")
+		{
+			Physics.IgnoreCollision(ParentObject.GetComponent<Collider>(), other.GetComponent<CharacterController>(), true);
+		}
+		else if (other.gameObject.tag == "resetfloor")
 		{
 			ParentObject.transform.position = objectResetPos.position;
 		}

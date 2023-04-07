@@ -30,29 +30,29 @@ public class playerInBeartrap : MonoBehaviour
 	{
 		if (bloodON)
 		{
-			bloodScreen.CrossFadeAlpha(0f, 0.8f, ignoreTimeScale: false);
+			bloodScreen.CrossFadeAlpha(0f, 0.8f, false);
 			if (bloodScreen.canvasRenderer.GetAlpha() < 0.1f)
 			{
 				bloodON = false;
-				bloodScreenTexture.SetActive(value: false);
+				bloodScreenTexture.SetActive(false);
 			}
 		}
 		if (bloodHitON)
 		{
-			bloodScreenHit.CrossFadeAlpha(0f, 0.8f, ignoreTimeScale: false);
+			bloodScreenHit.CrossFadeAlpha(0f, 0.8f, false);
 			if (bloodScreenHit.canvasRenderer.GetAlpha() < 0.1f)
 			{
 				bloodHitON = false;
-				bloodScreenHitTexture.SetActive(value: false);
+				bloodScreenHitTexture.SetActive(false);
 			}
 		}
 		if (bloodBitenON)
 		{
-			bloodScreenBiten.CrossFadeAlpha(0f, 0.8f, ignoreTimeScale: false);
+			bloodScreenBiten.CrossFadeAlpha(0f, 0.8f, false);
 			if (bloodScreenBiten.canvasRenderer.GetAlpha() < 0.1f)
 			{
 				bloodBitenON = false;
-				bloodScreenBitenTexture.SetActive(value: false);
+				bloodScreenBitenTexture.SetActive(false);
 			}
 		}
 	}
@@ -77,7 +77,7 @@ public class playerInBeartrap : MonoBehaviour
 
 	public virtual IEnumerator stuckTimer()
 	{
-		bloodScreenTexture.SetActive(value: true);
+		bloodScreenTexture.SetActive(true);
 		yield return new WaitForSeconds(3f);
 		bloodON = true;
 	}
@@ -85,14 +85,14 @@ public class playerInBeartrap : MonoBehaviour
 	public virtual IEnumerator hitTimer()
 	{
 		yield return new WaitForSeconds(0.8f);
-		bloodScreenHitTexture.SetActive(value: true);
+		bloodScreenHitTexture.SetActive(true);
 		yield return new WaitForSeconds(3f);
 		bloodHitON = true;
 	}
 
 	public virtual IEnumerator bitenTimer()
 	{
-		bloodScreenBitenTexture.SetActive(value: true);
+		bloodScreenBitenTexture.SetActive(true);
 		yield return new WaitForSeconds(3f);
 		bloodBitenON = true;
 	}

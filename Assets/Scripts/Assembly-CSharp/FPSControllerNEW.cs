@@ -69,6 +69,22 @@ public class FPSControllerNEW : MonoBehaviour
 
 	public int startingPitch;
 
+	public FPSControllerNEW()
+	{
+		forwardSpeed = 4f;
+		backwardSpeed = 1f;
+		sidestepSpeed = 1f;
+		jumpSpeed = 8f;
+		inAirMultiplier = 0.25f;
+		rotationSpeed = new Vector2(50f, 25f);
+		tiltPositiveYAxis = 0.6f;
+		tiltNegativeYAxis = 0.4f;
+		tiltXAxisMinimum = 0.1f;
+		canJump = true;
+		PlayerIsGrounded = true;
+		startingPitch = 4;
+	}
+
 	public virtual void Start()
 	{
 		timeInAir = 0f;
@@ -234,10 +250,8 @@ public class FPSControllerNEW : MonoBehaviour
 				headBobAnimHolder.GetComponent<Animation>()["HeadBobAnimation"].speed = 0.7f;
 			}
 		}
-		else if (vector.y != 1f)
+		else if (vector.y != 1f && moveTouchPad.position.y != 0f)
 		{
-			_ = moveTouchPad.position.y;
-			_ = 0f;
 		}
 		if (character.isGrounded)
 		{
@@ -331,7 +345,9 @@ public class FPSControllerNEW : MonoBehaviour
 		}
 		CharacterController component = GetComponent<CharacterController>();
 		Vector3 vector3 = component.velocity;
-		if (new Vector3(component.velocity.x, 0f, component.velocity.z).magnitude > 0f)
+		vector3 = new Vector3(component.velocity.x, 0f, component.velocity.z);
+		float magnitude = vector3.magnitude;
+		if (magnitude > 0f)
 		{
 			((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).isWalking = true;
 		}
@@ -352,21 +368,5 @@ public class FPSControllerNEW : MonoBehaviour
 				((Footsteps)footstepScriptHolder.GetComponent(typeof(Footsteps))).walkGrus = false;
 			}
 		}
-	}
-
-	public FPSControllerNEW()
-	{
-		forwardSpeed = 4f;
-		backwardSpeed = 1f;
-		sidestepSpeed = 1f;
-		jumpSpeed = 8f;
-		inAirMultiplier = 0.25f;
-		rotationSpeed = new Vector2(50f, 25f);
-		tiltPositiveYAxis = 0.6f;
-		tiltNegativeYAxis = 0.4f;
-		tiltXAxisMinimum = 0.1f;
-		canJump = true;
-		PlayerIsGrounded = true;
-		startingPitch = 4;
 	}
 }

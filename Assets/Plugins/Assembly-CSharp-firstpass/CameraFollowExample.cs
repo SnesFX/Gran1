@@ -57,7 +57,7 @@ public class CameraFollowExample : MonoBehaviour
 		YawSpeed = SensData.sliderValue;
 		if (RotateJoystick != null)
 		{
-			_ = _parentTransformCache.eulerAngles;
+			Vector3 eulerAngles = _parentTransformCache.eulerAngles;
 			float yAngle = RotateJoystick.GetAxis("Horizontal") * YawSpeed * 5f * Time.deltaTime;
 			rotationx += RotateJoystick.GetAxis("Vertical") * PitchSpeed * 5f * Time.deltaTime;
 			player.Rotate(0f, yAngle, 0f, Space.World);

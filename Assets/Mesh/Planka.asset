@@ -2,11 +2,10 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!43 &4300000
 Mesh:
-  serializedVersion: 10
+  serializedVersion: 9
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: Planka
   m_SubMeshes:
   - serializedVersion: 2
@@ -27,9 +26,6 @@ Mesh:
   m_BindPose: []
   m_BoneNameHashes: []
   m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: []
   m_MeshCompression: 0
   m_IsReadable: 1
   m_KeepVertices: 0
@@ -37,7 +33,7 @@ Mesh:
   m_IndexFormat: 0
   m_IndexBuffer: 000001000200030002000100040005000600070006000500080009000a000b000a0009000c000d000e000f000e000d00100011001200130012001100140015001600170016001500
   m_VertexData:
-    serializedVersion: 3
+    serializedVersion: 2
     m_VertexCount: 24
     m_Channels:
     - stream: 0
@@ -158,8 +154,4 @@ Mesh:
   m_BakedTriangleCollisionMesh:
   m_MeshMetrics[0]: 5977.966
   m_MeshMetrics[1]: 20079.396
-  m_MeshOptimizationFlags: -1
-  m_StreamData:
-    offset: 0
-    size: 0
-    path:
+  m_MeshOptimized: 1

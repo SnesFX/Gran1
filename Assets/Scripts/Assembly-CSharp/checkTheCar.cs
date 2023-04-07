@@ -45,8 +45,6 @@ public class checkTheCar : MonoBehaviour
 
 	public float textTimer;
 
-	public bool carMoving;
-
 	public virtual void Start()
 	{
 	}
@@ -60,8 +58,8 @@ public class checkTheCar : MonoBehaviour
 			{
 				textTimerOnOff = false;
 				textTimer = 0f;
-				canNotStartCarText.SetActive(value: false);
-				needCarKeyText.SetActive(value: false);
+				canNotStartCarText.SetActive(false);
+				needCarKeyText.SetActive(false);
 			}
 		}
 	}
@@ -70,34 +68,34 @@ public class checkTheCar : MonoBehaviour
 	{
 		if (batteryOK && topplockOK && sparkplugOK && fuelOK && playerHaveCarKey && topplocksskruvar == 6f)
 		{
-			startButton.SetActive(value: false);
+			startButton.SetActive(false);
 			StartCoroutine(startEngine());
 			if (reverseOK)
 			{
-				reverseButton.SetActive(value: true);
-				forwardButton.SetActive(value: false);
+				reverseButton.SetActive(true);
+				forwardButton.SetActive(false);
 			}
 			else if (forwardOK)
 			{
-				forwardButton.SetActive(value: true);
-				reverseButton.SetActive(value: false);
+				forwardButton.SetActive(true);
+				reverseButton.SetActive(false);
 			}
 			else
 			{
-				reverseButton.SetActive(value: true);
-				forwardButton.SetActive(value: false);
+				reverseButton.SetActive(true);
+				forwardButton.SetActive(false);
 			}
 		}
 		else if (batteryOK && topplockOK && sparkplugOK && fuelOK && !playerHaveCarKey && topplocksskruvar == 6f)
 		{
 			textTimer = 0f;
-			needCarKeyText.SetActive(value: true);
+			needCarKeyText.SetActive(true);
 			textTimerOnOff = true;
 		}
 		else
 		{
 			textTimer = 0f;
-			canNotStartCarText.SetActive(value: true);
+			canNotStartCarText.SetActive(true);
 			textTimerOnOff = true;
 		}
 	}
@@ -105,9 +103,9 @@ public class checkTheCar : MonoBehaviour
 	public virtual IEnumerator startEngine()
 	{
 		engineOn = true;
-		engineStartSound.SetActive(value: true);
+		engineStartSound.SetActive(true);
 		((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerStartCar = true;
 		yield return new WaitForSeconds(0.6f);
-		engineOnSound.SetActive(value: true);
+		engineOnSound.SetActive(true);
 	}
 }

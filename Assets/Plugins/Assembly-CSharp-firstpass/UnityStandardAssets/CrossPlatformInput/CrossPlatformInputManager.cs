@@ -20,12 +20,24 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 			public bool matchWithInputManager { get; private set; }
 
-			public float GetValue => m_Value;
+			public float GetValue
+			{
+				get
+				{
+					return m_Value;
+				}
+			}
 
-			public float GetValueRaw => m_Value;
+			public float GetValueRaw
+			{
+				get
+				{
+					return m_Value;
+				}
+			}
 
 			public VirtualAxis(string name)
-				: this(name, matchToInputSettings: true)
+				: this(name, true)
 			{
 			}
 
@@ -58,14 +70,32 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 			public bool matchWithInputManager { get; private set; }
 
-			public bool GetButton => m_Pressed;
+			public bool GetButton
+			{
+				get
+				{
+					return m_Pressed;
+				}
+			}
 
-			public bool GetButtonDown => m_LastPressedFrame - Time.frameCount == -1;
+			public bool GetButtonDown
+			{
+				get
+				{
+					return m_LastPressedFrame - Time.frameCount == -1;
+				}
+			}
 
-			public bool GetButtonUp => m_ReleasedFrame == Time.frameCount - 1;
+			public bool GetButtonUp
+			{
+				get
+				{
+					return m_ReleasedFrame == Time.frameCount - 1;
+				}
+			}
 
 			public VirtualButton(string name)
-				: this(name, matchToInputSettings: true)
+				: this(name, true)
 			{
 			}
 
@@ -102,7 +132,13 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		private static VirtualInput s_HardwareInput;
 
-		public static Vector3 mousePosition => activeInput.MousePosition();
+		public static Vector3 mousePosition
+		{
+			get
+			{
+				return activeInput.MousePosition();
+			}
+		}
 
 		static CrossPlatformInputManager()
 		{
@@ -165,12 +201,12 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		public static float GetAxis(string name)
 		{
-			return GetAxis(name, raw: false);
+			return GetAxis(name, false);
 		}
 
 		public static float GetAxisRaw(string name)
 		{
-			return GetAxis(name, raw: true);
+			return GetAxis(name, true);
 		}
 
 		private static float GetAxis(string name, bool raw)

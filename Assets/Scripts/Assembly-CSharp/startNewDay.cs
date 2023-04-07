@@ -97,8 +97,6 @@ public class startNewDay : MonoBehaviour
 
 	public GameObject musicHolder;
 
-	public GameObject musicHolderNightmare;
-
 	public GameObject kliverUrBedLjud;
 
 	public GameObject haveToLeaveText;
@@ -225,10 +223,6 @@ public class startNewDay : MonoBehaviour
 
 	public AudioMixer audioMixer;
 
-	public GameObject bloodHanging;
-
-	public GameObject rats;
-
 	public virtual IEnumerator Start()
 	{
 		Cursor.visible = false;
@@ -241,8 +235,6 @@ public class startNewDay : MonoBehaviour
 			MotionBlurModel.Settings settings = CC.motionBlur.settings;
 			settings.frameBlending = 0f;
 			CC.motionBlur.settings = settings;
-			CC.chromaticAberration.enabled = false;
-			CC.vignette.enabled = false;
 		}
 		else if (PlayerPrefs.GetInt("EffectsOnOff") == 0)
 		{
@@ -250,70 +242,69 @@ public class startNewDay : MonoBehaviour
 			CC.depthOfField.enabled = false;
 			CC.motionBlur.enabled = false;
 			CC.chromaticAberration.enabled = false;
-			CC.vignette.enabled = false;
 		}
 		if (PlayerPrefs.GetInt("DiffData") == 0)
 		{
-			KnarrandeGolv.SetActive(value: true);
-			tavla.SetActive(value: true);
+			KnarrandeGolv.SetActive(true);
+			tavla.SetActive(true);
 			RandomNRTavelbitar = UnityEngine.Random.Range(1, 4);
 			if (RandomNRTavelbitar == 1f)
 			{
-				tavelBitPlace1.SetActive(value: true);
+				tavelBitPlace1.SetActive(true);
 			}
 			else if (RandomNRTavelbitar == 2f)
 			{
-				tavelBitPlace2.SetActive(value: true);
+				tavelBitPlace2.SetActive(true);
 			}
 			else if (RandomNRTavelbitar == 3f)
 			{
-				tavelBitPlace3.SetActive(value: true);
+				tavelBitPlace3.SetActive(true);
 			}
 		}
 		else if (PlayerPrefs.GetInt("DiffData") == 1)
 		{
-			KnarrandeGolv.SetActive(value: false);
-			tavla.SetActive(value: true);
+			KnarrandeGolv.SetActive(false);
+			tavla.SetActive(true);
 			RandomNRTavelbitar = UnityEngine.Random.Range(1, 4);
 			if (RandomNRTavelbitar == 1f)
 			{
-				tavelBitPlace1.SetActive(value: true);
+				tavelBitPlace1.SetActive(true);
 			}
 			else if (RandomNRTavelbitar == 2f)
 			{
-				tavelBitPlace2.SetActive(value: true);
+				tavelBitPlace2.SetActive(true);
 			}
 			else if (RandomNRTavelbitar == 3f)
 			{
-				tavelBitPlace3.SetActive(value: true);
+				tavelBitPlace3.SetActive(true);
 			}
 		}
 		else if (PlayerPrefs.GetInt("DiffData") == 2)
 		{
-			KnarrandeGolv.SetActive(value: true);
+			KnarrandeGolv.SetActive(true);
 		}
 		else if (PlayerPrefs.GetInt("DiffData") == 3)
 		{
-			KnarrandeGolvExtreme.SetActive(value: true);
-			KnarrandeGolv.SetActive(value: false);
+			KnarrandeGolvExtreme.SetActive(true);
+			KnarrandeGolv.SetActive(false);
 		}
 		else if (PlayerPrefs.GetInt("DiffData") == 4)
 		{
-			KnarrandeGolv.SetActive(value: true);
-			tavla.SetActive(value: true);
-			GrannyMessage.SetActive(value: true);
+			KnarrandeGolv.SetActive(true);
+			tavla.SetActive(true);
+			GrannyMessage.SetActive(true);
 			RandomNRTavelbitar = UnityEngine.Random.Range(1, 4);
 			if (RandomNRTavelbitar == 1f)
 			{
-				tavelBitPlace1.SetActive(value: true);
+				tavelBitPlace1.SetActive(true);
 			}
 			else if (RandomNRTavelbitar == 2f)
 			{
-				tavelBitPlace2.SetActive(value: true);
+				tavelBitPlace2.SetActive(true);
 			}
 			else if (RandomNRTavelbitar == 3f)
 			{
-				tavelBitPlace3.SetActive(value: true);
+				tavelBitPlace3.SetActive(true);
 			}
 		}
 		if (PlayerPrefs.GetInt("randomNR") == 0)
@@ -321,107 +312,107 @@ public class startNewDay : MonoBehaviour
 			RandomNR = UnityEngine.Random.Range(1, 6);
 			if (RandomNR == 1f)
 			{
-				OP1.SetActive(value: true);
-				OP1_2.SetActive(value: true);
-				OP1_3.SetActive(value: true);
-				OP1_4.SetActive(value: true);
-				OP1_5.SetActive(value: true);
-				OP1_6.SetActive(value: true);
-				OP1_7.SetActive(value: true);
+				OP1.SetActive(true);
+				OP1_2.SetActive(true);
+				OP1_3.SetActive(true);
+				OP1_4.SetActive(true);
+				OP1_5.SetActive(true);
+				OP1_6.SetActive(true);
+				OP1_7.SetActive(true);
 				PlayerPrefs.SetInt("randomNR", 1);
 			}
 			else if (RandomNR == 2f)
 			{
-				OP2.SetActive(value: true);
-				OP2_2.SetActive(value: true);
-				OP2_3.SetActive(value: true);
-				OP2_4.SetActive(value: true);
-				OP2_5.SetActive(value: true);
+				OP2.SetActive(true);
+				OP2_2.SetActive(true);
+				OP2_3.SetActive(true);
+				OP2_4.SetActive(true);
+				OP2_5.SetActive(true);
 				PlayerPrefs.SetInt("randomNR", 2);
 			}
 			else if (RandomNR == 3f)
 			{
-				OP3.SetActive(value: true);
-				OP3_2.SetActive(value: true);
-				OP3_3.SetActive(value: true);
-				OP3_4.SetActive(value: true);
-				OP3_5.SetActive(value: true);
-				OP3_6.SetActive(value: true);
+				OP3.SetActive(true);
+				OP3_2.SetActive(true);
+				OP3_3.SetActive(true);
+				OP3_4.SetActive(true);
+				OP3_5.SetActive(true);
+				OP3_6.SetActive(true);
 				PlayerPrefs.SetInt("randomNR", 3);
 			}
 			else if (RandomNR == 4f)
 			{
-				OP4.SetActive(value: true);
-				OP4_2.SetActive(value: true);
-				OP4_3.SetActive(value: true);
-				OP4_4.SetActive(value: true);
-				OP4_5.SetActive(value: true);
-				OP4_6.SetActive(value: true);
-				OP4_7.SetActive(value: true);
+				OP4.SetActive(true);
+				OP4_2.SetActive(true);
+				OP4_3.SetActive(true);
+				OP4_4.SetActive(true);
+				OP4_5.SetActive(true);
+				OP4_6.SetActive(true);
+				OP4_7.SetActive(true);
 				PlayerPrefs.SetInt("randomNR", 4);
 			}
 			else if (RandomNR == 5f)
 			{
-				OP5.SetActive(value: true);
-				OP5_2.SetActive(value: true);
-				OP5_3.SetActive(value: true);
-				OP5_4.SetActive(value: true);
-				OP5_5.SetActive(value: true);
-				OP5_6.SetActive(value: true);
-				OP5_7.SetActive(value: true);
+				OP5.SetActive(true);
+				OP5_2.SetActive(true);
+				OP5_3.SetActive(true);
+				OP5_4.SetActive(true);
+				OP5_5.SetActive(true);
+				OP5_6.SetActive(true);
+				OP5_7.SetActive(true);
 				PlayerPrefs.SetInt("randomNR", 5);
 			}
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 1)
 		{
-			OP1.SetActive(value: true);
-			OP1_2.SetActive(value: true);
-			OP1_3.SetActive(value: true);
-			OP1_4.SetActive(value: true);
-			OP1_5.SetActive(value: true);
-			OP1_6.SetActive(value: true);
-			OP1_7.SetActive(value: true);
+			OP1.SetActive(true);
+			OP1_2.SetActive(true);
+			OP1_3.SetActive(true);
+			OP1_4.SetActive(true);
+			OP1_5.SetActive(true);
+			OP1_6.SetActive(true);
+			OP1_7.SetActive(true);
 			PlayerPrefs.SetInt("randomNR", 2);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 2)
 		{
-			OP2.SetActive(value: true);
-			OP2_2.SetActive(value: true);
-			OP2_3.SetActive(value: true);
-			OP2_4.SetActive(value: true);
-			OP2_5.SetActive(value: true);
+			OP2.SetActive(true);
+			OP2_2.SetActive(true);
+			OP2_3.SetActive(true);
+			OP2_4.SetActive(true);
+			OP2_5.SetActive(true);
 			PlayerPrefs.SetInt("randomNR", 3);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 3)
 		{
-			OP3.SetActive(value: true);
-			OP3_2.SetActive(value: true);
-			OP3_3.SetActive(value: true);
-			OP3_4.SetActive(value: true);
-			OP3_5.SetActive(value: true);
-			OP3_6.SetActive(value: true);
+			OP3.SetActive(true);
+			OP3_2.SetActive(true);
+			OP3_3.SetActive(true);
+			OP3_4.SetActive(true);
+			OP3_5.SetActive(true);
+			OP3_6.SetActive(true);
 			PlayerPrefs.SetInt("randomNR", 4);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 4)
 		{
-			OP4.SetActive(value: true);
-			OP4_2.SetActive(value: true);
-			OP4_3.SetActive(value: true);
-			OP4_4.SetActive(value: true);
-			OP4_5.SetActive(value: true);
-			OP4_6.SetActive(value: true);
-			OP4_7.SetActive(value: true);
+			OP4.SetActive(true);
+			OP4_2.SetActive(true);
+			OP4_3.SetActive(true);
+			OP4_4.SetActive(true);
+			OP4_5.SetActive(true);
+			OP4_6.SetActive(true);
+			OP4_7.SetActive(true);
 			PlayerPrefs.SetInt("randomNR", 5);
 		}
 		else if (PlayerPrefs.GetInt("randomNR") == 5)
 		{
-			OP5.SetActive(value: true);
-			OP5_2.SetActive(value: true);
-			OP5_3.SetActive(value: true);
-			OP5_4.SetActive(value: true);
-			OP5_5.SetActive(value: true);
-			OP5_6.SetActive(value: true);
-			OP5_7.SetActive(value: true);
+			OP5.SetActive(true);
+			OP5_2.SetActive(true);
+			OP5_3.SetActive(true);
+			OP5_4.SetActive(true);
+			OP5_5.SetActive(true);
+			OP5_6.SetActive(true);
+			OP5_7.SetActive(true);
 			PlayerPrefs.SetInt("randomNR", 1);
 		}
 		if (daysCounter == 0f)
@@ -435,39 +426,22 @@ public class startNewDay : MonoBehaviour
 		fadeTextSpeed = 1f;
 		((backgroundSound)soundHolder2.GetComponent(typeof(backgroundSound))).fadeUp = true;
 		yield return StartCoroutine(FadeText1(1f, 0f, 2f));
-		day1Text.SetActive(value: false);
+		day1Text.SetActive(false);
 		animationHolder.GetComponent<Animation>().CrossFade("PlayerInBed");
-		kliverUrBedLjud.SetActive(value: true);
-		if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-		{
-			bloodHanging.SetActive(value: true);
-			rats.SetActive(value: true);
-		}
-		else
-		{
-			bloodHanging.SetActive(value: false);
-			rats.SetActive(value: false);
-		}
+		kliverUrBedLjud.SetActive(true);
 		if (PlayerPrefs.GetInt("musikOnOff") == 0)
 		{
-			if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
-			{
-				musicHolderNightmare.SetActive(value: true);
-			}
-			else
-			{
-				musicHolder.SetActive(value: true);
-			}
+			musicHolder.GetComponent<AudioSource>().Play();
 		}
-		blackScreenTexture.CrossFadeAlpha(0f, 6f, ignoreTimeScale: false);
+		blackScreenTexture.CrossFadeAlpha(0f, 6f, false);
 		yield return new WaitForSeconds(11f);
-		playerInBed.SetActive(value: false);
-		Player.SetActive(value: true);
-		crouchButton.SetActive(value: true);
-		optionButton.SetActive(value: true);
+		playerInBed.SetActive(false);
+		Player.SetActive(true);
+		crouchButton.SetActive(true);
+		optionButton.SetActive(true);
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = true;
-		mittPrick.SetActive(value: true);
-		kliverUrBedLjud.SetActive(value: false);
+		mittPrick.SetActive(true);
+		kliverUrBedLjud.SetActive(false);
 		Cursor.visible = false;
 		Screen.lockCursor = true;
 	}
@@ -595,7 +569,7 @@ public class startNewDay : MonoBehaviour
 				CC.motionBlur.settings = settings;
 				frameBlendingOn = true;
 			}
-			dropObjectText.SetActive(value: false);
+			dropObjectText.SetActive(false);
 			fadeTextSpeed = 3f;
 			((SoundEffectsPlayerInBed)soundHolder.GetComponent(typeof(SoundEffectsPlayerInBed))).startTextSound();
 			yield return StartCoroutine(FadeText2(0f, 1f, 2f));
@@ -610,26 +584,27 @@ public class startNewDay : MonoBehaviour
 			fadeTextSpeed = 1f;
 			((backgroundSound)soundHolder2.GetComponent(typeof(backgroundSound))).fadeUp = true;
 			yield return StartCoroutine(FadeText2(1f, 0f, 2f));
-			day2Text.SetActive(value: false);
+			day2Text.SetActive(false);
 			((Footsteps)playerSkalle.GetComponent(typeof(Footsteps))).playerCrouching = false;
-			PlayerPrefs.GetInt("DiffData");
-			_ = 4;
+			if (PlayerPrefs.GetInt("DiffData") != 4)
+			{
+				doorRoom1.gameObject.tag = "innerdoorLocked";
+			}
 			animationHolder.GetComponent<Animation>().CrossFade("PlayerInBed2");
 			animationHolder.GetComponent<Animation>()["PlayerInBed"].speed = 1f;
-			kliverUrBedLjud.SetActive(value: true);
-			blackScreenTexture.CrossFadeAlpha(0f, 6f, ignoreTimeScale: false);
+			kliverUrBedLjud.SetActive(true);
+			blackScreenTexture.CrossFadeAlpha(0f, 6f, false);
 			yield return new WaitForSeconds(11f);
-			playerInBed.SetActive(value: false);
-			Player.SetActive(value: true);
-			haveToLeaveText.SetActive(value: true);
+			playerInBed.SetActive(false);
+			Player.SetActive(true);
+			haveToLeaveText.SetActive(true);
 			GameObject.Find("CameraPivot").GetComponent<Footsteps>().day2 = true;
 			GameObject.Find("CameraPivot").GetComponent<Footsteps>().playerDie = false;
-			crouchButton.SetActive(value: true);
-			optionButton.SetActive(value: true);
-			allBedButtons.SetActive(value: true);
+			crouchButton.SetActive(true);
+			optionButton.SetActive(true);
+			allBedButtons.SetActive(true);
 			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerGetCaught = false;
 			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInhole = false;
-			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInFreezetrap = false;
 			playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 			Player.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = true;
@@ -638,8 +613,8 @@ public class startNewDay : MonoBehaviour
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerNearGranny = false;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
 			GrannyEyeColor.gameObject.GetComponent<Renderer>().material.color = new Color(0.1509434f, 0.1509434f, 0.1509434f);
-			mittPrick.SetActive(value: true);
-			kliverUrBedLjud.SetActive(value: false);
+			mittPrick.SetActive(true);
+			kliverUrBedLjud.SetActive(false);
 			Cursor.visible = false;
 			Screen.lockCursor = true;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHiding = false;
@@ -647,6 +622,10 @@ public class startNewDay : MonoBehaviour
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimer = 15f;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuDoorTimer = 20f;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimeOff = false;
+			if (slendrinaMomAppeard)
+			{
+				bokhyllaClose.GetComponent<Animation>().Play("BookShelfClose");
+			}
 		}
 		else if (daysCounter == 3f)
 		{
@@ -658,7 +637,7 @@ public class startNewDay : MonoBehaviour
 				CC.motionBlur.settings = settings2;
 				frameBlendingOn = true;
 			}
-			dropObjectText.SetActive(value: false);
+			dropObjectText.SetActive(false);
 			fadeTextSpeed = 3f;
 			((SoundEffectsPlayerInBed)soundHolder.GetComponent(typeof(SoundEffectsPlayerInBed))).startTextSound();
 			yield return StartCoroutine(FadeText3(0f, 1f, 2f));
@@ -673,7 +652,7 @@ public class startNewDay : MonoBehaviour
 			fadeTextSpeed = 1f;
 			((backgroundSound)soundHolder2.GetComponent(typeof(backgroundSound))).fadeUp = true;
 			yield return StartCoroutine(FadeText3(1f, 0f, 2f));
-			day3Text.SetActive(value: false);
+			day3Text.SetActive(false);
 			((Footsteps)playerSkalle.GetComponent(typeof(Footsteps))).playerCrouching = false;
 			if (PlayerPrefs.GetInt("DiffData") != 4)
 			{
@@ -681,20 +660,19 @@ public class startNewDay : MonoBehaviour
 			}
 			animationHolder.GetComponent<Animation>().CrossFade("PlayerInBed3");
 			animationHolder.GetComponent<Animation>()["PlayerInBed"].speed = 1f;
-			kliverUrBedLjud.SetActive(value: true);
-			blackScreenTexture.CrossFadeAlpha(0f, 6f, ignoreTimeScale: false);
+			kliverUrBedLjud.SetActive(true);
+			blackScreenTexture.CrossFadeAlpha(0f, 6f, false);
 			yield return new WaitForSeconds(11f);
-			playerInBed.SetActive(value: false);
-			Player.SetActive(value: true);
+			playerInBed.SetActive(false);
+			Player.SetActive(true);
 			GameObject.Find("CameraPivot").GetComponent<Footsteps>().day2 = false;
 			GameObject.Find("CameraPivot").GetComponent<Footsteps>().day3 = true;
 			GameObject.Find("CameraPivot").GetComponent<Footsteps>().playerDie = false;
-			crouchButton.SetActive(value: true);
-			optionButton.SetActive(value: true);
-			allBedButtons.SetActive(value: true);
+			crouchButton.SetActive(true);
+			optionButton.SetActive(true);
+			allBedButtons.SetActive(true);
 			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerGetCaught = false;
 			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInhole = false;
-			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInFreezetrap = false;
 			playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 			Player.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = true;
@@ -703,8 +681,8 @@ public class startNewDay : MonoBehaviour
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerNearGranny = false;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
 			GrannyEyeColor.gameObject.GetComponent<Renderer>().material.color = new Color(0.1509434f, 0.1509434f, 0.1509434f);
-			mittPrick.SetActive(value: true);
-			kliverUrBedLjud.SetActive(value: false);
+			mittPrick.SetActive(true);
+			kliverUrBedLjud.SetActive(false);
 			Cursor.visible = false;
 			Screen.lockCursor = true;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHiding = false;
@@ -712,6 +690,10 @@ public class startNewDay : MonoBehaviour
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimer = 15f;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuDoorTimer = 20f;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimeOff = false;
+			if (slendrinaMomAppeard)
+			{
+				bokhyllaClose.GetComponent<Animation>().Play("BookShelfClose");
+			}
 			AudioListener.pause = false;
 			Time.timeScale = 1f;
 		}
@@ -724,7 +706,7 @@ public class startNewDay : MonoBehaviour
 				CC.motionBlur.settings = settings3;
 				frameBlendingOn = true;
 			}
-			dropObjectText.SetActive(value: false);
+			dropObjectText.SetActive(false);
 			fadeTextSpeed = 3f;
 			((SoundEffectsPlayerInBed)soundHolder.GetComponent(typeof(SoundEffectsPlayerInBed))).startTextSound();
 			yield return StartCoroutine(FadeText4(0f, 1f, 2f));
@@ -739,25 +721,24 @@ public class startNewDay : MonoBehaviour
 			fadeTextSpeed = 1f;
 			((backgroundSound)soundHolder2.GetComponent(typeof(backgroundSound))).fadeUp = true;
 			yield return StartCoroutine(FadeText4(1f, 0f, 2f));
-			day4Text.SetActive(value: false);
+			day4Text.SetActive(false);
 			((Footsteps)playerSkalle.GetComponent(typeof(Footsteps))).playerCrouching = false;
 			animationHolder.GetComponent<Animation>().CrossFade("PlayerInBed2");
 			animationHolder.GetComponent<Animation>()["PlayerInBed"].speed = 1f;
-			kliverUrBedLjud.SetActive(value: true);
-			bloodscreen.SetActive(value: true);
+			kliverUrBedLjud.SetActive(true);
+			bloodscreen.SetActive(true);
 			bloodscreenImage.canvasRenderer.SetAlpha(0.5f);
-			bloodOnBed.SetActive(value: true);
-			blackScreenTexture.CrossFadeAlpha(0f, 6f, ignoreTimeScale: false);
+			bloodOnBed.SetActive(true);
+			blackScreenTexture.CrossFadeAlpha(0f, 6f, false);
 			yield return new WaitForSeconds(11f);
-			playerInBed.SetActive(value: false);
-			Player.SetActive(value: true);
-			crouchButton.SetActive(value: true);
-			optionButton.SetActive(value: true);
-			allBedButtons.SetActive(value: true);
+			playerInBed.SetActive(false);
+			Player.SetActive(true);
+			crouchButton.SetActive(true);
+			optionButton.SetActive(true);
+			allBedButtons.SetActive(true);
 			GameObject.Find("CameraPivot").GetComponent<Footsteps>().playerDie = false;
 			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerGetCaught = false;
 			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInhole = false;
-			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInFreezetrap = false;
 			playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 			Player.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = true;
@@ -766,8 +747,8 @@ public class startNewDay : MonoBehaviour
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerNearGranny = false;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
 			GrannyEyeColor.gameObject.GetComponent<Renderer>().material.color = new Color(0.1509434f, 0.1509434f, 0.1509434f);
-			mittPrick.SetActive(value: true);
-			kliverUrBedLjud.SetActive(value: false);
+			mittPrick.SetActive(true);
+			kliverUrBedLjud.SetActive(false);
 			Cursor.visible = false;
 			Screen.lockCursor = true;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHiding = false;
@@ -775,6 +756,10 @@ public class startNewDay : MonoBehaviour
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimer = 15f;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuDoorTimer = 20f;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimeOff = false;
+			if (slendrinaMomAppeard)
+			{
+				bokhyllaClose.GetComponent<Animation>().Play("BookShelfClose");
+			}
 		}
 		else if (daysCounter == 5f)
 		{
@@ -785,7 +770,7 @@ public class startNewDay : MonoBehaviour
 				CC.motionBlur.settings = settings4;
 				frameBlendingOn = true;
 			}
-			dropObjectText.SetActive(value: false);
+			dropObjectText.SetActive(false);
 			((Footsteps)playerSkalle.GetComponent(typeof(Footsteps))).playerCrouching = false;
 			fadeTextSpeed = 3f;
 			((SoundEffectsPlayerInBed)soundHolder.GetComponent(typeof(SoundEffectsPlayerInBed))).startTextSound();
@@ -796,7 +781,7 @@ public class startNewDay : MonoBehaviour
 				fadeTextSpeed = 1f;
 				((backgroundSound)soundHolder2.GetComponent(typeof(backgroundSound))).fadeUp = true;
 				yield return StartCoroutine(FadeText5LD(1f, 0f, 2f));
-				day5LastDayText.SetActive(value: false);
+				day5LastDayText.SetActive(false);
 			}
 			else if (tavelbit1 && tavelbit2 && tavelbit3 && tavelbit4)
 			{
@@ -805,7 +790,7 @@ public class startNewDay : MonoBehaviour
 				fadeTextSpeed = 1f;
 				((backgroundSound)soundHolder2.GetComponent(typeof(backgroundSound))).fadeUp = true;
 				yield return StartCoroutine(FadeText5(1f, 0f, 2f));
-				day5Text.SetActive(value: false);
+				day5Text.SetActive(false);
 			}
 			else
 			{
@@ -814,7 +799,7 @@ public class startNewDay : MonoBehaviour
 				fadeTextSpeed = 1f;
 				((backgroundSound)soundHolder2.GetComponent(typeof(backgroundSound))).fadeUp = true;
 				yield return StartCoroutine(FadeText5LD(1f, 0f, 2f));
-				day5LastDayText.SetActive(value: false);
+				day5LastDayText.SetActive(false);
 			}
 			if (!slendrinaAppeard && (bool)GameObject.Find("Teddy(Clone)"))
 			{
@@ -825,21 +810,17 @@ public class startNewDay : MonoBehaviour
 			}
 			animationHolder.GetComponent<Animation>().CrossFade("PlayerInBed");
 			animationHolder.GetComponent<Animation>()["PlayerInBed"].speed = 1f;
-			kliverUrBedLjud.SetActive(value: true);
-			bloodscreen.SetActive(value: true);
-			bloodscreenImage.canvasRenderer.SetAlpha(0.5f);
-			bloodOnBed.SetActive(value: true);
-			blackScreenTexture.CrossFadeAlpha(0f, 6f, ignoreTimeScale: false);
+			kliverUrBedLjud.SetActive(true);
+			blackScreenTexture.CrossFadeAlpha(0f, 6f, false);
 			yield return new WaitForSeconds(11f);
-			playerInBed.SetActive(value: false);
-			Player.SetActive(value: true);
-			crouchButton.SetActive(value: true);
-			optionButton.SetActive(value: true);
-			allBedButtons.SetActive(value: true);
+			playerInBed.SetActive(false);
+			Player.SetActive(true);
+			crouchButton.SetActive(true);
+			optionButton.SetActive(true);
+			allBedButtons.SetActive(true);
 			GameObject.Find("CameraPivot").GetComponent<Footsteps>().playerDie = false;
 			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerGetCaught = false;
 			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInhole = false;
-			((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInFreezetrap = false;
 			playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 			Player.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = true;
@@ -848,8 +829,8 @@ public class startNewDay : MonoBehaviour
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerNearGranny = false;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
 			GrannyEyeColor.gameObject.GetComponent<Renderer>().material.color = new Color(0.1509434f, 0.1509434f, 0.1509434f);
-			mittPrick.SetActive(value: true);
-			kliverUrBedLjud.SetActive(value: false);
+			mittPrick.SetActive(true);
+			kliverUrBedLjud.SetActive(false);
 			Cursor.visible = false;
 			Screen.lockCursor = true;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHiding = false;
@@ -857,6 +838,10 @@ public class startNewDay : MonoBehaviour
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimer = 15f;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuDoorTimer = 20f;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimeOff = false;
+			if (slendrinaMomAppeard)
+			{
+				bokhyllaClose.GetComponent<Animation>().Play("BookShelfClose");
+			}
 		}
 		else if (daysCounter == 6f)
 		{
@@ -867,7 +852,7 @@ public class startNewDay : MonoBehaviour
 				CC.motionBlur.settings = settings5;
 				frameBlendingOn = true;
 			}
-			dropObjectText.SetActive(value: false);
+			dropObjectText.SetActive(false);
 			((Footsteps)playerSkalle.GetComponent(typeof(Footsteps))).playerCrouching = false;
 			if (tavelbit1 && tavelbit2 && tavelbit3 && tavelbit4)
 			{
@@ -885,26 +870,22 @@ public class startNewDay : MonoBehaviour
 				fadeTextSpeed = 1f;
 				((backgroundSound)soundHolder2.GetComponent(typeof(backgroundSound))).fadeUp = true;
 				yield return StartCoroutine(FadeText6(1f, 0f, 2f));
-				day6Text.SetActive(value: false);
+				day6Text.SetActive(false);
 				animationHolder.GetComponent<Animation>().CrossFade("PlayerInBed2");
 				animationHolder.GetComponent<Animation>()["PlayerInBed"].speed = 1f;
-				kliverUrBedLjud.SetActive(value: true);
-				bloodscreen.SetActive(value: true);
-				bloodOnBed.SetActive(value: true);
-				bloodscreen.SetActive(value: true);
-				bloodscreenImage.canvasRenderer.SetAlpha(0.5f);
-				bloodOnBed.SetActive(value: true);
-				blackScreenTexture.CrossFadeAlpha(0f, 6f, ignoreTimeScale: false);
+				kliverUrBedLjud.SetActive(true);
+				bloodscreen.SetActive(true);
+				bloodOnBed.SetActive(true);
+				blackScreenTexture.CrossFadeAlpha(0f, 6f, false);
 				yield return new WaitForSeconds(11f);
-				playerInBed.SetActive(value: false);
-				Player.SetActive(value: true);
-				crouchButton.SetActive(value: true);
-				optionButton.SetActive(value: true);
-				allBedButtons.SetActive(value: true);
+				playerInBed.SetActive(false);
+				Player.SetActive(true);
+				crouchButton.SetActive(true);
+				optionButton.SetActive(true);
+				allBedButtons.SetActive(true);
 				GameObject.Find("CameraPivot").GetComponent<Footsteps>().playerDie = false;
 				((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerGetCaught = false;
 				((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInhole = false;
-				((FirstPersonController_Egen)Player.GetComponent(typeof(FirstPersonController_Egen))).playerInFreezetrap = false;
 				playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 				Player.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).enabled = true;
@@ -913,8 +894,8 @@ public class startNewDay : MonoBehaviour
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerNearGranny = false;
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = false;
 				GrannyEyeColor.gameObject.GetComponent<Renderer>().material.color = new Color(0.1509434f, 0.1509434f, 0.1509434f);
-				mittPrick.SetActive(value: true);
-				kliverUrBedLjud.SetActive(value: false);
+				mittPrick.SetActive(true);
+				kliverUrBedLjud.SetActive(false);
 				Cursor.visible = false;
 				Screen.lockCursor = true;
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHiding = false;
@@ -922,6 +903,10 @@ public class startNewDay : MonoBehaviour
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimer = 15f;
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuDoorTimer = 20f;
 				((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimeOff = false;
+				if (slendrinaMomAppeard)
+				{
+					bokhyllaClose.GetComponent<Animation>().Play("BookShelfClose");
+				}
 			}
 			else if (PlayerPrefs.GetInt("DiffData") == 4)
 			{
@@ -930,21 +915,16 @@ public class startNewDay : MonoBehaviour
 			else if (PlayerPrefs.GetInt("DiffGOsceneData") == 0)
 			{
 				PlayerPrefs.SetInt("DiffGOsceneData", 1);
-				((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene4();
+				StartCoroutine(((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene());
 			}
 			else if (PlayerPrefs.GetInt("DiffGOsceneData") == 1)
 			{
-				PlayerPrefs.SetInt("DiffGOsceneData", 2);
-				StartCoroutine(((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene3());
-			}
-			else if (PlayerPrefs.GetInt("DiffGOsceneData") == 2)
-			{
-				PlayerPrefs.SetInt("DiffGOsceneData", 3);
+				PlayerPrefs.SetInt("DiffGOsceneData", 0);
 				StartCoroutine(((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene2());
 			}
-			else if (PlayerPrefs.GetInt("DiffGOsceneData") == 3)
+			else
 			{
-				PlayerPrefs.SetInt("DiffGOsceneData", 0);
+				PlayerPrefs.SetInt("DiffGOsceneData", 1);
 				StartCoroutine(((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene());
 			}
 		}
@@ -957,21 +937,16 @@ public class startNewDay : MonoBehaviour
 			else if (PlayerPrefs.GetInt("DiffGOsceneData") == 0)
 			{
 				PlayerPrefs.SetInt("DiffGOsceneData", 1);
-				((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene4();
+				StartCoroutine(((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene());
 			}
 			else if (PlayerPrefs.GetInt("DiffGOsceneData") == 1)
 			{
-				PlayerPrefs.SetInt("DiffGOsceneData", 2);
-				StartCoroutine(((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene3());
-			}
-			else if (PlayerPrefs.GetInt("DiffGOsceneData") == 2)
-			{
-				PlayerPrefs.SetInt("DiffGOsceneData", 3);
+				PlayerPrefs.SetInt("DiffGOsceneData", 0);
 				StartCoroutine(((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene2());
 			}
-			else if (PlayerPrefs.GetInt("DiffGOsceneData") == 3)
+			else
 			{
-				PlayerPrefs.SetInt("DiffGOsceneData", 0);
+				PlayerPrefs.SetInt("DiffGOsceneData", 1);
 				StartCoroutine(((playerDead)gameController.GetComponent(typeof(playerDead))).startEndScene());
 			}
 		}

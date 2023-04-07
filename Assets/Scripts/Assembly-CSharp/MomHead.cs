@@ -22,7 +22,7 @@ public class MomHead : MonoBehaviour
 		if (faceReady && !faceNot)
 		{
 			faceReady = false;
-			momFaceScare.SetActive(value: true);
+			momFaceScare.SetActive(true);
 			StartCoroutine(faceScare());
 		}
 	}
@@ -30,7 +30,7 @@ public class MomHead : MonoBehaviour
 	public virtual IEnumerator faceScare()
 	{
 		yield return new WaitForSeconds(0.1f);
-		momFaceScare.SetActive(value: false);
+		momFaceScare.SetActive(false);
 		faceNot = true;
 	}
 }

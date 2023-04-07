@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UI;
 
 [Serializable]
 public class HealthBarStretch : MonoBehaviour
@@ -11,7 +10,7 @@ public class HealthBarStretch : MonoBehaviour
 
 	private Rect defaultRect;
 
-	public Image gui;
+	public GUITexture gui;
 
 	public virtual void Start()
 	{

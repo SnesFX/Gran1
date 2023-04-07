@@ -16,9 +16,9 @@ public class MomTeleport : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player" && !((AIfollow)mom.GetComponent(typeof(AIfollow))).seePlayer)
 		{
-			mom.SetActive(value: false);
+			mom.SetActive(false);
 			mom.transform.position = teleportPoint.position;
-			mom.SetActive(value: true);
+			mom.SetActive(true);
 		}
 	}
 }

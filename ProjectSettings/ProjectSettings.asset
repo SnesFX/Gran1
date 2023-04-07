@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!129 &1
 PlayerSettings:
-  serializedVersion: 18
+  serializedVersion: 15
   m_ObjectHideFlags: 0
   productGUID: 7abb257f5ce615a41a5082fd5feff5af
   AndroidProfiler: 0
@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DVloper
   productName: Granny
-  defaultCursor: {fileID: 2800000, guid: 87bdc7504e1e81b42b9f7ffad25e4924, type: 3}
+  defaultCursor: {fileID: 2800000, guid: b64cee285899b634794292d48cb0e535, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 1}
   m_ShowUnitySplashScreen: 0
@@ -40,7 +40,7 @@ PlayerSettings:
     width: 1
     height: 1
   m_SplashScreenLogos:
-  - logo: {fileID: 21300000, guid: 59814729f102ac141af60be7a882129d, type: 2}
+  - logo: {fileID: 21300000, guid: d5d607fb078fab24997cef7e62a8eaac, type: 2}
     duration: 3
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
@@ -60,8 +60,8 @@ PlayerSettings:
   - 1
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
+  iosAppInBackgroundBehavior: 0
   displayResolutionDialog: 0
-  iosUseCustomAppBackgroundBehavior: 0
   iosAllowHTTPDownload: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
@@ -71,9 +71,6 @@ PlayerSettings:
   use32BitDisplayBuffer: 1
   preserveFramebufferAlpha: 0
   disableDepthAndStencilBuffers: 0
-  androidStartInFullscreen: 1
-  androidRenderOutsideSafeArea: 1
-  androidUseSwappy: 0
   androidBlitType: 0
   defaultIsNativeResolution: 1
   macRetinaSupport: 1
@@ -88,7 +85,6 @@ PlayerSettings:
   usePlayerLog: 1
   bakeCollisionMeshes: 0
   forceSingleInstance: 0
-  useFlipModelSwapchain: 1
   resizableWindow: 0
   useMacAppStoreValidation: 0
   macAppStoreCategory: public.app-category.games
@@ -108,6 +104,9 @@ PlayerSettings:
   xboxEnableGuest: 0
   xboxEnablePIXSampling: 0
   metalFramebufferOnly: 0
+  n3dsDisableStereoscopicView: 0
+  n3dsEnableSharedListOpt: 1
+  n3dsEnableVSync: 0
   xboxOneResolution: 0
   xboxOneSResolution: 0
   xboxOneXResolution: 3
@@ -116,19 +115,18 @@ PlayerSettings:
   xboxOneDisableEsram: 0
   xboxOnePresentImmediateThreshold: 0
   switchQueueCommandMemory: 0
-  switchQueueControlMemory: 16384
-  switchQueueComputeMemory: 262144
-  switchNVNShaderPoolsGranularity: 33554432
-  switchNVNDefaultPoolsGranularity: 16777216
-  switchNVNOtherPoolsGranularity: 16777216
+  videoMemoryForVertexBuffers: 0
+  psp2PowerMode: 0
+  psp2AcquireBGM: 1
   vulkanEnableSetSRGBWrite: 0
+  vulkanUseSWCommandBuffers: 0
   m_SupportedAspectRatios:
     4:3: 1
     5:4: 1
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 1.2.1
+  bundleVersion: 1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -150,22 +148,11 @@ PlayerSettings:
     hololens:
       depthFormat: 1
       depthBufferSharingEnabled: 0
-    lumin:
-      depthFormat: 0
-      frameTiming: 2
-      enableGLCache: 0
-      glCacheMaxBlobSize: 524288
-      glCacheMaxFileSize: 8388608
     oculus:
       sharedDepthBuffer: 0
       dashSupport: 0
-      lowOverheadMode: 0
-      protectedContext: 0
-      v2Signing: 0
     enable360StereoCapture: 0
-  isWsaHolographicRemotingEnabled: 0
   protectGraphicsMemory: 0
-  enableFrameTimingStats: 0
   useHDRDisplay: 0
   m_ColorGamuts:
   - 0
@@ -213,10 +200,6 @@ PlayerSettings:
   iPadHighResPortraitSplashScreen: {fileID: 0}
   iPadLandscapeSplashScreen: {fileID: 0}
   iPadHighResLandscapeSplashScreen: {fileID: 0}
-  iPhone65inPortraitSplashScreen: {fileID: 0}
-  iPhone65inLandscapeSplashScreen: {fileID: 0}
-  iPhone61inPortraitSplashScreen: {fileID: 0}
-  iPhone61inLandscapeSplashScreen: {fileID: 0}
   appleTVSplashScreen: {fileID: 0}
   appleTVSplashScreen2x: {fileID: 0}
   tvOSSmallIconLayers: []
@@ -260,8 +243,8 @@ PlayerSettings:
   tvOSManualSigningProvisioningProfileType: 0
   appleEnableAutomaticSigning: 0
   iOSRequireARKit: 0
-  iOSAutomaticallyDetectAndAddCapabilities: 0
   appleEnableProMotion: 0
+  vulkanEditorSupport: 0
   clonedFromGUID: 00000000000000000000000000000000
   templatePackageId:
   templateDefaultScene:
@@ -276,21 +259,17 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 0
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 0
   m_AndroidBanners: []
   androidGamepadSupportLevel: 0
-  AndroidValidateAppBundleSize: 0
-  AndroidAppBundleSizeToValidate: 0
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons: []
   m_BuildTargetPlatformIcons: []
   m_BuildTargetBatching: []
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings: []
+  m_BuildTargetEnableVuforiaSettings: []
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
-  openGLRequireES32: 0
-  vuforiaEnabled: 0
   m_TemplateCustomTags: {}
   mobileMTRendering: {}
   m_BuildTargetGroupLightmapEncodingQuality: []
@@ -416,8 +395,6 @@ PlayerSettings:
   switchAllowsVideoCapturing: 0
   switchAllowsRuntimeAddOnContentInstall: 0
   switchDataLossConfirmation: 0
-  switchUserAccountLockEnabled: 0
-  switchSystemResourceMemory: 0
   switchSupportedNpadStyles: 0
   switchNativeFsCacheSize: 0
   switchIsHoldTypeHorizontal: 0
@@ -471,7 +448,6 @@ PlayerSettings:
   ps4DownloadDataSize: 0
   ps4GarlicHeapSize: 0
   ps4ProGarlicHeapSize: 0
-  playerPrefsMaxSize: 0
   ps4Passcode:
   ps4pnSessions: 0
   ps4pnPresence: 0
@@ -479,7 +455,6 @@ PlayerSettings:
   ps4pnGameCustomData: 0
   playerPrefsSupport: 0
   enableApplicationExit: 0
-  resetTempFolder: 0
   restrictedAudioUsageRights: 0
   ps4UseResolutionFallback: 0
   ps4ReprojectionSupport: 0
@@ -503,9 +478,55 @@ PlayerSettings:
   ps4attribEyeToEyeDistanceSettingVR: 0
   ps4IncludedModules: []
   monoEnv:
+  psp2Splashimage: {fileID: 0}
+  psp2NPTrophyPackPath:
+  psp2NPSupportGBMorGJP: 0
+  psp2NPAgeRating: 0
+  psp2NPTitleDatPath:
+  psp2NPCommsID:
+  psp2NPCommunicationsID:
+  psp2NPCommsPassphrase:
+  psp2NPCommsSig:
+  psp2ParamSfxPath:
+  psp2ManualPath:
+  psp2LiveAreaGatePath:
+  psp2LiveAreaBackroundPath:
+  psp2LiveAreaPath:
+  psp2LiveAreaTrialPath:
+  psp2PatchChangeInfoPath:
+  psp2PatchOriginalPackage:
+  psp2PackagePassword:
+  psp2KeystoneFile:
+  psp2MemoryExpansionMode: 0
+  psp2DRMType: 0
+  psp2StorageType: 0
+  psp2MediaCapacity: 0
+  psp2DLCConfigPath:
+  psp2ThumbnailPath:
+  psp2BackgroundPath:
+  psp2SoundPath:
+  psp2TrophyCommId:
+  psp2TrophyPackagePath:
+  psp2PackagedResourcesPath:
+  psp2SaveDataQuota: 0
+  psp2ParentalLevel: 0
+  psp2ShortTitle:
+  psp2ContentID:
+  psp2Category: 0
+  psp2MasterVersion:
+  psp2AppVersion:
+  psp2TVBootMode: 0
+  psp2EnterButtonAssignment: 0
+  psp2TVDisableEmu: 0
+  psp2AllowTwitterDialog: 0
+  psp2Upgradable: 0
+  psp2HealthWarning: 0
+  psp2UseLibLocation: 0
+  psp2InfoBarOnStartup: 0
+  psp2InfoBarColor: 0
+  psp2ScriptOptimizationLevel: 0
   splashScreenBackgroundSourceLandscape: {fileID: 0}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
-  blurSplashScreenBackground: 0
   spritePackerPolicy:
   webGLMemorySize: 0
   webGLExceptionSupport: 0
@@ -519,19 +540,14 @@ PlayerSettings:
   webGLUseEmbeddedResources: 0
   webGLCompressionFormat: 0
   webGLLinkerTarget: 0
-  webGLThreadsSupport: 0
-  webGLWasmStreaming: 0
   scriptingDefineSymbols: {}
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
-  managedStrippingLevel: {}
   incrementalIl2cppBuild: {}
   allowUnsafeCode: 0
   additionalIl2CppArgs:
   scriptingRuntimeVersion: 0
-  gcIncremental: 0
-  gcWBarrierValidation: 0
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 0
   m_MobileRenderingPath: 0
@@ -549,18 +565,27 @@ PlayerSettings:
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
   metroWideTileShowName: 0
-  metroSupportStreamingInstall: 0
-  metroLastRequiredScene: 0
   metroDefaultTileSize: 0
   metroTileForegroundText: 0
   metroTileBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
   metroSplashScreenBackgroundColor: {r: 0, g: 0, b: 0, a: 0}
   metroSplashScreenUseBackgroundColor: 0
   platformCapabilities: {}
-  metroTargetDeviceFamilies: {}
   metroFTAName:
   metroFTAFileTypes: []
   metroProtocolName:
+  metroCompilationOverrides: 0
+  n3dsUseExtSaveData: 0
+  n3dsCompressStaticMem: 0
+  n3dsExtSaveDataNumber:
+  n3dsStackSize: 0
+  n3dsTargetPlatform: 0
+  n3dsRegion: 0
+  n3dsMediaSize: 0
+  n3dsLogoStyle: 0
+  n3dsTitle:
+  n3dsProductCode:
+  n3dsApplicationId:
   XboxOneProductId:
   XboxOneUpdateKey:
   XboxOneSandboxId:
@@ -585,7 +610,6 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   XboxOneXTitleMemory: 0
   xboxOneScriptCompiler: 0
-  XboxOneOverrideIdentityName:
   vrEditorSettings:
     none: {}
     cardboard: {}
@@ -593,30 +617,11 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled: {}
-  luminIcon:
-    m_Name:
-    m_ModelFolderPath:
-    m_PortalFolderPath:
-  luminCert:
-    m_CertPath:
-    m_SignPackage: 0
-  luminIsChannelApp: 0
-  luminVersion:
-    m_VersionCode: 0
-    m_VersionName:
   facebookSdkVersion:
-  facebookAppId:
-  facebookCookies: 0
-  facebookLogging: 0
-  facebookStatus: 0
-  facebookXfbml: 0
-  facebookFrictionlessRequests: 0
   apiCompatibilityLevel: 0
   cloudProjectId: 20d466dd-483d-4ac9-9a6f-bd439061fa46
-  framebufferDepthMemorylessMode: 0
   projectName: Granny (PC version)
   organizationId: dennis-1524074
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
-  legacyClampBlendShapeWeights: 1

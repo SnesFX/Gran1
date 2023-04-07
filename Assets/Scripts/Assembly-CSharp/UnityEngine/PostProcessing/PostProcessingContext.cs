@@ -12,15 +12,45 @@ namespace UnityEngine.PostProcessing
 
 		public bool interrupted { get; private set; }
 
-		public bool isGBufferAvailable => camera.actualRenderingPath == RenderingPath.DeferredShading;
+		public bool isGBufferAvailable
+		{
+			get
+			{
+				return camera.actualRenderingPath == RenderingPath.DeferredShading;
+			}
+		}
 
-		public bool isHdr => camera.allowHDR;
+		public bool isHdr
+		{
+			get
+			{
+				return camera.allowHDR;
+			}
+		}
 
-		public int width => camera.pixelWidth;
+		public int width
+		{
+			get
+			{
+				return camera.pixelWidth;
+			}
+		}
 
-		public int height => camera.pixelHeight;
+		public int height
+		{
+			get
+			{
+				return camera.pixelHeight;
+			}
+		}
 
-		public Rect viewport => camera.rect;
+		public Rect viewport
+		{
+			get
+			{
+				return camera.rect;
+			}
+		}
 
 		public void Interrupt()
 		{

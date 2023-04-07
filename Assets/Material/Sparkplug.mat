@@ -5,8 +5,7 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: Sparkplug
   m_Shader: {fileID: 14, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords:
@@ -24,7 +23,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 76a285698451947498c6c22befec4535, type: 3}
+        m_Texture: {fileID: 2800000, guid: 32d832afa47c6c84686635c9549eafd1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:

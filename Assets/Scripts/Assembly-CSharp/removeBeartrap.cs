@@ -20,6 +20,11 @@ public class removeBeartrap : MonoBehaviour
 
 	public bool playerTaken;
 
+	public removeBeartrap()
+	{
+		layerMask = 256;
+	}
+
 	public virtual void Start()
 	{
 		removeBar.fillAmount = 0f;
@@ -57,10 +62,5 @@ public class removeBeartrap : MonoBehaviour
 			removeBar.fillAmount = 0f;
 			((seeBearTrap)rayHolder.GetComponent(typeof(seeBearTrap))).destroyTrap = false;
 		}
-	}
-
-	public removeBeartrap()
-	{
-		layerMask = 256;
 	}
 }

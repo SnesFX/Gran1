@@ -15,11 +15,7 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				if (base.model.enabled && base.model.settings.intensity > 0f)
-				{
-					return !context.interrupted;
-				}
-				return false;
+				return base.model.enabled && base.model.settings.intensity > 0f && !context.interrupted;
 			}
 		}
 
@@ -37,7 +33,7 @@ namespace UnityEngine.PostProcessing
 			{
 				if (m_SpectrumLut == null)
 				{
-					m_SpectrumLut = new Texture2D(3, 1, TextureFormat.RGB24, mipChain: false)
+					m_SpectrumLut = new Texture2D(3, 1, TextureFormat.RGB24, false)
 					{
 						name = "Chromatic Aberration Spectrum Lookup",
 						filterMode = FilterMode.Bilinear,

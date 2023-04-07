@@ -14,7 +14,7 @@ public class maniacScream : MonoBehaviour
 
 	public virtual void Start()
 	{
-		GetComponent<AudioSource>();
+		AudioSource component = GetComponent<AudioSource>();
 	}
 
 	public virtual void Update()

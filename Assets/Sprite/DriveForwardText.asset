@@ -4,8 +4,7 @@
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
   m_Name: DriveForwardText
   m_Rect:
     serializedVersion: 2
@@ -27,9 +26,8 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 2800000, guid: 4e32d70d27c8cc44ab9deb9bf3232eec, type: 3}
+    texture: {fileID: 2800000, guid: 9b9713cde755c9b4590f3be34b9c052c, type: 3}
     alphaTexture: {fileID: 0}
-    secondaryTextures: []
     m_SubMeshes:
     - serializedVersion: 2
       firstByte: 0
@@ -43,7 +41,7 @@ Sprite:
         m_Extent: {x: 0, y: 0, z: 0}
     m_IndexBuffer: 3c003a004300420043003a004700460045003c0045004600440045003c00430044003c004000440043004200400043003f0040004200410040003f003e0002003d0000003d0002003a003d0000003b003d003a003c003b003a003900380037003400370038003500370034003600350034003300320031002d0031003200300031002d002e0030002d002f002e002d00260024002b002a002b0024002c002b002a002900280025002700250028002100250027002400250021002600250024002200240021002300220021001a0018001f001e001f00180020001f001e001d001c0019001b0019001c00150019001b001800190015001a00190018001600180015001700160015000f0012000d0013000d001200140013001200110010000e000f000e0010000d000e000f000c000e000d0009000c000d000a000c0009000b000a000900080007000600050006000700030006000500040003000500000003000400010003000000020001000000
     m_VertexData:
-      serializedVersion: 3
+      serializedVersion: 2
       m_VertexCount: 72
       m_Channels:
       - stream: 0
@@ -120,11 +118,10 @@ Sprite:
     serializedVersion: 3
     texture: {fileID: 0}
     alphaTexture: {fileID: 0}
-    secondaryTextures: []
     m_SubMeshes: []
     m_IndexBuffer:
     m_VertexData:
-      serializedVersion: 3
+      serializedVersion: 2
       m_VertexCount: 0
       m_Channels: []
       m_DataSize: 0

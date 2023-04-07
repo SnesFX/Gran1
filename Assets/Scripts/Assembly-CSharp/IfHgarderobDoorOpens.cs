@@ -18,6 +18,11 @@ public class IfHgarderobDoorOpens : MonoBehaviour
 
 	public GameObject player;
 
+	public IfHgarderobDoorOpens()
+	{
+		doorsClosed = true;
+	}
+
 	public virtual void Start()
 	{
 	}
@@ -33,12 +38,7 @@ public class IfHgarderobDoorOpens : MonoBehaviour
 			((AIfollow)nos.GetComponent(typeof(AIfollow))).playerHiding = false;
 			((FPSControllerNEW)player.GetComponent(typeof(FPSControllerNEW))).sidestepSpeed = 6f;
 			((FPSControllerNEW)player.GetComponent(typeof(FPSControllerNEW))).forwardSpeed = 8f;
-			doorButton.SetActive(value: false);
+			doorButton.SetActive(false);
 		}
-	}
-
-	public IfHgarderobDoorOpens()
-	{
-		doorsClosed = true;
 	}
 }

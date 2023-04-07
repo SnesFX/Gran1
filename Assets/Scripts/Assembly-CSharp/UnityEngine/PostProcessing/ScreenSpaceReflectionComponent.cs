@@ -105,11 +105,7 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				if (base.model.enabled && context.isGBufferAvailable)
-				{
-					return !context.interrupted;
-				}
-				return false;
+				return base.model.enabled && context.isGBufferAvailable && !context.interrupted;
 			}
 		}
 
@@ -171,7 +167,7 @@ namespace UnityEngine.PostProcessing
 			material.SetFloat(Uniforms._FresnelFadePower, settings.intensity.fresnelFadePower);
 			Matrix4x4 projectionMatrix = camera.projectionMatrix;
 			Vector4 value2 = new Vector4(-2f / (num4 * projectionMatrix[0]), -2f / (num5 * projectionMatrix[5]), (1f - projectionMatrix[2]) / projectionMatrix[0], (1f + projectionMatrix[6]) / projectionMatrix[5]);
-			Vector3 vector = (float.IsPositiveInfinity(camera.farClipPlane) ? new Vector3(camera.nearClipPlane, -1f, 1f) : new Vector3(camera.nearClipPlane * camera.farClipPlane, camera.nearClipPlane - camera.farClipPlane, camera.farClipPlane));
+			Vector3 vector = ((!float.IsPositiveInfinity(camera.farClipPlane)) ? new Vector3(camera.nearClipPlane * camera.farClipPlane, camera.nearClipPlane - camera.farClipPlane, camera.farClipPlane) : new Vector3(camera.nearClipPlane, -1f, 1f));
 			material.SetVector(Uniforms._ReflectionBufferSize, new Vector2(num2, num3));
 			material.SetVector(Uniforms._ScreenSize, new Vector2(num4, num5));
 			material.SetVector(Uniforms._InvScreenSize, new Vector2(1f / num4, 1f / num5));

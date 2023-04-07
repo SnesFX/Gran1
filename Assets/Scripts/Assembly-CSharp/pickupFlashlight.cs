@@ -60,46 +60,46 @@ public class pickupFlashlight : MonoBehaviour
 			{
 				if (hitInfo.collider.gameObject.tag == "flashlight")
 				{
-					flashlightEtext.SetActive(value: true);
-					flashlightText.SetActive(value: true);
+					flashlightEtext.SetActive(true);
+					flashlightText.SetActive(true);
 					if (pickingFlashlight)
 					{
-						lightOnPlayerDarker1.SetActive(value: true);
-						lightOnPlayerDarker2.SetActive(value: true);
-						lightOnPlayerDarker3.SetActive(value: true);
-						lightOnPlayerDarker4.SetActive(value: true);
-						lightOnPlayerDarker5.SetActive(value: true);
-						lightOnPlayerDarker6.SetActive(value: true);
-						lightOnPlayerDarker7.SetActive(value: true);
-						lightOnPlayerDarker8.SetActive(value: true);
-						lightOnPlayerDarker9.SetActive(value: true);
-						lightOnPlayerDarker10.SetActive(value: true);
+						lightOnPlayerDarker1.SetActive(true);
+						lightOnPlayerDarker2.SetActive(true);
+						lightOnPlayerDarker3.SetActive(true);
+						lightOnPlayerDarker4.SetActive(true);
+						lightOnPlayerDarker5.SetActive(true);
+						lightOnPlayerDarker6.SetActive(true);
+						lightOnPlayerDarker7.SetActive(true);
+						lightOnPlayerDarker8.SetActive(true);
+						lightOnPlayerDarker9.SetActive(true);
+						lightOnPlayerDarker10.SetActive(true);
 						((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).pickingUpStuff();
 						Object.Destroy(hitInfo.collider.gameObject);
-						flashlightEtext.SetActive(value: false);
+						flashlightEtext.SetActive(false);
 						pickingFlashlight = false;
-						flashlightText.SetActive(value: false);
-						base.gameObject.SetActive(value: false);
+						flashlightText.SetActive(false);
+						base.gameObject.SetActive(false);
 					}
 				}
 				else
 				{
-					flashlightEtext.SetActive(value: false);
-					flashlightText.SetActive(value: false);
+					flashlightEtext.SetActive(false);
+					flashlightText.SetActive(false);
 					pickingFlashlight = false;
 				}
 			}
 			else
 			{
-				flashlightEtext.SetActive(value: false);
-				flashlightText.SetActive(value: false);
+				flashlightEtext.SetActive(false);
+				flashlightText.SetActive(false);
 				pickingFlashlight = false;
 			}
 		}
 		else
 		{
-			flashlightEtext.SetActive(value: false);
-			flashlightText.SetActive(value: false);
+			flashlightEtext.SetActive(false);
+			flashlightText.SetActive(false);
 			pickingFlashlight = false;
 		}
 	}

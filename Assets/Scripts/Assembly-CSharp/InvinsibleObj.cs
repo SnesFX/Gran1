@@ -7,9 +7,11 @@ public class InvinsibleObj : MonoBehaviour
 	public virtual void Start()
 	{
 		Component[] componentsInChildren = GetComponentsInChildren(typeof(Renderer));
-		for (int i = 0; i < componentsInChildren.Length; i++)
+		Component[] array = componentsInChildren;
+		for (int i = 0; i < array.Length; i++)
 		{
-			((Renderer)componentsInChildren[i]).material.renderQueue = 2002;
+			Renderer renderer = (Renderer)array[i];
+			renderer.material.renderQueue = 2002;
 		}
 	}
 }

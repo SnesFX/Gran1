@@ -26,7 +26,10 @@ public class seeBearTrap : MonoBehaviour
 
 	public AudioClip removeBeartrapSound;
 
-	public AudioClip removeBeartrapOrganicSound;
+	public seeBearTrap()
+	{
+		layerMask = 256;
+	}
 
 	public virtual void Start()
 	{
@@ -52,29 +55,21 @@ public class seeBearTrap : MonoBehaviour
 					return;
 				}
 				removeBar.fillAmount += 0.5f * Time.deltaTime;
-				if (removeBar.fillAmount != 1f)
+				if (removeBar.fillAmount == 1f)
 				{
-					return;
-				}
-				removeBar.fillAmount = 0f;
-				if (hitInfo.collider.gameObject.tag == "BearTrapActivated")
-				{
-					UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
-					((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).playerInhole = false;
-					((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 6f;
-					crawlButton.SetActive(value: true);
-					allBedButtons.SetActive(value: true);
-					((removeBeartrap)button.GetComponent(typeof(removeBeartrap))).seeTrap = false;
-					player.GetComponent<CharacterController>().height = 2.76f;
-					button.enabled = false;
-					destroyTrap = false;
-					if (PlayerPrefs.GetInt("NightMareOnOff") == 0)
+					removeBar.fillAmount = 0f;
+					if (hitInfo.collider.gameObject.tag == "BearTrapActivated")
 					{
+						UnityEngine.Object.Destroy(hitInfo.collider.gameObject);
+						((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).playerInhole = false;
+						((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).m_WalkSpeed = 6f;
+						crawlButton.SetActive(true);
+						allBedButtons.SetActive(true);
+						((removeBeartrap)button.GetComponent(typeof(removeBeartrap))).seeTrap = false;
+						player.GetComponent<CharacterController>().height = 2.76f;
+						button.enabled = false;
+						destroyTrap = false;
 						GetComponent<AudioSource>().PlayOneShot(removeBeartrapSound);
-					}
-					else
-					{
-						GetComponent<AudioSource>().PlayOneShot(removeBeartrapOrganicSound);
 					}
 				}
 			}
@@ -91,10 +86,5 @@ public class seeBearTrap : MonoBehaviour
 			button.enabled = false;
 			destroyTrap = false;
 		}
-	}
-
-	public seeBearTrap()
-	{
-		layerMask = 256;
 	}
 }

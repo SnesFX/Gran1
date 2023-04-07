@@ -31,9 +31,9 @@ public class ClickContinueButton : MonoBehaviour
 		{
 			buttonPressed = true;
 			SceneManager.LoadScene("ForestScene");
-			LoadingScreen.SetActive(value: true);
-			allButtons.SetActive(value: false);
-			Optionbackground.SetActive(value: false);
+			LoadingScreen.SetActive(true);
+			allButtons.SetActive(false);
+			Optionbackground.SetActive(false);
 			((ButtonClicks)ljudHolder.GetComponent(typeof(ButtonClicks))).clickButton();
 			Cursor.visible = false;
 		}

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class tapcontrol : MonoBehaviour
@@ -8,7 +9,7 @@ public class tapcontrol : MonoBehaviour
 
 	public Transform cameraPivot;
 
-	public GUITexture jumpButton;
+	public Image jumpButton;
 
 	public float speed;
 

@@ -11,6 +11,6 @@ namespace TMPro
 		BottomLeft = 6,
 		Bottom = 7,
 		BottomRight = 8,
-		Custom = 9
+		Custom = 9,
 	}
 }

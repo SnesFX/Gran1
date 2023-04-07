@@ -4,6 +4,6 @@ namespace TMPro
 	{
 		MaskOff = 0,
 		MaskHard = 1,
-		MaskSoft = 2
+		MaskSoft = 2,
 	}
 }

@@ -7,9 +7,7 @@ namespace TMPro
 	public class TMP_Asset : ScriptableObject
 	{
 		public int hashCode;
-
 		public Material material;
-
 		public int materialHashCode;
 	}
 }

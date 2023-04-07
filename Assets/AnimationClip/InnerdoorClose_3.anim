@@ -2,12 +2,12 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!74 &7400000
 AnimationClip:
-  serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: InnerdoorClose
+  m_Name: InnerdoorClose_3
+  serializedVersion: 6
   m_Legacy: 1
   m_Compressed: 0
   m_UseHighQualityCurve: 1
@@ -414,8 +414,8 @@ AnimationClip:
       - serializedVersion: 3
         time: 0.73333335
         value: {x: -0.7069834, y: 0, z: 0, w: 0.70723015}
-        inSlope: {x: -3.9338964E-05, y: -0.056410726, z: -0.056430414, w: 3.9338964E-05}
-        outSlope: {x: -3.9338964E-05, y: -0.056410726, z: -0.056430414, w: 3.9338964E-05}
+        inSlope: {x: -0.000039338964, y: -0.056410726, z: -0.056430414, w: 0.000039338964}
+        outSlope: {x: -0.000039338964, y: -0.056410726, z: -0.056430414, w: 0.000039338964}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334, w: 0.33333334}
@@ -423,7 +423,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path:
+    path: 
   m_CompressedRotationCurves: []
   m_EulerCurves: []
   m_PositionCurves: []

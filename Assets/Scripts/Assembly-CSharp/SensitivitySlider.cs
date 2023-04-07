@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class SensitivitySlider : MonoBehaviour
@@ -12,7 +13,7 @@ public class SensitivitySlider : MonoBehaviour
 
 	private Rect defaultRect;
 
-	private GUITexture gui;
+	private Image gui;
 
 	public saveSensitivityData scriptC;
 

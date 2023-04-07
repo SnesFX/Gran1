@@ -3,6 +3,6 @@ namespace TMPro
 	public enum VertexSortingOrder
 	{
 		Normal = 0,
-		Reverse = 1
+		Reverse = 1,
 	}
 }

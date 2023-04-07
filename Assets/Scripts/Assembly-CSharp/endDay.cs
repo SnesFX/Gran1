@@ -63,7 +63,7 @@ public class endDay : MonoBehaviour
 
 	public GameObject carButton;
 
-	public GUITexture trapButtonGUI;
+	public Image trapButtonGUI;
 
 	public GameObject trapButton;
 
@@ -162,7 +162,7 @@ public class endDay : MonoBehaviour
 		carButton.SetActive(value: false);
 		trapButton.SetActive(value: true);
 		trapBar.SetActive(value: true);
-		trapButtonGUI.enabled = false;
+		trapButtonGUI.CrossFadeAlpha(1f, 0.8f, false);
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerGetCaught = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).attackingPlayer = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).huntPlayer = false;

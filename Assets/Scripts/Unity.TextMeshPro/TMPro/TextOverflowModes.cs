@@ -8,6 +8,6 @@ namespace TMPro
 		Truncate = 3,
 		ScrollRect = 4,
 		Page = 5,
-		Linked = 6
+		Linked = 6,
 	}
 }

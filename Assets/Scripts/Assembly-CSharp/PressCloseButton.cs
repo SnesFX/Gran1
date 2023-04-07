@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class PressCloseButton : MonoBehaviour
@@ -26,7 +27,7 @@ public class PressCloseButton : MonoBehaviour
 		for (int i = 0; i < touches.Length; i++)
 		{
 			Touch touch = touches[i];
-			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
+			if (touch.phase == TouchPhase.Ended && RectTransformUtility.RectangleContainsScreenPoint(GetComponent<RectTransform>(), touch.position))
 			{
 				((soundEffectsMenu)ljudHolder.GetComponent(typeof(soundEffectsMenu))).buttonClick();
 				HelpMenu.SetActive(value: false);

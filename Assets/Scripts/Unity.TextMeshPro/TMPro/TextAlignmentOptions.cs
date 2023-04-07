@@ -37,6 +37,6 @@ namespace TMPro
 		CaplineRight = 8196,
 		CaplineJustified = 8200,
 		CaplineFlush = 8208,
-		CaplineGeoAligned = 8224
+		CaplineGeoAligned = 8224,
 	}
 }

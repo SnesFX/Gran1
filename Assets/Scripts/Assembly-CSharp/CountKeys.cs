@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class CountKeys : MonoBehaviour
@@ -14,7 +15,7 @@ public class CountKeys : MonoBehaviour
 
 	public virtual void Update()
 	{
-		keyCounterParent.GetComponent<GUIText>().text = keys.ToString();
+		keyCounterParent.GetComponent<Text>().text = keys.ToString();
 	}
 
 	public virtual void countUpkeys()

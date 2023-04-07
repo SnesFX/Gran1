@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class PressOptionButton : MonoBehaviour
@@ -28,7 +29,7 @@ public class PressOptionButton : MonoBehaviour
 		for (int i = 0; i < touches.Length; i++)
 		{
 			Touch touch = touches[i];
-			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
+			if (touch.phase == TouchPhase.Ended && GetComponent<RectTransform>().HitTest(touch.position))
 			{
 				optionMenu.SetActive(value: true);
 				joystick.SetActive(value: false);

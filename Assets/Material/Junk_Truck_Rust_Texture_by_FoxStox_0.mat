@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Junk_Truck_Rust_Texture_by_FoxStox
+  m_Name: Junk_Truck_Rust_Texture_by_FoxStox_0
   m_Shader: {fileID: 4800000, guid: e3b88fdd205547f4b878d36e75e8c935, type: 3}
-  m_ShaderKeywords:
+  m_ShaderKeywords: 
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
 public class SeeObjects : MonoBehaviour
@@ -12,7 +13,7 @@ public class SeeObjects : MonoBehaviour
 		for (int i = 0; i < touches.Length; i++)
 		{
 			Touch touch = touches[i];
-			if (touch.phase == TouchPhase.Began && GetComponent<GUITexture>().HitTest(touch.position))
+			if (touch.phase == TouchPhase.Began && GetComponent<Image>().HitTest(touch.position))
 			{
 				((PickUp)handHolder.GetComponent(typeof(PickUp))).pickUp = true;
 			}

@@ -1,8 +1,9 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 [Serializable]
-[RequireComponent(typeof(GUITexture))]
+[RequireComponent(typeof(Image))]
 public class Joystick : MonoBehaviour
 {
 	private static Joystick[] joysticks;
@@ -33,7 +34,7 @@ public class Joystick : MonoBehaviour
 
 	private float firstDeltaTime;
 
-	private GUITexture gui;
+	private Image gui;
 
 	private Rect defaultRect;
 
@@ -45,7 +46,7 @@ public class Joystick : MonoBehaviour
 
 	public bool havestopped;
 
-	public GUITexture joystickRing;
+	public Image joystickRing;
 
 	public GameObject footstepScriptHolder;
 
@@ -56,7 +57,7 @@ public class Joystick : MonoBehaviour
 	public virtual void Start()
 	{
 		footstepScriptHolder = GameObject.Find("Main Camera");
-		gui = (GUITexture)GetComponent(typeof(GUITexture));
+		gui = (Image)GetComponent(typeof(Image));
 		defaultRect = gui.pixelInset;
 		defaultRect.x += base.transform.position.x * (float)Screen.width;
 		defaultRect.y += base.transform.position.y * (float)Screen.height;

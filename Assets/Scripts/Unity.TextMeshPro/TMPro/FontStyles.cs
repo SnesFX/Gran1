@@ -7,11 +7,11 @@ namespace TMPro
 		Italic = 2,
 		Underline = 4,
 		LowerCase = 8,
-		UpperCase = 0x10,
-		SmallCaps = 0x20,
-		Strikethrough = 0x40,
-		Superscript = 0x80,
-		Subscript = 0x100,
-		Highlight = 0x200
+		UpperCase = 16,
+		SmallCaps = 32,
+		Strikethrough = 64,
+		Superscript = 128,
+		Subscript = 256,
+		Highlight = 512,
 	}
 }

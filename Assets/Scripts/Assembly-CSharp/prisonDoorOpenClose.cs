@@ -47,11 +47,6 @@ public class prisonDoorOpenClose : MonoBehaviour
 
 	public GameObject granny;
 
-	public prisonDoorOpenClose()
-	{
-		DoorOpen = true;
-	}
-
 	public virtual void Start()
 	{
 		DoorOpen = true;
@@ -118,11 +113,11 @@ public class prisonDoorOpenClose : MonoBehaviour
 		}
 		if (GameObject.Find("Sparkle1") != null)
 		{
-			sparcle1.SetActive(false);
+			sparcle1.SetActive(value: false);
 		}
 		if (GameObject.Find("Sparkle2") != null)
 		{
-			sparcle2.SetActive(false);
+			sparcle2.SetActive(value: false);
 		}
 	}
 
@@ -130,7 +125,7 @@ public class prisonDoorOpenClose : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 		base.gameObject.tag = "prisondoorlocked";
-		doorTrigger.SetActive(true);
+		doorTrigger.SetActive(value: true);
 		if (GameObject.Find("Sprint1") != null)
 		{
 			sprint1.gameObject.tag = "sprint1";
@@ -146,11 +141,11 @@ public class prisonDoorOpenClose : MonoBehaviour
 		{
 			if (GameObject.Find("Sprint1") != null)
 			{
-				sparcle1.SetActive(true);
+				sparcle1.SetActive(value: true);
 			}
 			if (GameObject.Find("Sprint2") != null)
 			{
-				sparcle2.SetActive(true);
+				sparcle2.SetActive(value: true);
 			}
 		}
 	}
@@ -162,11 +157,10 @@ public class prisonDoorOpenClose : MonoBehaviour
 	public virtual IEnumerator doorLoose()
 	{
 		galler.GetComponent<Collider>().enabled = true;
-		gallerColliders.SetActive(false);
-		camSeeTrigger.SetActive(false);
+		gallerColliders.SetActive(value: false);
+		camSeeTrigger.SetActive(value: false);
 		yield return new WaitForSeconds(2f);
-		base.gameObject.AddComponent(typeof(Rigidbody));
-		doorTrigger.SetActive(false);
+		doorTrigger.SetActive(value: false);
 		((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerInPrison = false;
 		((Rigidbody)GetComponent(typeof(Rigidbody))).isKinematic = false;
 		((MeshCollider)GetComponent(typeof(MeshCollider))).convex = true;
@@ -185,20 +179,25 @@ public class prisonDoorOpenClose : MonoBehaviour
 		{
 			doorOpenAgain = true;
 			GetComponent<Animation>().Play("prisondoorOpen");
-			doorTrigger.SetActive(false);
+			doorTrigger.SetActive(value: false);
 			((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerInPrison = false;
-			camSeeTrigger.SetActive(false);
+			camSeeTrigger.SetActive(value: false);
 		}
 		if (DoorMoving)
 		{
 			if (other.gameObject.tag == "Player")
 			{
-				Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), true);
+				Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), ignore: true);
 			}
 		}
 		else if (!DoorMoving)
 		{
-			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), false);
+			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), ignore: false);
 		}
+	}
+
+	public prisonDoorOpenClose()
+	{
+		DoorOpen = true;
 	}
 }

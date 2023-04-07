@@ -201,8 +201,7 @@ namespace TMPro
 			}
 			for (int i = 0; i < m_materialList.Count; i++)
 			{
-				Material stencilMaterial = m_materialList[i].stencilMaterial;
-				UnityEngine.Object.DestroyImmediate(stencilMaterial);
+				UnityEngine.Object.DestroyImmediate(m_materialList[i].stencilMaterial);
 				m_materialList.RemoveAt(i);
 			}
 		}
@@ -260,7 +259,7 @@ namespace TMPro
 		private static Transform FindRootSortOverrideCanvas(Transform start)
 		{
 			List<Canvas> list = TMP_ListPool<Canvas>.Get();
-			start.GetComponentsInParent(false, list);
+			start.GetComponentsInParent(includeInactive: false, list);
 			Canvas canvas = null;
 			for (int i = 0; i < list.Count; i++)
 			{
@@ -271,7 +270,11 @@ namespace TMPro
 				}
 			}
 			TMP_ListPool<Canvas>.Release(list);
-			return (!(canvas != null)) ? null : canvas.transform;
+			if (!(canvas != null))
+			{
+				return null;
+			}
+			return canvas.transform;
 		}
 
 		public static Material GetFallbackMaterial(Material sourceMaterial, Material targetMaterial)
@@ -280,8 +283,7 @@ namespace TMPro
 			Texture texture = targetMaterial.GetTexture(ShaderUtilities.ID_MainTex);
 			int instanceID2 = texture.GetInstanceID();
 			long num = ((long)instanceID << 32) | (uint)instanceID2;
-			FallbackMaterial value;
-			if (m_fallbackMaterials.TryGetValue(num, out value))
+			if (m_fallbackMaterials.TryGetValue(num, out var value))
 			{
 				return value.fallbackMaterial;
 			}
@@ -317,9 +319,7 @@ namespace TMPro
 			if (!(targetMaterial == null))
 			{
 				int instanceID = targetMaterial.GetInstanceID();
-				long value;
-				FallbackMaterial value2;
-				if (m_fallbackMaterialLookup.TryGetValue(instanceID, out value) && m_fallbackMaterials.TryGetValue(value, out value2))
+				if (m_fallbackMaterialLookup.TryGetValue(instanceID, out var value) && m_fallbackMaterials.TryGetValue(value, out var value2))
 				{
 					value2.count++;
 				}
@@ -333,9 +333,7 @@ namespace TMPro
 				return;
 			}
 			int instanceID = targetMaterial.GetInstanceID();
-			long value;
-			FallbackMaterial value2;
-			if (m_fallbackMaterialLookup.TryGetValue(instanceID, out value) && m_fallbackMaterials.TryGetValue(value, out value2))
+			if (m_fallbackMaterialLookup.TryGetValue(instanceID, out var value) && m_fallbackMaterials.TryGetValue(value, out var value2))
 			{
 				value2.count--;
 				if (value2.count < 1)
@@ -373,9 +371,7 @@ namespace TMPro
 				return;
 			}
 			int instanceID = fallackMaterial.GetInstanceID();
-			long value;
-			FallbackMaterial value2;
-			if (m_fallbackMaterialLookup.TryGetValue(instanceID, out value) && m_fallbackMaterials.TryGetValue(value, out value2))
+			if (m_fallbackMaterialLookup.TryGetValue(instanceID, out var value) && m_fallbackMaterials.TryGetValue(value, out var value2))
 			{
 				value2.count--;
 				if (value2.count < 1)

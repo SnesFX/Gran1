@@ -21,7 +21,7 @@ public class theEndCarEscape : MonoBehaviour
 	public virtual IEnumerator Start()
 	{
 		yield return new WaitForSeconds(time);
-		theEndTextImage.SetActive(true);
+		theEndTextImage.SetActive(value: true);
 		yield return new WaitForSeconds(time2);
 		PlayerPrefs.SetInt("teddyInPlace", 0);
 		SceneManager.LoadScene("Menu");

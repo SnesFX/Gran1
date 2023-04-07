@@ -60,18 +60,6 @@ public class tapcontrol : MonoBehaviour
 
 	private float firstTouchTime;
 
-	public tapcontrol()
-	{
-		inAirMultiplier = 0.25f;
-		minimumDistanceToMove = 1f;
-		minimumTimeUntilMove = 0.25f;
-		rotateEpsilon = 1f;
-		state = ControlState.WaitingForFirstTouch;
-		fingerDown = new int[2];
-		fingerDownPosition = new Vector2[2];
-		fingerDownFrame = new int[2];
-	}
-
 	public virtual void Start()
 	{
 		thisTransform = base.transform;
@@ -141,8 +129,7 @@ public class tapcontrol : MonoBehaviour
 	public virtual void CharacterControl()
 	{
 		RaycastHit hitInfo = default(RaycastHit);
-		int touchCount = Input.touchCount;
-		if (touchCount == 1 && state == ControlState.MovingCharacter)
+		if (Input.touchCount == 1 && state == ControlState.MovingCharacter)
 		{
 			Touch touch = Input.GetTouch(0);
 			if (character.isGrounded && jumpButton.HitTest(touch.position))
@@ -150,18 +137,13 @@ public class tapcontrol : MonoBehaviour
 				velocity = character.velocity;
 				velocity.y = jumpSpeed;
 			}
-			else if (!jumpButton.HitTest(touch.position) && touch.phase != 0)
+			else if (!jumpButton.HitTest(touch.position) && touch.phase != 0 && Physics.Raycast(cam.ScreenPointToRay(new Vector3(touch.position.x, touch.position.y)), out hitInfo))
 			{
-				Ray ray = cam.ScreenPointToRay(new Vector3(touch.position.x, touch.position.y));
-				if (Physics.Raycast(ray, out hitInfo))
+				if ((base.transform.position - hitInfo.point).magnitude > minimumDistanceToMove)
 				{
-					float magnitude = (base.transform.position - hitInfo.point).magnitude;
-					if (magnitude > minimumDistanceToMove)
-					{
-						targetLocation = hitInfo.point;
-					}
-					moving = true;
+					targetLocation = hitInfo.point;
 				}
+				moving = true;
 			}
 		}
 		Vector3 motion = Vector3.zero;
@@ -169,8 +151,7 @@ public class tapcontrol : MonoBehaviour
 		{
 			motion = targetLocation - thisTransform.position;
 			motion.y = 0f;
-			float magnitude2 = motion.magnitude;
-			if (magnitude2 < 1f)
+			if (motion.magnitude < 1f)
 			{
 				moving = false;
 			}
@@ -254,7 +235,7 @@ public class tapcontrol : MonoBehaviour
 					}
 					if (touchCount == 1)
 					{
-						Vector2 vector = touch.position - fingerDownPosition[0];
+						_ = touch.position - fingerDownPosition[0];
 						if (touch.fingerId == fingerDown[0] && (Time.time > firstTouchTime + minimumTimeUntilMove || touch.phase == TouchPhase.Ended))
 						{
 							state = ControlState.MovingCharacter;
@@ -300,26 +281,18 @@ public class tapcontrol : MonoBehaviour
 				{
 					if (flag2)
 					{
-						Vector2 vector2 = fingerDownPosition[1] - fingerDownPosition[0];
-						Vector2 vector3 = touch3.position - touch2.position;
-						Vector2 lhs = vector2 / vector2.magnitude;
-						Vector2 rhs = vector3 / vector3.magnitude;
+						Vector2 vector = fingerDownPosition[1] - fingerDownPosition[0];
+						Vector2 vector2 = touch3.position - touch2.position;
+						Vector2 lhs = vector / vector.magnitude;
+						Vector2 rhs = vector2 / vector2.magnitude;
 						float num2 = Vector2.Dot(lhs, rhs);
-						if (num2 < 1f)
+						if (num2 < 1f && Mathf.Acos(num2) > rotateEpsilon * ((float)Math.PI / 180f))
 						{
-							float num3 = Mathf.Acos(num2);
-							if (num3 > rotateEpsilon * ((float)Math.PI / 180f))
-							{
-								state = ControlState.RotatingCamera;
-							}
+							state = ControlState.RotatingCamera;
 						}
-						if (state == ControlState.WaitingForMovement)
+						if (state == ControlState.WaitingForMovement && Mathf.Abs(vector.magnitude - vector2.magnitude) > zoomEpsilon)
 						{
-							float f = vector2.magnitude - vector3.magnitude;
-							if (Mathf.Abs(f) > zoomEpsilon)
-							{
-								state = ControlState.ZoomingCamera;
-							}
+							state = ControlState.ZoomingCamera;
 						}
 					}
 				}
@@ -369,5 +342,17 @@ public class tapcontrol : MonoBehaviour
 		Vector3 eulerAngles = cameraPivot.eulerAngles;
 		eulerAngles.y = y;
 		cameraPivot.eulerAngles = eulerAngles;
+	}
+
+	public tapcontrol()
+	{
+		inAirMultiplier = 0.25f;
+		minimumDistanceToMove = 1f;
+		minimumTimeUntilMove = 0.25f;
+		rotateEpsilon = 1f;
+		state = ControlState.WaitingForFirstTouch;
+		fingerDown = new int[2];
+		fingerDownPosition = new Vector2[2];
+		fingerDownFrame = new int[2];
 	}
 }

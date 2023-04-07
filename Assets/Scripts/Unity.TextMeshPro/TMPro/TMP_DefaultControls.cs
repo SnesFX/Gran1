@@ -39,8 +39,7 @@ namespace TMPro
 		private static GameObject CreateUIElementRoot(string name, Vector2 size)
 		{
 			GameObject gameObject = new GameObject(name);
-			RectTransform rectTransform = gameObject.AddComponent<RectTransform>();
-			rectTransform.sizeDelta = size;
+			gameObject.AddComponent<RectTransform>().sizeDelta = size;
 			return gameObject;
 		}
 
@@ -70,7 +69,7 @@ namespace TMPro
 		{
 			if (!(parent == null))
 			{
-				child.transform.SetParent(parent.transform, false);
+				child.transform.SetParent(parent.transform, worldPositionStays: false);
 				SetLayerRecursively(child, parent.layer);
 			}
 		}
@@ -111,9 +110,40 @@ namespace TMPro
 			return gameObject;
 		}
 
+		public static GameObject CreateButton(Resources resources)
+		{
+			GameObject gameObject = CreateUIElementRoot("Button", s_ThickElementSize);
+			GameObject gameObject2 = new GameObject("Text (TMP)");
+			gameObject2.AddComponent<RectTransform>();
+			SetParentAndAlign(gameObject2, gameObject);
+			Image image = gameObject.AddComponent<Image>();
+			image.sprite = resources.standard;
+			image.type = Image.Type.Sliced;
+			image.color = s_DefaultSelectableColor;
+			SetDefaultColorTransitionValues(gameObject.AddComponent<Button>());
+			TextMeshProUGUI textMeshProUGUI = gameObject2.AddComponent<TextMeshProUGUI>();
+			textMeshProUGUI.text = "Button";
+			textMeshProUGUI.alignment = TextAlignmentOptions.Center;
+			SetDefaultTextValues(textMeshProUGUI);
+			RectTransform component = gameObject2.GetComponent<RectTransform>();
+			component.anchorMin = Vector2.zero;
+			component.anchorMax = Vector2.one;
+			component.sizeDelta = Vector2.zero;
+			return gameObject;
+		}
+
+		public static GameObject CreateText(Resources resources)
+		{
+			GameObject gameObject = CreateUIElementRoot("Text (TMP)", s_ThickElementSize);
+			TextMeshProUGUI textMeshProUGUI = gameObject.AddComponent<TextMeshProUGUI>();
+			textMeshProUGUI.text = "New Text";
+			SetDefaultTextValues(textMeshProUGUI);
+			return gameObject;
+		}
+
 		public static GameObject CreateInputField(Resources resources)
 		{
-			GameObject gameObject = CreateUIElementRoot("TextMeshPro - InputField", s_ThickElementSize);
+			GameObject gameObject = CreateUIElementRoot("InputField (TMP)", s_ThickElementSize);
 			GameObject gameObject2 = CreateUIObject("Text Area", gameObject);
 			GameObject gameObject3 = CreateUIObject("Placeholder", gameObject2);
 			GameObject gameObject4 = CreateUIObject("Text", gameObject2);
@@ -131,7 +161,7 @@ namespace TMPro
 			component.offsetMin = new Vector2(10f, 6f);
 			component.offsetMax = new Vector2(-10f, -7f);
 			TextMeshProUGUI textMeshProUGUI = gameObject4.AddComponent<TextMeshProUGUI>();
-			textMeshProUGUI.text = string.Empty;
+			textMeshProUGUI.text = "";
 			textMeshProUGUI.enableWordWrapping = false;
 			textMeshProUGUI.extraPadding = true;
 			textMeshProUGUI.richText = true;
@@ -180,7 +210,7 @@ namespace TMPro
 			gameObject11.name = "Scrollbar";
 			SetParentAndAlign(gameObject11, gameObject4);
 			Scrollbar component = gameObject11.GetComponent<Scrollbar>();
-			component.SetDirection(Scrollbar.Direction.BottomToTop, true);
+			component.SetDirection(Scrollbar.Direction.BottomToTop, includeRectLayouts: true);
 			RectTransform component2 = gameObject11.GetComponent<RectTransform>();
 			component2.anchorMin = Vector2.right;
 			component2.anchorMax = Vector2.one;
@@ -208,22 +238,20 @@ namespace TMPro
 			scrollRect.verticalScrollbar = component;
 			scrollRect.verticalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHideAndExpandViewport;
 			scrollRect.verticalScrollbarSpacing = -3f;
-			Mask mask = gameObject5.AddComponent<Mask>();
-			mask.showMaskGraphic = false;
+			gameObject5.AddComponent<Mask>().showMaskGraphic = false;
 			Image image4 = gameObject5.AddComponent<Image>();
 			image4.sprite = resources.mask;
 			image4.type = Image.Type.Sliced;
 			TextMeshProUGUI textMeshProUGUI2 = gameObject2.AddComponent<TextMeshProUGUI>();
 			SetDefaultTextValues(textMeshProUGUI2);
 			textMeshProUGUI2.alignment = TextAlignmentOptions.Left;
-			Image image5 = gameObject3.AddComponent<Image>();
-			image5.sprite = resources.dropdown;
-			Image image6 = gameObject.AddComponent<Image>();
-			image6.sprite = resources.standard;
-			image6.color = s_DefaultSelectableColor;
-			image6.type = Image.Type.Sliced;
+			gameObject3.AddComponent<Image>().sprite = resources.dropdown;
+			Image image5 = gameObject.AddComponent<Image>();
+			image5.sprite = resources.standard;
+			image5.color = s_DefaultSelectableColor;
+			image5.type = Image.Type.Sliced;
 			TMP_Dropdown tMP_Dropdown = gameObject.AddComponent<TMP_Dropdown>();
-			tMP_Dropdown.targetGraphic = image6;
+			tMP_Dropdown.targetGraphic = image5;
 			SetDefaultColorTransitionValues(tMP_Dropdown);
 			tMP_Dropdown.template = gameObject4.GetComponent<RectTransform>();
 			tMP_Dropdown.captionText = textMeshProUGUI2;
@@ -287,7 +315,7 @@ namespace TMPro
 			component11.anchorMax = Vector2.one;
 			component11.offsetMin = new Vector2(20f, 1f);
 			component11.offsetMax = new Vector2(-10f, -2f);
-			gameObject4.SetActive(false);
+			gameObject4.SetActive(value: false);
 			return gameObject;
 		}
 	}

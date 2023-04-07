@@ -25,6 +25,8 @@ public class spiderControll : MonoBehaviour
 
 	public float spiderEatTimer;
 
+	public float beforeBackToNestTimer;
+
 	public bool spiderStartEat;
 
 	public bool SpiderBitePlayer;
@@ -39,7 +41,7 @@ public class spiderControll : MonoBehaviour
 
 	public float spiderSpeed;
 
-	public GameObject spiderAnimHolder;
+	public Animator spider2AnimHolder;
 
 	public GameObject foodCollider;
 
@@ -52,6 +54,10 @@ public class spiderControll : MonoBehaviour
 	public bool soundAttackPlayed;
 
 	public bool spiderResetNow;
+
+	public bool spiderRunToNest;
+
+	public bool spiderBackoff;
 
 	public bool spiderInNest;
 
@@ -73,14 +79,12 @@ public class spiderControll : MonoBehaviour
 
 	public Transform spiderNestPosition;
 
-	public spiderControll()
-	{
-		spiderDeadTimer = 8f;
-		spiderInNest = true;
-	}
+	public Transform spiderNotHuntPosition;
 
 	public virtual void Start()
 	{
+		spider2AnimHolder = spider2AnimHolder.gameObject.GetComponent<Animator>();
+		spider2AnimHolder.Play("idle");
 	}
 
 	public virtual void Update()
@@ -97,9 +101,8 @@ public class spiderControll : MonoBehaviour
 					forward.y = 0f;
 					Quaternion b = Quaternion.LookRotation(forward);
 					base.transform.rotation = Quaternion.Slerp(base.transform.rotation, b, Time.deltaTime * damping);
-					spiderAnimHolder.GetComponent<Animation>()["Walk"].speed = 3f;
-					foodCollider.SetActive(false);
-					playerCollider.SetActive(true);
+					foodCollider.SetActive(value: false);
+					playerCollider.SetActive(value: true);
 					running();
 					if (!soundSeePlayed)
 					{
@@ -112,21 +115,31 @@ public class spiderControll : MonoBehaviour
 					spiderInNest = false;
 					base.transform.Translate(Vector3.forward * Time.deltaTime * 10f);
 					base.transform.LookAt(FoodPlate);
-					spiderAnimHolder.GetComponent<Animation>()["Walk"].speed = 3f;
-					foodCollider.SetActive(true);
-					playerCollider.SetActive(false);
+					foodCollider.SetActive(value: true);
+					playerCollider.SetActive(value: false);
 					running();
 				}
 			}
-			if (spiderResetNow && !spiderStartEat)
+			if (spiderResetNow && !spiderStartEat && !huntPlayer)
 			{
 				base.transform.Translate(Vector3.forward * Time.deltaTime * spiderSpeed);
-				Vector3 forward2 = spiderNestPosition.position - base.transform.position;
+				Vector3 forward2 = spiderNotHuntPosition.position - base.transform.position;
 				forward2.y = 0f;
 				Quaternion b2 = Quaternion.LookRotation(forward2);
 				base.transform.rotation = Quaternion.Slerp(base.transform.rotation, b2, Time.deltaTime * damping);
-				foodCollider.SetActive(false);
-				playerCollider.SetActive(false);
+				foodCollider.SetActive(value: true);
+				playerCollider.SetActive(value: false);
+				running();
+			}
+			if (spiderRunToNest && !spiderStartEat && !huntPlayer)
+			{
+				base.transform.Translate(Vector3.forward * Time.deltaTime * spiderSpeed);
+				Vector3 forward3 = spiderNestPosition.position - base.transform.position;
+				forward3.y = 0f;
+				Quaternion b3 = Quaternion.LookRotation(forward3);
+				base.transform.rotation = Quaternion.Slerp(base.transform.rotation, b3, Time.deltaTime * damping);
+				foodCollider.SetActive(value: true);
+				playerCollider.SetActive(value: false);
 				running();
 			}
 		}
@@ -135,8 +148,8 @@ public class spiderControll : MonoBehaviour
 			spiderDeadTimer -= Time.deltaTime;
 			if (spiderDeadTimer <= 0f)
 			{
-				inactivateSpider.SetActive(false);
-				inactivateSpiderTrigger.SetActive(false);
+				inactivateSpider.SetActive(value: false);
+				inactivateSpiderTrigger.SetActive(value: false);
 			}
 		}
 		if (spiderStartEat)
@@ -145,8 +158,19 @@ public class spiderControll : MonoBehaviour
 			if (spiderEatTimer >= 10f)
 			{
 				spiderStartEat = false;
-				spiderTrigger2.SetActive(true);
-				meatOnPlate.SetActive(false);
+				spiderTrigger2.SetActive(value: true);
+				meatOnPlate.SetActive(value: false);
+				spiderRunToNest = true;
+			}
+		}
+		if (spiderBackoff)
+		{
+			beforeBackToNestTimer += Time.deltaTime;
+			if (beforeBackToNestTimer >= 7f)
+			{
+				spiderBackoff = false;
+				beforeBackToNestTimer = 0f;
+				spiderRunToNest = true;
 			}
 		}
 	}
@@ -155,7 +179,7 @@ public class spiderControll : MonoBehaviour
 	{
 		if (!spiderDead)
 		{
-			spiderAnimHolder.GetComponent<Animation>().CrossFade("Walk");
+			spider2AnimHolder.Play("Walk");
 		}
 	}
 
@@ -163,9 +187,7 @@ public class spiderControll : MonoBehaviour
 	{
 		if (!spiderDead)
 		{
-			spiderAnimHolder.GetComponent<Animation>().CrossFade("attack");
-			spiderAnimHolder.GetComponent<Animation>().Stop("Walk");
-			spiderAnimHolder.GetComponent<Animation>().Stop("idle");
+			spider2AnimHolder.Play("attack");
 			playerDead();
 		}
 	}
@@ -174,9 +196,7 @@ public class spiderControll : MonoBehaviour
 	{
 		if (!spiderDead)
 		{
-			spiderAnimHolder.GetComponent<Animation>().CrossFade("idle");
-			spiderAnimHolder.GetComponent<Animation>().Stop("Walk");
-			spiderAnimHolder.GetComponent<Animation>().Stop("attack");
+			spider2AnimHolder.Play("idle");
 		}
 	}
 
@@ -184,16 +204,15 @@ public class spiderControll : MonoBehaviour
 	{
 		if (!spiderDead && !SpiderBitePlayer)
 		{
-			foodCollider.SetActive(false);
+			foodCollider.SetActive(value: false);
 			SpiderBitePlayer = true;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerGetCaught = true;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerFallDeath = true;
+			((grannyRestart)gameController.GetComponent(typeof(grannyRestart))).playerFallDead = true;
 			huntPlayer = false;
-			spiderAnimHolder.GetComponent<Animation>().CrossFade("attack");
-			spiderAnimHolder.GetComponent<Animation>().Stop("Walk");
-			spiderAnimHolder.GetComponent<Animation>().Stop("idle");
+			spider2AnimHolder.Play("attack");
 			((playerCrawl)playerHukaKnapp.GetComponent(typeof(playerCrawl))).standUp();
-			playerHukaKnappParent.SetActive(false);
+			playerHukaKnappParent.SetActive(value: false);
 			if (!soundAttackPlayed)
 			{
 				soundAttackPlayed = true;
@@ -218,8 +237,9 @@ public class spiderControll : MonoBehaviour
 			SpiderBitePlayer = false;
 			soundSeePlayed = false;
 			soundAttackPlayed = false;
-			spiderTrigger2.SetActive(false);
-			inactivateSpiderTrigger.SetActive(true);
+			spiderTrigger2.SetActive(value: false);
+			inactivateSpiderTrigger.SetActive(value: true);
+			spider2AnimHolder.Play("idle");
 		}
 	}
 
@@ -228,15 +248,13 @@ public class spiderControll : MonoBehaviour
 		if (!spiderDead)
 		{
 			playerCaught = true;
-			spiderAnimHolder.GetComponent<Animation>().CrossFade("idle");
-			spiderAnimHolder.GetComponent<Animation>().Stop("Walk");
-			spiderAnimHolder.GetComponent<Animation>().Stop("attack");
+			spider2AnimHolder.Play("idle");
 			spiderInNest = true;
 			SpiderBitePlayer = false;
 			soundSeePlayed = false;
 			soundAttackPlayed = false;
-			spiderTrigger2.SetActive(false);
-			inactivateSpiderTrigger.SetActive(true);
+			spiderTrigger2.SetActive(value: false);
+			inactivateSpiderTrigger.SetActive(value: true);
 		}
 	}
 
@@ -246,24 +264,31 @@ public class spiderControll : MonoBehaviour
 		spiderParent.transform.rotation = spiderStartPosition.rotation;
 		playerCaught = false;
 		huntPlayer = false;
+		spider2AnimHolder.Play("idle");
 	}
 
 	public virtual void spiderIsDead()
 	{
 		spiderDead = true;
-		spiderAnimHolder.GetComponent<Animation>().CrossFade("dead");
-		spiderAnimHolder.GetComponent<Animation>().Stop("Walk");
-		spiderAnimHolder.GetComponent<Animation>().Stop("attack");
-		spiderAnimHolder.GetComponent<Animation>().Stop("idle");
+		spider2AnimHolder.Play("die");
 		SpiderBitePlayer = false;
 		soundSeePlayed = false;
 		soundAttackPlayed = false;
-		foodCollider.SetActive(false);
-		playerCollider.SetActive(false);
-		spiderTrigger2.SetActive(false);
-		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = true;
-		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).spiderIsDead = true;
-		leavetrigger.SetActive(false);
+		foodCollider.SetActive(value: false);
+		playerCollider.SetActive(value: false);
+		spiderTrigger2.SetActive(value: false);
+		if (!((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).ragdollSpawn)
+		{
+			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy = true;
+			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).spiderIsDead = true;
+		}
+		leavetrigger.SetActive(value: false);
 		((spiderSoundEffects)soundEffectHolder.GetComponent(typeof(spiderSoundEffects))).spiderDie();
+	}
+
+	public spiderControll()
+	{
+		spiderDeadTimer = 8f;
+		spiderInNest = true;
 	}
 }

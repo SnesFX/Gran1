@@ -14,7 +14,7 @@ public class NeedToGetOuttrigger : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			needToGetOutText.SetActive(true);
+			needToGetOutText.SetActive(value: true);
 			((TextInactivate)needToGetOutText.GetComponent(typeof(TextInactivate))).travelDown = true;
 			UnityEngine.Object.Destroy(base.gameObject);
 		}

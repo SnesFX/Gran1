@@ -10,7 +10,7 @@ public class TriggerBastuOn : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			bastuSteam.SetActive(true);
+			bastuSteam.SetActive(value: true);
 		}
 	}
 }

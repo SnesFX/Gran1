@@ -24,6 +24,8 @@ public class reverseCar : MonoBehaviour
 
 	public GameObject optionButton;
 
+	public GameObject gameController;
+
 	public virtual void Start()
 	{
 	}
@@ -32,30 +34,31 @@ public class reverseCar : MonoBehaviour
 	{
 		if (Input.GetKeyDown(KeyCode.S))
 		{
+			((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).carMoving = true;
 			if (!reverse1Played)
 			{
 				carAnimation.GetComponent<Animation>().Play("CarReverse");
-				reverseButton.SetActive(false);
+				reverseButton.SetActive(value: false);
 				reverse1Played = true;
-				outOffCarButton.SetActive(false);
-				carReverseSound1.SetActive(true);
-				engineOnSound.SetActive(false);
-				frontCrashSound.SetActive(false);
-				frontCrashSound2.SetActive(false);
-				CarHitTriggers.SetActive(true);
-				optionButton.SetActive(false);
+				outOffCarButton.SetActive(value: false);
+				carReverseSound1.SetActive(value: true);
+				engineOnSound.SetActive(value: false);
+				frontCrashSound.SetActive(value: false);
+				frontCrashSound2.SetActive(value: false);
+				CarHitTriggers.SetActive(value: true);
+				optionButton.SetActive(value: false);
 			}
 			else
 			{
 				carAnimation.GetComponent<Animation>().Play("CarReverse2");
-				reverseButton.SetActive(false);
-				outOffCarButton.SetActive(false);
-				carReverseSound1.SetActive(true);
-				engineOnSound.SetActive(false);
-				frontCrashSound.SetActive(false);
-				frontCrashSound2.SetActive(false);
-				CarHitTriggers.SetActive(true);
-				optionButton.SetActive(false);
+				reverseButton.SetActive(value: false);
+				outOffCarButton.SetActive(value: false);
+				carReverseSound1.SetActive(value: true);
+				engineOnSound.SetActive(value: false);
+				frontCrashSound.SetActive(value: false);
+				frontCrashSound2.SetActive(value: false);
+				CarHitTriggers.SetActive(value: true);
+				optionButton.SetActive(value: false);
 			}
 		}
 	}

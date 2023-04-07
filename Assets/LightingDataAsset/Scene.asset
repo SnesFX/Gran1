@@ -5,10 +5,12 @@ LightingDataAsset:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Scene
   m_Scene: {fileID: 102900000, guid: 4390d7eb15bba844c96dd46f12b9ae49, type: 3}
   m_Lightmaps: []
+  m_AOTextures: []
   m_LightmapsCacheFiles: []
   m_LightProbes: {fileID: 0}
   m_LightmapsMode: 1
@@ -50,141 +52,177 @@ LightingDataAsset:
     m_TerrainChunks: []
   m_EnlightenSceneMappingRendererIDs: []
   m_Lights:
-  - targetObject: 5558
+  - targetObject: 6781
     targetPrefab: 0
-  - targetObject: 5559
+  - targetObject: 6782
     targetPrefab: 0
-  - targetObject: 5560
+  - targetObject: 6783
     targetPrefab: 0
-  - targetObject: 5561
+  - targetObject: 6784
     targetPrefab: 0
-  - targetObject: 5562
+  - targetObject: 6785
     targetPrefab: 0
-  - targetObject: 5563
+  - targetObject: 6786
     targetPrefab: 0
-  - targetObject: 5564
+  - targetObject: 6787
     targetPrefab: 0
-  - targetObject: 5565
+  - targetObject: 6788
     targetPrefab: 0
-  - targetObject: 5566
+  - targetObject: 6789
     targetPrefab: 0
-  - targetObject: 5567
+  - targetObject: 6790
     targetPrefab: 0
-  - targetObject: 5568
+  - targetObject: 6791
     targetPrefab: 0
-  - targetObject: 5569
+  - targetObject: 6792
     targetPrefab: 0
-  - targetObject: 5570
+  - targetObject: 6793
     targetPrefab: 0
-  - targetObject: 5571
+  - targetObject: 6794
     targetPrefab: 0
-  - targetObject: 5572
+  - targetObject: 6795
     targetPrefab: 0
-  - targetObject: 5573
+  - targetObject: 6796
     targetPrefab: 0
-  - targetObject: 5574
+  - targetObject: 6797
     targetPrefab: 0
-  - targetObject: 5575
+  - targetObject: 6798
     targetPrefab: 0
-  - targetObject: 5576
+  - targetObject: 6799
     targetPrefab: 0
-  - targetObject: 5577
+  - targetObject: 6800
     targetPrefab: 0
-  - targetObject: 5578
+  - targetObject: 6801
     targetPrefab: 0
-  - targetObject: 5579
+  - targetObject: 6802
     targetPrefab: 0
-  - targetObject: 5580
+  - targetObject: 6803
     targetPrefab: 0
-  - targetObject: 5581
+  - targetObject: 6804
     targetPrefab: 0
-  - targetObject: 5582
+  - targetObject: 6805
     targetPrefab: 0
-  - targetObject: 5583
+  - targetObject: 6806
     targetPrefab: 0
-  - targetObject: 5584
+  - targetObject: 6807
     targetPrefab: 0
-  - targetObject: 5585
+  - targetObject: 6808
     targetPrefab: 0
-  - targetObject: 5586
+  - targetObject: 6809
     targetPrefab: 0
-  - targetObject: 5587
+  - targetObject: 6810
     targetPrefab: 0
-  - targetObject: 5588
+  - targetObject: 6811
     targetPrefab: 0
-  - targetObject: 5589
+  - targetObject: 6812
     targetPrefab: 0
-  - targetObject: 5590
+  - targetObject: 6813
     targetPrefab: 0
-  - targetObject: 5591
+  - targetObject: 6814
     targetPrefab: 0
-  - targetObject: 5592
+  - targetObject: 6815
     targetPrefab: 0
-  - targetObject: 5593
+  - targetObject: 6816
     targetPrefab: 0
-  - targetObject: 5594
+  - targetObject: 6817
     targetPrefab: 0
-  - targetObject: 5595
+  - targetObject: 6818
     targetPrefab: 0
-  - targetObject: 5596
+  - targetObject: 6819
     targetPrefab: 0
-  - targetObject: 5597
+  - targetObject: 6820
     targetPrefab: 0
-  - targetObject: 5598
+  - targetObject: 6821
     targetPrefab: 0
-  - targetObject: 5599
+  - targetObject: 6822
     targetPrefab: 0
-  - targetObject: 5600
+  - targetObject: 6823
     targetPrefab: 0
-  - targetObject: 5601
+  - targetObject: 6824
     targetPrefab: 0
-  - targetObject: 5602
+  - targetObject: 6825
     targetPrefab: 0
-  - targetObject: 5603
+  - targetObject: 6826
     targetPrefab: 0
-  - targetObject: 5604
+  - targetObject: 6827
     targetPrefab: 0
-  - targetObject: 5605
+  - targetObject: 6828
     targetPrefab: 0
-  - targetObject: 5606
+  - targetObject: 6829
     targetPrefab: 0
-  - targetObject: 5607
+  - targetObject: 6830
     targetPrefab: 0
-  - targetObject: 5608
+  - targetObject: 6831
     targetPrefab: 0
-  - targetObject: 5609
+  - targetObject: 6832
     targetPrefab: 0
-  - targetObject: 5610
+  - targetObject: 6833
     targetPrefab: 0
-  - targetObject: 5611
+  - targetObject: 6834
     targetPrefab: 0
-  - targetObject: 5612
+  - targetObject: 6835
     targetPrefab: 0
-  - targetObject: 5613
+  - targetObject: 6836
     targetPrefab: 0
-  - targetObject: 5614
+  - targetObject: 6837
     targetPrefab: 0
-  - targetObject: 5615
+  - targetObject: 6838
     targetPrefab: 0
-  - targetObject: 5616
+  - targetObject: 6839
     targetPrefab: 0
-  - targetObject: 5617
+  - targetObject: 6840
     targetPrefab: 0
-  - targetObject: 5618
+  - targetObject: 6841
     targetPrefab: 0
-  - targetObject: 5619
+  - targetObject: 6842
     targetPrefab: 0
-  - targetObject: 5620
+  - targetObject: 6843
     targetPrefab: 0
-  - targetObject: 5621
+  - targetObject: 6844
     targetPrefab: 0
-  - targetObject: 5622
+  - targetObject: 6845
     targetPrefab: 0
-  - targetObject: 5623
+  - targetObject: 6846
     targetPrefab: 0
-  - targetObject: 5624
+  - targetObject: 6847
+    targetPrefab: 0
+  - targetObject: 6848
+    targetPrefab: 0
+  - targetObject: 6849
+    targetPrefab: 0
+  - targetObject: 6850
+    targetPrefab: 0
+  - targetObject: 6851
     targetPrefab: 0
   m_LightBakingOutputs:
+  - serializedVersion: 2
+    probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmapBakeMode:
+      lightmapBakeType: 4
+      mixedLightingMode: 2
+    isBaked: 0
+  - serializedVersion: 2
+    probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmapBakeMode:
+      lightmapBakeType: 4
+      mixedLightingMode: 2
+    isBaked: 0
+  - serializedVersion: 2
+    probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmapBakeMode:
+      lightmapBakeType: 4
+      mixedLightingMode: 2
+    isBaked: 0
+  - serializedVersion: 2
+    probeOcclusionLightIndex: -1
+    occlusionMaskChannel: -1
+    lightmapBakeMode:
+      lightmapBakeType: 4
+      mixedLightingMode: 2
+    isBaked: 0
   - serializedVersion: 2
     probeOcclusionLightIndex: -1
     occlusionMaskChannel: -1

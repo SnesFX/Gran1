@@ -50,7 +50,7 @@ public class cameraSeeTrigger : MonoBehaviour
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerInPrison = true;
 			((PickUp)player.GetComponent(typeof(PickUp))).playerInPrison = true;
 			((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHiding = true;
-			doorTrigger.SetActive(true);
+			doorTrigger.SetActive(value: true);
 			if (!camActivated)
 			{
 				camActivated = true;
@@ -64,24 +64,24 @@ public class cameraSeeTrigger : MonoBehaviour
 			}
 			if (GameObject.Find("PlankaVind") != null)
 			{
-				planka1.SetActive(false);
+				planka1.SetActive(value: false);
 			}
 			if (GameObject.Find("PlankaVind2") != null)
 			{
-				planka2.SetActive(false);
+				planka2.SetActive(value: false);
 			}
 			if (GameObject.Find("PlankaVind3") != null)
 			{
-				planka3.SetActive(false);
+				planka3.SetActive(value: false);
 			}
 			camSee = true;
-			noiceObject1.SetActive(true);
+			noiceObject1.SetActive(value: true);
 			yield return new WaitForSeconds(15f);
-			noiceObject2.SetActive(true);
+			noiceObject2.SetActive(value: true);
 			yield return new WaitForSeconds(15f);
-			noiceObject3.SetActive(true);
+			noiceObject3.SetActive(value: true);
 			yield return new WaitForSeconds(15f);
-			noiceObject4.SetActive(true);
+			noiceObject4.SetActive(value: true);
 			((camLampBlink)cameraAlarm.GetComponent(typeof(camLampBlink))).soundOff = true;
 		}
 		if (other.gameObject.tag == "granny")

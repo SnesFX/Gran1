@@ -34,9 +34,9 @@ public class PlayerWindowController : MonoBehaviour
 	public virtual void jumpOut()
 	{
 		((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).seePlayer = false;
-		player.SetActive(false);
-		camIndoor.SetActive(true);
-		holeCollider.SetActive(true);
+		player.SetActive(value: false);
+		camIndoor.SetActive(value: true);
+		holeCollider.SetActive(value: true);
 		window.gameObject.GetComponent<Animation>().Play("WindowOpenClose");
 		camIndoor.gameObject.GetComponent<Animation>().Play("CamInToOut");
 		((backgroundSound)SoundOut.GetComponent(typeof(backgroundSound))).fadeDown = true;
@@ -47,9 +47,9 @@ public class PlayerWindowController : MonoBehaviour
 	public virtual void jumpIn()
 	{
 		((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).seePlayer = false;
-		player.SetActive(false);
-		camOutdoor.SetActive(true);
-		holeCollider.SetActive(true);
+		player.SetActive(value: false);
+		camOutdoor.SetActive(value: true);
+		holeCollider.SetActive(value: true);
 		window.gameObject.GetComponent<Animation>().Play("WindowOpenClose");
 		camOutdoor.gameObject.GetComponent<Animation>().Play("CamOutToIn");
 		((backgroundSound)SoundIn.GetComponent(typeof(backgroundSound))).fadeDown = true;
@@ -62,10 +62,10 @@ public class PlayerWindowController : MonoBehaviour
 		yield return new WaitForSeconds(2.1f);
 		player.transform.position = PlayerOutPos.position;
 		player.transform.localEulerAngles = new Vector3(0f, -180f, 0f);
-		player.SetActive(true);
-		camIndoor.SetActive(false);
-		crouchButton.SetActive(true);
-		holeCollider.SetActive(false);
+		player.SetActive(value: true);
+		camIndoor.SetActive(value: false);
+		crouchButton.SetActive(value: true);
+		holeCollider.SetActive(value: false);
 	}
 
 	public virtual IEnumerator playerSpawnInside()
@@ -73,9 +73,9 @@ public class PlayerWindowController : MonoBehaviour
 		yield return new WaitForSeconds(1.75f);
 		player.transform.position = PlayerInPos.position;
 		player.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
-		player.SetActive(true);
-		camOutdoor.SetActive(false);
-		crouchButton.SetActive(true);
-		holeCollider.SetActive(false);
+		player.SetActive(value: true);
+		camOutdoor.SetActive(value: false);
+		crouchButton.SetActive(value: true);
+		holeCollider.SetActive(value: false);
 	}
 }

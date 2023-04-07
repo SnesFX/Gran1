@@ -22,7 +22,7 @@ public class destroyBats : MonoBehaviour
 		if (timer < 0f)
 		{
 			timer = 2f;
-			bats.SetActive(false);
+			bats.SetActive(value: false);
 		}
 	}
 }

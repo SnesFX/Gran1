@@ -27,8 +27,7 @@ namespace UnityStandardAssets.Effects
 				{
 					lastSoundTime = Time.time;
 				}
-				Component colliderComponent = m_CollisionEvents[i].colliderComponent;
-				Rigidbody component = colliderComponent.GetComponent<Rigidbody>();
+				Rigidbody component = m_CollisionEvents[i].colliderComponent.GetComponent<Rigidbody>();
 				if (component != null)
 				{
 					Vector3 velocity = m_CollisionEvents[i].velocity;

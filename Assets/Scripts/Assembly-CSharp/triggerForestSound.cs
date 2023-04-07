@@ -15,7 +15,7 @@ public class triggerForestSound : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			soundHolder.SetActive(true);
+			soundHolder.SetActive(value: true);
 			StartCoroutine(soundTimer());
 		}
 	}
@@ -23,6 +23,6 @@ public class triggerForestSound : MonoBehaviour
 	public virtual IEnumerator soundTimer()
 	{
 		yield return new WaitForSeconds(30f);
-		soundHolder.SetActive(false);
+		soundHolder.SetActive(value: false);
 	}
 }

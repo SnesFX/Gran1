@@ -4,13 +4,14 @@
 AudioMixerController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: MainMixer
   m_OutputGroup: {fileID: 0}
-  m_MasterGroup: {fileID: 24300000, guid: 870dae6246f16044b98d4426ff6de0f7, type: 2}
+  m_MasterGroup: {fileID: 24300000, guid: 4f065a0f0ca88b5429856619dec9e38f, type: 2}
   m_Snapshots:
-  - {fileID: 24500000, guid: bbe21a36d20129d4782944dab3d6c347, type: 2}
-  m_StartSnapshot: {fileID: 24500000, guid: bbe21a36d20129d4782944dab3d6c347, type: 2}
+  - {fileID: 24500000, guid: 40ed924308d746943b43479d067d9a5b, type: 2}
+  m_StartSnapshot: {fileID: 24500000, guid: 40ed924308d746943b43479d067d9a5b, type: 2}
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0

@@ -18,9 +18,9 @@ public class inactivateButtons : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			forwardButton.SetActive(false);
-			backButton.SetActive(false);
-			startButton.SetActive(false);
+			forwardButton.SetActive(value: false);
+			backButton.SetActive(value: false);
+			startButton.SetActive(value: false);
 		}
 	}
 }

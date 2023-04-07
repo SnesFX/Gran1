@@ -12,11 +12,11 @@ public class plankaHitSpot : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), true);
+			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), ignore: true);
 		}
 		else
 		{
-			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), false);
+			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), ignore: false);
 		}
 	}
 }

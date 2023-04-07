@@ -12,11 +12,6 @@ public class FPS : MonoBehaviour
 
 	private float timeleft;
 
-	public FPS()
-	{
-		updateInterval = 0.5f;
-	}
-
 	public virtual void Start()
 	{
 		if (!GetComponent<GUIText>())
@@ -37,10 +32,15 @@ public class FPS : MonoBehaviour
 		frames++;
 		if (timeleft <= 0f)
 		{
-			GetComponent<GUIText>().text = string.Empty + (accum / (float)frames).ToString("f2");
+			GetComponent<GUIText>().text = (accum / (float)frames).ToString("f2") ?? "";
 			timeleft = updateInterval;
 			accum = 0f;
 			frames = 0;
 		}
+	}
+
+	public FPS()
+	{
+		updateInterval = 0.5f;
 	}
 }

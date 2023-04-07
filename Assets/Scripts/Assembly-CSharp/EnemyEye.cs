@@ -18,11 +18,6 @@ public class EnemyEye : MonoBehaviour
 
 	public GameObject playerCrouch;
 
-	public EnemyEye()
-	{
-		layerMask = 1024;
-	}
-
 	public virtual void Start()
 	{
 		layerMask = ~layerMask;
@@ -128,5 +123,10 @@ public class EnemyEye : MonoBehaviour
 		{
 			((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).seePlayer = false;
 		}
+	}
+
+	public EnemyEye()
+	{
+		layerMask = 1024;
 	}
 }

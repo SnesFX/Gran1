@@ -2,10 +2,11 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!43 &4300000
 Mesh:
-  serializedVersion: 9
+  serializedVersion: 10
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Cylinder31
   m_SubMeshes:
   - serializedVersion: 2
@@ -26,6 +27,9 @@ Mesh:
   m_BindPose: []
   m_BoneNameHashes: []
   m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: []
   m_MeshCompression: 0
   m_IsReadable: 1
   m_KeepVertices: 0
@@ -33,7 +37,7 @@ Mesh:
   m_IndexFormat: 0
   m_IndexBuffer: 000001000200000002000300040005000600040006000700080009000a0008000a000b000c000d000e000c000e000f00100011001200100012001300140015001600140016001700180019001a001a001b0018001b001c0018001b001d001c001e001f002000200021001e00200022002100220023002100240025002600240026002700280029002a0028002a002b002c002d002e002c002e002f00300031003200300032003300340035003600340036003700380039003a0038003a003b003c003d003e003e003f003c003f0040003c003f0041004000420043004400440045004200440046004500460047004500
   m_VertexData:
-    serializedVersion: 2
+    serializedVersion: 3
     m_VertexCount: 72
     m_Channels:
     - stream: 0
@@ -154,4 +158,8 @@ Mesh:
   m_BakedTriangleCollisionMesh:
   m_MeshMetrics[0]: 0.06854425
   m_MeshMetrics[1]: 0.3562164
-  m_MeshOptimized: 1
+  m_MeshOptimizationFlags: -1
+  m_StreamData:
+    offset: 0
+    size: 0
+    path:

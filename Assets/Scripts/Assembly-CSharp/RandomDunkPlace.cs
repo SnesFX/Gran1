@@ -19,19 +19,19 @@ public class RandomDunkPlace : MonoBehaviour
 		number = UnityEngine.Random.Range(1, 5);
 		if (number == 1)
 		{
-			dunkPlace1.SetActive(true);
+			dunkPlace1.SetActive(value: true);
 		}
 		else if (number == 2)
 		{
-			dunkPlace2.SetActive(true);
+			dunkPlace2.SetActive(value: true);
 		}
 		else if (number == 3)
 		{
-			dunkPlace3.SetActive(true);
+			dunkPlace3.SetActive(value: true);
 		}
 		else if (number == 4)
 		{
-			dunkPlace4.SetActive(true);
+			dunkPlace4.SetActive(value: true);
 		}
 	}
 }

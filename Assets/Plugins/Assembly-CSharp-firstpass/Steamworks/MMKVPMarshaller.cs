@@ -18,7 +18,7 @@ namespace Steamworks
 				m_pArrayEntries = Marshal.AllocHGlobal(num * filters.Length);
 				for (int i = 0; i < filters.Length; i++)
 				{
-					Marshal.StructureToPtr(filters[i], new IntPtr(m_pArrayEntries.ToInt64() + i * num), false);
+					Marshal.StructureToPtr(filters[i], new IntPtr(m_pArrayEntries.ToInt64() + i * num), fDeleteOld: false);
 				}
 				Marshal.WriteIntPtr(m_pNativeArray, m_pArrayEntries);
 			}

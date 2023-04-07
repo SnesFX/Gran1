@@ -12,20 +12,20 @@ namespace UnityStandardAssets.Effects
 		{
 			yield return null;
 			float multiplier = GetComponent<ParticleSystemMultiplier>().multiplier;
-			float r = 10f * multiplier;
-			Collider[] cols = Physics.OverlapSphere(base.transform.position, r);
-			List<Rigidbody> rigidbodies = new List<Rigidbody>();
-			Collider[] array = cols;
-			foreach (Collider collider in array)
+			float num = 10f * multiplier;
+			Collider[] array = Physics.OverlapSphere(base.transform.position, num);
+			List<Rigidbody> list = new List<Rigidbody>();
+			Collider[] array2 = array;
+			foreach (Collider collider in array2)
 			{
-				if (collider.attachedRigidbody != null && !rigidbodies.Contains(collider.attachedRigidbody))
+				if (collider.attachedRigidbody != null && !list.Contains(collider.attachedRigidbody))
 				{
-					rigidbodies.Add(collider.attachedRigidbody);
+					list.Add(collider.attachedRigidbody);
 				}
 			}
-			foreach (Rigidbody item in rigidbodies)
+			foreach (Rigidbody item in list)
 			{
-				item.AddExplosionForce(explosionForce * multiplier, base.transform.position, r, 1f * multiplier, ForceMode.Impulse);
+				item.AddExplosionForce(explosionForce * multiplier, base.transform.position, num, 1f * multiplier, ForceMode.Impulse);
 			}
 		}
 	}

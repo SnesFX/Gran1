@@ -14,7 +14,11 @@ namespace UnityEngine.PostProcessing
 			get
 			{
 				UserLutModel.Settings settings = base.model.settings;
-				return base.model.enabled && settings.lut != null && settings.contribution > 0f && settings.lut.height == (int)Mathf.Sqrt(settings.lut.width) && !context.interrupted;
+				if (base.model.enabled && settings.lut != null && settings.contribution > 0f && settings.lut.height == (int)Mathf.Sqrt(settings.lut.width))
+				{
+					return !context.interrupted;
+				}
+				return false;
 			}
 		}
 
@@ -29,8 +33,7 @@ namespace UnityEngine.PostProcessing
 		public void OnGUI()
 		{
 			UserLutModel.Settings settings = base.model.settings;
-			Rect position = new Rect(context.viewport.x * (float)Screen.width + 8f, 8f, settings.lut.width, settings.lut.height);
-			GUI.DrawTexture(position, settings.lut);
+			GUI.DrawTexture(new Rect(context.viewport.x * (float)Screen.width + 8f, 8f, settings.lut.width, settings.lut.height), settings.lut);
 		}
 	}
 }

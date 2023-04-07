@@ -10,6 +10,8 @@ public class playerLeaveSpider : MonoBehaviour
 
 	public GameObject SpiderTrigger2;
 
+	public GameObject spiderbackOfPoint;
+
 	public virtual void Start()
 	{
 	}
@@ -24,8 +26,7 @@ public class playerLeaveSpider : MonoBehaviour
 		{
 			((spiderControll)Spider.GetComponent(typeof(spiderControll))).huntPlayer = false;
 			((spiderControll)Spider.GetComponent(typeof(spiderControll))).spiderResetNow = true;
-			SpiderTrigger1.SetActive(true);
-			SpiderTrigger2.SetActive(false);
+			spiderbackOfPoint.SetActive(value: true);
 		}
 	}
 }

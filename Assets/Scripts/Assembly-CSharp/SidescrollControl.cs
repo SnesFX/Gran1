@@ -25,15 +25,6 @@ public class SidescrollControl : MonoBehaviour
 
 	private bool canJump;
 
-	public SidescrollControl()
-	{
-		forwardSpeed = 4f;
-		backwardSpeed = 4f;
-		jumpSpeed = 16f;
-		inAirMultiplier = 0.25f;
-		canJump = true;
-	}
-
 	public virtual void Start()
 	{
 		thisTransform = (Transform)GetComponent(typeof(Transform));
@@ -88,5 +79,14 @@ public class SidescrollControl : MonoBehaviour
 		{
 			velocity = Vector3.zero;
 		}
+	}
+
+	public SidescrollControl()
+	{
+		forwardSpeed = 4f;
+		backwardSpeed = 4f;
+		jumpSpeed = 16f;
+		inAirMultiplier = 0.25f;
+		canJump = true;
 	}
 }

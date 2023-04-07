@@ -7,6 +7,6 @@ public class FadeBloodscreen : MonoBehaviour
 
 	private void Start()
 	{
-		bloodScreen.CrossFadeAlpha(0f, 6f, false);
+		bloodScreen.CrossFadeAlpha(0f, 6f, ignoreTimeScale: false);
 	}
 }

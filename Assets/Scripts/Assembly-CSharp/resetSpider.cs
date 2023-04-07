@@ -24,10 +24,11 @@ public class resetSpider : MonoBehaviour
 		{
 			((spiderControll)Spider.GetComponent(typeof(spiderControll))).spiderInNest = true;
 			((spiderControll)Spider.GetComponent(typeof(spiderControll))).spiderResetNow = false;
+			((spiderControll)Spider.GetComponent(typeof(spiderControll))).spiderRunToNest = false;
 			((spiderControll)Spider.GetComponent(typeof(spiderControll))).foodTime = false;
 			((spiderControll)Spider.GetComponent(typeof(spiderControll))).idle();
-			SpiderTrigger1.SetActive(true);
-			SpiderTrigger2.SetActive(false);
+			SpiderTrigger1.SetActive(value: true);
+			SpiderTrigger2.SetActive(value: false);
 		}
 	}
 }

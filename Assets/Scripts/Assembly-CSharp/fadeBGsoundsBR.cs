@@ -20,7 +20,7 @@ public class fadeBGsoundsBR : MonoBehaviour
 		{
 			((backgroundSound)Sound1.GetComponent(typeof(backgroundSound))).fadeDown = true;
 			((backgroundSound)Sound2.GetComponent(typeof(backgroundSound))).fadeUp = true;
-			landSoundTrigger.SetActive(true);
+			landSoundTrigger.SetActive(value: true);
 		}
 	}
 }

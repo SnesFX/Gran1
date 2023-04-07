@@ -22,6 +22,8 @@ public class shootSpiderButton : MonoBehaviour
 
 	public GameObject spiderNestpos;
 
+	public GameObject spiderStartpos;
+
 	public AudioClip luckaFaller;
 
 	public virtual void Start()
@@ -38,11 +40,15 @@ public class shootSpiderButton : MonoBehaviour
 		{
 			if (!((spiderControll)spider.GetComponent(typeof(spiderControll))).SpiderBitePlayer)
 			{
+				buttonShot = true;
+				luckaAnim.GetComponent<Animation>().Play("SpiderLuckaClose");
+				luckaAnim.GetComponent<AudioSource>().PlayOneShot(luckaFaller);
+				spiderNestpos.transform.localPosition = new Vector3(20.28f, 91.04f, -17.06f);
+				spiderStartpos.transform.localPosition = new Vector3(22.68f, 90.5774f, -9.64f);
 				((spiderControll)spider.GetComponent(typeof(spiderControll))).huntPlayer = true;
 				((spiderControll)spider.GetComponent(typeof(spiderControll))).foodTime = false;
-				spiderTrigger1.SetActive(false);
-				spiderTrigger2.SetActive(false);
-				leaveTrigger.SetActive(false);
+				spiderTrigger1.SetActive(value: false);
+				spiderTrigger2.SetActive(value: false);
 			}
 		}
 		else
@@ -50,13 +56,13 @@ public class shootSpiderButton : MonoBehaviour
 			buttonShot = true;
 			luckaAnim.GetComponent<Animation>().Play("SpiderLuckaClose");
 			luckaAnim.GetComponent<AudioSource>().PlayOneShot(luckaFaller);
-			spider.SetActive(false);
-			spiderTrigger1.SetActive(false);
-			spiderTrigger2.SetActive(false);
-			leaveTrigger.SetActive(false);
-			foodPos.SetActive(false);
-			spiderNestpos.SetActive(false);
-			shootbutton.SetActive(false);
+			spider.SetActive(value: false);
+			spiderTrigger1.SetActive(value: false);
+			spiderTrigger2.SetActive(value: false);
+			leaveTrigger.SetActive(value: false);
+			foodPos.SetActive(value: false);
+			spiderNestpos.SetActive(value: false);
+			shootbutton.SetActive(value: false);
 		}
 	}
 
@@ -70,11 +76,16 @@ public class shootSpiderButton : MonoBehaviour
 		{
 			if (!((spiderControll)spider.GetComponent(typeof(spiderControll))).SpiderBitePlayer)
 			{
+				buttonShot = true;
+				luckaAnim.GetComponent<Animation>().Play("SpiderLuckaClose");
+				luckaAnim.GetComponent<AudioSource>().PlayOneShot(luckaFaller);
+				spiderNestpos.transform.localPosition = new Vector3(22.49f, 91.04005f, -16f);
+				spiderStartpos.transform.localPosition = new Vector3(22.68f, 90.5774f, -9.64f);
 				((spiderControll)spider.GetComponent(typeof(spiderControll))).huntPlayer = true;
 				((spiderControll)spider.GetComponent(typeof(spiderControll))).foodTime = false;
-				spiderTrigger1.SetActive(false);
-				spiderTrigger2.SetActive(false);
-				leaveTrigger.SetActive(false);
+				spiderTrigger1.SetActive(value: false);
+				spiderTrigger2.SetActive(value: false);
+				leaveTrigger.SetActive(value: false);
 			}
 		}
 		else
@@ -82,13 +93,13 @@ public class shootSpiderButton : MonoBehaviour
 			buttonShot = true;
 			luckaAnim.GetComponent<Animation>().Play("SpiderLuckaClose");
 			luckaAnim.GetComponent<AudioSource>().PlayOneShot(luckaFaller);
-			spider.SetActive(false);
-			spiderTrigger1.SetActive(false);
-			spiderTrigger2.SetActive(false);
-			leaveTrigger.SetActive(false);
-			foodPos.SetActive(false);
-			spiderNestpos.SetActive(false);
-			shootbutton.SetActive(false);
+			spider.SetActive(value: false);
+			spiderTrigger1.SetActive(value: false);
+			spiderTrigger2.SetActive(value: false);
+			leaveTrigger.SetActive(value: false);
+			foodPos.SetActive(value: false);
+			spiderNestpos.SetActive(value: false);
+			shootbutton.SetActive(value: false);
 		}
 	}
 }

@@ -22,6 +22,8 @@ public class playerWalkForest : MonoBehaviour
 
 	public AudioClip GrannyHit;
 
+	public AudioClip jumpScareSound;
+
 	public GameObject bloodScreenHolder;
 
 	public GameObject skipText;
@@ -62,16 +64,16 @@ public class playerWalkForest : MonoBehaviour
 		yield return new WaitForSeconds(4f);
 		startFading = true;
 		yield return new WaitForSeconds(2f);
-		skipText.SetActive(true);
+		skipText.SetActive(value: true);
 		yield return new WaitForSeconds(19f);
-		music.SetActive(true);
-		sparkle.SetActive(true);
+		music.SetActive(value: true);
+		sparkle.SetActive(value: true);
 		yield return new WaitForSeconds(4f);
-		sparkle.SetActive(false);
+		sparkle.SetActive(value: false);
 		yield return new WaitForSeconds(24f);
-		granny.SetActive(true);
+		granny.SetActive(value: true);
 		yield return new WaitForSeconds(0.9f);
-		music2.SetActive(true);
+		music2.SetActive(value: true);
 		dof.focusDistance = 0.78f;
 		dof.aperture = 17.7f;
 		if (PlayerPrefs.GetInt("EffectsOnOff") == 1)
@@ -86,7 +88,7 @@ public class playerWalkForest : MonoBehaviour
 		grannyAnim.GetComponent<Animation>().CrossFade("Hit");
 		GetComponent<AudioSource>().PlayOneShot(GrannyHit);
 		yield return new WaitForSeconds(0.9f);
-		bloodScreenHolder.SetActive(true);
+		bloodScreenHolder.SetActive(value: true);
 		yield return new WaitForSeconds(1.1f);
 		m_Fading = true;
 		yield return new WaitForSeconds(5f);
@@ -99,12 +101,17 @@ public class playerWalkForest : MonoBehaviour
 		{
 			if (m_Fading)
 			{
-				m_Image.CrossFadeAlpha(1f, 0.7f, false);
+				m_Image.CrossFadeAlpha(1f, 0.7f, ignoreTimeScale: false);
 			}
 			if (!m_Fading)
 			{
-				m_Image.CrossFadeAlpha(0f, 5f, false);
+				m_Image.CrossFadeAlpha(0f, 5f, ignoreTimeScale: false);
 			}
 		}
+	}
+
+	public void jumpScare()
+	{
+		GetComponent<AudioSource>().PlayOneShot(jumpScareSound);
 	}
 }

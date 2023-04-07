@@ -6,19 +6,17 @@ namespace UnityEngine.PostProcessing
 
 		private static Mesh s_Quad;
 
-		public static bool isLinearColorSpace
-		{
-			get
-			{
-				return QualitySettings.activeColorSpace == ColorSpace.Linear;
-			}
-		}
+		public static bool isLinearColorSpace => QualitySettings.activeColorSpace == ColorSpace.Linear;
 
 		public static bool supportsDX11
 		{
 			get
 			{
-				return SystemInfo.graphicsShaderLevel >= 50 && SystemInfo.supportsComputeShaders;
+				if (SystemInfo.graphicsShaderLevel >= 50)
+				{
+					return SystemInfo.supportsComputeShaders;
+				}
+				return false;
 			}
 		}
 
@@ -30,7 +28,7 @@ namespace UnityEngine.PostProcessing
 				{
 					return s_WhiteTexture;
 				}
-				s_WhiteTexture = new Texture2D(1, 1, TextureFormat.ARGB32, false);
+				s_WhiteTexture = new Texture2D(1, 1, TextureFormat.ARGB32, mipChain: false);
 				s_WhiteTexture.SetPixel(0, 0, new Color(1f, 1f, 1f, 1f));
 				s_WhiteTexture.Apply();
 				return s_WhiteTexture;
@@ -60,11 +58,12 @@ namespace UnityEngine.PostProcessing
 					new Vector2(0f, 1f)
 				};
 				int[] triangles = new int[6] { 0, 1, 2, 1, 0, 3 };
-				Mesh mesh = new Mesh();
-				mesh.vertices = vertices;
-				mesh.uv = uv;
-				mesh.triangles = triangles;
-				s_Quad = mesh;
+				s_Quad = new Mesh
+				{
+					vertices = vertices,
+					uv = uv,
+					triangles = triangles
+				};
 				s_Quad.RecalculateNormals();
 				s_Quad.RecalculateBounds();
 				return s_Quad;
@@ -93,7 +92,7 @@ namespace UnityEngine.PostProcessing
 		{
 			RenderTexture active = RenderTexture.active;
 			RenderTexture.active = destination;
-			GL.Clear(false, clearColor, Color.clear);
+			GL.Clear(clearDepth: false, clearColor, Color.clear);
 			GL.PushMatrix();
 			GL.LoadOrtho();
 			material.SetTexture("_MainTex", source);

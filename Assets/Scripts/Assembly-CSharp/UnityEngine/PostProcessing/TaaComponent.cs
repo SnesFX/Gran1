@@ -33,7 +33,11 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				return base.model.enabled && base.model.settings.method == AntialiasingModel.Method.Taa && SystemInfo.supportsMotionVectors && SystemInfo.supportedRenderTargetCount >= 2 && !context.interrupted;
+				if (base.model.enabled && base.model.settings.method == AntialiasingModel.Method.Taa && SystemInfo.supportsMotionVectors && SystemInfo.supportedRenderTargetCount >= 2)
+				{
+					return !context.interrupted;
+				}
+				return false;
 			}
 		}
 
@@ -61,13 +65,12 @@ namespace UnityEngine.PostProcessing
 			}
 			else
 			{
-				context.camera.projectionMatrix = ((!context.camera.orthographic) ? GetPerspectiveProjectionMatrix(vector) : GetOrthographicProjectionMatrix(vector));
+				context.camera.projectionMatrix = (context.camera.orthographic ? GetOrthographicProjectionMatrix(vector) : GetPerspectiveProjectionMatrix(vector));
 			}
 			context.camera.useJitteredProjectionMatrixForTransparentRendering = false;
 			vector.x /= context.width;
 			vector.y /= context.height;
-			Material material = context.materialFactory.Get("Hidden/Post FX/Temporal Anti-aliasing");
-			material.SetVector(Uniforms._Jitter, vector);
+			context.materialFactory.Get("Hidden/Post FX/Temporal Anti-aliasing").SetVector(Uniforms._Jitter, vector);
 			jitterVector = vector;
 		}
 

@@ -14,11 +14,11 @@ public class CombineMesh2 : MonoBehaviour
 		{
 			array[i].mesh = componentsInChildren[i].sharedMesh;
 			array[i].transform = componentsInChildren[i].transform.localToWorldMatrix;
-			componentsInChildren[i].gameObject.SetActive(false);
+			componentsInChildren[i].gameObject.SetActive(value: false);
 		}
 		((MeshFilter)base.transform.GetComponent(typeof(MeshFilter))).mesh = new Mesh();
 		((MeshFilter)base.transform.GetComponent(typeof(MeshFilter))).mesh.CombineMeshes(array);
 		base.transform.localPosition = new Vector3(0f, 0f, 0f);
-		base.transform.gameObject.SetActive(true);
+		base.transform.gameObject.SetActive(value: true);
 	}
 }

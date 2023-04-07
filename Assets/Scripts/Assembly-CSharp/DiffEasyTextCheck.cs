@@ -34,48 +34,48 @@ public class DiffEasyTextCheck : MonoBehaviour
 	{
 		if (PlayerPrefs.GetInt("DiffData") == 0)
 		{
-			diffNormalText.SetActive(true);
-			diffEasyText.SetActive(false);
-			diffHardText.SetActive(false);
-			diffExtremeText.SetActive(false);
-			diffPractiseText.SetActive(false);
+			diffNormalText.SetActive(value: true);
+			diffEasyText.SetActive(value: false);
+			diffHardText.SetActive(value: false);
+			diffExtremeText.SetActive(value: false);
+			diffPractiseText.SetActive(value: false);
 			extraLockToggle.interactable = true;
 		}
 		else if (PlayerPrefs.GetInt("DiffData") == 1)
 		{
-			diffEasyText.SetActive(true);
-			diffHardText.SetActive(false);
-			diffNormalText.SetActive(false);
-			diffExtremeText.SetActive(false);
-			diffPractiseText.SetActive(false);
+			diffEasyText.SetActive(value: true);
+			diffHardText.SetActive(value: false);
+			diffNormalText.SetActive(value: false);
+			diffExtremeText.SetActive(value: false);
+			diffPractiseText.SetActive(value: false);
 			extraLockToggle.interactable = true;
 		}
 		else if (PlayerPrefs.GetInt("DiffData") == 2)
 		{
-			diffHardText.SetActive(true);
-			diffEasyText.SetActive(false);
-			diffNormalText.SetActive(false);
-			diffExtremeText.SetActive(false);
-			diffPractiseText.SetActive(false);
+			diffHardText.SetActive(value: true);
+			diffEasyText.SetActive(value: false);
+			diffNormalText.SetActive(value: false);
+			diffExtremeText.SetActive(value: false);
+			diffPractiseText.SetActive(value: false);
 			extraLockToggle.interactable = true;
 		}
 		else if (PlayerPrefs.GetInt("DiffData") == 3)
 		{
-			diffExtremeText.SetActive(true);
-			diffHardText.SetActive(false);
-			diffEasyText.SetActive(false);
-			diffNormalText.SetActive(false);
-			diffPractiseText.SetActive(false);
+			diffExtremeText.SetActive(value: true);
+			diffHardText.SetActive(value: false);
+			diffEasyText.SetActive(value: false);
+			diffNormalText.SetActive(value: false);
+			diffPractiseText.SetActive(value: false);
 			extraLockToggle.isOn = true;
 			extraLockToggle.interactable = false;
 		}
 		else if (PlayerPrefs.GetInt("DiffData") == 4)
 		{
-			diffPractiseText.SetActive(true);
-			diffExtremeText.SetActive(false);
-			diffHardText.SetActive(false);
-			diffEasyText.SetActive(false);
-			diffNormalText.SetActive(false);
+			diffPractiseText.SetActive(value: true);
+			diffExtremeText.SetActive(value: false);
+			diffHardText.SetActive(value: false);
+			diffEasyText.SetActive(value: false);
+			diffNormalText.SetActive(value: false);
 			extraLockToggle.interactable = true;
 		}
 	}

@@ -130,11 +130,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
 		private void FixedUpdate()
 		{
-			float speed;
-			GetInput(out speed);
+			GetInput(out var speed);
 			Vector3 vector = base.transform.forward * m_Input.y + base.transform.right * m_Input.x;
-			RaycastHit hitInfo;
-			Physics.SphereCast(base.transform.position, m_CharacterController.radius, Vector3.down, out hitInfo, m_CharacterController.height / 2f, -1, QueryTriggerInteraction.Ignore);
+			Physics.SphereCast(base.transform.position, m_CharacterController.radius, Vector3.down, out var hitInfo, m_CharacterController.height / 2f, -1, QueryTriggerInteraction.Ignore);
 			vector = Vector3.ProjectOnPlane(vector, hitInfo.normal).normalized;
 			m_MoveDir.x = vector.x * speed;
 			m_MoveDir.z = vector.z * speed;
@@ -169,7 +167,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		{
 			if (m_CharacterController.velocity.sqrMagnitude > 0f && (m_Input.x != 0f || m_Input.y != 0f))
 			{
-				m_StepCycle += (m_CharacterController.velocity.magnitude + speed * ((!m_IsWalking) ? m_RunstepLenghten : 1f)) * Time.fixedDeltaTime;
+				m_StepCycle += (m_CharacterController.velocity.magnitude + speed * (m_IsWalking ? 1f : m_RunstepLenghten)) * Time.fixedDeltaTime;
 			}
 			if (m_StepCycle > m_NextStep)
 			{
@@ -197,7 +195,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				Vector3 localPosition;
 				if (m_CharacterController.velocity.magnitude > 0f && m_CharacterController.isGrounded)
 				{
-					m_Camera.transform.localPosition = m_HeadBob.DoHeadBob(m_CharacterController.velocity.magnitude + speed * ((!m_IsWalking) ? m_RunstepLenghten : 1f));
+					m_Camera.transform.localPosition = m_HeadBob.DoHeadBob(m_CharacterController.velocity.magnitude + speed * (m_IsWalking ? 1f : m_RunstepLenghten));
 					localPosition = m_Camera.transform.localPosition;
 					localPosition.y = m_Camera.transform.localPosition.y - m_JumpBob.Offset();
 				}
@@ -216,7 +214,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			float axis2 = CrossPlatformInputManager.GetAxis("Vertical");
 			bool isWalking = m_IsWalking;
 			m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
-			speed = ((!m_IsWalking) ? m_RunSpeed : m_WalkSpeed);
+			speed = (m_IsWalking ? m_WalkSpeed : m_RunSpeed);
 			m_Input = new Vector2(axis, axis2);
 			if (m_Input.sqrMagnitude > 1f)
 			{
@@ -225,7 +223,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			if (m_IsWalking != isWalking && m_UseFovKick && m_CharacterController.velocity.sqrMagnitude > 0f)
 			{
 				StopAllCoroutines();
-				StartCoroutine(m_IsWalking ? m_FovKick.FOVKickDown() : m_FovKick.FOVKickUp());
+				StartCoroutine((!m_IsWalking) ? m_FovKick.FOVKickUp() : m_FovKick.FOVKickDown());
 			}
 		}
 

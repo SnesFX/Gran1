@@ -23,8 +23,8 @@ public class ClickBackButton : MonoBehaviour
 			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
 			{
 				((soundEffectsMenu)ljudHolder.GetComponent(typeof(soundEffectsMenu))).buttonClick();
-				difficultyMenu.SetActive(false);
-				Menu.SetActive(true);
+				difficultyMenu.SetActive(value: false);
+				Menu.SetActive(value: true);
 			}
 		}
 	}

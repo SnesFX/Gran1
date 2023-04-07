@@ -76,11 +76,19 @@ namespace Steamworks
 			case EGameIDType.k_EGameIDTypeApp:
 				return AppID() != AppId_t.Invalid;
 			case EGameIDType.k_EGameIDTypeGameMod:
-				return AppID() != AppId_t.Invalid && (ModID() & 0x80000000u) != 0;
+				if (AppID() != AppId_t.Invalid)
+				{
+					return (ModID() & 0x80000000u) != 0;
+				}
+				return false;
 			case EGameIDType.k_EGameIDTypeShortcut:
 				return (ModID() & 0x80000000u) != 0;
 			case EGameIDType.k_EGameIDTypeP2P:
-				return AppID() == AppId_t.Invalid && (ModID() & 0x80000000u) != 0;
+				if (AppID() == AppId_t.Invalid)
+				{
+					return (ModID() & 0x80000000u) != 0;
+				}
+				return false;
 			default:
 				return false;
 			}
@@ -98,7 +106,7 @@ namespace Steamworks
 
 		private void SetAppID(AppId_t other)
 		{
-			m_GameID = (m_GameID & 0xFFFFFFFFFF000000uL) | (((ulong)(uint)other & 0xFFFFFFuL) << 0);
+			m_GameID = (m_GameID & 0xFFFFFFFFFF000000uL) | ((ulong)(uint)other & 0xFFFFFFuL);
 		}
 
 		private void SetType(EGameIDType other)
@@ -118,7 +126,11 @@ namespace Steamworks
 
 		public override bool Equals(object other)
 		{
-			return other is CGameID && this == (CGameID)other;
+			if (other is CGameID)
+			{
+				return this == (CGameID)other;
+			}
+			return false;
 		}
 
 		public override int GetHashCode()

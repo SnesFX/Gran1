@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 namespace TMPro
@@ -18,6 +18,10 @@ namespace TMPro
 
 		private Dictionary<int, int> m_GraphicQueueLookup = new Dictionary<int, int>();
 
+		private readonly List<TMP_Text> m_InternalUpdateQueue = new List<TMP_Text>();
+
+		private Dictionary<int, int> m_InternalUpdateLookup = new Dictionary<int, int>();
+
 		public static TMP_UpdateManager instance
 		{
 			get
@@ -33,7 +37,22 @@ namespace TMPro
 		protected TMP_UpdateManager()
 		{
 			Camera.onPreCull = (Camera.CameraCallback)Delegate.Combine(Camera.onPreCull, new Camera.CameraCallback(OnCameraPreCull));
-			RenderPipeline.beginFrameRendering += OnBeginFrameRendering;
+			RenderPipelineManager.beginFrameRendering += OnBeginFrameRendering;
+		}
+
+		internal static void RegisterTextObjectForUpdate(TMP_Text textObject)
+		{
+			instance.InternalRegisterTextObjectForUpdate(textObject);
+		}
+
+		private void InternalRegisterTextObjectForUpdate(TMP_Text textObject)
+		{
+			int instanceID = textObject.GetInstanceID();
+			if (!m_InternalUpdateLookup.ContainsKey(instanceID))
+			{
+				m_InternalUpdateLookup[instanceID] = instanceID;
+				m_InternalUpdateQueue.Add(textObject);
+			}
 		}
 
 		public static void RegisterTextElementForLayoutRebuild(TMP_Text element)
@@ -70,7 +89,7 @@ namespace TMPro
 			return true;
 		}
 
-		private void OnBeginFrameRendering(Camera[] cameras)
+		private void OnBeginFrameRendering(ScriptableRenderContext renderContext, Camera[] cameras)
 		{
 			DoRebuilds();
 		}
@@ -82,18 +101,22 @@ namespace TMPro
 
 		private void DoRebuilds()
 		{
-			for (int i = 0; i < m_LayoutRebuildQueue.Count; i++)
+			for (int i = 0; i < m_InternalUpdateQueue.Count; i++)
 			{
-				m_LayoutRebuildQueue[i].Rebuild(CanvasUpdate.Prelayout);
+				m_InternalUpdateQueue[i].InternalUpdate();
+			}
+			for (int j = 0; j < m_LayoutRebuildQueue.Count; j++)
+			{
+				m_LayoutRebuildQueue[j].Rebuild(CanvasUpdate.Prelayout);
 			}
 			if (m_LayoutRebuildQueue.Count > 0)
 			{
 				m_LayoutRebuildQueue.Clear();
 				m_LayoutQueueLookup.Clear();
 			}
-			for (int j = 0; j < m_GraphicRebuildQueue.Count; j++)
+			for (int k = 0; k < m_GraphicRebuildQueue.Count; k++)
 			{
-				m_GraphicRebuildQueue[j].Rebuild(CanvasUpdate.PreRender);
+				m_GraphicRebuildQueue[k].Rebuild(CanvasUpdate.PreRender);
 			}
 			if (m_GraphicRebuildQueue.Count > 0)
 			{
@@ -102,10 +125,16 @@ namespace TMPro
 			}
 		}
 
+		internal static void UnRegisterTextObjectForUpdate(TMP_Text textObject)
+		{
+			instance.InternalUnRegisterTextObjectForUpdate(textObject);
+		}
+
 		public static void UnRegisterTextElementForRebuild(TMP_Text element)
 		{
 			instance.InternalUnRegisterTextElementForGraphicRebuild(element);
 			instance.InternalUnRegisterTextElementForLayoutRebuild(element);
+			instance.InternalUnRegisterTextObjectForUpdate(element);
 		}
 
 		private void InternalUnRegisterTextElementForGraphicRebuild(TMP_Text element)
@@ -120,6 +149,13 @@ namespace TMPro
 			int instanceID = element.GetInstanceID();
 			instance.m_LayoutRebuildQueue.Remove(element);
 			m_LayoutQueueLookup.Remove(instanceID);
+		}
+
+		private void InternalUnRegisterTextObjectForUpdate(TMP_Text textObject)
+		{
+			int instanceID = textObject.GetInstanceID();
+			instance.m_InternalUpdateQueue.Remove(textObject);
+			m_InternalUpdateLookup.Remove(instanceID);
 		}
 	}
 }

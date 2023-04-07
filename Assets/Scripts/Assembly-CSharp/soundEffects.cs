@@ -4,9 +4,9 @@ using UnityEngine;
 [Serializable]
 public class soundEffects : MonoBehaviour
 {
-	public AudioClip pickUpStuff;
-
 	public AudioClip PCaught;
+
+	public AudioClip PCaughtNightmare;
 
 	public AudioClip exitDoorOpen;
 
@@ -50,122 +50,137 @@ public class soundEffects : MonoBehaviour
 
 	public AudioClip pickUpLoaded;
 
+	public AudioClip remoteSound;
+
+	public AudioClip pickupObject;
+
 	public virtual void Start()
 	{
 	}
 
-	public virtual void pickingUpStuff()
-	{
-		GetComponent<AudioSource>().PlayOneShot(pickUpStuff);
-	}
-
 	public virtual void playerCaught()
 	{
-		GetComponent<AudioSource>().PlayOneShot(PCaught);
+		AudioSource.PlayClipAtPoint(PCaught, base.transform.position);
+	}
+
+	public virtual void playerCaughtNightmare()
+	{
+		AudioSource.PlayClipAtPoint(PCaught, base.transform.position);
+		AudioSource.PlayClipAtPoint(PCaughtNightmare, base.transform.position);
 	}
 
 	public virtual void openExitDoor()
 	{
-		GetComponent<AudioSource>().PlayOneShot(exitDoorOpen);
+		AudioSource.PlayClipAtPoint(exitDoorOpen, base.transform.position);
 	}
 
 	public virtual void playerGetHit()
 	{
-		GetComponent<AudioSource>().PlayOneShot(playerHit);
+		AudioSource.PlayClipAtPoint(playerHit, base.transform.position);
 	}
 
 	public virtual void hukarSig()
 	{
-		GetComponent<AudioSource>().PlayOneShot(hukaSig);
+		AudioSource.PlayClipAtPoint(hukaSig, base.transform.position);
 	}
 
 	public virtual void standUp()
 	{
-		GetComponent<AudioSource>().PlayOneShot(stand);
+		AudioSource.PlayClipAtPoint(stand, base.transform.position);
 	}
 
 	public virtual void underBed()
 	{
-		GetComponent<AudioSource>().PlayOneShot(bedNer);
+		AudioSource.PlayClipAtPoint(bedNer, base.transform.position);
 	}
 
 	public virtual void fromBed()
 	{
-		GetComponent<AudioSource>().PlayOneShot(bedUpp);
+		AudioSource.PlayClipAtPoint(bedUpp, base.transform.position);
 	}
 
 	public virtual void manakinLook()
 	{
-		GetComponent<AudioSource>().PlayOneShot(manakin);
+		AudioSource.PlayClipAtPoint(manakin, base.transform.position);
 	}
 
 	public virtual void CrossbowShoot()
 	{
-		GetComponent<AudioSource>().PlayOneShot(crossbowShoot);
+		AudioSource.PlayClipAtPoint(crossbowShoot, base.transform.position);
 	}
 
 	public virtual void CrossbowLoad()
 	{
-		GetComponent<AudioSource>().PlayOneShot(crossbowLoad);
+		AudioSource.PlayClipAtPoint(crossbowLoad, base.transform.position);
 	}
 
 	public virtual void CoffinIn()
 	{
-		GetComponent<AudioSource>().PlayOneShot(inCoffin);
+		AudioSource.PlayClipAtPoint(inCoffin, base.transform.position);
 	}
 
 	public virtual void CoffinUt()
 	{
-		GetComponent<AudioSource>().PlayOneShot(OutCoffin);
+		AudioSource.PlayClipAtPoint(OutCoffin, base.transform.position);
 	}
 
 	public virtual void playerLandSound()
 	{
-		GetComponent<AudioSource>().PlayOneShot(landSound);
+		AudioSource.PlayClipAtPoint(landSound, base.transform.position);
 	}
 
 	public virtual void playerLandBRSound()
 	{
-		GetComponent<AudioSource>().PlayOneShot(landBRSound);
+		AudioSource.PlayClipAtPoint(landBRSound, base.transform.position);
 	}
 
 	public virtual void playerFallFloor()
 	{
-		GetComponent<AudioSource>().PlayOneShot(fallFloor);
+		AudioSource.PlayClipAtPoint(fallFloor, base.transform.position);
 	}
 
 	public virtual void tavelbitPlace()
 	{
-		GetComponent<AudioSource>().PlayOneShot(placeTavelbit);
+		AudioSource.PlayClipAtPoint(placeTavelbit, base.transform.position);
 	}
 
 	public virtual void GunShoot()
 	{
-		GetComponent<AudioSource>().PlayOneShot(gunShot);
+		AudioSource.PlayClipAtPoint(gunShot, base.transform.position);
 	}
 
 	public virtual void CarIn()
 	{
-		GetComponent<AudioSource>().PlayOneShot(inCar);
+		AudioSource.PlayClipAtPoint(inCar, base.transform.position);
 	}
 
 	public virtual void CarOut()
 	{
-		GetComponent<AudioSource>().PlayOneShot(outCar);
+		AudioSource.PlayClipAtPoint(outCar, base.transform.position);
 	}
 
 	public virtual void loadShotgun()
 	{
-		GetComponent<AudioSource>().PlayOneShot(shotgunLoad);
+		AudioSource.PlayClipAtPoint(shotgunLoad, base.transform.position);
 	}
 
 	public virtual void emptyShotgun()
 	{
-		GetComponent<AudioSource>().PlayOneShot(shotgunEmpty);
+		AudioSource.PlayClipAtPoint(shotgunEmpty, base.transform.position);
 	}
 
 	public virtual void loadedPickup()
 	{
-		GetComponent<AudioSource>().PlayOneShot(pickUpLoaded);
+		AudioSource.PlayClipAtPoint(pickUpLoaded, base.transform.position);
+	}
+
+	public virtual void clickRemote()
+	{
+		AudioSource.PlayClipAtPoint(remoteSound, base.transform.position);
+	}
+
+	public virtual void pickingUpStuff()
+	{
+		AudioSource.PlayClipAtPoint(pickupObject, base.transform.position);
 	}
 }

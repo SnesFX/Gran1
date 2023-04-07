@@ -20,9 +20,9 @@ public class batsTrigger : MonoBehaviour
 		{
 			((AIfollow)NOS.GetComponent(typeof(AIfollow))).seePlayer = true;
 			((AIfollow)NOS.GetComponent(typeof(AIfollow))).FollowPlayer = true;
-			bats.SetActive(true);
-			nextTrigger.SetActive(true);
-			base.gameObject.SetActive(false);
+			bats.SetActive(value: true);
+			nextTrigger.SetActive(value: true);
+			base.gameObject.SetActive(value: false);
 		}
 	}
 }

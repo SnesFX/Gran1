@@ -60,13 +60,13 @@ namespace UnityStandardAssets.Utility
 		private IEnumerator Activate(Entry entry)
 		{
 			yield return new WaitForSeconds(entry.delay);
-			entry.target.SetActive(true);
+			entry.target.SetActive(value: true);
 		}
 
 		private IEnumerator Deactivate(Entry entry)
 		{
 			yield return new WaitForSeconds(entry.delay);
-			entry.target.SetActive(false);
+			entry.target.SetActive(value: false);
 		}
 
 		private IEnumerator ReloadLevel(Entry entry)

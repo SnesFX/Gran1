@@ -31,12 +31,12 @@ public class clickOptionButtonIG : MonoBehaviour
 			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
 			{
 				Time.timeScale = 0f;
-				optionMenu.SetActive(true);
-				optionButton.SetActive(false);
-				joystick.SetActive(false);
-				crouchButton.SetActive(false);
-				bedButtons.SetActive(false);
-				carControls.SetActive(false);
+				optionMenu.SetActive(value: true);
+				optionButton.SetActive(value: false);
+				joystick.SetActive(value: false);
+				crouchButton.SetActive(value: false);
+				bedButtons.SetActive(value: false);
+				carControls.SetActive(value: false);
 				((backgroundSound)soundHolder.GetComponent(typeof(backgroundSound))).buttonClick();
 			}
 		}

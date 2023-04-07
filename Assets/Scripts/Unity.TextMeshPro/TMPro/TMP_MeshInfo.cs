@@ -12,6 +12,8 @@ namespace TMPro
 
 		private static readonly Vector4 s_DefaultTangent = new Vector4(-1f, 0f, 0f, 1f);
 
+		private static readonly Bounds s_DefaultBounds = default(Bounds);
+
 		public Mesh mesh;
 
 		public int vertexCount;
@@ -78,7 +80,7 @@ namespace TMPro
 			this.mesh.normals = normals;
 			this.mesh.tangents = tangents;
 			this.mesh.triangles = triangles;
-			this.mesh.bounds = new Bounds(Vector3.zero, new Vector3(3840f, 2160f, 0f));
+			this.mesh.bounds = s_DefaultBounds;
 		}
 
 		public TMP_MeshInfo(Mesh mesh, int size, bool isVolumetric)
@@ -92,8 +94,8 @@ namespace TMPro
 				mesh.Clear();
 			}
 			this.mesh = mesh;
-			int num = (isVolumetric ? 8 : 4);
-			int num2 = (isVolumetric ? 36 : 6);
+			int num = ((!isVolumetric) ? 4 : 8);
+			int num2 = ((!isVolumetric) ? 6 : 36);
 			size = Mathf.Min(size, 65532 / num);
 			int num3 = size * num;
 			int num4 = size * num2;
@@ -164,7 +166,7 @@ namespace TMPro
 			this.mesh.normals = normals;
 			this.mesh.tangents = tangents;
 			this.mesh.triangles = triangles;
-			this.mesh.bounds = new Bounds(Vector3.zero, new Vector3(3840f, 2160f, 64f));
+			this.mesh.bounds = s_DefaultBounds;
 		}
 
 		public void ResizeMeshInfo(int size)
@@ -215,8 +217,8 @@ namespace TMPro
 
 		public void ResizeMeshInfo(int size, bool isVolumetric)
 		{
-			int num = (isVolumetric ? 8 : 4);
-			int num2 = (isVolumetric ? 36 : 6);
+			int num = ((!isVolumetric) ? 4 : 8);
+			int num2 = ((!isVolumetric) ? 6 : 36);
 			size = Mathf.Min(size, 65532 / num);
 			int newSize = size * num;
 			int newSize2 = size * num2;
@@ -327,6 +329,10 @@ namespace TMPro
 				if (uploadChanges && mesh != null)
 				{
 					mesh.vertices = vertices;
+				}
+				if (mesh != null)
+				{
+					mesh.bounds = s_DefaultBounds;
 				}
 			}
 		}

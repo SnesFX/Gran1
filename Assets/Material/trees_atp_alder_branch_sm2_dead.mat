@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: trees_atp_alder_branch_sm2_dead
   m_Shader: {fileID: 14000, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: EFFECT_BUMP GEOM_TYPE_LEAF
@@ -19,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 5fd52c9a6210f6b48b7c39591c6a8ba3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5ba3912e05753cb45b553cad14926e2e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailTex:
@@ -27,7 +28,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 94d8bd1945a2a764e9a16101fca6d8be, type: 3}
+        m_Texture: {fileID: 2800000, guid: 8932749934212d24da229d75724460b9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:

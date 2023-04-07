@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace TMPro
 {
-	[ExecuteInEditMode]
+	[ExecuteAlways]
 	public class TMP_SubMeshUI : MaskableGraphic, IClippable, IMaskable, IMaterialModifier
 	{
 		[SerializeField]
@@ -144,13 +144,7 @@ namespace TMPro
 			}
 		}
 
-		public override Material materialForRendering
-		{
-			get
-			{
-				return TMP_MaterialManager.GetMaterialForRendering(this, m_sharedMaterial);
-			}
-		}
+		public override Material materialForRendering => TMP_MaterialManager.GetMaterialForRendering(this, m_sharedMaterial);
 
 		public bool isDefaultMaterial
 		{
@@ -207,15 +201,15 @@ namespace TMPro
 
 		public static TMP_SubMeshUI AddSubTextObject(TextMeshProUGUI textComponent, MaterialReference materialReference)
 		{
-			GameObject gameObject = new GameObject("TMP UI SubObject [" + materialReference.material.name + "]", typeof(RectTransform));
-			gameObject.transform.SetParent(textComponent.transform, false);
-			gameObject.layer = textComponent.gameObject.layer;
-			RectTransform component = gameObject.GetComponent<RectTransform>();
+			GameObject obj = new GameObject("TMP UI SubObject [" + materialReference.material.name + "]", typeof(RectTransform));
+			obj.transform.SetParent(textComponent.transform, worldPositionStays: false);
+			obj.layer = textComponent.gameObject.layer;
+			RectTransform component = obj.GetComponent<RectTransform>();
 			component.anchorMin = Vector2.zero;
 			component.anchorMax = Vector2.one;
 			component.sizeDelta = Vector2.zero;
 			component.pivot = textComponent.rectTransform.pivot;
-			TMP_SubMeshUI tMP_SubMeshUI = gameObject.AddComponent<TMP_SubMeshUI>();
+			TMP_SubMeshUI tMP_SubMeshUI = obj.AddComponent<TMP_SubMeshUI>();
 			tMP_SubMeshUI.m_canvasRenderer = tMP_SubMeshUI.canvasRenderer;
 			tMP_SubMeshUI.m_TextComponent = textComponent;
 			tMP_SubMeshUI.m_materialReferenceIndex = materialReference.index;
@@ -421,10 +415,12 @@ namespace TMPro
 
 		private Material CreateMaterialInstance(Material source)
 		{
-			Material material = new Material(source);
-			material.shaderKeywords = source.shaderKeywords;
-			material.name += " (Instance)";
-			return material;
+			Material obj = new Material(source)
+			{
+				shaderKeywords = source.shaderKeywords
+			};
+			obj.name += " (Instance)";
+			return obj;
 		}
 
 		private Material GetSharedMaterial()

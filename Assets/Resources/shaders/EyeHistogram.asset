@@ -4,7 +4,8 @@
 ComputeShader:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: EyeHistogram
   variants:
   - targetRenderer: 2
@@ -13,13 +14,13 @@ ComputeShader:
     - name: KEyeHistogram
       cbs:
       - name: Params
-        generatedName: '<noninit>'
+        generatedName:
         bindPoint: 0
         samplerBindPoint: -1
         texDimension: -1
       textures:
       - name: _Source
-        generatedName: '<noninit>'
+        generatedName:
         bindPoint: 0
         samplerBindPoint: -1
         texDimension: 2
@@ -27,7 +28,7 @@ ComputeShader:
       inBuffers: []
       outBuffers:
       - name: _Histogram
-        generatedName: '<noninit>'
+        generatedName:
         bindPoint: 0
         samplerBindPoint: -1
         texDimension: -1

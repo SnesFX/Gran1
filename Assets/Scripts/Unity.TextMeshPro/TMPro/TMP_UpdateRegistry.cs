@@ -71,8 +71,7 @@ namespace TMPro
 		{
 			for (int i = 0; i < m_LayoutRebuildQueue.Count; i++)
 			{
-				ICanvasElement canvasElement = instance.m_LayoutRebuildQueue[i];
-				canvasElement.Rebuild(CanvasUpdate.Prelayout);
+				instance.m_LayoutRebuildQueue[i].Rebuild(CanvasUpdate.Prelayout);
 			}
 			if (m_LayoutRebuildQueue.Count > 0)
 			{
@@ -81,8 +80,7 @@ namespace TMPro
 			}
 			for (int j = 0; j < m_GraphicRebuildQueue.Count; j++)
 			{
-				ICanvasElement canvasElement2 = instance.m_GraphicRebuildQueue[j];
-				canvasElement2.Rebuild(CanvasUpdate.PreRender);
+				instance.m_GraphicRebuildQueue[j].Rebuild(CanvasUpdate.PreRender);
 			}
 			if (m_GraphicRebuildQueue.Count > 0)
 			{

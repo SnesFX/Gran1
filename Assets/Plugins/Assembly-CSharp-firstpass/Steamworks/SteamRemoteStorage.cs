@@ -208,7 +208,7 @@ namespace Steamworks
 			InteropHelp.TestIfAvailableClient();
 			IntPtr ppchName2;
 			bool flag = NativeMethods.ISteamRemoteStorage_GetUGCDetails(CSteamAPIContext.GetSteamRemoteStorage(), hContent, out pnAppID, out ppchName2, out pnFileSizeInBytes, out pSteamIDOwner);
-			ppchName = ((!flag) ? null : InteropHelp.PtrToStringUTF8(ppchName2));
+			ppchName = (flag ? InteropHelp.PtrToStringUTF8(ppchName2) : null);
 			return flag;
 		}
 

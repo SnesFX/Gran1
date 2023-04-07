@@ -33,16 +33,6 @@ public class PlayerRelativeControl : MonoBehaviour
 
 	private Vector3 velocity;
 
-	public PlayerRelativeControl()
-	{
-		forwardSpeed = 4f;
-		backwardSpeed = 1f;
-		sidestepSpeed = 1f;
-		jumpSpeed = 8f;
-		inAirMultiplier = 0.25f;
-		rotationSpeed = new Vector2(50f, 25f);
-	}
-
 	public virtual void Start()
 	{
 		thisTransform = (Transform)GetComponent(typeof(Transform));
@@ -125,5 +115,15 @@ public class PlayerRelativeControl : MonoBehaviour
 			thisTransform.Rotate(0f, position.x, 0f, Space.World);
 			cameraPivot.Rotate(position.y, 0f, 0f);
 		}
+	}
+
+	public PlayerRelativeControl()
+	{
+		forwardSpeed = 4f;
+		backwardSpeed = 1f;
+		sidestepSpeed = 1f;
+		jumpSpeed = 8f;
+		inAirMultiplier = 0.25f;
+		rotationSpeed = new Vector2(50f, 25f);
 	}
 }

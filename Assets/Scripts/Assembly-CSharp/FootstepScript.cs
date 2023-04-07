@@ -13,13 +13,6 @@ public class FootstepScript : MonoBehaviour
 
 	public float audioStepLengthWalk;
 
-	public FootstepScript()
-	{
-		step = true;
-		startWalking = true;
-		audioStepLengthWalk = 0.45f;
-	}
-
 	public virtual void Start()
 	{
 	}
@@ -56,5 +49,12 @@ public class FootstepScript : MonoBehaviour
 		startWalking = false;
 		step = false;
 		GetComponent<AudioSource>().Stop();
+	}
+
+	public FootstepScript()
+	{
+		step = true;
+		startWalking = true;
+		audioStepLengthWalk = 0.45f;
 	}
 }

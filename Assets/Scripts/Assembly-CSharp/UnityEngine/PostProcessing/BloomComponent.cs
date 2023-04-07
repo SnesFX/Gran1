@@ -35,7 +35,11 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				return base.model.enabled && base.model.settings.bloom.intensity > 0f && !context.interrupted;
+				if (base.model.enabled && base.model.settings.bloom.intensity > 0f)
+				{
+					return !context.interrupted;
+				}
+				return false;
 			}
 		}
 
@@ -48,7 +52,7 @@ namespace UnityEngine.PostProcessing
 			material.SetTexture(Uniforms._AutoExposure, autoExposure);
 			int width = context.width / 2;
 			int num = context.height / 2;
-			RenderTextureFormat format = ((!Application.isMobilePlatform) ? RenderTextureFormat.DefaultHDR : RenderTextureFormat.Default);
+			RenderTextureFormat format = (Application.isMobilePlatform ? RenderTextureFormat.Default : RenderTextureFormat.DefaultHDR);
 			float num2 = Mathf.Log(num, 2f) + bloom.radius - 8f;
 			int num3 = (int)num2;
 			int num4 = Mathf.Clamp(num3, 1, 16);
@@ -56,7 +60,7 @@ namespace UnityEngine.PostProcessing
 			material.SetFloat(Uniforms._Threshold, thresholdLinear);
 			float num5 = thresholdLinear * bloom.softKnee + 1E-05f;
 			material.SetVector(value: new Vector3(thresholdLinear - num5, num5 * 2f, 0.25f / num5), nameID: Uniforms._Curve);
-			material.SetFloat(Uniforms._PrefilterOffs, (!bloom.antiFlicker) ? 0f : (-0.5f));
+			material.SetFloat(Uniforms._PrefilterOffs, bloom.antiFlicker ? (-0.5f) : 0f);
 			float num6 = 0.5f + num2 - (float)num3;
 			material.SetFloat(Uniforms._SampleScale, num6);
 			if (bloom.antiFlicker)

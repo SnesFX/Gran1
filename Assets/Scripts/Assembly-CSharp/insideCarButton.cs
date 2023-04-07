@@ -75,29 +75,28 @@ public class insideCarButton : MonoBehaviour
 		{
 			if (!PlayerHiding)
 			{
-				player.SetActive(false);
+				player.SetActive(value: false);
 				PlayerHiding = true;
-				inCoffin.SetActive(true);
+				inCoffin.SetActive(value: true);
 				underBedCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerHidingInCar = true;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).hidingInCar = true;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerNearGranny = false;
-				crouchButton.SetActive(false);
-				dropButtonHolder.SetActive(false);
-				shootGunButtonHolder.SetActive(false);
-				pickupButton.SetActive(false);
-				openDoorButton.SetActive(false);
-				mittenRing.SetActive(false);
-				startButton.SetActive(true);
-				((hideSound)hidingSoundHolder.GetComponent(typeof(hideSound))).theSound();
-				engineOffSound.SetActive(false);
-				objectsHolder.SetActive(false);
+				crouchButton.SetActive(value: false);
+				dropButtonHolder.SetActive(value: false);
+				shootGunButtonHolder.SetActive(value: false);
+				pickupButton.SetActive(value: false);
+				openDoorButton.SetActive(value: false);
+				mittenRing.SetActive(value: false);
+				startButton.SetActive(value: true);
+				engineOffSound.SetActive(value: false);
+				objectsHolder.SetActive(value: false);
 			}
 			else
 			{
-				inCoffin.SetActive(false);
+				inCoffin.SetActive(value: false);
 				player.transform.position = playerPosition.transform.position;
-				player.SetActive(true);
+				player.SetActive(value: true);
 				player.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 				playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 				((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).resetMouse();
@@ -106,19 +105,19 @@ public class insideCarButton : MonoBehaviour
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerHidingInCar = false;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).hidingInCar = false;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerStartCar = false;
-				crouchButton.SetActive(true);
-				dropButtonHolder.SetActive(true);
-				shootGunButtonHolder.SetActive(true);
-				startButton.SetActive(false);
-				reverseButton.SetActive(false);
-				forwardButton.SetActive(false);
-				objectsHolder.SetActive(true);
+				crouchButton.SetActive(value: true);
+				dropButtonHolder.SetActive(value: true);
+				shootGunButtonHolder.SetActive(value: true);
+				startButton.SetActive(value: false);
+				reverseButton.SetActive(value: false);
+				forwardButton.SetActive(value: false);
+				objectsHolder.SetActive(value: true);
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).CarOut();
 				if (((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).engineOn)
 				{
-					engineOffSound.SetActive(true);
-					engineOnSound.SetActive(false);
-					engineStartSound.SetActive(false);
+					engineOffSound.SetActive(value: true);
+					engineOnSound.SetActive(value: false);
+					engineStartSound.SetActive(value: false);
 					((checkTheCar)gameController.GetComponent(typeof(checkTheCar))).engineOn = false;
 				}
 			}

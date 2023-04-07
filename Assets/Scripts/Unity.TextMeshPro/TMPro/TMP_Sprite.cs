@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TMPro
 {
 	[Serializable]
-	public class TMP_Sprite : TMP_TextElement
+	public class TMP_Sprite : TMP_TextElement_Legacy
 	{
 		public string name;
 

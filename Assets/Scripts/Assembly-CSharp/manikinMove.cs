@@ -17,11 +17,6 @@ public class manikinMove : MonoBehaviour
 
 	public GameObject gameController;
 
-	public manikinMove()
-	{
-		damping = 2;
-	}
-
 	public virtual void Start()
 	{
 		player = GameObject.Find("Player").transform;
@@ -60,5 +55,10 @@ public class manikinMove : MonoBehaviour
 		startStopMoving = false;
 		yield return new WaitForSeconds(30f);
 		UnityEngine.Object.Destroy(base.gameObject);
+	}
+
+	public manikinMove()
+	{
+		damping = 2;
 	}
 }

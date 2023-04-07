@@ -70,33 +70,33 @@ namespace TMPro
 
 		public Color32 highlightColor;
 
-		public TMP_BasicXmlTagStack basicStyleStack;
+		public TMP_FontStyleStack basicStyleStack;
 
-		public TMP_XmlTagStack<Color32> colorStack;
+		public TMP_RichTextTagStack<Color32> colorStack;
 
-		public TMP_XmlTagStack<Color32> underlineColorStack;
+		public TMP_RichTextTagStack<Color32> underlineColorStack;
 
-		public TMP_XmlTagStack<Color32> strikethroughColorStack;
+		public TMP_RichTextTagStack<Color32> strikethroughColorStack;
 
-		public TMP_XmlTagStack<Color32> highlightColorStack;
+		public TMP_RichTextTagStack<Color32> highlightColorStack;
 
-		public TMP_XmlTagStack<TMP_ColorGradient> colorGradientStack;
+		public TMP_RichTextTagStack<TMP_ColorGradient> colorGradientStack;
 
-		public TMP_XmlTagStack<float> sizeStack;
+		public TMP_RichTextTagStack<float> sizeStack;
 
-		public TMP_XmlTagStack<float> indentStack;
+		public TMP_RichTextTagStack<float> indentStack;
 
-		public TMP_XmlTagStack<int> fontWeightStack;
+		public TMP_RichTextTagStack<FontWeight> fontWeightStack;
 
-		public TMP_XmlTagStack<int> styleStack;
+		public TMP_RichTextTagStack<int> styleStack;
 
-		public TMP_XmlTagStack<float> baselineStack;
+		public TMP_RichTextTagStack<float> baselineStack;
 
-		public TMP_XmlTagStack<int> actionStack;
+		public TMP_RichTextTagStack<int> actionStack;
 
-		public TMP_XmlTagStack<MaterialReference> materialReferenceStack;
+		public TMP_RichTextTagStack<MaterialReference> materialReferenceStack;
 
-		public TMP_XmlTagStack<TextAlignmentOptions> lineJustificationStack;
+		public TMP_RichTextTagStack<TextAlignmentOptions> lineJustificationStack;
 
 		public int spriteAnimationID;
 

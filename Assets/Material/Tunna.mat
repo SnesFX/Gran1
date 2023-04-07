@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Tunna
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _NORMALMAP
@@ -19,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 74e9d118af9a17942a5cdbfe9702fbb6, type: 3}
+        m_Texture: {fileID: 2800000, guid: a32dc0ce3cb365049bf6c0f84b783aea, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 274dea0326a1d7242a10ddb9e8f89733, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4ad942203968f1a4d96a2f9a2885a0a5, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -72,5 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    - _Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 namespace TMPro
 {
-	[ExecuteInEditMode]
 	[RequireComponent(typeof(RectTransform))]
 	[AddComponentMenu("Layout/Text Container")]
 	public class TextContainer : UIBehaviour
@@ -152,21 +151,9 @@ namespace TMPro
 			}
 		}
 
-		public bool isDefaultWidth
-		{
-			get
-			{
-				return m_isDefaultWidth;
-			}
-		}
+		public bool isDefaultWidth => m_isDefaultWidth;
 
-		public bool isDefaultHeight
-		{
-			get
-			{
-				return m_isDefaultHeight;
-			}
-		}
+		public bool isDefaultHeight => m_isDefaultHeight;
 
 		public bool isAutoFitting
 		{
@@ -180,21 +167,9 @@ namespace TMPro
 			}
 		}
 
-		public Vector3[] corners
-		{
-			get
-			{
-				return m_corners;
-			}
-		}
+		public Vector3[] corners => m_corners;
 
-		public Vector3[] worldCorners
-		{
-			get
-			{
-				return m_worldCorners;
-			}
-		}
+		public Vector3[] worldCorners => m_worldCorners;
 
 		public Vector4 margins
 		{

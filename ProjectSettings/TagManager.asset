@@ -144,6 +144,24 @@ TagManager:
   - bakluckaClosed
   - Fire
   - flashlight
+  - pepperspray
+  - remoteLock
+  - smalldoorLocked
+  - remotecontrol
+  - pepper
+  - rat1
+  - rat2
+  - water
+  - gallerhole
+  - birdseedplate
+  - birdseed
+  - burdoor
+  - skjutplatta
+  - steeldoorLocked
+  - croweat
+  - crowbur
+  - playersteal
+  - freezetrap
   layers:
   - Default
   - TransparentFX

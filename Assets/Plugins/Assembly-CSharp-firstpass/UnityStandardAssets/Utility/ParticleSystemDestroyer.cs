@@ -27,10 +27,10 @@ namespace UnityStandardAssets.Utility
 				yield return null;
 			}
 			Debug.Log("stopping " + base.name);
-			ParticleSystem[] array2 = systems;
-			foreach (ParticleSystem particleSystem2 in array2)
+			array = systems;
+			for (int i = 0; i < array.Length; i++)
 			{
-				ParticleSystem.EmissionModule emission = particleSystem2.emission;
+				ParticleSystem.EmissionModule emission = array[i].emission;
 				emission.enabled = false;
 			}
 			BroadcastMessage("Extinguish", SendMessageOptions.DontRequireReceiver);

@@ -8,6 +8,8 @@ namespace TMPro
 
 		public int index;
 
+		public int stringLength;
+
 		public TMP_TextElementType elementType;
 
 		public TMP_TextElement textElement;
@@ -32,9 +34,9 @@ namespace TMPro
 
 		public int vertexIndex;
 
-		public TMP_Vertex vertex_TL;
-
 		public TMP_Vertex vertex_BL;
+
+		public TMP_Vertex vertex_TL;
 
 		public TMP_Vertex vertex_TR;
 

@@ -53,27 +53,27 @@ public class bedButton2 : MonoBehaviour
 		{
 			if (!PlayerHiding)
 			{
-				player.SetActive(false);
+				player.SetActive(value: false);
 				PlayerHiding = true;
-				underBed.SetActive(true);
+				underBed.SetActive(value: true);
 				underBedCam.transform.localEulerAngles = new Vector3(0f, -90f, 0f);
 				PlayerHiding = true;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerHidingUnderBed = true;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).hidingUnderBed2 = true;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerNearGranny = false;
-				crouchButton.SetActive(false);
-				dropButtonHolder.SetActive(false);
-				shootGunButtonHolder.SetActive(false);
-				pickupButton.SetActive(false);
-				openDoorButton.SetActive(false);
-				mittenRing.SetActive(false);
+				crouchButton.SetActive(value: false);
+				dropButtonHolder.SetActive(value: false);
+				shootGunButtonHolder.SetActive(value: false);
+				pickupButton.SetActive(value: false);
+				openDoorButton.SetActive(value: false);
+				mittenRing.SetActive(value: false);
 				((hideSound)hidingSoundHolder.GetComponent(typeof(hideSound))).theSound();
 			}
 			else
 			{
-				underBed.SetActive(false);
+				underBed.SetActive(value: false);
 				player.transform.position = playerPosition.transform.position;
-				player.SetActive(true);
+				player.SetActive(value: true);
 				player.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 				playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 				((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).resetMouse();
@@ -81,9 +81,9 @@ public class bedButton2 : MonoBehaviour
 				PlayerHiding = false;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerHidingUnderBed = false;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).hidingUnderBed2 = false;
-				crouchButton.SetActive(true);
-				dropButtonHolder.SetActive(true);
-				shootGunButtonHolder.SetActive(true);
+				crouchButton.SetActive(value: true);
+				dropButtonHolder.SetActive(value: true);
+				shootGunButtonHolder.SetActive(value: true);
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).fromBed();
 			}
 		}

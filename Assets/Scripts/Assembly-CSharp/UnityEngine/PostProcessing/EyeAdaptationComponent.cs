@@ -43,7 +43,11 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				return base.model.enabled && SystemInfo.supportsComputeShaders && !context.interrupted;
+				if (base.model.enabled && SystemInfo.supportsComputeShaders)
+				{
+					return !context.interrupted;
+				}
+				return false;
 			}
 		}
 
@@ -60,9 +64,9 @@ namespace UnityEngine.PostProcessing
 		public override void OnDisable()
 		{
 			RenderTexture[] autoExposurePool = m_AutoExposurePool;
-			foreach (RenderTexture obj in autoExposurePool)
+			for (int i = 0; i < autoExposurePool.Length; i++)
 			{
-				GraphicsUtils.Destroy(obj);
+				GraphicsUtils.Destroy(autoExposurePool[i]);
 			}
 			if (m_HistogramBuffer != null)
 			{
@@ -167,8 +171,7 @@ namespace UnityEngine.PostProcessing
 		{
 			if (!(m_DebugHistogram == null) && m_DebugHistogram.IsCreated())
 			{
-				Rect position = new Rect(context.viewport.x * (float)Screen.width + 8f, 8f, m_DebugHistogram.width, m_DebugHistogram.height);
-				GUI.DrawTexture(position, m_DebugHistogram);
+				GUI.DrawTexture(new Rect(context.viewport.x * (float)Screen.width + 8f, 8f, m_DebugHistogram.width, m_DebugHistogram.height), m_DebugHistogram);
 			}
 		}
 	}

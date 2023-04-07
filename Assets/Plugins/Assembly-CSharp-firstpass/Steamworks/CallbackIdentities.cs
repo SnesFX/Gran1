@@ -6,13 +6,11 @@ namespace Steamworks
 	{
 		public static int GetCallbackIdentity(Type callbackStruct)
 		{
-			//Discarded unreachable code: IL_0029
-			object[] customAttributes = callbackStruct.GetCustomAttributes(typeof(CallbackIdentityAttribute), false);
+			object[] customAttributes = callbackStruct.GetCustomAttributes(typeof(CallbackIdentityAttribute), inherit: false);
 			int num = 0;
 			if (num < customAttributes.Length)
 			{
-				CallbackIdentityAttribute callbackIdentityAttribute = (CallbackIdentityAttribute)customAttributes[num];
-				return callbackIdentityAttribute.Identity;
+				return ((CallbackIdentityAttribute)customAttributes[num]).Identity;
 			}
 			throw new Exception("Callback number not found for struct " + callbackStruct);
 		}

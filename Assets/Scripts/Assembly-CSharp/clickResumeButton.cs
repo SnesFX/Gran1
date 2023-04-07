@@ -24,6 +24,6 @@ public class clickResumeButton : MonoBehaviour
 		Screen.lockCursor = true;
 		((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).menuEnabled = false;
 		btn1.GetComponent<RectTransform>().sizeDelta = new Vector2(160f, 30f);
-		optionMenu.SetActive(false);
+		optionMenu.SetActive(value: false);
 	}
 }

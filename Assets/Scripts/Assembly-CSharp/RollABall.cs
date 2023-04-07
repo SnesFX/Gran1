@@ -13,11 +13,6 @@ public class RollABall : MonoBehaviour
 
 	private Vector3 previousPosition;
 
-	public RollABall()
-	{
-		tilt = Vector3.zero;
-	}
-
 	public virtual void Start()
 	{
 		circ = (float)Math.PI * 2f * GetComponent<Collider>().bounds.extents.x;
@@ -37,5 +32,10 @@ public class RollABall : MonoBehaviour
 		vector = new Vector3(vector.z, 0f, 0f - vector.x);
 		base.transform.Rotate(vector / circ * 360f, Space.World);
 		previousPosition = base.transform.position;
+	}
+
+	public RollABall()
+	{
+		tilt = Vector3.zero;
 	}
 }

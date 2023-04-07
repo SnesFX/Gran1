@@ -18,8 +18,8 @@ public class ClickCloseButton : MonoBehaviour
 			Touch touch = touches[i];
 			if (touch.phase == TouchPhase.Began && GetComponent<GUITexture>().HitTest(touch.position))
 			{
-				OptionsMenu.SetActive(false);
-				MenuButtons.SetActive(true);
+				OptionsMenu.SetActive(value: false);
+				MenuButtons.SetActive(value: true);
 				((ButtonClicks)ljudHolder.GetComponent(typeof(ButtonClicks))).clickButton();
 			}
 		}

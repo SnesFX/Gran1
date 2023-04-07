@@ -4,7 +4,8 @@
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: NeedHammerText
   m_Rect:
     serializedVersion: 2
@@ -26,8 +27,9 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 2800000, guid: 334d3a732e077ef4abbb10dcdbe3a315, type: 3}
+    texture: {fileID: 2800000, guid: 4284d0c1adf28ea47a6cab2e22dd8b8c, type: 3}
     alphaTexture: {fileID: 0}
+    secondaryTextures: []
     m_SubMeshes:
     - serializedVersion: 2
       firstByte: 0
@@ -41,7 +43,7 @@ Sprite:
         m_Extent: {x: 0, y: 0, z: 0}
     m_IndexBuffer: 6200610060005f00600061005d0060005f005c005d005f005e005d005c005b005a005700590057005a005600570059005800570056004e004c005300550053004c00520053005500540053005200510050004f004d004f0050004e004f004d004c004e004d0049004c004d004a004c0049004b004a0049004800470045004400450047004600450044004300420041003e00410042003f0041003e0040003f003e003d003c003b003a003b003c0038003b003a00390038003a00350038003900360038003500370036003500340033003100300031003300320031003000280026002f002c002f0026002d002f002c002e002d002c002b002a002800290028002a002500280029002600280025002700260025002400230020002200200023002100200022001f00200021001d0020001f001c001d001f001e001d001c001b001a001900180019001a001600190018001500160018001700160015000e000d001300120013000d00140013001200110010000e000f000e0010000a000e000f000d000e000a000b000d000a000c000b000a00090004000800030008000400070006000500000005000600040005000000030004000000010003000000020001000000
     m_VertexData:
-      serializedVersion: 2
+      serializedVersion: 3
       m_VertexCount: 99
       m_Channels:
       - stream: 0
@@ -118,10 +120,11 @@ Sprite:
     serializedVersion: 3
     texture: {fileID: 0}
     alphaTexture: {fileID: 0}
+    secondaryTextures: []
     m_SubMeshes: []
     m_IndexBuffer:
     m_VertexData:
-      serializedVersion: 2
+      serializedVersion: 3
       m_VertexCount: 0
       m_Channels: []
       m_DataSize: 0

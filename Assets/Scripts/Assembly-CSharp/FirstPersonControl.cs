@@ -39,20 +39,6 @@ public class FirstPersonControl : MonoBehaviour
 
 	private bool canJump;
 
-	public FirstPersonControl()
-	{
-		forwardSpeed = 4f;
-		backwardSpeed = 1f;
-		sidestepSpeed = 1f;
-		jumpSpeed = 8f;
-		inAirMultiplier = 0.25f;
-		rotationSpeed = new Vector2(50f, 25f);
-		tiltPositiveYAxis = 0.6f;
-		tiltNegativeYAxis = 0.4f;
-		tiltXAxisMinimum = 0.1f;
-		canJump = true;
-	}
-
 	public virtual void Start()
 	{
 		thisTransform = (Transform)GetComponent(typeof(Transform));
@@ -163,5 +149,19 @@ public class FirstPersonControl : MonoBehaviour
 		vector2 *= Time.deltaTime;
 		thisTransform.Rotate(0f, vector2.x, 0f, Space.World);
 		cameraPivot.Rotate(0f - vector2.y, 0f, 0f);
+	}
+
+	public FirstPersonControl()
+	{
+		forwardSpeed = 4f;
+		backwardSpeed = 1f;
+		sidestepSpeed = 1f;
+		jumpSpeed = 8f;
+		inAirMultiplier = 0.25f;
+		rotationSpeed = new Vector2(50f, 25f);
+		tiltPositiveYAxis = 0.6f;
+		tiltNegativeYAxis = 0.4f;
+		tiltXAxisMinimum = 0.1f;
+		canJump = true;
 	}
 }

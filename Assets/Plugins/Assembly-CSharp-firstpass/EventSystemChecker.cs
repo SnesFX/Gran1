@@ -7,9 +7,9 @@ public class EventSystemChecker : MonoBehaviour
 	{
 		if (!Object.FindObjectOfType<EventSystem>())
 		{
-			GameObject gameObject = new GameObject("EventSystem");
-			gameObject.AddComponent<EventSystem>();
-			gameObject.AddComponent<StandaloneInputModule>().forceModuleActive = true;
+			GameObject obj = new GameObject("EventSystem");
+			obj.AddComponent<EventSystem>();
+			obj.AddComponent<StandaloneInputModule>().forceModuleActive = true;
 		}
 	}
 }

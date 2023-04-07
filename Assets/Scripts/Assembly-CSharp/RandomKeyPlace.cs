@@ -17,15 +17,15 @@ public class RandomKeyPlace : MonoBehaviour
 		number = UnityEngine.Random.Range(1, 4);
 		if (number == 1)
 		{
-			keyPlace1.SetActive(true);
+			keyPlace1.SetActive(value: true);
 		}
 		else if (number == 2)
 		{
-			keyPlace2.SetActive(true);
+			keyPlace2.SetActive(value: true);
 		}
 		else if (number == 3)
 		{
-			keyPlace3.SetActive(true);
+			keyPlace3.SetActive(value: true);
 		}
 	}
 }

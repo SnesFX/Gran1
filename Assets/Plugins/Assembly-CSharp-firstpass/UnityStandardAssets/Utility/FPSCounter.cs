@@ -32,7 +32,7 @@ namespace UnityStandardAssets.Utility
 				m_CurrentFps = (int)((float)m_FpsAccumulator / 0.5f);
 				m_FpsAccumulator = 0;
 				m_FpsNextPeriod += 0.5f;
-				m_Text.text = string.Format("{0} FPS", m_CurrentFps);
+				m_Text.text = $"{m_CurrentFps} FPS";
 			}
 		}
 	}

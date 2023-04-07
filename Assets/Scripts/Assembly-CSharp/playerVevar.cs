@@ -26,11 +26,6 @@ public class playerVevar : MonoBehaviour
 
 	public GameObject brunnsLjud;
 
-	public playerVevar()
-	{
-		layerMask = 256;
-	}
-
 	public virtual void Start()
 	{
 		layerMask = ~layerMask;
@@ -50,40 +45,45 @@ public class playerVevar : MonoBehaviour
 			{
 				if (hitInfo.collider.gameObject.tag == "brunnsvev")
 				{
-					brunnsVevButton.SetActive(true);
+					brunnsVevButton.SetActive(value: true);
 					if (playerHoldButton)
 					{
-						hitInfo.collider.gameObject.transform.Rotate(0f, 0f, 0.8f, Space.Self);
-						winch.gameObject.transform.Rotate(0f, 0f, 0.8f, Space.Self);
+						hitInfo.collider.gameObject.transform.Rotate(0f, 0f, 100f * Time.deltaTime);
+						winch.gameObject.transform.Rotate(0f, 0f, 100f * Time.deltaTime);
 						rope.transform.Translate(-Vector3.forward * Time.deltaTime * 0.5f, Space.Self);
 						((vevarBrunnLjud)brunnsLjud.GetComponent(typeof(vevarBrunnLjud))).PlayerVevar = true;
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "grus")
 				{
-					brunnsVevButton.SetActive(false);
+					brunnsVevButton.SetActive(value: false);
 					playerHoldButton = false;
 					((vevarBrunnLjud)brunnsLjud.GetComponent(typeof(vevarBrunnLjud))).PlayerVevar = false;
 				}
 				else if (hitInfo.collider.gameObject.tag == "Untagged")
 				{
-					brunnsVevButton.SetActive(false);
+					brunnsVevButton.SetActive(value: false);
 					playerHoldButton = false;
 					((vevarBrunnLjud)brunnsLjud.GetComponent(typeof(vevarBrunnLjud))).PlayerVevar = false;
 				}
 			}
 			else
 			{
-				brunnsVevButton.SetActive(false);
+				brunnsVevButton.SetActive(value: false);
 				playerHoldButton = false;
 				((vevarBrunnLjud)brunnsLjud.GetComponent(typeof(vevarBrunnLjud))).PlayerVevar = false;
 			}
 		}
 		else
 		{
-			brunnsVevButton.SetActive(false);
+			brunnsVevButton.SetActive(value: false);
 			playerHoldButton = false;
 			((vevarBrunnLjud)brunnsLjud.GetComponent(typeof(vevarBrunnLjud))).PlayerVevar = false;
 		}
+	}
+
+	public playerVevar()
+	{
+		layerMask = 256;
 	}
 }

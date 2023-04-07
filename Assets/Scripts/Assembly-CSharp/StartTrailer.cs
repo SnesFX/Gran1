@@ -14,8 +14,8 @@ public class StartTrailer : MonoBehaviour
 		Time.timeScale = 0.13f;
 		yield return new WaitForSeconds(5f);
 		Time.timeScale = 1f;
-		Cam2.SetActive(true);
-		Cam1.SetActive(false);
+		Cam2.SetActive(value: true);
+		Cam1.SetActive(value: false);
 	}
 
 	public virtual void Update()

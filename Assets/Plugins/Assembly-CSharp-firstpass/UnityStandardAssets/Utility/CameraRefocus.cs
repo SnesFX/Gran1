@@ -33,8 +33,7 @@ namespace UnityStandardAssets.Utility
 
 		public void GetFocusPoint()
 		{
-			RaycastHit hitInfo;
-			if (Physics.Raycast(Parent.transform.position + m_OrigCameraPos, Parent.transform.forward, out hitInfo, 100f))
+			if (Physics.Raycast(Parent.transform.position + m_OrigCameraPos, Parent.transform.forward, out var hitInfo, 100f))
 			{
 				Lookatpoint = hitInfo.point;
 				m_Refocus = true;

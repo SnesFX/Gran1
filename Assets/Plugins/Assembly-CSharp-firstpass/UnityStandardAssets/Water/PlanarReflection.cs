@@ -62,9 +62,10 @@ namespace UnityStandardAssets.Water
 
 		private RenderTexture CreateTextureFor(Camera cam)
 		{
-			RenderTexture renderTexture = new RenderTexture(Mathf.FloorToInt((float)cam.pixelWidth * 0.5f), Mathf.FloorToInt((float)cam.pixelHeight * 0.5f), 24);
-			renderTexture.hideFlags = HideFlags.DontSave;
-			return renderTexture;
+			return new RenderTexture(Mathf.FloorToInt((float)cam.pixelWidth * 0.5f), Mathf.FloorToInt((float)cam.pixelHeight * 0.5f), 24)
+			{
+				hideFlags = HideFlags.DontSave
+			};
 		}
 
 		public void RenderHelpCameras(Camera currentCam)
@@ -75,7 +76,7 @@ namespace UnityStandardAssets.Water
 			}
 			if (!m_HelperCameras.ContainsKey(currentCam))
 			{
-				m_HelperCameras.Add(currentCam, false);
+				m_HelperCameras.Add(currentCam, value: false);
 			}
 			if (!m_HelperCameras[currentCam])
 			{

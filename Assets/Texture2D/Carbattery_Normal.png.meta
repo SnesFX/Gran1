@@ -1,11 +1,10 @@
 fileFormatVersion: 2
-guid: 9a364cd2420e07b44a2f4afd8b6c6efd
-timeCreated: 1680861049
+guid: 347848f2d0603e948957a7fd067e7860
+timeCreated: 1680873008
 licenseType: Free
 TextureImporter:
-  serializedVersion: 7
-  name:
-  fileIDToRecycleName: {}
+  serializedVersion: 10
+  internalIDToNameTable: []
   externalObjects: {}
   mipmaps:
     mipMapMode: 0
@@ -61,7 +60,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -72,6 +71,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites: []
@@ -79,10 +79,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID:
+    internalID: 0
     vertices: []
     indices: []
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag:
   output:
     textureImportInstructions:

@@ -19,7 +19,11 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				return base.model.enabled && !context.interrupted;
+				if (base.model.enabled)
+				{
+					return !context.interrupted;
+				}
+				return false;
 			}
 		}
 

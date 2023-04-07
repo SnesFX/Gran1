@@ -11,7 +11,7 @@ public class playerLandBR : MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).playerLandBRSound();
-			base.gameObject.SetActive(false);
+			base.gameObject.SetActive(value: false);
 		}
 	}
 }

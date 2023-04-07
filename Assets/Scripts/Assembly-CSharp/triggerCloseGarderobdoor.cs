@@ -27,7 +27,7 @@ public class triggerCloseGarderobdoor : MonoBehaviour
 		if (other.gameObject.tag == "Player")
 		{
 			playerInLocker = true;
-			doorButton.SetActive(true);
+			doorButton.SetActive(value: true);
 			doorV.GetComponent<Animation>().Play("VgarderobDoorClose");
 			doorH.GetComponent<Animation>().Play("HgarderobDoorClose");
 			((IfgarderobDoorOpens)doorV.GetComponent(typeof(IfgarderobDoorOpens))).doorsClosed = true;

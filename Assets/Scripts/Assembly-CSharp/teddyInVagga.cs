@@ -33,10 +33,13 @@ public class teddyInVagga : MonoBehaviour
 		{
 			other.gameObject.tag = "Untagged";
 			fadeDown = true;
-			granny.SetActive(false);
-			granny.transform.position = GrannyStartPos.position;
-			granny.SetActive(true);
-			glow.SetActive(true);
+			if (!((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).hitByArrow)
+			{
+				granny.SetActive(value: false);
+				granny.transform.position = GrannyStartPos.position;
+				granny.SetActive(value: true);
+			}
+			glow.SetActive(value: true);
 			((startNewDay)gameController.GetComponent(typeof(startNewDay))).slendrinaAppeard = true;
 		}
 	}
@@ -55,7 +58,7 @@ public class teddyInVagga : MonoBehaviour
 			if (teddyTexture.GetComponent<Renderer>().material.color.a <= 0f)
 			{
 				fadeDown = false;
-				slendrina.SetActive(true);
+				slendrina.SetActive(value: true);
 				UnityEngine.Object.Destroy(teddyTexture);
 				PlayerPrefs.SetInt("teddyInPlace", 1);
 			}

@@ -14,8 +14,6 @@ public class checkIfEnabled : MonoBehaviour
 
 	public virtual void Update()
 	{
-		if (!Menu.activeSelf)
-		{
-		}
+		_ = Menu.activeSelf;
 	}
 }

@@ -6,41 +6,41 @@ namespace TMPro
 	{
 		private static List<int> k_searchedFontAssets;
 
-		public static TMP_FontAsset SearchForGlyph(TMP_FontAsset font, int character, out TMP_Glyph glyph)
+		public static TMP_FontAsset SearchForCharacter(TMP_FontAsset font, uint unicode, out TMP_Character character)
 		{
 			if (k_searchedFontAssets == null)
 			{
 				k_searchedFontAssets = new List<int>();
 			}
 			k_searchedFontAssets.Clear();
-			return SearchForGlyphInternal(font, character, out glyph);
+			return SearchForCharacterInternal(font, unicode, out character);
 		}
 
-		public static TMP_FontAsset SearchForGlyph(List<TMP_FontAsset> fonts, int character, out TMP_Glyph glyph)
+		public static TMP_FontAsset SearchForCharacter(List<TMP_FontAsset> fonts, uint unicode, out TMP_Character character)
 		{
-			return SearchForGlyphInternal(fonts, character, out glyph);
+			return SearchForCharacterInternal(fonts, unicode, out character);
 		}
 
-		private static TMP_FontAsset SearchForGlyphInternal(TMP_FontAsset font, int character, out TMP_Glyph glyph)
+		private static TMP_FontAsset SearchForCharacterInternal(TMP_FontAsset font, uint unicode, out TMP_Character character)
 		{
-			glyph = null;
+			character = null;
 			if (font == null)
 			{
 				return null;
 			}
-			if (font.characterDictionary.TryGetValue(character, out glyph))
+			if (font.characterLookupTable.TryGetValue(unicode, out character))
 			{
 				return font;
 			}
-			if (font.fallbackFontAssets != null && font.fallbackFontAssets.Count > 0)
+			if (font.fallbackFontAssetTable != null && font.fallbackFontAssetTable.Count > 0)
 			{
-				for (int i = 0; i < font.fallbackFontAssets.Count; i++)
+				for (int i = 0; i < font.fallbackFontAssetTable.Count; i++)
 				{
-					if (glyph != null)
+					if (character != null)
 					{
 						break;
 					}
-					TMP_FontAsset tMP_FontAsset = font.fallbackFontAssets[i];
+					TMP_FontAsset tMP_FontAsset = font.fallbackFontAssetTable[i];
 					if (tMP_FontAsset == null)
 					{
 						continue;
@@ -49,7 +49,7 @@ namespace TMPro
 					if (!k_searchedFontAssets.Contains(instanceID))
 					{
 						k_searchedFontAssets.Add(instanceID);
-						tMP_FontAsset = SearchForGlyphInternal(tMP_FontAsset, character, out glyph);
+						tMP_FontAsset = SearchForCharacterInternal(tMP_FontAsset, unicode, out character);
 						if (tMP_FontAsset != null)
 						{
 							return tMP_FontAsset;
@@ -60,14 +60,14 @@ namespace TMPro
 			return null;
 		}
 
-		private static TMP_FontAsset SearchForGlyphInternal(List<TMP_FontAsset> fonts, int character, out TMP_Glyph glyph)
+		private static TMP_FontAsset SearchForCharacterInternal(List<TMP_FontAsset> fonts, uint unicode, out TMP_Character character)
 		{
-			glyph = null;
+			character = null;
 			if (fonts != null && fonts.Count > 0)
 			{
 				for (int i = 0; i < fonts.Count; i++)
 				{
-					TMP_FontAsset tMP_FontAsset = SearchForGlyphInternal(fonts[i], character, out glyph);
+					TMP_FontAsset tMP_FontAsset = SearchForCharacterInternal(fonts[i], unicode, out character);
 					if (tMP_FontAsset != null)
 					{
 						return tMP_FontAsset;

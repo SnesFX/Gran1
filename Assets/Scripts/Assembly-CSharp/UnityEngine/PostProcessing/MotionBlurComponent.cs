@@ -272,12 +272,16 @@ namespace UnityEngine.PostProcessing
 				cb.SetGlobalFloat(Uniforms._History3Weight, frameRelative3.CalculateWeight(strength, time));
 				cb.SetGlobalFloat(Uniforms._History4Weight, frameRelative4.CalculateWeight(strength, time));
 				cb.SetGlobalTexture(Uniforms._MainTex, source);
-				cb.Blit(source, destination, material, (!m_UseCompression) ? 8 : 7);
+				cb.Blit(source, destination, material, m_UseCompression ? 7 : 8);
 			}
 
 			private static bool CheckSupportCompression()
 			{
-				return SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.R8) && SystemInfo.supportedRenderTargetCount > 1;
+				if (SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.R8))
+				{
+					return SystemInfo.supportedRenderTargetCount > 1;
+				}
+				return false;
 			}
 
 			private static RenderTextureFormat GetPreferredRenderTextureFormat()
@@ -288,8 +292,7 @@ namespace UnityEngine.PostProcessing
 					RenderTextureFormat.ARGB1555,
 					RenderTextureFormat.ARGB4444
 				};
-				RenderTextureFormat[] array2 = array;
-				foreach (RenderTextureFormat renderTextureFormat in array2)
+				foreach (RenderTextureFormat renderTextureFormat in array)
 				{
 					if (SystemInfo.SupportsRenderTextureFormat(renderTextureFormat))
 					{
@@ -341,7 +344,11 @@ namespace UnityEngine.PostProcessing
 			get
 			{
 				MotionBlurModel.Settings settings = base.model.settings;
-				return base.model.enabled && ((settings.shutterAngle > 0f && reconstructionFilter.IsSupported()) || settings.frameBlending > 0f) && SystemInfo.graphicsDeviceType != GraphicsDeviceType.OpenGLES2 && !context.interrupted;
+				if (base.model.enabled && ((settings.shutterAngle > 0f && reconstructionFilter.IsSupported()) || settings.frameBlending > 0f) && SystemInfo.graphicsDeviceType != GraphicsDeviceType.OpenGLES2)
+				{
+					return !context.interrupted;
+				}
+				return false;
 			}
 		}
 
@@ -384,7 +391,7 @@ namespace UnityEngine.PostProcessing
 			Material material = context.materialFactory.Get("Hidden/Post FX/Motion Blur");
 			Material mat = context.materialFactory.Get("Hidden/Post FX/Blit");
 			MotionBlurModel.Settings settings = base.model.settings;
-			RenderTextureFormat format = ((!context.isHdr) ? RenderTextureFormat.Default : RenderTextureFormat.DefaultHDR);
+			RenderTextureFormat format = (context.isHdr ? RenderTextureFormat.DefaultHDR : RenderTextureFormat.Default);
 			int tempRT = Uniforms._TempRT;
 			cb.GetTemporaryRT(tempRT, context.width, context.height, 0, FilterMode.Point, format);
 			if (settings.shutterAngle > 0f && settings.frameBlending > 0f)

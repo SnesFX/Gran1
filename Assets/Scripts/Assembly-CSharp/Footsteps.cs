@@ -6,11 +6,17 @@ public class Footsteps : MonoBehaviour
 {
 	public AudioClip[] footstepConcrete;
 
+	public AudioClip[] footstepConcreteSticky;
+
 	public AudioClip[] footstepGrus;
+
+	public AudioClip[] footstepWater;
 
 	public bool isWalking;
 
 	public bool walkGrus;
+
+	public bool walkWater;
 
 	public GameObject headBob;
 
@@ -22,11 +28,6 @@ public class Footsteps : MonoBehaviour
 
 	public bool playerCrouching;
 
-	public Footsteps()
-	{
-		isWalking = true;
-	}
-
 	public virtual void Start()
 	{
 	}
@@ -37,18 +38,32 @@ public class Footsteps : MonoBehaviour
 
 	public virtual void step()
 	{
-		if (isWalking)
+		if (!isWalking)
 		{
-			if (!walkGrus)
+			return;
+		}
+		if (!walkGrus && !walkWater)
+		{
+			if (PlayerPrefs.GetInt("NightMareOnOff") == 1)
 			{
-				int num = UnityEngine.Random.Range(0, footstepConcrete.Length);
-				GetComponent<AudioSource>().PlayOneShot(footstepConcrete[num]);
+				int num = UnityEngine.Random.Range(0, footstepConcreteSticky.Length);
+				GetComponent<AudioSource>().PlayOneShot(footstepConcreteSticky[num]);
 			}
-			else if (walkGrus)
+			else
 			{
-				int num2 = UnityEngine.Random.Range(0, footstepGrus.Length);
-				GetComponent<AudioSource>().PlayOneShot(footstepGrus[num2]);
+				int num2 = UnityEngine.Random.Range(0, footstepConcrete.Length);
+				GetComponent<AudioSource>().PlayOneShot(footstepConcrete[num2]);
 			}
+		}
+		else if (walkGrus)
+		{
+			int num3 = UnityEngine.Random.Range(0, footstepGrus.Length);
+			GetComponent<AudioSource>().PlayOneShot(footstepGrus[num3]);
+		}
+		else if (walkWater)
+		{
+			int num4 = UnityEngine.Random.Range(0, footstepWater.Length);
+			GetComponent<AudioSource>().PlayOneShot(footstepWater[num4]);
 		}
 	}
 
@@ -150,5 +165,10 @@ public class Footsteps : MonoBehaviour
 		{
 			headBob.GetComponent<Animation>().Stop("HeadBobAnimation");
 		}
+	}
+
+	public Footsteps()
+	{
+		isWalking = true;
 	}
 }

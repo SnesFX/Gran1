@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace TMPro
 {
-	[ExecuteInEditMode]
 	[RequireComponent(typeof(MeshRenderer))]
 	[RequireComponent(typeof(MeshFilter))]
+	[ExecuteAlways]
 	public class TMP_SubMesh : MonoBehaviour
 	{
 		[SerializeField]
@@ -37,9 +37,6 @@ namespace TMPro
 		private MeshFilter m_meshFilter;
 
 		private Mesh m_mesh;
-
-		[SerializeField]
-		private BoxCollider m_boxCollider;
 
 		[SerializeField]
 		private TextMeshPro m_TextComponent;
@@ -200,23 +197,6 @@ namespace TMPro
 			}
 		}
 
-		public BoxCollider boxCollider
-		{
-			get
-			{
-				if (m_boxCollider == null)
-				{
-					m_boxCollider = GetComponent<BoxCollider>();
-					if (m_boxCollider == null)
-					{
-						m_boxCollider = base.gameObject.AddComponent<BoxCollider>();
-						base.gameObject.AddComponent<Rigidbody>();
-					}
-				}
-				return m_boxCollider;
-			}
-		}
-
 		private void OnEnable()
 		{
 			if (!m_isRegisteredForEvents)
@@ -258,7 +238,7 @@ namespace TMPro
 		{
 			GameObject gameObject = new GameObject("TMP SubMesh [" + materialReference.material.name + "]", typeof(TMP_SubMesh));
 			TMP_SubMesh component = gameObject.GetComponent<TMP_SubMesh>();
-			gameObject.transform.SetParent(textComponent.transform, false);
+			gameObject.transform.SetParent(textComponent.transform, worldPositionStays: false);
 			gameObject.transform.localPosition = Vector3.zero;
 			gameObject.transform.localRotation = Quaternion.identity;
 			gameObject.transform.localScale = Vector3.one;
@@ -298,10 +278,12 @@ namespace TMPro
 
 		private Material CreateMaterialInstance(Material source)
 		{
-			Material material = new Material(source);
-			material.shaderKeywords = source.shaderKeywords;
-			material.name += " (Instance)";
-			return material;
+			Material obj = new Material(source)
+			{
+				shaderKeywords = source.shaderKeywords
+			};
+			obj.name += " (Instance)";
+			return obj;
 		}
 
 		private Material GetSharedMaterial()
@@ -351,27 +333,6 @@ namespace TMPro
 				m_renderer = renderer;
 			}
 			m_renderer.sharedMaterial = m_sharedMaterial;
-		}
-
-		public void UpdateColliders(int vertexCount)
-		{
-			if (!(boxCollider == null))
-			{
-				Vector2 mAX_16BIT = TMP_Math.MAX_16BIT;
-				Vector2 mIN_16BIT = TMP_Math.MIN_16BIT;
-				for (int i = 0; i < vertexCount; i++)
-				{
-					mAX_16BIT.x = Mathf.Min(mAX_16BIT.x, m_mesh.vertices[i].x);
-					mAX_16BIT.y = Mathf.Min(mAX_16BIT.y, m_mesh.vertices[i].y);
-					mIN_16BIT.x = Mathf.Max(mIN_16BIT.x, m_mesh.vertices[i].x);
-					mIN_16BIT.y = Mathf.Max(mIN_16BIT.y, m_mesh.vertices[i].y);
-				}
-				Vector3 center = (mAX_16BIT + mIN_16BIT) / 2f;
-				Vector3 size = mIN_16BIT - mAX_16BIT;
-				size.z = 0.1f;
-				boxCollider.center = center;
-				boxCollider.size = size;
-			}
 		}
 	}
 }

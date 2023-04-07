@@ -20,7 +20,7 @@ public class moveTunnellock : MonoBehaviour
 			LockMoved = true;
 			base.gameObject.GetComponent<Animation>().Play("TunnelLock");
 			GetComponent<AudioSource>().PlayOneShot(ObjectLjud);
-			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), true);
+			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), ignore: true);
 			yield return new WaitForSeconds(20f);
 			UnityEngine.Object.Destroy(base.gameObject);
 		}

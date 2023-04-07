@@ -12,17 +12,22 @@ namespace TMPro
 		private uint m_FirstGlyph;
 
 		[SerializeField]
-		private GlyphValueRecord m_FirstGlyphAdjustments;
+		private GlyphValueRecord_Legacy m_FirstGlyphAdjustments;
 
 		[FormerlySerializedAs("AscII_Right")]
 		[SerializeField]
 		private uint m_SecondGlyph;
 
 		[SerializeField]
-		private GlyphValueRecord m_SecondGlyphAdjustments;
+		private GlyphValueRecord_Legacy m_SecondGlyphAdjustments;
 
 		[FormerlySerializedAs("XadvanceOffset")]
 		public float xOffset;
+
+		internal static KerningPair empty = new KerningPair(0u, default(GlyphValueRecord_Legacy), 0u, default(GlyphValueRecord_Legacy));
+
+		[SerializeField]
+		private bool m_IgnoreSpacingAdjustments;
 
 		public uint firstGlyph
 		{
@@ -36,13 +41,7 @@ namespace TMPro
 			}
 		}
 
-		public GlyphValueRecord firstGlyphAdjustments
-		{
-			get
-			{
-				return m_FirstGlyphAdjustments;
-			}
-		}
+		public GlyphValueRecord_Legacy firstGlyphAdjustments => m_FirstGlyphAdjustments;
 
 		public uint secondGlyph
 		{
@@ -56,20 +55,16 @@ namespace TMPro
 			}
 		}
 
-		public GlyphValueRecord secondGlyphAdjustments
-		{
-			get
-			{
-				return m_SecondGlyphAdjustments;
-			}
-		}
+		public GlyphValueRecord_Legacy secondGlyphAdjustments => m_SecondGlyphAdjustments;
+
+		public bool ignoreSpacingAdjustments => m_IgnoreSpacingAdjustments;
 
 		public KerningPair()
 		{
 			m_FirstGlyph = 0u;
-			m_FirstGlyphAdjustments = default(GlyphValueRecord);
+			m_FirstGlyphAdjustments = default(GlyphValueRecord_Legacy);
 			m_SecondGlyph = 0u;
-			m_SecondGlyphAdjustments = default(GlyphValueRecord);
+			m_SecondGlyphAdjustments = default(GlyphValueRecord_Legacy);
 		}
 
 		public KerningPair(uint left, uint right, float offset)
@@ -79,7 +74,7 @@ namespace TMPro
 			xOffset = offset;
 		}
 
-		public KerningPair(uint firstGlyph, GlyphValueRecord firstGlyphAdjustments, uint secondGlyph, GlyphValueRecord secondGlyphAdjustments)
+		public KerningPair(uint firstGlyph, GlyphValueRecord_Legacy firstGlyphAdjustments, uint secondGlyph, GlyphValueRecord_Legacy secondGlyphAdjustments)
 		{
 			m_FirstGlyph = firstGlyph;
 			m_FirstGlyphAdjustments = firstGlyphAdjustments;

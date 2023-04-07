@@ -18,7 +18,7 @@ public class clickMainMenuButton : MonoBehaviour
 
 	private void TaskOnClick()
 	{
-		AreYouSureMenu.SetActive(true);
+		AreYouSureMenu.SetActive(value: true);
 		menuButton.interactable = false;
 		ResumeButton.interactable = false;
 	}

@@ -59,27 +59,27 @@ public class coffinButtonBackyard : MonoBehaviour
 		{
 			if (!PlayerHiding)
 			{
-				player.SetActive(false);
+				player.SetActive(value: false);
 				PlayerHiding = true;
-				inCoffin.SetActive(true);
+				inCoffin.SetActive(value: true);
 				underBedCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 				coffinLock.transform.localEulerAngles = new Vector3(lockRotXNer, 0f, 0f);
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerHidingInCoffinBackyard = true;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).hidingInCoffinBY = true;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerNearGranny = false;
-				crouchButton.SetActive(false);
-				dropButtonHolder.SetActive(false);
-				shootGunButtonHolder.SetActive(false);
-				pickupButton.SetActive(false);
-				openDoorButton.SetActive(false);
-				mittenRing.SetActive(false);
+				crouchButton.SetActive(value: false);
+				dropButtonHolder.SetActive(value: false);
+				shootGunButtonHolder.SetActive(value: false);
+				pickupButton.SetActive(value: false);
+				openDoorButton.SetActive(value: false);
+				mittenRing.SetActive(value: false);
 				((hideSound)hidingSoundHolder.GetComponent(typeof(hideSound))).theSound();
 			}
 			else
 			{
-				inCoffin.SetActive(false);
+				inCoffin.SetActive(value: false);
 				player.transform.position = playerPosition.transform.position;
-				player.SetActive(true);
+				player.SetActive(value: true);
 				player.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 				playerCam.transform.localEulerAngles = new Vector3(0f, 0f, 0f);
 				((FirstPersonController_Egen)player.GetComponent(typeof(FirstPersonController_Egen))).resetMouse();
@@ -88,9 +88,9 @@ public class coffinButtonBackyard : MonoBehaviour
 				PlayerHiding = false;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).playerHidingInCoffinBackyard = false;
 				((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).hidingInCoffinBY = false;
-				crouchButton.SetActive(true);
-				dropButtonHolder.SetActive(true);
-				shootGunButtonHolder.SetActive(true);
+				crouchButton.SetActive(value: true);
+				dropButtonHolder.SetActive(value: true);
+				shootGunButtonHolder.SetActive(value: true);
 				((soundEffects)soundHolder.GetComponent(typeof(soundEffects))).CoffinUt();
 			}
 		}

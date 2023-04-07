@@ -34,8 +34,7 @@ public class AlphaButtonClickMask : MonoBehaviour, ICanvasRaycastFilter
 
 	public bool IsRaycastLocationValid(Vector2 sp, Camera eventCamera)
 	{
-		Vector2 localPoint;
-		RectTransformUtility.ScreenPointToLocalPointInRectangle(_image.rectTransform, sp, eventCamera, out localPoint);
+		RectTransformUtility.ScreenPointToLocalPointInRectangle(_image.rectTransform, sp, eventCamera, out var localPoint);
 		Vector2 pivot = _image.rectTransform.pivot;
 		Vector2 vector = new Vector2(pivot.x + localPoint.x / _image.rectTransform.rect.width, pivot.y + localPoint.y / _image.rectTransform.rect.height);
 		Vector2 vector2 = new Vector2(_image.sprite.rect.x + vector.x * _image.sprite.rect.width, _image.sprite.rect.y + vector.y * _image.sprite.rect.height);

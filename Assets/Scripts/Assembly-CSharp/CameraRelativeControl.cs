@@ -29,14 +29,6 @@ public class CameraRelativeControl : MonoBehaviour
 
 	private Vector3 velocity;
 
-	public CameraRelativeControl()
-	{
-		speed = 5f;
-		jumpSpeed = 8f;
-		inAirMultiplier = 0.25f;
-		rotationSpeed = new Vector2(50f, 25f);
-	}
-
 	public virtual void Start()
 	{
 		thisTransform = (Transform)GetComponent(typeof(Transform));
@@ -73,7 +65,7 @@ public class CameraRelativeControl : MonoBehaviour
 		motion.y = 0f;
 		motion.Normalize();
 		Vector2 vector = new Vector2(Mathf.Abs(moveJoystick.position.x), Mathf.Abs(moveJoystick.position.y));
-		motion *= speed * ((!(vector.x > vector.y)) ? vector.y : vector.x);
+		motion *= speed * ((vector.x > vector.y) ? vector.x : vector.y);
 		if (character.isGrounded)
 		{
 			if (rotateJoystick.tapCount == 2)
@@ -103,5 +95,13 @@ public class CameraRelativeControl : MonoBehaviour
 		position *= Time.deltaTime;
 		cameraPivot.Rotate(0f, position.x, 0f, Space.World);
 		cameraPivot.Rotate(position.y, 0f, 0f);
+	}
+
+	public CameraRelativeControl()
+	{
+		speed = 5f;
+		jumpSpeed = 8f;
+		inAirMultiplier = 0.25f;
+		rotationSpeed = new Vector2(50f, 25f);
 	}
 }

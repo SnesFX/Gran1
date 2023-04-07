@@ -20,14 +20,6 @@ public class AnimationController : MonoBehaviour
 
 	private int minUpwardSpeed;
 
-	public AnimationController()
-	{
-		maxForwardSpeed = 6f;
-		maxBackwardSpeed = 3f;
-		maxSidestepSpeed = 4f;
-		minUpwardSpeed = 2;
-	}
-
 	public virtual void Start()
 	{
 		character = (CharacterController)GetComponent(typeof(CharacterController));
@@ -131,5 +123,13 @@ public class AnimationController : MonoBehaviour
 		{
 			animationTarget.CrossFade("idle");
 		}
+	}
+
+	public AnimationController()
+	{
+		maxForwardSpeed = 6f;
+		maxBackwardSpeed = 3f;
+		maxSidestepSpeed = 4f;
+		minUpwardSpeed = 2;
 	}
 }

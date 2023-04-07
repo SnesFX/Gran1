@@ -4,7 +4,8 @@
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: TeddyText
   m_Rect:
     serializedVersion: 2
@@ -26,8 +27,9 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 2800000, guid: 6347199043f473f46b8e017725359bfd, type: 3}
+    texture: {fileID: 2800000, guid: 04ccc49a571d9c94382ccaaf7c6c5cb4, type: 3}
     alphaTexture: {fileID: 0}
+    secondaryTextures: []
     m_SubMeshes:
     - serializedVersion: 2
       firstByte: 0
@@ -41,7 +43,7 @@ Sprite:
         m_Extent: {x: 0, y: 0, z: 0}
     m_IndexBuffer: 3300310038003900380031003700360035002500350036002300350025003400350023003200340023003300340032003100330032002e00310032002f0031002e0030002f002e002d001f002c002b002c001f001d002b001f0029002b001d002a002b00290025002a0029002400250029002300240029002600230029002700230026002800270026002500240023002200210020001d00200021001e0020001d001f001e001d001700030001000900080017000300170008001c000f001a000d001a000f0012001a000d0019001a0012001b001a0019001800170015000100150017000200150001000500150002001600150005001000150016001100100016001300110016000f00150010001200110013001400120013000c0012000e000d000e001200100011000c0012000c00110010000c000f000d000f000c000e000d000c000b000a000900070009000a00080009000700000008000700040000000700060004000700050004000600000004000200050002000400030000000100020001000000
     m_VertexData:
-      serializedVersion: 2
+      serializedVersion: 3
       m_VertexCount: 58
       m_Channels:
       - stream: 0
@@ -118,10 +120,11 @@ Sprite:
     serializedVersion: 3
     texture: {fileID: 0}
     alphaTexture: {fileID: 0}
+    secondaryTextures: []
     m_SubMeshes: []
     m_IndexBuffer:
     m_VertexData:
-      serializedVersion: 2
+      serializedVersion: 3
       m_VertexCount: 0
       m_Channels: []
       m_DataSize: 0

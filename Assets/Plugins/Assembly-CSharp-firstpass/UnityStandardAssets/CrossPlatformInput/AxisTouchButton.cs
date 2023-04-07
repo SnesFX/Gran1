@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 namespace UnityStandardAssets.CrossPlatformInput
 {
-	public class AxisTouchButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IEventSystemHandler
+	public class AxisTouchButton : MonoBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler
 	{
 		public string axisName = "Horizontal";
 
@@ -33,8 +33,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		private void FindPairedButton()
 		{
-			AxisTouchButton[] array = Object.FindObjectsOfType(typeof(AxisTouchButton)) as AxisTouchButton[];
-			if (array == null)
+			if (!(Object.FindObjectsOfType(typeof(AxisTouchButton)) is AxisTouchButton[] array))
 			{
 				return;
 			}

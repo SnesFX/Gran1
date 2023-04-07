@@ -4,7 +4,8 @@
 Sprite:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: RemoveBeartrapText
   m_Rect:
     serializedVersion: 2
@@ -26,8 +27,9 @@ Sprite:
   m_SpriteAtlas: {fileID: 0}
   m_RD:
     serializedVersion: 3
-    texture: {fileID: 2800000, guid: 9aabc7bcbcae9ab4fa8f7be7375cd30d, type: 3}
+    texture: {fileID: 2800000, guid: 11ed8dd67e1c00149ba6a9f5c92f628c, type: 3}
     alphaTexture: {fileID: 0}
+    secondaryTextures: []
     m_SubMeshes:
     - serializedVersion: 2
       firstByte: 0
@@ -41,7 +43,7 @@ Sprite:
         m_Extent: {x: 0, y: 0, z: 0}
     m_IndexBuffer: 4a00490047004800470049004600470048004500470046004400450046004100450044004300410044004200410043004000410042003e00410040003f003e0040003d003e003f003b003e003d003c003b003d0039003b003c003a003b00390037003a0039003800370039003600370038003500370036003400350036003300350034003200330034003100330032003000310032002f00310030002d002f0030002e002f002d002c002e002d002b002c002d002a002c002b0029002a002b0028002a0029002700280029002600280027002400260027002500260024002300250024002200230024002100230022002000210022001f00210020001d001f0020001e001f001d001c001e001d001b001c001d001a001c001b0019001a001b0017001a0019001800170019001500170018001600170015001400160015001300140015001200140013001100120013000f001200110010000f0011000e000f0010000d000f000e000c000d000e000b000d000c000a000b000c0007000b000a00090007000a00080007000900060007000800050007000600040005000600030005000400000003000400010003000000020001000000
     m_VertexData:
-      serializedVersion: 2
+      serializedVersion: 3
       m_VertexCount: 75
       m_Channels:
       - stream: 0
@@ -118,10 +120,11 @@ Sprite:
     serializedVersion: 3
     texture: {fileID: 0}
     alphaTexture: {fileID: 0}
+    secondaryTextures: []
     m_SubMeshes: []
     m_IndexBuffer:
     m_VertexData:
-      serializedVersion: 2
+      serializedVersion: 3
       m_VertexCount: 0
       m_Channels: []
       m_DataSize: 0

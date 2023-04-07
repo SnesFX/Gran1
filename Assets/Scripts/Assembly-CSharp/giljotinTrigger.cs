@@ -36,9 +36,9 @@ public class giljotinTrigger : MonoBehaviour
 			spak.gameObject.tag = "Untagged";
 			if (meloninPlace)
 			{
-				melon.SetActive(false);
-				deladMelon.SetActive(true);
-				keyShow.SetActive(true);
+				melon.SetActive(value: false);
+				deladMelon.SetActive(value: true);
+				keyShow.SetActive(value: true);
 				meloninPlace = false;
 				GetComponent<AudioSource>().PlayOneShot(ObjectLjud);
 			}

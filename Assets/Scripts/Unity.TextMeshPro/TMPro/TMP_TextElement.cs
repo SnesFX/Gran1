@@ -1,26 +1,74 @@
 using System;
+using UnityEngine;
+using UnityEngine.TextCore;
 
 namespace TMPro
 {
 	[Serializable]
 	public class TMP_TextElement
 	{
-		public int id;
+		[SerializeField]
+		protected TextElementType m_ElementType;
 
-		public float x;
+		[SerializeField]
+		private uint m_Unicode;
 
-		public float y;
+		private Glyph m_Glyph;
 
-		public float width;
+		[SerializeField]
+		private uint m_GlyphIndex;
 
-		public float height;
+		[SerializeField]
+		private float m_Scale;
 
-		public float xOffset;
+		public TextElementType elementType => m_ElementType;
 
-		public float yOffset;
+		public uint unicode
+		{
+			get
+			{
+				return m_Unicode;
+			}
+			set
+			{
+				m_Unicode = value;
+			}
+		}
 
-		public float xAdvance;
+		public Glyph glyph
+		{
+			get
+			{
+				return m_Glyph;
+			}
+			set
+			{
+				m_Glyph = value;
+			}
+		}
 
-		public float scale;
+		public uint glyphIndex
+		{
+			get
+			{
+				return m_GlyphIndex;
+			}
+			set
+			{
+				m_GlyphIndex = value;
+			}
+		}
+
+		public float scale
+		{
+			get
+			{
+				return m_Scale;
+			}
+			set
+			{
+				m_Scale = value;
+			}
+		}
 	}
 }

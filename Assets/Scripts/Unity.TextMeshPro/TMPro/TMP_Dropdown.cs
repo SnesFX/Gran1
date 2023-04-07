@@ -8,11 +8,11 @@ using UnityEngine.UI;
 
 namespace TMPro
 {
-	[AddComponentMenu("UI/TMP Dropdown", 35)]
+	[AddComponentMenu("UI/Dropdown - TextMeshPro", 35)]
 	[RequireComponent(typeof(RectTransform))]
-	public class TMP_Dropdown : Selectable, IPointerClickHandler, ISubmitHandler, ICancelHandler, IEventSystemHandler
+	public class TMP_Dropdown : Selectable, IPointerClickHandler, IEventSystemHandler, ISubmitHandler, ICancelHandler
 	{
-		protected internal class DropdownItem : MonoBehaviour, IPointerEnterHandler, ICancelHandler, IEventSystemHandler
+		protected internal class DropdownItem : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, ICancelHandler
 		{
 			[SerializeField]
 			private TMP_Text m_Text;
@@ -310,20 +310,28 @@ namespace TMPro
 			}
 			set
 			{
-				if (!Application.isPlaying || (value != m_Value && options.Count != 0))
-				{
-					m_Value = Mathf.Clamp(value, 0, options.Count - 1);
-					RefreshShownValue();
-					m_OnValueChanged.Invoke(m_Value);
-				}
+				SetValue(value);
 			}
 		}
 
-		public bool IsExpanded
+		public bool IsExpanded => m_Dropdown != null;
+
+		public void SetValueWithoutNotify(int input)
 		{
-			get
+			SetValue(input, sendCallback: false);
+		}
+
+		private void SetValue(int value, bool sendCallback = true)
+		{
+			if (!Application.isPlaying || (value != m_Value && options.Count != 0))
 			{
-				return m_Dropdown != null;
+				m_Value = Mathf.Clamp(value, 0, options.Count - 1);
+				RefreshShownValue();
+				if (sendCallback)
+				{
+					UISystemProfilerApi.AddMarker("Dropdown.value", this);
+					m_OnValueChanged.Invoke(m_Value);
+				}
 			}
 		}
 
@@ -341,8 +349,24 @@ namespace TMPro
 			}
 			if ((bool)m_Template)
 			{
-				m_Template.gameObject.SetActive(false);
+				m_Template.gameObject.SetActive(value: false);
 			}
+		}
+
+		protected override void Start()
+		{
+			base.Start();
+			RefreshShownValue();
+		}
+
+		protected override void OnDisable()
+		{
+			ImmediateDestroyDropdownList();
+			if (m_Blocker != null)
+			{
+				DestroyBlocker(m_Blocker);
+			}
+			m_Blocker = null;
 		}
 
 		public void RefreshShownValue()
@@ -360,7 +384,7 @@ namespace TMPro
 				}
 				else
 				{
-					m_CaptionText.text = string.Empty;
+					m_CaptionText.text = "";
 				}
 			}
 			if ((bool)m_CaptionImage)
@@ -404,6 +428,7 @@ namespace TMPro
 		public void ClearOptions()
 		{
 			options.Clear();
+			m_Value = 0;
 			RefreshShownValue();
 		}
 
@@ -416,7 +441,7 @@ namespace TMPro
 				return;
 			}
 			GameObject gameObject = m_Template.gameObject;
-			gameObject.SetActive(true);
+			gameObject.SetActive(value: true);
 			Toggle componentInChildren = m_Template.GetComponentInChildren<Toggle>();
 			validTemplate = true;
 			if (!componentInChildren || componentInChildren.transform == template)
@@ -441,7 +466,7 @@ namespace TMPro
 			}
 			if (!validTemplate)
 			{
-				gameObject.SetActive(false);
+				gameObject.SetActive(value: false);
 				return;
 			}
 			DropdownItem dropdownItem = componentInChildren.gameObject.AddComponent<DropdownItem>();
@@ -454,7 +479,7 @@ namespace TMPro
 			orAddComponent.sortingOrder = 30000;
 			GetOrAddComponent<GraphicRaycaster>(gameObject);
 			GetOrAddComponent<CanvasGroup>(gameObject);
-			gameObject.SetActive(false);
+			gameObject.SetActive(value: false);
 			validTemplate = true;
 		}
 
@@ -489,6 +514,22 @@ namespace TMPro
 			{
 				return;
 			}
+			List<Canvas> list = TMP_ListPool<Canvas>.Get();
+			base.gameObject.GetComponentsInParent(includeInactive: false, list);
+			if (list.Count == 0)
+			{
+				return;
+			}
+			Canvas canvas = list[list.Count - 1];
+			for (int i = 0; i < list.Count; i++)
+			{
+				if (list[i].isRootCanvas)
+				{
+					canvas = list[i];
+					break;
+				}
+			}
+			TMP_ListPool<Canvas>.Release(list);
 			if (!validTemplate)
 			{
 				SetupTemplate();
@@ -497,24 +538,16 @@ namespace TMPro
 					return;
 				}
 			}
-			List<Canvas> list = TMP_ListPool<Canvas>.Get();
-			base.gameObject.GetComponentsInParent(false, list);
-			if (list.Count == 0)
-			{
-				return;
-			}
-			Canvas canvas = list[0];
-			TMP_ListPool<Canvas>.Release(list);
-			m_Template.gameObject.SetActive(true);
+			m_Template.gameObject.SetActive(value: true);
+			m_Template.GetComponent<Canvas>().sortingLayerID = canvas.sortingLayerID;
 			m_Dropdown = CreateDropdownList(m_Template.gameObject);
 			m_Dropdown.name = "Dropdown List";
-			m_Dropdown.SetActive(true);
+			m_Dropdown.SetActive(value: true);
 			RectTransform rectTransform = m_Dropdown.transform as RectTransform;
-			rectTransform.SetParent(m_Template.transform.parent, false);
+			rectTransform.SetParent(m_Template.transform.parent, worldPositionStays: false);
 			DropdownItem componentInChildren = m_Dropdown.GetComponentInChildren<DropdownItem>();
-			GameObject gameObject = componentInChildren.rectTransform.parent.gameObject;
-			RectTransform rectTransform2 = gameObject.transform as RectTransform;
-			componentInChildren.rectTransform.gameObject.SetActive(true);
+			RectTransform rectTransform2 = componentInChildren.rectTransform.parent.gameObject.transform as RectTransform;
+			componentInChildren.rectTransform.gameObject.SetActive(value: true);
 			Rect rect = rectTransform2.rect;
 			Rect rect2 = componentInChildren.rectTransform.rect;
 			Vector2 vector = rect2.min - rect.min + (Vector2)componentInChildren.rectTransform.localPosition;
@@ -522,13 +555,13 @@ namespace TMPro
 			Vector2 size = rect2.size;
 			m_Items.Clear();
 			Toggle toggle = null;
-			for (int i = 0; i < options.Count; i++)
+			for (int j = 0; j < options.Count; j++)
 			{
-				OptionData data = options[i];
-				DropdownItem item = AddItem(data, value == i, componentInChildren, m_Items);
+				OptionData data = options[j];
+				DropdownItem item = AddItem(data, value == j, componentInChildren, m_Items);
 				if (!(item == null))
 				{
-					item.toggle.isOn = value == i;
+					item.toggle.isOn = value == j;
 					item.toggle.onValueChanged.AddListener(delegate
 					{
 						OnSelectItem(item.toggle);
@@ -565,13 +598,13 @@ namespace TMPro
 			rectTransform.GetWorldCorners(array);
 			RectTransform rectTransform3 = canvas.transform as RectTransform;
 			Rect rect3 = rectTransform3.rect;
-			for (int j = 0; j < 2; j++)
+			for (int k = 0; k < 2; k++)
 			{
 				bool flag = false;
-				for (int k = 0; k < 4; k++)
+				for (int l = 0; l < 4; l++)
 				{
-					Vector3 vector3 = rectTransform3.InverseTransformPoint(array[k]);
-					if (vector3[j] < rect3.min[j] || vector3[j] > rect3.max[j])
+					Vector3 vector3 = rectTransform3.InverseTransformPoint(array[l]);
+					if ((vector3[k] < rect3.min[k] && !Mathf.Approximately(vector3[k], rect3.min[k])) || (vector3[k] > rect3.max[k] && !Mathf.Approximately(vector3[k], rect3.max[k])))
 					{
 						flag = true;
 						break;
@@ -579,42 +612,40 @@ namespace TMPro
 				}
 				if (flag)
 				{
-					RectTransformUtility.FlipLayoutOnAxis(rectTransform, j, false, false);
+					RectTransformUtility.FlipLayoutOnAxis(rectTransform, k, keepPositioning: false, recursive: false);
 				}
 			}
-			for (int l = 0; l < m_Items.Count; l++)
+			for (int m = 0; m < m_Items.Count; m++)
 			{
-				RectTransform rectTransform4 = m_Items[l].rectTransform;
+				RectTransform rectTransform4 = m_Items[m].rectTransform;
 				rectTransform4.anchorMin = new Vector2(rectTransform4.anchorMin.x, 0f);
 				rectTransform4.anchorMax = new Vector2(rectTransform4.anchorMax.x, 0f);
-				rectTransform4.anchoredPosition = new Vector2(rectTransform4.anchoredPosition.x, vector.y + size.y * (float)(m_Items.Count - 1 - l) + size.y * rectTransform4.pivot.y);
+				rectTransform4.anchoredPosition = new Vector2(rectTransform4.anchoredPosition.x, vector.y + size.y * (float)(m_Items.Count - 1 - m) + size.y * rectTransform4.pivot.y);
 				rectTransform4.sizeDelta = new Vector2(rectTransform4.sizeDelta.x, size.y);
 			}
 			AlphaFadeList(0.15f, 0f, 1f);
-			m_Template.gameObject.SetActive(false);
-			componentInChildren.gameObject.SetActive(false);
+			m_Template.gameObject.SetActive(value: false);
+			componentInChildren.gameObject.SetActive(value: false);
 			m_Blocker = CreateBlocker(canvas);
 		}
 
 		protected virtual GameObject CreateBlocker(Canvas rootCanvas)
 		{
-			GameObject gameObject = new GameObject("Blocker");
-			RectTransform rectTransform = gameObject.AddComponent<RectTransform>();
-			rectTransform.SetParent(rootCanvas.transform, false);
+			GameObject obj = new GameObject("Blocker");
+			RectTransform rectTransform = obj.AddComponent<RectTransform>();
+			rectTransform.SetParent(rootCanvas.transform, worldPositionStays: false);
 			rectTransform.anchorMin = Vector3.zero;
 			rectTransform.anchorMax = Vector3.one;
 			rectTransform.sizeDelta = Vector2.zero;
-			Canvas canvas = gameObject.AddComponent<Canvas>();
+			Canvas canvas = obj.AddComponent<Canvas>();
 			canvas.overrideSorting = true;
 			Canvas component = m_Dropdown.GetComponent<Canvas>();
 			canvas.sortingLayerID = component.sortingLayerID;
 			canvas.sortingOrder = component.sortingOrder - 1;
-			gameObject.AddComponent<GraphicRaycaster>();
-			Image image = gameObject.AddComponent<Image>();
-			image.color = Color.clear;
-			Button button = gameObject.AddComponent<Button>();
-			button.onClick.AddListener(Hide);
-			return gameObject;
+			obj.AddComponent<GraphicRaycaster>();
+			obj.AddComponent<Image>().color = Color.clear;
+			obj.AddComponent<Button>().onClick.AddListener(Hide);
+			return obj;
 		}
 
 		protected virtual void DestroyBlocker(GameObject blocker)
@@ -644,9 +675,9 @@ namespace TMPro
 		private DropdownItem AddItem(OptionData data, bool selected, DropdownItem itemTemplate, List<DropdownItem> items)
 		{
 			DropdownItem dropdownItem = CreateItem(itemTemplate);
-			dropdownItem.rectTransform.SetParent(itemTemplate.rectTransform.parent, false);
-			dropdownItem.gameObject.SetActive(true);
-			dropdownItem.gameObject.name = "Item " + items.Count + ((data.text == null) ? string.Empty : (": " + data.text));
+			dropdownItem.rectTransform.SetParent(itemTemplate.rectTransform.parent, worldPositionStays: false);
+			dropdownItem.gameObject.SetActive(value: true);
+			dropdownItem.gameObject.name = "Item " + items.Count + ((data.text != null) ? (": " + data.text) : "");
 			if (dropdownItem.toggle != null)
 			{
 				dropdownItem.toggle.isOn = false;
@@ -689,8 +720,7 @@ namespace TMPro
 		{
 			if ((bool)m_Dropdown)
 			{
-				CanvasGroup component = m_Dropdown.GetComponent<CanvasGroup>();
-				component.alpha = alpha;
+				m_Dropdown.GetComponent<CanvasGroup>().alpha = alpha;
 			}
 		}
 
@@ -715,14 +745,19 @@ namespace TMPro
 		private IEnumerator DelayedDestroyDropdownList(float delay)
 		{
 			yield return new WaitForSecondsRealtime(delay);
+			ImmediateDestroyDropdownList();
+		}
+
+		private void ImmediateDestroyDropdownList()
+		{
 			for (int i = 0; i < m_Items.Count; i++)
 			{
 				if (m_Items[i] != null)
 				{
 					DestroyItem(m_Items[i]);
 				}
-				m_Items.Clear();
 			}
+			m_Items.Clear();
 			if (m_Dropdown != null)
 			{
 				DestroyDropdownList(m_Dropdown);

@@ -27,10 +27,10 @@ public class pressBackButtonHelpmenu : MonoBehaviour
 			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
 			{
 				((soundEffectsMenu)ljudHolder.GetComponent(typeof(soundEffectsMenu))).buttonClick();
-				HelpMenu.SetActive(false);
-				playButton.SetActive(true);
-				quitButton.SetActive(true);
-				helpButton.SetActive(true);
+				HelpMenu.SetActive(value: false);
+				playButton.SetActive(value: true);
+				quitButton.SetActive(value: true);
+				helpButton.SetActive(value: true);
 			}
 		}
 	}

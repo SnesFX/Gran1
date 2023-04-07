@@ -145,7 +145,7 @@ namespace Steamworks
 			InteropHelp.TestIfAvailableClient();
 			IntPtr intPtr = Marshal.AllocHGlobal((int)cchText);
 			bool flag = NativeMethods.ISteamUtils_GetEnteredGamepadTextInput(CSteamAPIContext.GetSteamUtils(), intPtr, cchText);
-			pchText = ((!flag) ? null : InteropHelp.PtrToStringUTF8(intPtr));
+			pchText = (flag ? InteropHelp.PtrToStringUTF8(intPtr) : null);
 			Marshal.FreeHGlobal(intPtr);
 			return flag;
 		}

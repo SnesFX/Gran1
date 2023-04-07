@@ -6,15 +6,15 @@ public class setGameQuality : MonoBehaviour
 	{
 		if (PlayerPrefs.GetInt("graphSettings") == 0)
 		{
-			QualitySettings.SetQualityLevel(0, true);
+			QualitySettings.SetQualityLevel(0, applyExpensiveChanges: true);
 		}
 		else if (PlayerPrefs.GetInt("graphSettings") == 1)
 		{
-			QualitySettings.SetQualityLevel(1, true);
+			QualitySettings.SetQualityLevel(1, applyExpensiveChanges: true);
 		}
 		else if (PlayerPrefs.GetInt("graphSettings") == 2)
 		{
-			QualitySettings.SetQualityLevel(2, true);
+			QualitySettings.SetQualityLevel(2, applyExpensiveChanges: true);
 		}
 	}
 }

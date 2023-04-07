@@ -52,7 +52,7 @@ public class PlanksMakesSound : MonoBehaviour
 		}
 		else if (other.gameObject.tag == "Player" && haveMakedSound)
 		{
-			Physics.IgnoreCollision(ParentObject.GetComponent<Collider>(), other.GetComponent<CharacterController>(), true);
+			Physics.IgnoreCollision(ParentObject.GetComponent<Collider>(), other.GetComponent<CharacterController>(), ignore: true);
 		}
 	}
 

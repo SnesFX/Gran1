@@ -14,7 +14,7 @@ public class bedTrigger : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			button.SetActive(true);
+			button.SetActive(value: true);
 		}
 	}
 
@@ -22,7 +22,7 @@ public class bedTrigger : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			button.SetActive(false);
+			button.SetActive(value: false);
 		}
 	}
 }

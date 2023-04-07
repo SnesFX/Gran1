@@ -47,6 +47,8 @@ namespace TMPro
 
 		public static int ID_PerspectiveFilter;
 
+		public static int ID_Sharpness;
+
 		public static int ID_TextureWidth;
 
 		public static int ID_TextureHeight;
@@ -125,6 +127,34 @@ namespace TMPro
 
 		public static bool isInitialized;
 
+		private static Shader k_ShaderRef_MobileSDF;
+
+		private static Shader k_ShaderRef_MobileBitmap;
+
+		internal static Shader ShaderRef_MobileSDF
+		{
+			get
+			{
+				if (k_ShaderRef_MobileSDF == null)
+				{
+					k_ShaderRef_MobileSDF = Shader.Find("TextMeshPro/Mobile/Distance Field");
+				}
+				return k_ShaderRef_MobileSDF;
+			}
+		}
+
+		internal static Shader ShaderRef_MobileBitmap
+		{
+			get
+			{
+				if (k_ShaderRef_MobileBitmap == null)
+				{
+					k_ShaderRef_MobileBitmap = Shader.Find("TextMeshPro/Mobile/Bitmap");
+				}
+				return k_ShaderRef_MobileBitmap;
+			}
+		}
+
 		static ShaderUtilities()
 		{
 			Keyword_Bevel = "BEVEL_ON";
@@ -138,6 +168,7 @@ namespace TMPro
 			ShaderTag_ZTestMode = "unity_GUIZTestMode";
 			ShaderTag_CullMode = "_CullMode";
 			m_clamp = 1f;
+			isInitialized = false;
 			GetShaderPropertyIDs();
 		}
 
@@ -167,6 +198,7 @@ namespace TMPro
 				ID_ScaleX = Shader.PropertyToID("_ScaleX");
 				ID_ScaleY = Shader.PropertyToID("_ScaleY");
 				ID_PerspectiveFilter = Shader.PropertyToID("_PerspectiveFilter");
+				ID_Sharpness = Shader.PropertyToID("_Sharpness");
 				ID_TextureWidth = Shader.PropertyToID("_TextureWidth");
 				ID_TextureHeight = Shader.PropertyToID("_TextureHeight");
 				ID_BevelAmount = Shader.PropertyToID("_Bevel");
@@ -194,6 +226,14 @@ namespace TMPro
 				ID_ScaleRatio_A = Shader.PropertyToID("_ScaleRatioA");
 				ID_ScaleRatio_B = Shader.PropertyToID("_ScaleRatioB");
 				ID_ScaleRatio_C = Shader.PropertyToID("_ScaleRatioC");
+				if (k_ShaderRef_MobileSDF == null)
+				{
+					k_ShaderRef_MobileSDF = Shader.Find("TextMeshPro/Mobile/Distance Field");
+				}
+				if (k_ShaderRef_MobileBitmap == null)
+				{
+					k_ShaderRef_MobileBitmap = Shader.Find("TextMeshPro/Mobile/Bitmap");
+				}
 			}
 		}
 
@@ -209,7 +249,7 @@ namespace TMPro
 			float float4 = mat.GetFloat(ID_OutlineSoftness);
 			float num4 = Mathf.Max(mat.GetFloat(ID_WeightNormal), mat.GetFloat(ID_WeightBold)) / 4f;
 			float num5 = Mathf.Max(1f, num4 + float2 + float3 + float4);
-			num = ((!flag) ? 1f : ((@float - m_clamp) / (@float * num5)));
+			num = (flag ? ((@float - m_clamp) / (@float * num5)) : 1f);
 			mat.SetFloat(ID_ScaleRatio_A, num);
 			if (mat.HasProperty(ID_GlowOffset))
 			{
@@ -217,7 +257,7 @@ namespace TMPro
 				float float6 = mat.GetFloat(ID_GlowOuter);
 				float num6 = (num4 + float2) * (@float - m_clamp);
 				num5 = Mathf.Max(1f, float5 + float6);
-				num2 = ((!flag) ? 1f : (Mathf.Max(0f, @float - m_clamp - num6) / (@float * num5)));
+				num2 = (flag ? (Mathf.Max(0f, @float - m_clamp - num6) / (@float * num5)) : 1f);
 				mat.SetFloat(ID_ScaleRatio_B, num2);
 			}
 			if (mat.HasProperty(ID_UnderlayOffsetX))
@@ -228,7 +268,7 @@ namespace TMPro
 				float float10 = mat.GetFloat(ID_UnderlaySoftness);
 				float num7 = (num4 + float2) * (@float - m_clamp);
 				num5 = Mathf.Max(1f, Mathf.Max(Mathf.Abs(float7), Mathf.Abs(float8)) + float9 + float10);
-				num3 = ((!flag) ? 1f : (Mathf.Max(0f, @float - m_clamp - num7) / (@float * num5)));
+				num3 = (flag ? (Mathf.Max(0f, @float - m_clamp - num7) / (@float * num5)) : 1f);
 				mat.SetFloat(ID_ScaleRatio_C, num3);
 			}
 		}
@@ -337,16 +377,16 @@ namespace TMPro
 			zero.y = Mathf.Min(zero.y, 1f);
 			zero.z = Mathf.Min(zero.z, 1f);
 			zero.w = Mathf.Min(zero.w, 1f);
-			zero2.x = ((!(zero2.x < zero.x)) ? zero2.x : zero.x);
-			zero2.y = ((!(zero2.y < zero.y)) ? zero2.y : zero.y);
-			zero2.z = ((!(zero2.z < zero.z)) ? zero2.z : zero.z);
-			zero2.w = ((!(zero2.w < zero.w)) ? zero2.w : zero.w);
+			zero2.x = ((zero2.x < zero.x) ? zero.x : zero2.x);
+			zero2.y = ((zero2.y < zero.y) ? zero.y : zero2.y);
+			zero2.z = ((zero2.z < zero.z) ? zero.z : zero2.z);
+			zero2.w = ((zero2.w < zero.w) ? zero.w : zero2.w);
 			float @float = material.GetFloat(ID_GradientScale);
 			zero *= @float;
 			num10 = Mathf.Max(zero.x, zero.y);
 			num10 = Mathf.Max(zero.z, num10);
 			num10 = Mathf.Max(zero.w, num10);
-			return num10 + 0.5f;
+			return num10 + 1.25f;
 		}
 
 		public static float GetPadding(Material[] materials, bool enableExtraPadding, bool isBold)
@@ -433,10 +473,10 @@ namespace TMPro
 				zero.y = Mathf.Min(zero.y, 1f);
 				zero.z = Mathf.Min(zero.z, 1f);
 				zero.w = Mathf.Min(zero.w, 1f);
-				zero2.x = ((!(zero2.x < zero.x)) ? zero2.x : zero.x);
-				zero2.y = ((!(zero2.y < zero.y)) ? zero2.y : zero.y);
-				zero2.z = ((!(zero2.z < zero.z)) ? zero2.z : zero.z);
-				zero2.w = ((!(zero2.w < zero.w)) ? zero2.w : zero.w);
+				zero2.x = ((zero2.x < zero.x) ? zero.x : zero2.x);
+				zero2.y = ((zero2.y < zero.y) ? zero.y : zero2.y);
+				zero2.z = ((zero2.z < zero.z) ? zero.z : zero2.z);
+				zero2.w = ((zero2.w < zero.w) ? zero.w : zero2.w);
 			}
 			float @float = materials[0].GetFloat(ID_GradientScale);
 			zero *= @float;

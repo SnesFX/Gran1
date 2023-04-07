@@ -31,7 +31,7 @@ public class ClickPlayButton : MonoBehaviour
 		{
 			animHolder.GetComponent<Animation>().Play("camAnimOptions");
 			buttonPressed = true;
-			allButtons.SetActive(false);
+			allButtons.SetActive(value: false);
 			((ButtonClicks)ljudHolder.GetComponent(typeof(ButtonClicks))).clickButton();
 			StartCoroutine("optionMenu");
 		}
@@ -39,7 +39,7 @@ public class ClickPlayButton : MonoBehaviour
 
 	private IEnumerator optionMenu()
 	{
-		yield return new WaitForSeconds(1.7f);
-		OptionButtons.SetActive(true);
+		yield return new WaitForSeconds(1.5f);
+		OptionButtons.SetActive(value: true);
 	}
 }

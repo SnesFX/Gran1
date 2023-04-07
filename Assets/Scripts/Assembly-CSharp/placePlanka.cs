@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public class placePlanka : MonoBehaviour
 {
-	public GameObject holdingPlanka;
+	public GameObject gameController;
 
 	public GameObject highlightPlanka;
 
@@ -27,15 +27,15 @@ public class placePlanka : MonoBehaviour
 		{
 			return;
 		}
-		if (((PickUp)holdingPlanka.GetComponent(typeof(PickUp))).haveplanka)
+		if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveplanka)
 		{
-			highlightPlanka.SetActive(true);
-			((PickUp)holdingPlanka.GetComponent(typeof(PickUp))).plankaHighlighted = true;
-			PlaceButton.SetActive(true);
+			highlightPlanka.SetActive(value: true);
+			((InventoryController)gameController.GetComponent(typeof(InventoryController))).plankaHighlighted = true;
+			PlaceButton.SetActive(value: true);
 			return;
 		}
-		highlightPlanka.SetActive(false);
-		((PickUp)holdingPlanka.GetComponent(typeof(PickUp))).plankaHighlighted = false;
+		highlightPlanka.SetActive(value: false);
+		((InventoryController)gameController.GetComponent(typeof(InventoryController))).plankaHighlighted = false;
 		if ((bool)GameObject.FindWithTag("plankawalk") && holeOpen && !startText)
 		{
 			startText = true;
@@ -47,16 +47,16 @@ public class placePlanka : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			if (((PickUp)holdingPlanka.GetComponent(typeof(PickUp))).haveplanka)
+			if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).haveplanka)
 			{
-				highlightPlanka.SetActive(true);
-				((PickUp)holdingPlanka.GetComponent(typeof(PickUp))).plankaHighlighted = true;
-				PlaceButton.SetActive(true);
+				highlightPlanka.SetActive(value: true);
+				((InventoryController)gameController.GetComponent(typeof(InventoryController))).plankaHighlighted = true;
+				PlaceButton.SetActive(value: true);
 			}
 			else
 			{
-				highlightPlanka.SetActive(false);
-				((PickUp)holdingPlanka.GetComponent(typeof(PickUp))).plankaHighlighted = false;
+				highlightPlanka.SetActive(value: false);
+				((InventoryController)gameController.GetComponent(typeof(InventoryController))).plankaHighlighted = false;
 			}
 		}
 	}
@@ -65,17 +65,17 @@ public class placePlanka : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			highlightPlanka.SetActive(false);
-			((PickUp)holdingPlanka.GetComponent(typeof(PickUp))).plankaHighlighted = false;
-			PlaceButton.SetActive(false);
+			highlightPlanka.SetActive(value: false);
+			((InventoryController)gameController.GetComponent(typeof(InventoryController))).plankaHighlighted = false;
+			PlaceButton.SetActive(value: false);
 		}
 	}
 
 	public virtual IEnumerator textTimer()
 	{
 		yield return new WaitForSeconds(3f);
-		text.SetActive(true);
+		text.SetActive(value: true);
 		yield return new WaitForSeconds(3f);
-		text.SetActive(false);
+		text.SetActive(value: false);
 	}
 }

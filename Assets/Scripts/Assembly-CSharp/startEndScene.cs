@@ -83,23 +83,22 @@ public class startEndScene : MonoBehaviour
 	{
 		if (PlayerPrefs.GetInt("DiffData") == 4)
 		{
-			granny1.SetActive(false);
-			granny3Home.SetActive(true);
-			theEndText2.SetActive(true);
+			granny1.SetActive(value: false);
+			granny3Home.SetActive(value: true);
+			theEndText2.SetActive(value: true);
 		}
 		else
 		{
-			granny1.SetActive(true);
-			theEndText1.SetActive(true);
+			granny1.SetActive(value: true);
+			theEndText1.SetActive(value: true);
 		}
-		cam1.SetActive(true);
-		granny2.SetActive(false);
-		cam2.SetActive(false);
-		blackScreen.CrossFadeAlpha(0f, fadeBlackSpeed, false);
+		cam1.SetActive(value: true);
+		granny2.SetActive(value: false);
+		cam2.SetActive(value: false);
+		blackScreen.CrossFadeAlpha(0f, fadeBlackSpeed, ignoreTimeScale: false);
 		yield return new WaitForSeconds(5f);
-		if (PlayerPrefs.GetInt("DiffData") != 4)
-		{
-		}
+		PlayerPrefs.GetInt("DiffData");
+		_ = 4;
 		yield return new WaitForSeconds(5f);
 		if (PlayerPrefs.GetInt("DiffData") != 4)
 		{
@@ -109,8 +108,8 @@ public class startEndScene : MonoBehaviour
 		yield return new WaitForSeconds(1.5f);
 		if (PlayerPrefs.GetInt("DiffData") != 4)
 		{
-			soundEffects.SetActive(true);
-			theEndText1.SetActive(false);
+			soundEffects.SetActive(value: true);
+			theEndText1.SetActive(value: false);
 		}
 		if (PlayerPrefs.GetInt("DiffData") == 4)
 		{
@@ -118,7 +117,7 @@ public class startEndScene : MonoBehaviour
 		}
 		yield return new WaitForSeconds(1.5f);
 		fadeBlackSpeed = 0.6f;
-		blackScreen.CrossFadeAlpha(1f, fadeBlackSpeed, false);
+		blackScreen.CrossFadeAlpha(1f, fadeBlackSpeed, ignoreTimeScale: false);
 		yield return new WaitForSeconds(3f);
 		readyToMainMenu();
 	}
@@ -127,30 +126,29 @@ public class startEndScene : MonoBehaviour
 	{
 		if (PlayerPrefs.GetInt("DiffData") == 4)
 		{
-			granny2.SetActive(true);
-			GrannyGoneTeddy.SetActive(true);
-			granny2Gone.SetActive(false);
-			teddy.SetActive(false);
-			granny3Home.SetActive(true);
-			theEndText2.SetActive(true);
+			granny2.SetActive(value: true);
+			GrannyGoneTeddy.SetActive(value: true);
+			granny2Gone.SetActive(value: false);
+			teddy.SetActive(value: false);
+			granny3Home.SetActive(value: true);
+			theEndText2.SetActive(value: true);
 		}
 		else
 		{
-			granny2.SetActive(true);
-			theEndText1.SetActive(true);
-			GrannyGoneTeddy.SetActive(false);
-			teddy.SetActive(true);
+			granny2.SetActive(value: true);
+			theEndText1.SetActive(value: true);
+			GrannyGoneTeddy.SetActive(value: false);
+			teddy.SetActive(value: true);
 		}
-		cam2.SetActive(true);
-		granny1.SetActive(false);
-		cam1.SetActive(false);
-		blackScreen.CrossFadeAlpha(0f, fadeBlackSpeed, false);
+		cam2.SetActive(value: true);
+		granny1.SetActive(value: false);
+		cam1.SetActive(value: false);
+		blackScreen.CrossFadeAlpha(0f, fadeBlackSpeed, ignoreTimeScale: false);
 		yield return new WaitForSeconds(3f);
 		yield return new WaitForSeconds(2f);
 		slendrinaFade = true;
-		if (PlayerPrefs.GetInt("DiffData") != 4)
-		{
-		}
+		PlayerPrefs.GetInt("DiffData");
+		_ = 4;
 		yield return new WaitForSeconds(7f);
 		PlayerPrefs.SetInt("teddyInPlace", 0);
 		fadeBlackSpeed = 0.6f;
@@ -158,7 +156,7 @@ public class startEndScene : MonoBehaviour
 		{
 			yield return new WaitForSeconds(8f);
 		}
-		blackScreen.CrossFadeAlpha(1f, fadeBlackSpeed, false);
+		blackScreen.CrossFadeAlpha(1f, fadeBlackSpeed, ignoreTimeScale: false);
 		yield return new WaitForSeconds(3f);
 		readyToMainMenu();
 	}

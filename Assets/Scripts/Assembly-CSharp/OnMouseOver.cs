@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class OnMouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IEventSystemHandler
+public class OnMouseOver : MonoBehaviour, IPointerEnterHandler, IEventSystemHandler, IPointerExitHandler
 {
 	private GameObject currentHover;
 

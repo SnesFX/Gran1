@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 [Serializable]
@@ -25,25 +24,12 @@ public class AnimationDebug : MonoBehaviour
 		GUI.skin.font = null;
 		float num = 0f;
 		AnimationState animationState = null;
-		IEnumerator enumerator = animationController.animationTarget.GetEnumerator();
-		try
+		foreach (AnimationState item in animationController.animationTarget)
 		{
-			while (enumerator.MoveNext())
+			if (item.weight > num)
 			{
-				AnimationState animationState2 = (AnimationState)enumerator.Current;
-				if (animationState2.weight > num)
-				{
-					num = animationState2.weight;
-					animationState = animationState2;
-				}
-			}
-		}
-		finally
-		{
-			IDisposable disposable;
-			if ((disposable = enumerator as IDisposable) != null)
-			{
-				disposable.Dispose();
+				num = item.weight;
+				animationState = item;
 			}
 		}
 		Vector3 velocity = character.velocity;

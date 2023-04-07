@@ -8,6 +8,8 @@ public class grannyRestart : MonoBehaviour
 
 	public GameObject GrannyBody;
 
+	public GameObject GrannyEyeLock;
+
 	public Transform GrannyStartPos1;
 
 	public Transform GrannyStartPos2;
@@ -74,7 +76,7 @@ public class grannyRestart : MonoBehaviour
 			if (timerCount < 0f || playerFallDead)
 			{
 				startTimer = false;
-				Granny.SetActive(false);
+				Granny.SetActive(value: false);
 				RandomNR = UnityEngine.Random.Range(1, 5);
 				if (RandomNR == 1f)
 				{
@@ -92,8 +94,8 @@ public class grannyRestart : MonoBehaviour
 				{
 					Granny.transform.position = GrannyStartPos4.position;
 				}
-				Granny.SetActive(true);
-				GrannyBody.SetActive(true);
+				Granny.SetActive(value: true);
+				GrannyBody.SetActive(value: true);
 				playerFallDead = false;
 				noArrow();
 			}
@@ -106,7 +108,7 @@ public class grannyRestart : MonoBehaviour
 		if (timerCount < 0f || playerFallDead)
 		{
 			startTimer2 = false;
-			Granny.SetActive(false);
+			Granny.SetActive(value: false);
 			RandomNR = UnityEngine.Random.Range(1, 5);
 			if (RandomNR == 1f)
 			{
@@ -124,8 +126,8 @@ public class grannyRestart : MonoBehaviour
 			{
 				Granny.transform.position = GrannyStartPos4.position;
 			}
-			Granny.SetActive(true);
-			GrannyBody.SetActive(true);
+			Granny.SetActive(value: true);
+			GrannyBody.SetActive(value: true);
 			playerFallDead = false;
 			noArrow();
 		}
@@ -136,6 +138,7 @@ public class grannyRestart : MonoBehaviour
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByArrow = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByGun = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByCar = false;
+		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).freeze = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).grannyStandBesideCar = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuKilled = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).ragdollSpawn = false;
@@ -145,6 +148,12 @@ public class grannyRestart : MonoBehaviour
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).bastuTimeOff = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).huntPlayer = false;
 		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).grannyIsFollow = false;
+		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByPepperStart = false;
+		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).grannyPepperReact = false;
+		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).hitByPepper = false;
+		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).seePlayer = false;
+		((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).waypointStop = true;
+		GrannyEyeLock.SetActive(value: false);
 		if (((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).playerHaveTeddy)
 		{
 			if (!((EnemyAIGranny)Granny.GetComponent(typeof(EnemyAIGranny))).spiderIsDead)

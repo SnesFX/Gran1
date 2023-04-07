@@ -24,14 +24,9 @@ public class ControlMenu : MonoBehaviour
 
 	private bool displayBackground;
 
-	public ControlMenu()
-	{
-		selection = -1;
-	}
-
 	public virtual void Start()
 	{
-		launchIntro.SetActive(false);
+		launchIntro.SetActive(value: false);
 		orbEmitter.GetComponent<Renderer>().enabled = false;
 	}
 
@@ -58,7 +53,7 @@ public class ControlMenu : MonoBehaviour
 		GUI.skin.font = font;
 		if (displayBackground)
 		{
-			GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), background, ScaleMode.StretchToFill, false);
+			GUI.DrawTexture(new Rect(0f, 0f, Screen.width, Screen.height), background, ScaleMode.StretchToFill, alphaBlend: false);
 		}
 		if (!display)
 		{
@@ -99,15 +94,20 @@ public class ControlMenu : MonoBehaviour
 	public virtual IEnumerator ChangeControls()
 	{
 		Transform[] array = destroyOnLoad;
-		foreach (Transform transform in array)
+		for (int i = 0; i < array.Length; i++)
 		{
-			UnityEngine.Object.Destroy(transform.gameObject);
+			UnityEngine.Object.Destroy(array[i].gameObject);
 		}
-		launchIntro.SetActive(true);
+		launchIntro.SetActive(value: true);
 		yield return StartCoroutine(WaitUntilObjectDestroyed(launchIntro));
 		displayBackground = true;
 		orbEmitter.GetComponent<Renderer>().enabled = true;
 		SceneManager.LoadScene(controllers[selection].controlScene);
 		UnityEngine.Object.Destroy(base.gameObject, 1f);
+	}
+
+	public ControlMenu()
+	{
+		selection = -1;
 	}
 }

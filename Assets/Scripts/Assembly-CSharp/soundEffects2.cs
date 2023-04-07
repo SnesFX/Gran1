@@ -12,8 +12,7 @@ public class soundEffects2 : MonoBehaviour
 
 	public virtual void Start()
 	{
-		AudioSource component = GetComponent<AudioSource>();
-		component.clip = sword;
+		GetComponent<AudioSource>().clip = sword;
 	}
 
 	public virtual void swordSwing()

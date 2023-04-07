@@ -30,13 +30,13 @@ public class PressOptionButton : MonoBehaviour
 			Touch touch = touches[i];
 			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
 			{
-				optionMenu.SetActive(true);
-				joystick.SetActive(false);
-				joystickRing.SetActive(false);
-				mapButton.SetActive(false);
-				swordButton.SetActive(false);
-				allapapperslappar.SetActive(false);
-				pianoCollider.SetActive(false);
+				optionMenu.SetActive(value: true);
+				joystick.SetActive(value: false);
+				joystickRing.SetActive(value: false);
+				mapButton.SetActive(value: false);
+				swordButton.SetActive(value: false);
+				allapapperslappar.SetActive(value: false);
+				pianoCollider.SetActive(value: false);
 				Time.timeScale = 0f;
 			}
 		}

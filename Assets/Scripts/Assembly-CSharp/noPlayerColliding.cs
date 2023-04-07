@@ -6,7 +6,7 @@ public class noPlayerColliding : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), true);
+			Physics.IgnoreCollision(GetComponent<Collider>(), other.GetComponent<Collider>(), ignore: true);
 		}
 	}
 }

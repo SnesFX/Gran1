@@ -16,7 +16,7 @@ public class resetFloorTrigger : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			bats.SetActive(true);
+			bats.SetActive(value: true);
 			UnityEngine.Object.Destroy(triggerHolder);
 		}
 	}

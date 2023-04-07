@@ -16,9 +16,9 @@ public class TeleportMonster : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player" && !((AIfollow)monster.GetComponent(typeof(AIfollow))).seePlayer)
 		{
-			monster.SetActive(false);
+			monster.SetActive(value: false);
 			monster.transform.position = teleportPoint.position;
-			monster.SetActive(true);
+			monster.SetActive(value: true);
 		}
 	}
 }

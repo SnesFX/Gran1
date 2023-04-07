@@ -28,7 +28,7 @@ public class OpenCloseDoorV : MonoBehaviour
 			GetComponent<Animation>().Play("InnerDoorVSmash");
 			base.gameObject.tag = "Untagged";
 			GetComponent<Collider>().enabled = false;
-			doorStop.SetActive(false);
+			doorStop.SetActive(value: false);
 			AudioSource.PlayClipAtPoint(doorDeadLjud, base.transform.position);
 			StartCoroutine(removeDoor());
 		}

@@ -5,7 +5,8 @@ Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Bastudoor2
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _NORMALMAP
@@ -19,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: fb62bc1308eeac24e9c99328cee73a14, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5f5f7db7a8b67fc4482e6ecd1bf0ca03, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -39,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 3d505b5a5c5528a4c800e6dd54437473, type: 3}
+        m_Texture: {fileID: 2800000, guid: f1de3624ecbed5140ab8433feb64e7cf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -72,5 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.5882353, g: 0.5882353, b: 0.5882353, a: 1}
+    - _Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

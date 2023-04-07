@@ -22,7 +22,11 @@ namespace TMPro
 
 		public static bool Approximately(float a, float b)
 		{
-			return b - 0.0001f < a && a < b + 0.0001f;
+			if (b - 0.0001f < a)
+			{
+				return a < b + 0.0001f;
+			}
+			return false;
 		}
 	}
 }

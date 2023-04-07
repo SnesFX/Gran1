@@ -10,7 +10,7 @@ public class grannyStandCarTrigger : MonoBehaviour
 	{
 	}
 
-	public virtual void OnTriggerEnter(Collider other)
+	public virtual void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.tag == "granny")
 		{

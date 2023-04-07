@@ -29,8 +29,7 @@ namespace TMPro
 
 		public int AddKerningPair(uint first, uint second, float offset)
 		{
-			int num = kerningPairs.FindIndex((KerningPair item) => item.firstGlyph == first && item.secondGlyph == second);
-			if (num == -1)
+			if (kerningPairs.FindIndex((KerningPair item) => item.firstGlyph == first && item.secondGlyph == second) == -1)
 			{
 				kerningPairs.Add(new KerningPair(first, second, offset));
 				return 0;
@@ -38,10 +37,9 @@ namespace TMPro
 			return -1;
 		}
 
-		public int AddGlyphPairAdjustmentRecord(uint first, GlyphValueRecord firstAdjustments, uint second, GlyphValueRecord secondAdjustments)
+		public int AddGlyphPairAdjustmentRecord(uint first, GlyphValueRecord_Legacy firstAdjustments, uint second, GlyphValueRecord_Legacy secondAdjustments)
 		{
-			int num = kerningPairs.FindIndex((KerningPair item) => item.firstGlyph == first && item.secondGlyph == second);
-			if (num == -1)
+			if (kerningPairs.FindIndex((KerningPair item) => item.firstGlyph == first && item.secondGlyph == second) == -1)
 			{
 				kerningPairs.Add(new KerningPair(first, firstAdjustments, second, secondAdjustments));
 				return 0;

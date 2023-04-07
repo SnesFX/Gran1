@@ -22,8 +22,7 @@ public class CNTouchpad : CNAbstractController
 
 	protected virtual void Update()
 	{
-		Touch capturedTouch;
-		if (!TweakIfNeeded() && IsTouchCaptured(out capturedTouch))
+		if (!TweakIfNeeded() && IsTouchCaptured(out var capturedTouch))
 		{
 			PreviousPosition = base.ParentCamera.ScreenToWorldPoint(capturedTouch.position);
 		}

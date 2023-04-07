@@ -39,7 +39,11 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				return base.model.enabled && !context.interrupted;
+				if (base.model.enabled)
+				{
+					return !context.interrupted;
+				}
+				return false;
 			}
 		}
 
@@ -67,7 +71,11 @@ namespace UnityEngine.PostProcessing
 
 		private bool CheckHistory(int width, int height)
 		{
-			return m_CoCHistory != null && m_CoCHistory.IsCreated() && m_CoCHistory.width == width && m_CoCHistory.height == height;
+			if (m_CoCHistory != null && m_CoCHistory.IsCreated() && m_CoCHistory.width == width)
+			{
+				return m_CoCHistory.height == height;
+			}
+			return false;
 		}
 
 		private RenderTextureFormat SelectFormat(RenderTextureFormat primary, RenderTextureFormat secondary)
@@ -104,7 +112,7 @@ namespace UnityEngine.PostProcessing
 			if (antialiasCoC)
 			{
 				material.SetTexture(Uniforms._CoCTex, renderTexture);
-				float z = ((!CheckHistory(context.width, context.height)) ? 0f : taaBlending);
+				float z = (CheckHistory(context.width, context.height) ? taaBlending : 0f);
 				material.SetVector(Uniforms._TaaParams, new Vector3(taaJitter.x, taaJitter.y, z));
 				RenderTexture temporary = RenderTexture.GetTemporary(context.width, context.height, 0, format2);
 				Graphics.Blit(m_CoCHistory, temporary, material, 1);

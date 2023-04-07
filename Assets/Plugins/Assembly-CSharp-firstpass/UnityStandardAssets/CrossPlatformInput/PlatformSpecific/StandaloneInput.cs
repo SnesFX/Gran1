@@ -7,7 +7,11 @@ namespace UnityStandardAssets.CrossPlatformInput.PlatformSpecific
 	{
 		public override float GetAxis(string name, bool raw)
 		{
-			return (!raw) ? Input.GetAxis(name) : Input.GetAxisRaw(name);
+			if (!raw)
+			{
+				return Input.GetAxis(name);
+			}
+			return Input.GetAxisRaw(name);
 		}
 
 		public override bool GetButton(string name)

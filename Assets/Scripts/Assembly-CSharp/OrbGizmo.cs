@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 
 [Serializable]
@@ -16,22 +15,9 @@ public class OrbGizmo : MonoBehaviour
 		{
 			return;
 		}
-		IEnumerator enumerator = base.transform.GetEnumerator();
-		try
+		foreach (Transform item in base.transform)
 		{
-			while (enumerator.MoveNext())
-			{
-				Transform transform = (Transform)enumerator.Current;
-				Gizmos.DrawIcon(transform.position, "particleGizmo.tif");
-			}
-		}
-		finally
-		{
-			IDisposable disposable;
-			if ((disposable = enumerator as IDisposable) != null)
-			{
-				disposable.Dispose();
-			}
+			Gizmos.DrawIcon(item.position, "particleGizmo.tif");
 		}
 	}
 }

@@ -54,9 +54,7 @@ namespace UnityStandardAssets.Water
 				s_InsideWater = true;
 				m_HardwareWaterSupport = FindHardwareWaterSupport();
 				WaterMode waterMode = GetWaterMode();
-				Camera reflectionCamera;
-				Camera refractionCamera;
-				CreateWaterObjects(current, out reflectionCamera, out refractionCamera);
+				CreateWaterObjects(current, out var reflectionCamera, out var refractionCamera);
 				Vector3 position = base.transform.position;
 				Vector3 up = base.transform.up;
 				int pixelLightCount = QualitySettings.pixelLightCount;
@@ -283,7 +281,7 @@ namespace UnityStandardAssets.Water
 			{
 				return WaterMode.Simple;
 			}
-			string text = sharedMaterial.GetTag("WATERMODE", false);
+			string text = sharedMaterial.GetTag("WATERMODE", searchFallbacks: false);
 			if (text == "Refractive")
 			{
 				return WaterMode.Refractive;

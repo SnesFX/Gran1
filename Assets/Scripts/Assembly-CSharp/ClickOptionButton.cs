@@ -46,11 +46,11 @@ public class ClickOptionButton : MonoBehaviour
 		{
 			base.transform.localPosition = new Vector3(-0.28f, -0.04f, 2f);
 			buttonPressed = false;
-			OptionsMenu.SetActive(true);
-			MenuButtons.SetActive(false);
+			OptionsMenu.SetActive(value: true);
+			MenuButtons.SetActive(value: false);
 			if (PlayerPrefs.GetInt("ADSon") == 0)
 			{
-				noAdsButton.SetActive(true);
+				noAdsButton.SetActive(value: true);
 			}
 		}
 	}

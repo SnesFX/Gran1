@@ -31,9 +31,9 @@ namespace UnityStandardAssets.Utility
 			{
 				return;
 			}
-			Object @object = target ?? base.gameObject;
-			Behaviour behaviour = @object as Behaviour;
-			GameObject gameObject = @object as GameObject;
+			Object obj = target ?? base.gameObject;
+			Behaviour behaviour = obj as Behaviour;
+			GameObject gameObject = obj as GameObject;
 			if (behaviour != null)
 			{
 				gameObject = behaviour.gameObject;
@@ -56,7 +56,7 @@ namespace UnityStandardAssets.Utility
 			case Mode.Activate:
 				if (gameObject != null)
 				{
-					gameObject.SetActive(true);
+					gameObject.SetActive(value: true);
 				}
 				break;
 			case Mode.Enable:
@@ -74,7 +74,7 @@ namespace UnityStandardAssets.Utility
 			case Mode.Deactivate:
 				if (gameObject != null)
 				{
-					gameObject.SetActive(false);
+					gameObject.SetActive(value: false);
 				}
 				break;
 			}

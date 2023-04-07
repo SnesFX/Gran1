@@ -20,7 +20,7 @@ public class SensitivitySlider : MonoBehaviour
 
 	public virtual void Start()
 	{
-		saveSensitivityData saveSensitivityData2 = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));
+		_ = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));
 		if (PlayerPrefs.GetInt("slideData") == 0)
 		{
 			PlayerPrefs.SetInt("slideData", 150);
@@ -34,8 +34,7 @@ public class SensitivitySlider : MonoBehaviour
 
 	public virtual void Update()
 	{
-		saveSensitivityData saveSensitivityData2 = (saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData));
-		saveSensitivityData2.sliderValue = hSliderValue;
+		((saveSensitivityData)savedValue.GetComponent(typeof(saveSensitivityData))).sliderValue = hSliderValue;
 	}
 
 	public virtual void OnGUI()

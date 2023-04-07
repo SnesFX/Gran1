@@ -22,8 +22,8 @@ public class ClickContinueButton2 : MonoBehaviour
 			Touch touch = touches[i];
 			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
 			{
-				LoadingScreen.SetActive(true);
-				allButtons.SetActive(false);
+				LoadingScreen.SetActive(value: true);
+				allButtons.SetActive(value: false);
 				((ButtonClicks)ljudHolder.GetComponent(typeof(ButtonClicks))).clickButton();
 			}
 		}

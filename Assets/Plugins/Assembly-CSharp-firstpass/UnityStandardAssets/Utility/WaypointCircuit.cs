@@ -59,13 +59,7 @@ namespace UnityStandardAssets.Utility
 
 		public float Length { get; private set; }
 
-		public Transform[] Waypoints
-		{
-			get
-			{
-				return waypointList.items;
-			}
-		}
+		public Transform[] Waypoints => waypointList.items;
 
 		private void Awake()
 		{
@@ -79,8 +73,7 @@ namespace UnityStandardAssets.Utility
 		public RoutePoint GetRoutePoint(float dist)
 		{
 			Vector3 routePosition = GetRoutePosition(dist);
-			Vector3 routePosition2 = GetRoutePosition(dist + 0.1f);
-			return new RoutePoint(routePosition, (routePosition2 - routePosition).normalized);
+			return new RoutePoint(routePosition, (GetRoutePosition(dist + 0.1f) - routePosition).normalized);
 		}
 
 		public Vector3 GetRoutePosition(float dist)
@@ -139,12 +132,12 @@ namespace UnityStandardAssets.Utility
 
 		private void OnDrawGizmos()
 		{
-			DrawGizmos(false);
+			DrawGizmos(selected: false);
 		}
 
 		private void OnDrawGizmosSelected()
 		{
-			DrawGizmos(true);
+			DrawGizmos(selected: true);
 		}
 
 		private void DrawGizmos(bool selected)
@@ -157,7 +150,7 @@ namespace UnityStandardAssets.Utility
 			numPoints = Waypoints.Length;
 			CachePositionsAndDistances();
 			Length = distances[distances.Length - 1];
-			Gizmos.color = ((!selected) ? new Color(1f, 1f, 0f, 0.5f) : Color.yellow);
+			Gizmos.color = (selected ? Color.yellow : new Color(1f, 1f, 0f, 0.5f));
 			Vector3 from = Waypoints[0].position;
 			if (smoothRoute)
 			{

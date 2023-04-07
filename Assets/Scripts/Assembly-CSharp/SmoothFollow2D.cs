@@ -12,11 +12,6 @@ public class SmoothFollow2D : MonoBehaviour
 
 	private Vector2 velocity;
 
-	public SmoothFollow2D()
-	{
-		smoothTime = 0.3f;
-	}
-
 	public virtual void Start()
 	{
 		thisTransform = base.transform;
@@ -32,5 +27,10 @@ public class SmoothFollow2D : MonoBehaviour
 		Vector3 position2 = thisTransform.position;
 		position2.y = y;
 		thisTransform.position = position2;
+	}
+
+	public SmoothFollow2D()
+	{
+		smoothTime = 0.3f;
 	}
 }

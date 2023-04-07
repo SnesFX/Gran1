@@ -11,7 +11,7 @@ public class openDoors : MonoBehaviour
 
 	public GameObject granny;
 
-	public GameObject player;
+	public GameObject gameController;
 
 	public GameObject openDoorButton;
 
@@ -28,6 +28,10 @@ public class openDoors : MonoBehaviour
 	public bool removeBeartrap;
 
 	public GameObject footstepScriptHolder;
+
+	public GameObject player;
+
+	public GameObject joystick;
 
 	public GameObject microSparks;
 
@@ -55,6 +59,12 @@ public class openDoors : MonoBehaviour
 
 	public AudioClip bokhyllaLjud;
 
+	public AudioClip crowAttack;
+
+	public AudioClip burDoor;
+
+	public AudioClip moveGaller;
+
 	public bool playSound;
 
 	public GameObject bloodScreenHolder;
@@ -66,8 +76,6 @@ public class openDoors : MonoBehaviour
 	public GameObject garageportAnimHolder;
 
 	public GameObject carSensorFront;
-
-	public GameObject objectsHolder;
 
 	public GameObject needCarkeyText;
 
@@ -113,10 +121,9 @@ public class openDoors : MonoBehaviour
 
 	public GameObject bokhylla;
 
-	public openDoors()
-	{
-		layerMask = 256;
-	}
+	public bool playerTrySteal;
+
+	public GameObject Crow;
 
 	public virtual void Start()
 	{
@@ -138,7 +145,7 @@ public class openDoors : MonoBehaviour
 			{
 				if (hitInfo.collider.gameObject.tag == "innerdoorClosed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("InnerdoorOpen");
@@ -146,15 +153,15 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "innerdoorOpen")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("InnerdoorClose");
 					}
 				}
-				else if (hitInfo.collider.gameObject.tag == "innerdoorLocked")
+				else if (hitInfo.collider.gameObject.tag == "innerdoorLocked" || hitInfo.collider.gameObject.tag == "steeldoorLocked")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
@@ -163,7 +170,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "smalldoorClosed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("SmallDoorOpen");
@@ -171,15 +178,24 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "smalldoorOpen")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("SmallDoorClose");
 					}
 				}
+				else if (hitInfo.collider.gameObject.tag == "smalldoorLocked")
+				{
+					openDoorButton.SetActive(value: true);
+					if (openTheDoor && !playSound)
+					{
+						playSound = true;
+						hitInfo.collider.gameObject.GetComponent<Animation>().Play("SmallDoorLocked");
+					}
+				}
 				else if (hitInfo.collider.gameObject.tag == "vitrindoorRclosed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("VitrindoorHallOpen");
@@ -187,7 +203,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "vitrindoorRopen")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("VitrindoorHallClose");
@@ -195,7 +211,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "vitrindoorLclosed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("VitrindoorHallLOpen");
@@ -203,7 +219,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "vitrindoorLopen")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("VitrindoorHallLClose");
@@ -211,7 +227,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "vitrindoorVRLclosed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("VitrindoorVRLOpen");
@@ -219,7 +235,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "vitrindoorVRLopen")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("VitrindoorVRLClose");
@@ -227,7 +243,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "vitrindoorVRRclosed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("VitrindoorVRROpen");
@@ -235,7 +251,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "vitrindoorVRRopen")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("VitrindoorVRRClose");
@@ -243,7 +259,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "kylClosed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("KylOpen");
@@ -251,7 +267,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "kylOpen")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("KylClose");
@@ -259,7 +275,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "kitchenDoor1Closed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("KitchenDoor1Open");
@@ -267,7 +283,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "kitchenDoor1Open")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("KitchenDoor1Close");
@@ -275,7 +291,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "kitchenDoor2Closed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("KitchenDoor2Open");
@@ -283,7 +299,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "kitchenDoor2Open")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("KitchenDoor2Close");
@@ -291,7 +307,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "loda1Closed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("Loda1Open");
@@ -299,7 +315,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "loda1Open")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("Loda1Close");
@@ -307,7 +323,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "loda2Closed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("Loda2Open");
@@ -315,7 +331,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "loda2Open")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						openTheDoor = false;
@@ -324,7 +340,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "garde1Closed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("Garde1Open");
@@ -332,7 +348,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "garde1Open")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("Garde1Close");
@@ -340,18 +356,18 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "bakluckaLocked")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
-						if (((PickUp)objectsHolder.GetComponent(typeof(PickUp))).havecarKey)
+						if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havecarKey)
 						{
 							hitInfo.collider.gameObject.GetComponent<Animation>().Play("bakluckaOpen");
 						}
 						else
 						{
 							textTimer = 0f;
-							needCarkeyText.SetActive(true);
+							needCarkeyText.SetActive(value: true);
 							textTimerOnOff = true;
 							GetComponent<AudioSource>().PlayOneShot(bakluckaLocked);
 						}
@@ -359,7 +375,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "bakluckaClosed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("bakluckaOpen");
@@ -367,7 +383,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "bakluckaOpen")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("bakluckaClose");
@@ -375,7 +391,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "motorhuvClosed")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("motorhuvOpen");
@@ -383,7 +399,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "motorhuvOpen")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("motorhuvClose");
@@ -391,7 +407,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "garageport")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						if (garageportLock)
@@ -405,7 +421,7 @@ public class openDoors : MonoBehaviour
 						{
 							playSound = true;
 							textTimer = 0f;
-							garageportLockedText.SetActive(true);
+							garageportLockedText.SetActive(value: true);
 							textTimerOnOff = true;
 							GetComponent<AudioSource>().PlayOneShot(brokenCarDoor);
 						}
@@ -413,18 +429,18 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "microdoor")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor)
 					{
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("MicroDoorOpen");
 						hitInfo.collider.gameObject.tag = "Untagged";
 						GetComponent<AudioSource>().PlayOneShot(microDoor);
-						microSparks.SetActive(true);
+						microSparks.SetActive(value: true);
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "prisondoorlocked")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
@@ -436,14 +452,14 @@ public class openDoors : MonoBehaviour
 				{
 					if (!playerFanHurt)
 					{
-						openDoorButton.SetActive(true);
+						openDoorButton.SetActive(value: true);
 						if (openTheDoor && !playSound)
 						{
 							playSound = true;
 							footstepScriptHolder.gameObject.GetComponent<Animation>().Play("playerHurt");
 							((playerInBeartrap)bloodScreenHolder.GetComponent(typeof(playerInBeartrap))).playerStuck();
 							playerFanHurt = true;
-							openDoorButton.SetActive(false);
+							openDoorButton.SetActive(value: false);
 							GetComponent<AudioSource>().PlayOneShot(fingerFan);
 						}
 					}
@@ -454,62 +470,62 @@ public class openDoors : MonoBehaviour
 					{
 						if (canJumpOut)
 						{
-							openDoorButton.SetActive(true);
+							openDoorButton.SetActive(value: true);
 							if (openTheDoor && !playSound)
 							{
 								playSound = true;
 								((PlayerWindowController)winController.GetComponent(typeof(PlayerWindowController))).jumpOut();
-								openDoorButton.SetActive(false);
+								openDoorButton.SetActive(value: false);
 								canJumpOut = false;
-								checkPcrouch.SetActive(false);
+								checkPcrouch.SetActive(value: false);
 							}
 						}
 						else if (canJumpIn)
 						{
-							openDoorButton.SetActive(true);
+							openDoorButton.SetActive(value: true);
 							if (openTheDoor && !playSound)
 							{
 								playSound = true;
 								((PlayerWindowController)winController.GetComponent(typeof(PlayerWindowController))).jumpIn();
-								openDoorButton.SetActive(false);
+								openDoorButton.SetActive(value: false);
 								canJumpIn = false;
-								checkPcrouch.SetActive(false);
+								checkPcrouch.SetActive(value: false);
 							}
 						}
 						else
 						{
-							openDoorButton.SetActive(false);
+							openDoorButton.SetActive(value: false);
 						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "giljotinspak")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
 						giljotin.gameObject.GetComponent<Animation>().Play("giljotinOn");
 						GetComponent<AudioSource>().PlayOneShot(giljotinLjud);
-						openDoorButton.SetActive(false);
+						openDoorButton.SetActive(value: false);
 						hitInfo.collider.gameObject.tag = "Untagged";
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "secretdoorbutton")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
 						secretDoor.gameObject.GetComponent<Animation>().Play("SecretDoorOpenLittle");
 						GetComponent<AudioSource>().PlayOneShot(secretDoorButton);
-						secretDoorTrigger.SetActive(true);
-						openDoorButton.SetActive(false);
+						secretDoorTrigger.SetActive(value: true);
+						openDoorButton.SetActive(value: false);
 						hitInfo.collider.gameObject.tag = "Untagged";
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "bastuspakOff")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
@@ -522,7 +538,7 @@ public class openDoors : MonoBehaviour
 				}
 				else if (hitInfo.collider.gameObject.tag == "bastuspakOn")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
@@ -538,7 +554,7 @@ public class openDoors : MonoBehaviour
 				{
 					if (bastuDoor.gameObject.tag == "innerdoorClosed")
 					{
-						openDoorButton.SetActive(true);
+						openDoorButton.SetActive(value: true);
 						if (openTheDoor && !playSound)
 						{
 							playSound = true;
@@ -549,18 +565,18 @@ public class openDoors : MonoBehaviour
 							if (((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).grannyInBastu)
 							{
 								bastuDoorCarv.carving = base.enabled;
-								noiceObjectBastu.SetActive(true);
+								noiceObjectBastu.SetActive(value: true);
 							}
 							StartCoroutine(bastuBommenNere());
 							((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).bastuBomNere = true;
-							openDoorButton.SetActive(false);
+							openDoorButton.SetActive(value: false);
 							openTheDoor = false;
 						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "bastubomNere")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
@@ -570,40 +586,58 @@ public class openDoors : MonoBehaviour
 						StartCoroutine(bastuBommenUppe());
 						((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).bastuBomNere = false;
 						((EnemyAIGranny)granny.GetComponent(typeof(EnemyAIGranny))).bastuSafeTimer = 0f;
-						openDoorButton.SetActive(false);
+						openDoorButton.SetActive(value: false);
 						openTheDoor = false;
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "brokencardoor")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
 						GetComponent<AudioSource>().PlayOneShot(brokenCarDoor);
 						((Rigidbody)hitInfo.collider.gameObject.GetComponent(typeof(Rigidbody))).isKinematic = false;
 						hitInfo.collider.gameObject.tag = "Untagged";
-						openDoorButton.SetActive(false);
+						openDoorButton.SetActive(value: false);
 						openTheDoor = false;
 						((destroyCarDoor)hitInfo.collider.gameObject.GetComponent(typeof(destroyCarDoor))).destroyBrokenCardorr = true;
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "handskfack")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
 						hitInfo.collider.gameObject.GetComponent<Animation>().Play("handskfackOpen");
 						GetComponent<AudioSource>().PlayOneShot(secretDoorButton);
 						hitInfo.collider.gameObject.tag = "Untagged";
-						openDoorButton.SetActive(false);
+						openDoorButton.SetActive(value: false);
 						openTheDoor = false;
+					}
+				}
+				else if (hitInfo.collider.gameObject.tag == "playersteal")
+				{
+					if (!playerTrySteal)
+					{
+						openDoorButton.SetActive(value: true);
+						if (openTheDoor && !playSound)
+						{
+							playSound = true;
+							((CrowControl)Crow.GetComponent(typeof(CrowControl))).playerSteal = true;
+							footstepScriptHolder.gameObject.GetComponent<Animation>().Play("playerHurt");
+							((playerInBeartrap)bloodScreenHolder.GetComponent(typeof(playerInBeartrap))).playerStuck();
+							playerTrySteal = true;
+							openDoorButton.SetActive(value: false);
+							GetComponent<AudioSource>().PlayOneShot(crowAttack);
+							StartCoroutine(crowAttackPlayer());
+						}
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "tavelspak")
 				{
-					openDoorButton.SetActive(true);
+					openDoorButton.SetActive(value: true);
 					if (openTheDoor && !playSound)
 					{
 						playSound = true;
@@ -611,30 +645,67 @@ public class openDoors : MonoBehaviour
 						bokhylla.gameObject.GetComponent<Animation>().Play("BookShelfMove");
 						bokhylla.GetComponent<AudioSource>().PlayOneShot(bokhyllaLjud);
 						hitInfo.collider.gameObject.tag = "Untagged";
-						openDoorButton.SetActive(false);
+						openDoorButton.SetActive(value: false);
+						openTheDoor = false;
+					}
+				}
+				else if (hitInfo.collider.gameObject.tag == "burdoor")
+				{
+					openDoorButton.SetActive(value: true);
+					if (openTheDoor && !playSound)
+					{
+						playSound = true;
+						hitInfo.collider.gameObject.GetComponent<Animation>().Play("BurDoorOpen");
+						((CrowControl)Crow.GetComponent(typeof(CrowControl))).burdoorIsOpen = true;
+						GetComponent<AudioSource>().PlayOneShot(burDoor);
+						hitInfo.collider.gameObject.tag = "Untagged";
+						openDoorButton.SetActive(value: false);
+						openTheDoor = false;
+					}
+				}
+				else if (hitInfo.collider.gameObject.tag == "gallerhole")
+				{
+					openDoorButton.SetActive(value: true);
+					if (openTheDoor && !playSound)
+					{
+						playSound = true;
+						hitInfo.collider.gameObject.GetComponent<Animation>().Play("GallerHole");
+						GetComponent<AudioSource>().PlayOneShot(moveGaller);
+						hitInfo.collider.gameObject.tag = "Untagged";
+						openDoorButton.SetActive(value: false);
 						openTheDoor = false;
 					}
 				}
 				else if (hitInfo.collider.gameObject.tag == "golv")
 				{
-					openDoorButton.SetActive(false);
+					openDoorButton.SetActive(value: false);
+					openTheDoor = false;
+				}
+				else if (hitInfo.collider.gameObject.tag == "car")
+				{
+					openDoorButton.SetActive(value: false);
 					openTheDoor = false;
 				}
 				else if (hitInfo.collider.gameObject.tag == "Untagged")
 				{
-					openDoorButton.SetActive(false);
+					openDoorButton.SetActive(value: false);
+					openTheDoor = false;
+				}
+				else if (hitInfo.collider.gameObject.tag == "remoteLock")
+				{
+					openDoorButton.SetActive(value: false);
 					openTheDoor = false;
 				}
 			}
 			else
 			{
-				openDoorButton.SetActive(false);
+				openDoorButton.SetActive(value: false);
 				openTheDoor = false;
 			}
 		}
 		else
 		{
-			openDoorButton.SetActive(false);
+			openDoorButton.SetActive(value: false);
 		}
 		if (textTimerOnOff)
 		{
@@ -643,8 +714,8 @@ public class openDoors : MonoBehaviour
 			{
 				textTimerOnOff = false;
 				textTimer = 0f;
-				needCarkeyText.SetActive(false);
-				garageportLockedText.SetActive(false);
+				needCarkeyText.SetActive(value: false);
+				garageportLockedText.SetActive(value: false);
 			}
 		}
 	}
@@ -653,7 +724,7 @@ public class openDoors : MonoBehaviour
 	{
 		yield return new WaitForSeconds(1f);
 		bastuBom.gameObject.tag = "bastubomNere";
-		noiceObjectBastu.SetActive(false);
+		noiceObjectBastu.SetActive(value: false);
 	}
 
 	public virtual IEnumerator bastuBommenUppe()
@@ -661,5 +732,16 @@ public class openDoors : MonoBehaviour
 		yield return new WaitForSeconds(1f);
 		bastuBom.gameObject.tag = "bastubomUppe";
 		bastuDoor.gameObject.tag = "innerdoorClosed";
+	}
+
+	public virtual IEnumerator crowAttackPlayer()
+	{
+		yield return new WaitForSeconds(2f);
+		playerTrySteal = false;
+	}
+
+	public openDoors()
+	{
+		layerMask = 256;
 	}
 }

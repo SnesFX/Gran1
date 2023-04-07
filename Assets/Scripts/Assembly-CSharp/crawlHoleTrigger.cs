@@ -15,7 +15,7 @@ public class crawlHoleTrigger : MonoBehaviour
 	{
 	}
 
-	public virtual void OnTriggerEnter(Collider other)
+	public virtual void OnTriggerStay(Collider other)
 	{
 		if (other.gameObject.tag == "Player")
 		{

@@ -16,7 +16,7 @@ public class fadeEndText : MonoBehaviour
 	{
 		if (m_Fading)
 		{
-			theEndText.CrossFadeAlpha(1f, 5f, false);
+			theEndText.CrossFadeAlpha(1f, 5f, ignoreTimeScale: false);
 		}
 	}
 }

@@ -5,10 +5,12 @@ LightingDataAsset:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: EndScene
-  m_Scene: {fileID: 102900000, guid: 0a5b6ac26a85914448132429ea6f6318, type: 3}
+  m_Scene: {fileID: 102900000, guid: 235536a4b81d23e4db5b30583de32e8c, type: 3}
   m_Lightmaps: []
+  m_AOTextures: []
   m_LightmapsCacheFiles: []
   m_LightProbes: {fileID: 0}
   m_LightmapsMode: 1
@@ -50,13 +52,13 @@ LightingDataAsset:
     m_TerrainChunks: []
   m_EnlightenSceneMappingRendererIDs: []
   m_Lights:
-  - targetObject: 699
+  - targetObject: 715
     targetPrefab: 0
-  - targetObject: 700
+  - targetObject: 716
     targetPrefab: 0
-  - targetObject: 701
+  - targetObject: 717
     targetPrefab: 0
-  - targetObject: 702
+  - targetObject: 718
     targetPrefab: 0
   m_LightBakingOutputs:
   - serializedVersion: 2

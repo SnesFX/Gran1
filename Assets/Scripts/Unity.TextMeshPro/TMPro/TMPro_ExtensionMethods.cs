@@ -15,13 +15,38 @@ namespace TMPro
 			return text;
 		}
 
+		public static string IntToString(this int[] unicodes)
+		{
+			char[] array = new char[unicodes.Length];
+			for (int i = 0; i < unicodes.Length; i++)
+			{
+				array[i] = (char)unicodes[i];
+			}
+			return new string(array);
+		}
+
+		public static string IntToString(this int[] unicodes, int start, int length)
+		{
+			if (start > unicodes.Length)
+			{
+				return string.Empty;
+			}
+			int num = Mathf.Min(start + length, unicodes.Length);
+			char[] array = new char[num - start];
+			int num2 = 0;
+			for (int i = start; i < num; i++)
+			{
+				array[num2++] = (char)unicodes[i];
+			}
+			return new string(array);
+		}
+
 		public static int FindInstanceID<T>(this List<T> list, T target) where T : Object
 		{
 			int instanceID = target.GetInstanceID();
 			for (int i = 0; i < list.Count; i++)
 			{
-				T val = list[i];
-				if (val.GetInstanceID() == instanceID)
+				if (list[i].GetInstanceID() == instanceID)
 				{
 					return i;
 				}
@@ -31,22 +56,38 @@ namespace TMPro
 
 		public static bool Compare(this Color32 a, Color32 b)
 		{
-			return a.r == b.r && a.g == b.g && a.b == b.b && a.a == b.a;
+			if (a.r == b.r && a.g == b.g && a.b == b.b)
+			{
+				return a.a == b.a;
+			}
+			return false;
 		}
 
 		public static bool CompareRGB(this Color32 a, Color32 b)
 		{
-			return a.r == b.r && a.g == b.g && a.b == b.b;
+			if (a.r == b.r && a.g == b.g)
+			{
+				return a.b == b.b;
+			}
+			return false;
 		}
 
 		public static bool Compare(this Color a, Color b)
 		{
-			return a.r == b.r && a.g == b.g && a.b == b.b && a.a == b.a;
+			if (a.r == b.r && a.g == b.g && a.b == b.b)
+			{
+				return a.a == b.a;
+			}
+			return false;
 		}
 
 		public static bool CompareRGB(this Color a, Color b)
 		{
-			return a.r == b.r && a.g == b.g && a.b == b.b;
+			if (a.r == b.r && a.g == b.g)
+			{
+				return a.b == b.b;
+			}
+			return false;
 		}
 
 		public static Color32 Multiply(this Color32 c1, Color32 c2)
@@ -78,19 +119,19 @@ namespace TMPro
 
 		public static bool Compare(this Vector3 v1, Vector3 v2, int accuracy)
 		{
-			bool flag = (int)(v1.x * (float)accuracy) == (int)(v2.x * (float)accuracy);
-			bool flag2 = (int)(v1.y * (float)accuracy) == (int)(v2.y * (float)accuracy);
-			bool flag3 = (int)(v1.z * (float)accuracy) == (int)(v2.z * (float)accuracy);
-			return flag && flag2 && flag3;
+			bool num = (int)(v1.x * (float)accuracy) == (int)(v2.x * (float)accuracy);
+			bool flag = (int)(v1.y * (float)accuracy) == (int)(v2.y * (float)accuracy);
+			bool flag2 = (int)(v1.z * (float)accuracy) == (int)(v2.z * (float)accuracy);
+			return num && flag && flag2;
 		}
 
 		public static bool Compare(this Quaternion q1, Quaternion q2, int accuracy)
 		{
-			bool flag = (int)(q1.x * (float)accuracy) == (int)(q2.x * (float)accuracy);
-			bool flag2 = (int)(q1.y * (float)accuracy) == (int)(q2.y * (float)accuracy);
-			bool flag3 = (int)(q1.z * (float)accuracy) == (int)(q2.z * (float)accuracy);
-			bool flag4 = (int)(q1.w * (float)accuracy) == (int)(q2.w * (float)accuracy);
-			return flag && flag2 && flag3 && flag4;
+			bool num = (int)(q1.x * (float)accuracy) == (int)(q2.x * (float)accuracy);
+			bool flag = (int)(q1.y * (float)accuracy) == (int)(q2.y * (float)accuracy);
+			bool flag2 = (int)(q1.z * (float)accuracy) == (int)(q2.z * (float)accuracy);
+			bool flag3 = (int)(q1.w * (float)accuracy) == (int)(q2.w * (float)accuracy);
+			return num && flag && flag2 && flag3;
 		}
 	}
 }

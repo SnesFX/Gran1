@@ -5,10 +5,12 @@ LightingDataAsset:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: ForestScene
   m_Scene: {fileID: 102900000, guid: ddd180c0aa47ee64989b5c37655a8881, type: 3}
   m_Lightmaps: []
+  m_AOTextures: []
   m_LightmapsCacheFiles: []
   m_LightProbes: {fileID: 0}
   m_LightmapsMode: 1
@@ -50,11 +52,11 @@ LightingDataAsset:
     m_TerrainChunks: []
   m_EnlightenSceneMappingRendererIDs: []
   m_Lights:
-  - targetObject: 411
+  - targetObject: 415
     targetPrefab: 0
-  - targetObject: 412
+  - targetObject: 416
     targetPrefab: 0
-  - targetObject: 413
+  - targetObject: 417
     targetPrefab: 0
   m_LightBakingOutputs:
   - serializedVersion: 2

@@ -11,7 +11,7 @@ namespace Steamworks
 		public class UTF8StringHandle : SafeHandleZeroOrMinusOneIsInvalid
 		{
 			public UTF8StringHandle(string str)
-				: base(true)
+				: base(ownsHandle: true)
 			{
 				if (str == null)
 				{
@@ -59,14 +59,14 @@ namespace Steamworks
 					Marshal.Copy(array, 0, m_Strings[i], array.Length);
 				}
 				m_ptrStrings = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(IntPtr)) * m_Strings.Length);
-				SteamParamStringArray_t steamParamStringArray_t = new SteamParamStringArray_t
+				SteamParamStringArray_t structure = new SteamParamStringArray_t
 				{
 					m_ppStrings = m_ptrStrings,
 					m_nNumStrings = m_Strings.Length
 				};
-				Marshal.Copy(m_Strings, 0, steamParamStringArray_t.m_ppStrings, m_Strings.Length);
+				Marshal.Copy(m_Strings, 0, structure.m_ppStrings, m_Strings.Length);
 				m_pSteamParamStringArray = Marshal.AllocHGlobal(Marshal.SizeOf(typeof(SteamParamStringArray_t)));
-				Marshal.StructureToPtr(steamParamStringArray_t, m_pSteamParamStringArray, false);
+				Marshal.StructureToPtr(structure, m_pSteamParamStringArray, fDeleteOld: false);
 			}
 
 			~SteamParamStringArray()
@@ -75,8 +75,7 @@ namespace Steamworks
 				int i = 0;
 				for (; i < strings.Length; i++)
 				{
-					IntPtr hglobal = strings[i];
-					Marshal.FreeHGlobal(hglobal);
+					Marshal.FreeHGlobal(strings[i]);
 				}
 				if (m_ptrStrings != IntPtr.Zero)
 				{

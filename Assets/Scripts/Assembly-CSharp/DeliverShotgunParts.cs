@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public class DeliverShotgunParts : MonoBehaviour
 {
-	public GameObject Player;
+	public GameObject gameController;
 
 	public bool shotgunPart1;
 
@@ -38,55 +38,55 @@ public class DeliverShotgunParts : MonoBehaviour
 		{
 			return;
 		}
-		if (((PickUp)Player.GetComponent(typeof(PickUp))).havegunDel1)
+		if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegunDel1)
 		{
-			shotgunPart1Table.SetActive(true);
-			shotgunPart1Hand.SetActive(false);
-			dropObjectButton.SetActive(false);
-			((PickUp)Player.GetComponent(typeof(PickUp))).havegunDel1 = false;
+			shotgunPart1Table.SetActive(value: true);
+			shotgunPart1Hand.SetActive(value: false);
+			dropObjectButton.SetActive(value: false);
+			((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegunDel1 = false;
 			shotgunPart1 = true;
 			GetComponent<AudioSource>().PlayOneShot(placeObjectSound);
 			if (shotgunPart2 && shotgunPart3)
 			{
-				Shotgun.SetActive(true);
-				moreAmmo.SetActive(true);
-				shotgunPart1Table.SetActive(false);
-				shotgunPart2Table.SetActive(false);
-				shotgunPart3Table.SetActive(false);
+				Shotgun.SetActive(value: true);
+				moreAmmo.SetActive(value: true);
+				shotgunPart1Table.SetActive(value: false);
+				shotgunPart2Table.SetActive(value: false);
+				shotgunPart3Table.SetActive(value: false);
 			}
 		}
-		if (((PickUp)Player.GetComponent(typeof(PickUp))).havegunDel2)
+		if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegunDel2)
 		{
-			shotgunPart2Table.SetActive(true);
-			shotgunPart2Hand.SetActive(false);
-			dropObjectButton.SetActive(false);
-			((PickUp)Player.GetComponent(typeof(PickUp))).havegunDel2 = false;
+			shotgunPart2Table.SetActive(value: true);
+			shotgunPart2Hand.SetActive(value: false);
+			dropObjectButton.SetActive(value: false);
+			((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegunDel2 = false;
 			shotgunPart2 = true;
 			GetComponent<AudioSource>().PlayOneShot(placeObjectSound);
 			if (shotgunPart1 && shotgunPart3)
 			{
-				Shotgun.SetActive(true);
-				moreAmmo.SetActive(true);
-				shotgunPart1Table.SetActive(false);
-				shotgunPart2Table.SetActive(false);
-				shotgunPart3Table.SetActive(false);
+				Shotgun.SetActive(value: true);
+				moreAmmo.SetActive(value: true);
+				shotgunPart1Table.SetActive(value: false);
+				shotgunPart2Table.SetActive(value: false);
+				shotgunPart3Table.SetActive(value: false);
 			}
 		}
-		if (((PickUp)Player.GetComponent(typeof(PickUp))).havegunDel3)
+		if (((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegunDel3)
 		{
-			shotgunPart3Table.SetActive(true);
-			shotgunPart3Hand.SetActive(false);
-			dropObjectButton.SetActive(false);
-			((PickUp)Player.GetComponent(typeof(PickUp))).havegunDel3 = false;
+			shotgunPart3Table.SetActive(value: true);
+			shotgunPart3Hand.SetActive(value: false);
+			dropObjectButton.SetActive(value: false);
+			((InventoryController)gameController.GetComponent(typeof(InventoryController))).havegunDel3 = false;
 			shotgunPart3 = true;
 			GetComponent<AudioSource>().PlayOneShot(placeObjectSound);
 			if (shotgunPart1 && shotgunPart2)
 			{
-				Shotgun.SetActive(true);
-				moreAmmo.SetActive(true);
-				shotgunPart1Table.SetActive(false);
-				shotgunPart2Table.SetActive(false);
-				shotgunPart3Table.SetActive(false);
+				Shotgun.SetActive(value: true);
+				moreAmmo.SetActive(value: true);
+				shotgunPart1Table.SetActive(value: false);
+				shotgunPart2Table.SetActive(value: false);
+				shotgunPart3Table.SetActive(value: false);
 			}
 		}
 	}

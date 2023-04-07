@@ -53,19 +53,6 @@ public class Joystick : MonoBehaviour
 
 	public GameObject joystickCircle;
 
-	public Joystick()
-	{
-		deadZone = Vector2.zero;
-		lastFingerId = -1;
-		firstDeltaTime = 0.5f;
-		guiBoundary = new Boundary();
-	}
-
-	static Joystick()
-	{
-		tapTimeDelta = 0.3f;
-	}
-
 	public virtual void Start()
 	{
 		footstepScriptHolder = GameObject.Find("Main Camera");
@@ -121,7 +108,7 @@ public class Joystick : MonoBehaviour
 
 	public virtual void Disable()
 	{
-		base.gameObject.SetActive(false);
+		base.gameObject.SetActive(value: false);
 		enumeratedJoysticks = false;
 	}
 
@@ -282,5 +269,18 @@ public class Joystick : MonoBehaviour
 		{
 			position.y = Mathf.Sign(position.y) * (num2 - deadZone.y) / (1f - deadZone.y);
 		}
+	}
+
+	public Joystick()
+	{
+		deadZone = Vector2.zero;
+		lastFingerId = -1;
+		firstDeltaTime = 0.5f;
+		guiBoundary = new Boundary();
+	}
+
+	static Joystick()
+	{
+		tapTimeDelta = 0.3f;
 	}
 }

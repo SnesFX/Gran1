@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -15,38 +13,24 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		private void Start()
 		{
-			EventSystem eventSystem = UnityEngine.Object.FindObjectOfType<EventSystem>();
-			if (eventSystem == null)
+			if (Object.FindObjectOfType<EventSystem>() == null)
 			{
-				GameObject gameObject = new GameObject("EventSystem");
-				gameObject.AddComponent<EventSystem>();
-				gameObject.AddComponent<StandaloneInputModule>();
+				GameObject obj = new GameObject("EventSystem");
+				obj.AddComponent<EventSystem>();
+				obj.AddComponent<StandaloneInputModule>();
 			}
 		}
 
 		private void CheckEnableControlRig()
 		{
-			EnableControlRig(false);
+			EnableControlRig(enabled: false);
 		}
 
 		private void EnableControlRig(bool enabled)
 		{
-			IEnumerator enumerator = base.transform.GetEnumerator();
-			try
+			foreach (Transform item in base.transform)
 			{
-				while (enumerator.MoveNext())
-				{
-					Transform transform = (Transform)enumerator.Current;
-					transform.gameObject.SetActive(enabled);
-				}
-			}
-			finally
-			{
-				IDisposable disposable;
-				if ((disposable = enumerator as IDisposable) != null)
-				{
-					disposable.Dispose();
-				}
+				item.gameObject.SetActive(enabled);
 			}
 		}
 	}

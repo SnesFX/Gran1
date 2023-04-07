@@ -69,7 +69,11 @@ namespace UnityStandardAssets.CrossPlatformInput
 
 		public CrossPlatformInputManager.VirtualAxis VirtualAxisReference(string name)
 		{
-			return (!m_VirtualAxes.ContainsKey(name)) ? null : m_VirtualAxes[name];
+			if (!m_VirtualAxes.ContainsKey(name))
+			{
+				return null;
+			}
+			return m_VirtualAxes[name];
 		}
 
 		public void SetVirtualMousePositionX(float f)

@@ -77,7 +77,7 @@ namespace UnityEngine.PostProcessing
 				mesh.SetVertices(list);
 				mesh.SetUVs(0, list2);
 				mesh.SetIndices(array2, MeshTopology.Lines, 0);
-				mesh.UploadMeshData(true);
+				mesh.UploadMeshData(markNoLongerReadable: true);
 				columnCount = columns;
 				rowCount = rows;
 			}
@@ -97,7 +97,11 @@ namespace UnityEngine.PostProcessing
 		{
 			get
 			{
-				return base.model.IsModeActive(BuiltinDebugViewsModel.Mode.Depth) || base.model.IsModeActive(BuiltinDebugViewsModel.Mode.Normals) || base.model.IsModeActive(BuiltinDebugViewsModel.Mode.MotionVectors);
+				if (!base.model.IsModeActive(BuiltinDebugViewsModel.Mode.Depth) && !base.model.IsModeActive(BuiltinDebugViewsModel.Mode.Normals))
+				{
+					return base.model.IsModeActive(BuiltinDebugViewsModel.Mode.MotionVectors);
+				}
+				return true;
 			}
 		}
 
@@ -122,7 +126,11 @@ namespace UnityEngine.PostProcessing
 
 		public override CameraEvent GetCameraEvent()
 		{
-			return (base.model.settings.mode != BuiltinDebugViewsModel.Mode.MotionVectors) ? CameraEvent.BeforeImageEffectsOpaque : CameraEvent.BeforeImageEffects;
+			if (base.model.settings.mode != BuiltinDebugViewsModel.Mode.MotionVectors)
+			{
+				return CameraEvent.BeforeImageEffectsOpaque;
+			}
+			return CameraEvent.BeforeImageEffects;
 		}
 
 		public override string GetName()

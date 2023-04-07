@@ -5,7 +5,7 @@ using UnityEngine.UI;
 namespace UnityStandardAssets.CrossPlatformInput
 {
 	[RequireComponent(typeof(Image))]
-	public class TouchPad : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IEventSystemHandler
+	public class TouchPad : MonoBehaviour, IPointerDownHandler, IEventSystemHandler, IPointerUpHandler
 	{
 		public enum AxisOption
 		{
@@ -116,8 +116,7 @@ namespace UnityStandardAssets.CrossPlatformInput
 					m_Center = m_PreviousTouchPos;
 					m_PreviousTouchPos = Input.touches[m_Id].position;
 				}
-				Vector2 vector = new Vector2(Input.touches[m_Id].position.x - m_Center.x, Input.touches[m_Id].position.y - m_Center.y);
-				Vector2 normalized = vector.normalized;
+				Vector2 normalized = new Vector2(Input.touches[m_Id].position.x - m_Center.x, Input.touches[m_Id].position.y - m_Center.y).normalized;
 				normalized.x *= Xsensitivity;
 				normalized.y *= Ysensitivity;
 				UpdateVirtualAxes(new Vector3(normalized.x, normalized.y, 0f));

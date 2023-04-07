@@ -30,13 +30,13 @@ public class CloseOptionButton : MonoBehaviour
 			Touch touch = touches[i];
 			if (touch.phase == TouchPhase.Ended && GetComponent<GUITexture>().HitTest(touch.position))
 			{
-				optionMenu.SetActive(false);
-				joystick.SetActive(true);
-				joystickRing.SetActive(true);
-				mapButton.SetActive(true);
-				swordButton.SetActive(true);
-				allapapperslappar.SetActive(true);
-				pianoCollider.SetActive(true);
+				optionMenu.SetActive(value: false);
+				joystick.SetActive(value: true);
+				joystickRing.SetActive(value: true);
+				mapButton.SetActive(value: true);
+				swordButton.SetActive(value: true);
+				allapapperslappar.SetActive(value: true);
+				pianoCollider.SetActive(value: true);
 				Time.timeScale = 1f;
 			}
 		}
